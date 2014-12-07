@@ -1,0 +1,30 @@
+[DEBUG] [2014-12-06 21:50:21,390] (MainThread) Action processor initialization
+[DEBUG] [2014-12-06 21:50:21,390] (MainThread) Scheduler initialization
+[DEBUG] [2014-12-06 21:50:21,390] (MainThread) Performer initialization
+[INFO] [2014-12-06 21:50:21,390] (MainThread) SQL_conf: SELECT name, params, enabled FROM plugin
+[ERROR] [2014-12-06 21:50:21,395] (MainThread) Not loaded database - No module named 'pymysql'
+[DEBUG] [2014-12-06 21:50:21,397] (MainThread) OneWirePlugin initialization
+[DEBUG] [2014-12-06 21:50:21,397] (MainThread) 
+OneWirePlugin list dir:
+[DEBUG] [2014-12-06 21:50:22,031] (MainThread) b'/28.345805050000'
+[DEBUG] [2014-12-06 21:50:22,031] (MainThread) b'/28.F2CF39040000'
+[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/28.259039040000'
+[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/28.1D9D39040000'
+[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/3A.F2360D000000'
+[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/3A.C9330D000000'
+[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/81.F34132000000'
+[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/bus.0'
+[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/uncached'
+[DEBUG] [2014-12-06 21:50:22,033] (MainThread) b'/settings'
+[DEBUG] [2014-12-06 21:50:22,033] (MainThread) b'/system'
+[DEBUG] [2014-12-06 21:50:22,033] (MainThread) b'/statistics'
+[DEBUG] [2014-12-06 21:50:22,033] (MainThread) b'/structure'
+[DEBUG] [2014-12-06 21:50:22,033] (MainThread) b'/simultaneous'
+[DEBUG] [2014-12-06 21:50:22,033] (MainThread) b'/alarm'
+[DEBUG] [2014-12-06 21:50:22,033] (MainThread) 
+
+[DEBUG] [2014-12-06 21:50:22,034] (MainThread) SystemExecPlugin initialization
+[INFO] [2014-12-06 21:50:22,034] (MainThread) initialized successfully: {'sysexec': <plugins.sysexec.SystemExecPlugin.SystemExecPlugin object at 0x7fc00f561f60>, 'onewire': <plugins.onewire.OneWirePlugin.OneWirePlugin object at 0x7fc00f5610b8>, 'delay': <plugins.delay.DelayPlugin.DelayPlugin object at 0x7fc00f561128>}
+[INFO] [2014-12-06 21:50:22,034] (MainThread) found plugins: {'onewire': <class 'plugins.onewire.OneWirePlugin.OneWirePlugin'>, 'ledstrip': <class 'plugins.ledstrip.LedStripPlugin.LedStripPlugin'>, 'delay': <class 'plugins.delay.DelayPlugin.DelayPlugin'>, 'procexec': <class 'plugins.procexec.ProcExecPlugin.ProcExecPlugin'>, 'sysexec': <class 'plugins.sysexec.SystemExecPlugin.SystemExecPlugin'>, 'schedulercontrol': <class 'plugins.schedulercontrol.SchedulerControlPlugin.SchedulerControlPlugin'>}
+[INFO] [2014-12-06 21:50:22,034] (MainThread) not loaded plugins: {'database': "No module named 'pymysql'", 'ledstrip': 'Threre is no device ttyACM* in /dev'}
+[INFO] [2014-12-06 21:50:22,034] (MainThread) Context initialized

@@ -1,0 +1,217 @@
+[DEBUG] [2014-12-08 00:04:04,595] (MainThread) Action processor initialization
+[DEBUG] [2014-12-08 00:04:04,595] (MainThread) Scheduler initialization
+[DEBUG] [2014-12-08 00:04:04,595] (MainThread) Performer initialization
+[INFO] [2014-12-08 00:04:04,595] (MainThread) SQL_conf: SELECT name, params, enabled FROM plugin
+[ERROR] [2014-12-08 00:04:04,600] (MainThread) Not loaded database - No module named 'pymysql'
+[DEBUG] [2014-12-08 00:04:04,607] (MainThread) MockPlugin initialization
+[DEBUG] [2014-12-08 00:04:04,607] (MainThread) OneWirePlugin initialization
+[DEBUG] [2014-12-08 00:04:04,607] (MainThread) 
+OneWirePlugin list dir:
+[DEBUG] [2014-12-08 00:04:04,776] (MainThread) b'/28.345805050000'
+[DEBUG] [2014-12-08 00:04:04,776] (MainThread) b'/28.F2CF39040000'
+[DEBUG] [2014-12-08 00:04:04,776] (MainThread) b'/28.259039040000'
+[DEBUG] [2014-12-08 00:04:04,776] (MainThread) b'/28.1D9D39040000'
+[DEBUG] [2014-12-08 00:04:04,777] (MainThread) b'/3A.F2360D000000'
+[DEBUG] [2014-12-08 00:04:04,777] (MainThread) b'/3A.C9330D000000'
+[DEBUG] [2014-12-08 00:04:04,777] (MainThread) b'/81.F34132000000'
+[DEBUG] [2014-12-08 00:04:04,777] (MainThread) b'/bus.0'
+[DEBUG] [2014-12-08 00:04:04,777] (MainThread) b'/uncached'
+[DEBUG] [2014-12-08 00:04:04,777] (MainThread) b'/settings'
+[DEBUG] [2014-12-08 00:04:04,778] (MainThread) b'/system'
+[DEBUG] [2014-12-08 00:04:04,778] (MainThread) b'/statistics'
+[DEBUG] [2014-12-08 00:04:04,778] (MainThread) b'/structure'
+[DEBUG] [2014-12-08 00:04:04,778] (MainThread) b'/simultaneous'
+[DEBUG] [2014-12-08 00:04:04,778] (MainThread) b'/alarm'
+[DEBUG] [2014-12-08 00:04:04,778] (MainThread) 
+
+[DEBUG] [2014-12-08 00:04:04,779] (MainThread) SystemExecPlugin initialization
+[INFO] [2014-12-08 00:04:04,779] (MainThread) initialized successfully: {'sysexec': <plugins.sysexec.SystemExecPlugin.SystemExecPlugin object at 0x7f9decd15828>, 'delay': <plugins.delay.DelayPlugin.DelayPlugin object at 0x7f9dec796160>, 'mock': <plugins.mock.MockPlugin.MockPlugin object at 0x7f9decd15710>, 'onewire': <plugins.onewire.OneWirePlugin.OneWirePlugin object at 0x7f9decd15748>}
+[INFO] [2014-12-08 00:04:04,779] (MainThread) found plugins: {'procexec': <class 'plugins.procexec.ProcExecPlugin.ProcExecPlugin'>, 'ledstrip': <class 'plugins.ledstrip.LedStripPlugin.LedStripPlugin'>, 'mock': <class 'plugins.mock.MockPlugin.MockPlugin'>, 'onewire': <class 'plugins.onewire.OneWirePlugin.OneWirePlugin'>, 'delay': <class 'plugins.delay.DelayPlugin.DelayPlugin'>, 'schedulercontrol': <class 'plugins.schedulercontrol.SchedulerControlPlugin.SchedulerControlPlugin'>, 'sysexec': <class 'plugins.sysexec.SystemExecPlugin.SystemExecPlugin'>}
+[INFO] [2014-12-08 00:04:04,779] (MainThread) not loaded plugins: {'database': "No module named 'pymysql'", 'ledstrip': 'Threre is no device ttyACM* in /dev'}
+[INFO] [2014-12-08 00:04:04,779] (MainThread) Context initialized
+[DEBUG] [2014-12-08 00:04:04,781] (MainThread) Begin building expression tree with ( {
+                                          "type": "RequestNode",
+                                          "plugin": "mock",
+                                          "reference": "test ActionProcessor create execute delete",
+                                          "retvar":"x"
+                                        } )
+[DEBUG] [2014-12-08 00:04:04,781] (MainThread) create node decomposition result: {'plugin': '"mock"', 'type': '"RequestNode"', 'reference': '"test ActionProcessor create execute delete"', 'retvar': '"x"'}
+[DEBUG] [2014-12-08 00:04:04,781] (MainThread) AbstractNode constructor call ( {"plugin": "\"mock\"", "type": "\"RequestNode\"", "reference": "\"test ActionProcessor create execute delete\"", "retvar": "\"x\""} )
+[DEBUG] [2014-12-08 00:04:04,782] (MainThread) Request node constructing...
+[DEBUG] [2014-12-08 00:04:04,782] (MainThread) ActionProcessor process method call with message ( runmock )
+[DEBUG] [2014-12-08 00:04:04,782] (MainThread) action processor process method call in the same thread
+[DEBUG] [2014-12-08 00:04:04,782] (MainThread) process wrapper with ( runmock )
+[DEBUG] [2014-12-08 00:04:04,782] (MainThread) ActionProcessor: parsing message( runmock )
+[DEBUG] [2014-12-08 00:04:04,784] (MainThread) Message matched as command runmock without value 
+[INFO] [2014-12-08 00:04:04,784] (MainThread) Process runmock executed
+[DEBUG] [2014-12-08 00:04:04,784] (MainThread) thread executed in process ( runmock )
+[DEBUG] [2014-12-08 00:04:04,784] (Thread-1  ) Executed RequestNode with reference ( test ActionProcessor create execute delete )
+[INFO] [2014-12-08 00:04:04,785] (Thread-2  ) Threads alive: 3
+[DEBUG] [2014-12-08 00:04:04,786] (Thread-1  ) current node thread joined to main
+[DEBUG] [2014-12-08 00:04:04,786] (Thread-2  ) MockPlugin call with test ActionProcessor create execute delete
+[DEBUG] [2014-12-08 00:04:04,787] (Thread-2  ) Value test ActionProcessor create execute delete recieved
+[DEBUG] [2014-12-08 00:04:04,787] (Thread-2  ) Thread with ref ( test ActionProcessor create execute delete ) evaluation result: test ActionProcessor create execute delete
+[DEBUG] [2014-12-08 00:04:04,787] (Thread-1  ) All parallel nodes of process runmock completed
+[DEBUG] [2014-12-08 00:04:04,788] (Thread-1  ) All ways of test ActionProcessor create execute delete completed
+[INFO] [2014-12-08 00:04:04,788] (MainThread) SQL_conf: DELETE FROM process WHERE name='runmock'
+[DEBUG] [2014-12-08 00:04:04,789] (MainThread) Begin building expression tree with ( {"type": "RequestNode",
+                            "plugin": "mock", "reference": "test ExecuteNode create execute", "retvar": "x"} )
+[DEBUG] [2014-12-08 00:04:04,789] (MainThread) create node decomposition result: {'plugin': '"mock"', 'type': '"RequestNode"', 'reference': '"test ExecuteNode create execute"', 'retvar': '"x"'}
+[DEBUG] [2014-12-08 00:04:04,790] (MainThread) AbstractNode constructor call ( {"plugin": "\"mock\"", "type": "\"RequestNode\"", "reference": "\"test ExecuteNode create execute\"", "retvar": "\"x\""} )
+[DEBUG] [2014-12-08 00:04:04,790] (MainThread) Request node constructing...
+[DEBUG] [2014-12-08 00:04:04,790] (MainThread) ActionProcessor process method call with message ( execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,790] (MainThread) action processor process method call in the same thread
+[DEBUG] [2014-12-08 00:04:04,790] (MainThread) process wrapper with ( execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,790] (MainThread) ActionProcessor: parsing message( execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,791] (MainThread) Message matched as command execnode-ce without value 
+[INFO] [2014-12-08 00:04:04,791] (MainThread) Process execnode-ce executed
+[DEBUG] [2014-12-08 00:04:04,791] (MainThread) thread executed in process ( execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,791] (Thread-3  ) Executed RequestNode with reference ( test ExecuteNode create execute )
+[INFO] [2014-12-08 00:04:04,792] (Thread-4  ) Threads alive: 3
+[DEBUG] [2014-12-08 00:04:04,792] (Thread-3  ) current node thread joined to main
+[DEBUG] [2014-12-08 00:04:04,792] (Thread-4  ) MockPlugin call with test ExecuteNode create execute
+[DEBUG] [2014-12-08 00:04:04,793] (Thread-4  ) Value test ExecuteNode create execute recieved
+[DEBUG] [2014-12-08 00:04:04,793] (Thread-4  ) Thread with ref ( test ExecuteNode create execute ) evaluation result: test ExecuteNode create execute
+[DEBUG] [2014-12-08 00:04:04,793] (Thread-3  ) All parallel nodes of process execnode-ce completed
+[DEBUG] [2014-12-08 00:04:04,793] (Thread-3  ) All ways of test ExecuteNode create execute completed
+[DEBUG] [2014-12-08 00:04:04,794] (MainThread) Begin building expression tree with ( {"type": "ExecuteNode", "name": "execnode-ce"} )
+[DEBUG] [2014-12-08 00:04:04,794] (MainThread) create node decomposition result: {'name': '"execnode-ce"', 'type': '"ExecuteNode"'}
+[DEBUG] [2014-12-08 00:04:04,794] (MainThread) AbstractNode constructor call ( {"name": "\"execnode-ce\"", "type": "\"ExecuteNode\""} )
+[DEBUG] [2014-12-08 00:04:04,794] (MainThread) Execute node constructing...
+[DEBUG] [2014-12-08 00:04:04,794] (MainThread) ActionProcessor process method call with message ( exec-execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,794] (MainThread) action processor process method call in the same thread
+[DEBUG] [2014-12-08 00:04:04,794] (MainThread) process wrapper with ( exec-execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,794] (MainThread) ActionProcessor: parsing message( exec-execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,795] (MainThread) Message matched as command exec-execnode-ce without value 
+[INFO] [2014-12-08 00:04:04,795] (MainThread) Process exec-execnode-ce executed
+[DEBUG] [2014-12-08 00:04:04,795] (MainThread) thread executed in process ( exec-execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,795] (Thread-5  ) Executed ExecuteNode for process with name ( execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,795] (Thread-6  ) ActionProcessor process method call with message ( execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,796] (Thread-5  ) current node thread joined to main
+[DEBUG] [2014-12-08 00:04:04,796] (Thread-6  ) action processor process method call in new thread
+[DEBUG] [2014-12-08 00:04:04,796] (Thread-7  ) process wrapper with ( execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,797] (Thread-7  ) ActionProcessor: parsing message( execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,797] (Thread-7  ) Message matched as command execnode-ce without value 
+[INFO] [2014-12-08 00:04:04,797] (Thread-7  ) Process execnode-ce executed
+[DEBUG] [2014-12-08 00:04:04,798] (Thread-7  ) thread executed in process ( execnode-ce )
+[DEBUG] [2014-12-08 00:04:04,798] (Thread-8  ) Executed RequestNode with reference ( test ExecuteNode create execute )
+[INFO] [2014-12-08 00:04:04,799] (Thread-9  ) Threads alive: 5
+[DEBUG] [2014-12-08 00:04:04,799] (Thread-8  ) current node thread joined to main
+[DEBUG] [2014-12-08 00:04:04,799] (Thread-9  ) MockPlugin call with test ExecuteNode create execute
+[DEBUG] [2014-12-08 00:04:04,799] (Thread-9  ) Value test ExecuteNode create execute recieved
+[DEBUG] [2014-12-08 00:04:04,799] (Thread-9  ) Thread with ref ( test ExecuteNode create execute ) evaluation result: test ExecuteNode create execute
+[DEBUG] [2014-12-08 00:04:04,800] (Thread-8  ) All parallel nodes of process execnode-ce completed
+[DEBUG] [2014-12-08 00:04:04,800] (Thread-8  ) All ways of test ExecuteNode create execute completed
+[DEBUG] [2014-12-08 00:04:04,800] (Thread-5  ) From ExecuteNode (execnode-ce recieved {'x': 'test ExecuteNode create execute'}
+[DEBUG] [2014-12-08 00:04:04,800] (Thread-5  ) All parallel nodes of process exec-execnode-ce completed
+[DEBUG] [2014-12-08 00:04:04,800] (Thread-5  ) All ways of ExecuteNode for (execnode-ce) completed
+[INFO] [2014-12-08 00:04:04,801] (MainThread) SQL_conf: DELETE FROM process WHERE name='exec-execnode-ce'
+[INFO] [2014-12-08 00:04:04,801] (MainThread) SQL_conf: DELETE FROM process WHERE name='execnode-ce'
+[DEBUG] [2014-12-08 00:04:04,802] (MainThread) Begin building expression tree with ( {"type": "RequestNode",
+                            "plugin": "mock", "reference": "test ExecuteNode create execute with variables merging", "retvar": "x"} )
+[DEBUG] [2014-12-08 00:04:04,802] (MainThread) create node decomposition result: {'plugin': '"mock"', 'type': '"RequestNode"', 'reference': '"test ExecuteNode create execute with variables merging"', 'retvar': '"x"'}
+[DEBUG] [2014-12-08 00:04:04,802] (MainThread) AbstractNode constructor call ( {"plugin": "\"mock\"", "type": "\"RequestNode\"", "reference": "\"test ExecuteNode create execute with variables merging\"", "retvar": "\"x\""} )
+[DEBUG] [2014-12-08 00:04:04,802] (MainThread) Request node constructing...
+[DEBUG] [2014-12-08 00:04:04,802] (MainThread) ActionProcessor process method call with message ( execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,802] (MainThread) action processor process method call in the same thread
+[DEBUG] [2014-12-08 00:04:04,802] (MainThread) process wrapper with ( execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,803] (MainThread) ActionProcessor: parsing message( execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,803] (MainThread) Message matched as command execnode-mergevars without value 
+[INFO] [2014-12-08 00:04:04,803] (MainThread) Process execnode-mergevars executed
+[DEBUG] [2014-12-08 00:04:04,803] (MainThread) thread executed in process ( execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,803] (Thread-10 ) Executed RequestNode with reference ( test ExecuteNode create execute with variables merging )
+[INFO] [2014-12-08 00:04:04,803] (Thread-11 ) Threads alive: 3
+[DEBUG] [2014-12-08 00:04:04,804] (Thread-10 ) current node thread joined to main
+[DEBUG] [2014-12-08 00:04:04,804] (Thread-11 ) MockPlugin call with test ExecuteNode create execute with variables merging
+[DEBUG] [2014-12-08 00:04:04,804] (Thread-11 ) Value test ExecuteNode create execute with variables merging recieved
+[DEBUG] [2014-12-08 00:04:04,804] (Thread-11 ) Thread with ref ( test ExecuteNode create execute with variables merging ) evaluation result: test ExecuteNode create execute with variables merging
+[DEBUG] [2014-12-08 00:04:04,804] (Thread-10 ) All parallel nodes of process execnode-mergevars completed
+[DEBUG] [2014-12-08 00:04:04,804] (Thread-10 ) All ways of test ExecuteNode create execute with variables merging completed
+[DEBUG] [2014-12-08 00:04:04,804] (MainThread) Begin building expression tree with ( {"type": "ExecuteNode", "name": "execnode-mergevars", "mergevars":true} )
+[DEBUG] [2014-12-08 00:04:04,804] (MainThread) create node decomposition result: {'name': '"execnode-mergevars"', 'mergevars': 'true', 'type': '"ExecuteNode"'}
+[DEBUG] [2014-12-08 00:04:04,805] (MainThread) AbstractNode constructor call ( {"name": "\"execnode-mergevars\"", "mergevars": "true", "type": "\"ExecuteNode\""} )
+[DEBUG] [2014-12-08 00:04:04,805] (MainThread) Execute node constructing...
+[DEBUG] [2014-12-08 00:04:04,805] (MainThread) ActionProcessor process method call with message ( exec-execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,805] (MainThread) action processor process method call in the same thread
+[DEBUG] [2014-12-08 00:04:04,805] (MainThread) process wrapper with ( exec-execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,805] (MainThread) ActionProcessor: parsing message( exec-execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,805] (MainThread) Message matched as command exec-execnode-mergevars without value 
+[INFO] [2014-12-08 00:04:04,805] (MainThread) Process exec-execnode-mergevars executed
+[DEBUG] [2014-12-08 00:04:04,805] (MainThread) thread executed in process ( exec-execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,805] (Thread-12 ) Executed ExecuteNode for process with name ( execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,806] (Thread-13 ) ActionProcessor process method call with message ( execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,806] (Thread-12 ) current node thread joined to main
+[DEBUG] [2014-12-08 00:04:04,806] (Thread-13 ) action processor process method call in new thread
+[DEBUG] [2014-12-08 00:04:04,806] (Thread-14 ) process wrapper with ( execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,806] (Thread-14 ) ActionProcessor: parsing message( execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,807] (Thread-14 ) Message matched as command execnode-mergevars without value 
+[INFO] [2014-12-08 00:04:04,807] (Thread-14 ) Process execnode-mergevars executed
+[DEBUG] [2014-12-08 00:04:04,807] (Thread-14 ) thread executed in process ( execnode-mergevars )
+[DEBUG] [2014-12-08 00:04:04,807] (Thread-15 ) Executed RequestNode with reference ( test ExecuteNode create execute with variables merging )
+[INFO] [2014-12-08 00:04:04,807] (Thread-16 ) Threads alive: 5
+[DEBUG] [2014-12-08 00:04:04,807] (Thread-15 ) current node thread joined to main
+[DEBUG] [2014-12-08 00:04:04,808] (Thread-16 ) MockPlugin call with test ExecuteNode create execute with variables merging
+[DEBUG] [2014-12-08 00:04:04,808] (Thread-16 ) Value test ExecuteNode create execute with variables merging recieved
+[DEBUG] [2014-12-08 00:04:04,808] (Thread-16 ) Thread with ref ( test ExecuteNode create execute with variables merging ) evaluation result: test ExecuteNode create execute with variables merging
+[DEBUG] [2014-12-08 00:04:04,808] (Thread-15 ) All parallel nodes of process execnode-mergevars completed
+[DEBUG] [2014-12-08 00:04:04,808] (Thread-15 ) All ways of test ExecuteNode create execute with variables merging completed
+[DEBUG] [2014-12-08 00:04:04,808] (Thread-12 ) From ExecuteNode (execnode-mergevars recieved {'x': 'test ExecuteNode create execute with variables merging'}
+[DEBUG] [2014-12-08 00:04:04,808] (Thread-12 ) All parallel nodes of process exec-execnode-mergevars completed
+[DEBUG] [2014-12-08 00:04:04,808] (Thread-12 ) All ways of ExecuteNode for (execnode-mergevars) completed
+[INFO] [2014-12-08 00:04:04,809] (MainThread) SQL_conf: DELETE FROM process WHERE name='exec-execnode-mergevars'
+[INFO] [2014-12-08 00:04:04,809] (MainThread) SQL_conf: DELETE FROM process WHERE name='execnode-mergevars'
+[DEBUG] [2014-12-08 00:04:04,809] (MainThread) Begin building expression tree with ( {"type": "RequestNode",
+                            "plugin": "mock", "reference": "test SchedulerNode create start stop", "retvar": "x"} )
+[DEBUG] [2014-12-08 00:04:04,809] (MainThread) create node decomposition result: {'plugin': '"mock"', 'type': '"RequestNode"', 'reference': '"test SchedulerNode create start stop"', 'retvar': '"x"'}
+[DEBUG] [2014-12-08 00:04:04,810] (MainThread) AbstractNode constructor call ( {"plugin": "\"mock\"", "type": "\"RequestNode\"", "reference": "\"test SchedulerNode create start stop\"", "retvar": "\"x\""} )
+[DEBUG] [2014-12-08 00:04:04,810] (MainThread) Request node constructing...
+[DEBUG] [2014-12-08 00:04:04,810] (MainThread) Begin building expression tree with ( {"type":"SchedulerNode","task":"sch-css","action":"start"} )
+[DEBUG] [2014-12-08 00:04:04,810] (MainThread) create node decomposition result: {'task': '"sch-css"', 'type': '"SchedulerNode"', 'action': '"start"'}
+[DEBUG] [2014-12-08 00:04:04,810] (MainThread) AbstractNode constructor call ( {"task": "\"sch-css\"", "type": "\"SchedulerNode\"", "action": "\"start\""} )
+[DEBUG] [2014-12-08 00:04:04,810] (MainThread) Scheduler node constructing...
+[DEBUG] [2014-12-08 00:04:04,810] (MainThread) Begin building expression tree with ( {"type":"SchedulerNode","task":"sch-css","action":"stop"} )
+[DEBUG] [2014-12-08 00:04:04,810] (MainThread) create node decomposition result: {'task': '"sch-css"', 'type': '"SchedulerNode"', 'action': '"stop"'}
+[DEBUG] [2014-12-08 00:04:04,810] (MainThread) AbstractNode constructor call ( {"task": "\"sch-css\"", "type": "\"SchedulerNode\"", "action": "\"stop\""} )
+[DEBUG] [2014-12-08 00:04:04,811] (MainThread) Scheduler node constructing...
+[DEBUG] [2014-12-08 00:04:04,811] (MainThread) ActionProcessor process method call with message ( start-sch-css )
+[DEBUG] [2014-12-08 00:04:04,811] (MainThread) action processor process method call in the same thread
+[DEBUG] [2014-12-08 00:04:04,811] (MainThread) process wrapper with ( start-sch-css )
+[DEBUG] [2014-12-08 00:04:04,811] (MainThread) ActionProcessor: parsing message( start-sch-css )
+[DEBUG] [2014-12-08 00:04:04,811] (MainThread) Message matched as command start-sch-css without value 
+[INFO] [2014-12-08 00:04:04,811] (MainThread) Process start-sch-css executed
+[DEBUG] [2014-12-08 00:04:04,812] (MainThread) thread executed in process ( start-sch-css )
+[DEBUG] [2014-12-08 00:04:04,812] (Thread-17 ) Executed SchedulerNode with (task sch-css, action start, newscheme None )
+[DEBUG] [2014-12-08 00:04:04,812] (Thread-17 ) sch-css started
+[DEBUG] [2014-12-08 00:04:04,812] (Thread-17 ) ActionProcessor process method call with message ( sch-css )
+[DEBUG] [2014-12-08 00:04:04,812] (Thread-17 ) action processor process method call in the same thread
+[DEBUG] [2014-12-08 00:04:04,812] (Thread-17 ) process wrapper with ( sch-css )
+[DEBUG] [2014-12-08 00:04:04,813] (Thread-17 ) ActionProcessor: parsing message( sch-css )
+[DEBUG] [2014-12-08 00:04:04,813] (Thread-17 ) Message matched as command sch-css without value 
+[INFO] [2014-12-08 00:04:04,813] (Thread-17 ) Process sch-css executed
+[DEBUG] [2014-12-08 00:04:04,813] (Thread-17 ) thread executed in process ( sch-css )
+[DEBUG] [2014-12-08 00:04:04,813] (Thread-18 ) Executed RequestNode with reference ( test SchedulerNode create start stop )
+[INFO] [2014-12-08 00:04:04,814] (Thread-19 ) Threads alive: 4
+[DEBUG] [2014-12-08 00:04:04,814] (Thread-18 ) current node thread joined to main
+[DEBUG] [2014-12-08 00:04:04,814] (Thread-19 ) MockPlugin call with test SchedulerNode create start stop
+[DEBUG] [2014-12-08 00:04:04,814] (Thread-19 ) Value test SchedulerNode create start stop recieved
+[DEBUG] [2014-12-08 00:04:04,814] (Thread-19 ) Thread with ref ( test SchedulerNode create start stop ) evaluation result: test SchedulerNode create start stop
+[DEBUG] [2014-12-08 00:04:04,815] (Thread-18 ) All parallel nodes of process sch-css completed
+[DEBUG] [2014-12-08 00:04:04,815] (Thread-18 ) All ways of test SchedulerNode create start stop completed
+[INFO] [2014-12-08 00:04:04,815] (Thread-17 ) SQL_conf: UPDATE task SET scheme='1.0', runned='True' WHERE name='sch-css'
+[DEBUG] [2014-12-08 00:04:04,815] (Thread-17 ) All parallel nodes of process start-sch-css completed
+[DEBUG] [2014-12-08 00:04:04,815] (Thread-17 ) All ways of SchedulerNode sch-css start completed
+[DEBUG] [2014-12-08 00:04:04,815] (MainThread) ActionProcessor process method call with message ( stop-sch-css )
+[DEBUG] [2014-12-08 00:04:04,816] (MainThread) action processor process method call in the same thread
+[DEBUG] [2014-12-08 00:04:04,816] (MainThread) process wrapper with ( stop-sch-css )
+[DEBUG] [2014-12-08 00:04:04,816] (MainThread) ActionProcessor: parsing message( stop-sch-css )
+[DEBUG] [2014-12-08 00:04:04,816] (MainThread) Message matched as command stop-sch-css without value 
+[INFO] [2014-12-08 00:04:04,816] (MainThread) Process stop-sch-css executed
+[DEBUG] [2014-12-08 00:04:04,817] (MainThread) thread executed in process ( stop-sch-css )
+[DEBUG] [2014-12-08 00:04:04,817] (Thread-21 ) Executed SchedulerNode with (task sch-css, action stop, newscheme None )
+[DEBUG] [2014-12-08 00:04:04,817] (Thread-21 ) sch-css stopped
+[INFO] [2014-12-08 00:04:04,817] (Thread-21 ) SQL_conf: UPDATE task SET scheme='1.0', runned='False' WHERE name='sch-css'
+[DEBUG] [2014-12-08 00:04:04,817] (Thread-21 ) All parallel nodes of process stop-sch-css completed
+[DEBUG] [2014-12-08 00:04:04,817] (Thread-21 ) All ways of SchedulerNode sch-css stop completed
+[INFO] [2014-12-08 00:04:04,818] (MainThread) SQL_conf: DELETE FROM process WHERE name='start-sch-css'
+[INFO] [2014-12-08 00:04:04,818] (MainThread) SQL_conf: DELETE FROM process WHERE name='stop-sch-css'
+[INFO] [2014-12-08 00:04:04,818] (MainThread) SQL_conf: DELETE FROM process WHERE name='sch-css'
