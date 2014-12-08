@@ -309,6 +309,8 @@ def create_node(tag, structure):
         return ExecuteNode(tag, structure)
     elif node_type == 'ConditionalNode':
         return ConditionalNode(tag, structure)
+    elif node_type == 'DelayNode':
+        return DelayNode(tag, structure)
     else:
         raise InvalidNodeTypeException
 

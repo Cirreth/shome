@@ -84,3 +84,14 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.process('exec-execnode-mergevars'), {'x': 'test ExecuteNode create execute with variables merging'})
         self.delproc('exec-execnode-mergevars')
         self.delproc('execnode-mergevars')
+
+    def test_delaynode(self):
+        """Create DelayNode with different type delays"""
+        #int delay
+        self.createproc('delaytest-int', """{"type":"DelayNode", "delay":3}""")
+        self.process('delaytest-int')
+        self.delproc('delaytest-int')
+        #float delay
+        self.createproc('delaytest-float', """{"type":"DelayNode", "delay":2.5}""")
+        self.process('delaytest-float')
+        self.delproc('delaytest-float')
