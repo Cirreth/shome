@@ -47,12 +47,10 @@ class JQueryHandler(tornado.web.RequestHandler):
     def get(self):
         return self.render("js/jquery-2.1.1.min.js")
 
-
 class WebServer():
 
     _action_processor = None
     _scheduler = None
-
 
     define("port", default=8082, type=int)
 
@@ -66,11 +64,13 @@ class WebServer():
         logging.getLogger().setLevel(logging.DEBUG)
         settings = {
             "static_path": os.path.join(os.path.dirname(__file__), "static"),
+            "admin_path": os.path.join(os.path.dirname(__file__), "admin"),
         }
         application = tornado.web.Application([
             (r"/", MainHandler),
             (r"/command", CommandHandler, {'ws': self}),
-            (r"/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path']))
+            (r"/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
+            (r"/admin/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
         ], debug=True, **settings)
         http_server = tornado.httpserver.HTTPServer(application)
         http_server.listen(options.port)

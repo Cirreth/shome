@@ -1,30 +1,55 @@
-[DEBUG] [2014-12-06 21:50:21,390] (MainThread) Action processor initialization
-[DEBUG] [2014-12-06 21:50:21,390] (MainThread) Scheduler initialization
-[DEBUG] [2014-12-06 21:50:21,390] (MainThread) Performer initialization
-[INFO] [2014-12-06 21:50:21,390] (MainThread) SQL_conf: SELECT name, params, enabled FROM plugin
-[ERROR] [2014-12-06 21:50:21,395] (MainThread) Not loaded database - No module named 'pymysql'
-[DEBUG] [2014-12-06 21:50:21,397] (MainThread) OneWirePlugin initialization
-[DEBUG] [2014-12-06 21:50:21,397] (MainThread) 
+[DEBUG] [2014-12-08 21:15:00,056] (MainThread) Action processor initialization
+[DEBUG] [2014-12-08 21:15:00,056] (MainThread) Scheduler initialization
+[DEBUG] [2014-12-08 21:15:00,056] (MainThread) Performer initialization
+[INFO] [2014-12-08 21:15:00,056] (MainThread) SQL_conf: SELECT name, params, enabled FROM plugin
+[ERROR] [2014-12-08 21:15:00,061] (MainThread) Not loaded database - No module named 'pymysql'
+[DEBUG] [2014-12-08 21:15:00,063] (MainThread) SystemExecPlugin initialization
+[DEBUG] [2014-12-08 21:15:00,063] (MainThread) MockPlugin initialization
+[DEBUG] [2014-12-08 21:15:00,063] (MainThread) OneWirePlugin initialization
+[DEBUG] [2014-12-08 21:15:00,063] (MainThread) 
 OneWirePlugin list dir:
-[DEBUG] [2014-12-06 21:50:22,031] (MainThread) b'/28.345805050000'
-[DEBUG] [2014-12-06 21:50:22,031] (MainThread) b'/28.F2CF39040000'
-[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/28.259039040000'
-[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/28.1D9D39040000'
-[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/3A.F2360D000000'
-[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/3A.C9330D000000'
-[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/81.F34132000000'
-[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/bus.0'
-[DEBUG] [2014-12-06 21:50:22,032] (MainThread) b'/uncached'
-[DEBUG] [2014-12-06 21:50:22,033] (MainThread) b'/settings'
-[DEBUG] [2014-12-06 21:50:22,033] (MainThread) b'/system'
-[DEBUG] [2014-12-06 21:50:22,033] (MainThread) b'/statistics'
-[DEBUG] [2014-12-06 21:50:22,033] (MainThread) b'/structure'
-[DEBUG] [2014-12-06 21:50:22,033] (MainThread) b'/simultaneous'
-[DEBUG] [2014-12-06 21:50:22,033] (MainThread) b'/alarm'
-[DEBUG] [2014-12-06 21:50:22,033] (MainThread) 
+[DEBUG] [2014-12-08 21:15:00,068] (MainThread) b'/28.345805050000'
+[DEBUG] [2014-12-08 21:15:00,068] (MainThread) b'/28.F2CF39040000'
+[DEBUG] [2014-12-08 21:15:00,069] (MainThread) b'/28.259039040000'
+[DEBUG] [2014-12-08 21:15:00,069] (MainThread) b'/28.1D9D39040000'
+[DEBUG] [2014-12-08 21:15:00,069] (MainThread) b'/3A.F2360D000000'
+[DEBUG] [2014-12-08 21:15:00,069] (MainThread) b'/3A.C9330D000000'
+[DEBUG] [2014-12-08 21:15:00,069] (MainThread) b'/81.F34132000000'
+[DEBUG] [2014-12-08 21:15:00,069] (MainThread) b'/bus.0'
+[DEBUG] [2014-12-08 21:15:00,069] (MainThread) b'/uncached'
+[DEBUG] [2014-12-08 21:15:00,070] (MainThread) b'/settings'
+[DEBUG] [2014-12-08 21:15:00,070] (MainThread) b'/system'
+[DEBUG] [2014-12-08 21:15:00,070] (MainThread) b'/statistics'
+[DEBUG] [2014-12-08 21:15:00,070] (MainThread) b'/structure'
+[DEBUG] [2014-12-08 21:15:00,070] (MainThread) b'/simultaneous'
+[DEBUG] [2014-12-08 21:15:00,070] (MainThread) b'/alarm'
+[DEBUG] [2014-12-08 21:15:00,071] (MainThread) 
 
-[DEBUG] [2014-12-06 21:50:22,034] (MainThread) SystemExecPlugin initialization
-[INFO] [2014-12-06 21:50:22,034] (MainThread) initialized successfully: {'sysexec': <plugins.sysexec.SystemExecPlugin.SystemExecPlugin object at 0x7fc00f561f60>, 'onewire': <plugins.onewire.OneWirePlugin.OneWirePlugin object at 0x7fc00f5610b8>, 'delay': <plugins.delay.DelayPlugin.DelayPlugin object at 0x7fc00f561128>}
-[INFO] [2014-12-06 21:50:22,034] (MainThread) found plugins: {'onewire': <class 'plugins.onewire.OneWirePlugin.OneWirePlugin'>, 'ledstrip': <class 'plugins.ledstrip.LedStripPlugin.LedStripPlugin'>, 'delay': <class 'plugins.delay.DelayPlugin.DelayPlugin'>, 'procexec': <class 'plugins.procexec.ProcExecPlugin.ProcExecPlugin'>, 'sysexec': <class 'plugins.sysexec.SystemExecPlugin.SystemExecPlugin'>, 'schedulercontrol': <class 'plugins.schedulercontrol.SchedulerControlPlugin.SchedulerControlPlugin'>}
-[INFO] [2014-12-06 21:50:22,034] (MainThread) not loaded plugins: {'database': "No module named 'pymysql'", 'ledstrip': 'Threre is no device ttyACM* in /dev'}
-[INFO] [2014-12-06 21:50:22,034] (MainThread) Context initialized
+[INFO] [2014-12-08 21:15:00,071] (MainThread) initialized successfully: {'sysexec': <plugins.sysexec.SystemExecPlugin.SystemExecPlugin object at 0x7f6d66931b70>, 'mock': <plugins.mock.MockPlugin.MockPlugin object at 0x7f6d66931ba8>, 'onewire': <plugins.onewire.OneWirePlugin.OneWirePlugin object at 0x7f6d66931d30>}
+[INFO] [2014-12-08 21:15:00,071] (MainThread) found plugins: {'sysexec': <class 'plugins.sysexec.SystemExecPlugin.SystemExecPlugin'>, 'mock': <class 'plugins.mock.MockPlugin.MockPlugin'>, 'onewire': <class 'plugins.onewire.OneWirePlugin.OneWirePlugin'>, 'ledstrip': <class 'plugins.ledstrip.LedStripPlugin.LedStripPlugin'>}
+[INFO] [2014-12-08 21:15:00,072] (MainThread) not loaded plugins: {'database': "No module named 'pymysql'", 'ledstrip': 'Threre is no device ttyACM* in /dev'}
+[INFO] [2014-12-08 21:15:00,072] (MainThread) Context initialized
+[INFO] [2014-12-08 21:15:09,320] (MainThread) 200 GET /admin/index.html (127.0.0.1) 3.96ms
+[INFO] [2014-12-08 21:15:09,338] (MainThread) 200 GET /admin/css/bootstrap.min.css (127.0.0.1) 1.18ms
+[INFO] [2014-12-08 21:15:09,339] (MainThread) 200 GET /admin/css/sb-admin.css (127.0.0.1) 0.64ms
+[INFO] [2014-12-08 21:15:09,340] (MainThread) 200 GET /admin/css/constructor.css (127.0.0.1) 0.65ms
+[INFO] [2014-12-08 21:15:09,342] (MainThread) 200 GET /admin/css/plugins/morris.css (127.0.0.1) 0.60ms
+[INFO] [2014-12-08 21:15:09,343] (MainThread) 200 GET /admin/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.65ms
+[INFO] [2014-12-08 21:15:09,347] (MainThread) 200 GET /admin/js/jquery.js (127.0.0.1) 1.07ms
+[INFO] [2014-12-08 21:15:09,350] (MainThread) 200 GET /admin/js/jquery-ui.min.js (127.0.0.1) 1.88ms
+[INFO] [2014-12-08 21:15:09,352] (MainThread) 200 GET /admin/js/jquery.jsPlumb-min.js (127.0.0.1) 1.58ms
+[INFO] [2014-12-08 21:15:09,353] (MainThread) 200 GET /admin/js/bootstrap.min.js (127.0.0.1) 0.88ms
+[INFO] [2014-12-08 21:15:09,354] (MainThread) 200 GET /admin/js/jquery.pickmeup.min.js (127.0.0.1) 0.78ms
+[INFO] [2014-12-08 21:15:09,356] (MainThread) 200 GET /admin/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.75ms
+[INFO] [2014-12-08 21:15:09,357] (MainThread) 200 GET /admin/js/angular.min.js (127.0.0.1) 1.08ms
+[INFO] [2014-12-08 21:15:09,358] (MainThread) 200 GET /admin/js/angular-route.min.js (127.0.0.1) 0.71ms
+[INFO] [2014-12-08 21:15:09,359] (MainThread) 200 GET /admin/js/angular-animate.min.js (127.0.0.1) 0.72ms
+[INFO] [2014-12-08 21:15:09,360] (MainThread) 200 GET /admin/js/shomeadmin.js (127.0.0.1) 0.58ms
+[INFO] [2014-12-08 21:15:09,361] (MainThread) 200 GET /admin/js/constructor.js (127.0.0.1) 0.51ms
+[INFO] [2014-12-08 21:15:09,401] (MainThread) 200 GET /admin/logo.png (127.0.0.1) 0.77ms
+[INFO] [2014-12-08 21:15:09,446] (MainThread) 200 GET /admin/font-awesome-4.1.0/fonts/fontawesome-webfont.woff?v=4.1.0 (127.0.0.1) 0.90ms
+[INFO] [2014-12-08 21:15:09,581] (MainThread) 200 GET /admin/modules/main.html (127.0.0.1) 0.63ms
+[INFO] [2014-12-08 21:15:10,750] (MainThread) 200 GET /admin/modules/constructor.html (127.0.0.1) 1.55ms
+[INFO] [2014-12-08 21:15:10,792] (MainThread) 200 GET /admin/data-examples/process1.json (127.0.0.1) 0.89ms
+[INFO] [2014-12-08 21:15:11,347] (MainThread) 200 GET /admin/modules/scenarios.html (127.0.0.1) 0.94ms
+[INFO] [2014-12-08 21:15:11,401] (MainThread) 200 GET /admin/data-examples/scenarios.json (127.0.0.1) 0.90ms

@@ -1,3 +1,4 @@
+import time
 from core.Configuration import Configuration
 from core.ActionProcessor import ActionProcessor
 from core.Scheduler import Scheduler
@@ -88,10 +89,16 @@ class MyTestCase(unittest.TestCase):
     def test_delaynode(self):
         """Create DelayNode with different type delays"""
         #int delay
+        start_time = time.time()
         self.createproc('delaytest-int', """{"type":"DelayNode", "delay":3}""")
         self.process('delaytest-int')
         self.delproc('delaytest-int')
+        elapsed_time = time.time() - start_time
+        self.assertGreater(0.5, elapsed_time-3)
         #float delay
+        start_time = time.time()
         self.createproc('delaytest-float', """{"type":"DelayNode", "delay":2.5}""")
         self.process('delaytest-float')
         self.delproc('delaytest-float')
+        elapsed_time = time.time() - start_time
+        self.assertGreater(0.5, elapsed_time-2.5)
