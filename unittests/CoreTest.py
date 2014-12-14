@@ -1,6 +1,6 @@
 import time
 from core.Configuration import Configuration
-from core.ActionProcessor import ActionProcessor
+from core.ActionProcessor import ActionProcessor, prepare_parameter
 from core.Scheduler import Scheduler
 from core.Performer import Performer
 import os
@@ -102,3 +102,9 @@ class MyTestCase(unittest.TestCase):
         self.delproc('delaytest-float')
         elapsed_time = time.time() - start_time
         self.assertGreater(0.5, elapsed_time-2.5)
+
+    def test_prepare_parameter(self):
+        self.assertEqual(prepare_parameter('2'), int(2))
+        self.assertEqual(prepare_parameter('2.5'), float(2.5))
+        self.assertEqual(prepare_parameter('hello'), 'hello')
+        self.assertEqual(prepare_parameter('"2.5"'), '2.5')

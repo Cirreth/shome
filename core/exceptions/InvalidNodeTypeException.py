@@ -1,4 +1,4 @@
-__author__ = 'Кирилл'
+__author__ = 'cirreth'
 
 class InvalidNodeTypeException(Exception):
     pass

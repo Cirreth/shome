@@ -1,6 +1,6 @@
 import logging
 
-__author__ = 'Кирилл'
+__author__ = 'cirreth'
 import sqlite3
 
 class Configuration():

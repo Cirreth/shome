@@ -54,18 +54,18 @@ class ExecuteNode(AbstractNode):
         #Use value if setted
         if not self._value is None:
             val = self._value
-        #иначе должно быть установлено имя переменной
+        #else variable name must be setted
         elif self._variable:
             key = next(iter(self._variable.keys()))
-            #ищем сначала в переданных пользователем параметрах
+            #Initially looking for values in user passed parameters
             if key in values:
                 val = values[key]
             elif self._process_tag in pvars and key in pvars[self._process_tag]:
                 val = pvars[self._process_tag][key]
-            #если там тоже нет, ищем в предустановленных переменных
+            #...then in presetted values
             elif self._variable[key]:
                 val = self._variable[key]
-            #если нигде не нашли, кидаем исключение
+            #if not, throw exception
             else:
                 et = """Value in RequestNode not initialized.
                         External values="""+str(values)+', inner value='+self._value if self._value else str(self._variable)

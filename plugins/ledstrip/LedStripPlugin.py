@@ -2,7 +2,7 @@ import logging
 import time
 from plugins.SHomePlugin import SHomePlugin
 from libs.ledstrip import *
-__author__ = 'Кирилл'
+__author__ = 'cirreth'
 
 class LedStripPlugin(SHomePlugin):
 

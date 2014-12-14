@@ -1,4 +1,4 @@
-__author__ = 'Кирилл'
+__author__ = 'cirreth'
 
 from plugins.SHomePlugin import SHomePlugin
 import logging

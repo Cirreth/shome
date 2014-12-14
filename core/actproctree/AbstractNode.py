@@ -12,30 +12,23 @@ class AbstractNode(metaclass=ABCMeta):
     """Absctract node class attribute"""
     _action_processor = None
     _required_keys = ['type']
-    """структура, полученная из JSON, описывающая данный узел"""
+    """node json structure"""
     _structure = None
     _process_tag = None
     _performer = None
     _scheduler = None
-    """Ссылка на текущий узел. Если значение установлено, указав его, можно ссылаться на этот узел. ПОКА НЕ РЕАЛИЗОВАНО"""
-    label = None
 
-    """
-    Выходные точки узла.
-    Может быть указано: узел / процесс / ссылка на узел текущего процесса(not impl) / список из перечисленных элементов
-    """
-
-    """Направление next выполняется после завершения выполнения текущего узла"""
+    """To be executed after current node"""
     _next = None
 
-    """Направление parallel начинает выполнение одновременно с текущим узлом"""
+    """Works in the same time that the current node"""
     _parallel = None
 
-    """Направление exceptional начинает выполнение, если в текущем узле возникло исключение"""
-    #@TODO необходимо реализовать
+    """Exceptional directions to be executed if execute method catch exception"""
+    #@TODO Not implemented
     _exceptional = None
 
-    """Переменные узла"""
+    """Node variables"""
     _variables = {}
 
     @abstractmethod
@@ -45,7 +38,7 @@ class AbstractNode(metaclass=ABCMeta):
         self._required_keys.append(self.get_node_required_keys())
         if self.__class__.__name__ != structure['type'][1:-1]:
             raise Exception(self.__class__.__name__+' expected but '+structure['type'][1:-1]+' found')
-        #@TODO какой-то фак при добавлении ключей - все идут в абстакт нод эрреями
+        #@TODO DEBUG CODE BELOW
         #if not all([k for k in self._required_keys]):
         #    raise MissedParameterException(self.__class__.__name__+' expected but '+structure['type'][1:-1]+' found')
         self._structure = structure
@@ -81,8 +74,7 @@ class AbstractNode(metaclass=ABCMeta):
 
     def execute_direction(self, direction, values):
         """
-            Запускает ноды/процессы из переданного направления.
-            Направление - список, содержащий инстансы узлов и теги процессов
+            Execute from nodes from direction.
         """
         if direction:
             threads = []
@@ -98,8 +90,8 @@ class AbstractNode(metaclass=ABCMeta):
                 logging.debug('node from process '+self._process_tag+' thread joined to main')
                 t.join()
 
-    def prepare_ref(self, reference: "Поле с ссылкой", values):
-        """Заменяет токены в ссылке на их текущие значения"""
+    def prepare_ref(self, reference, values):
+        """Replace tokens in reference to values"""
         pvars = self._action_processor.pss_variables
         ref = ''
         lst = 0

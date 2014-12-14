@@ -1,7 +1,6 @@
-import json
 import queue
 
-__author__ = 'Кирилл'
+__author__ = 'cirreth'
 import logging
 import threading
 
@@ -148,7 +147,7 @@ class Scheduler:
             return None
 
     def find(self, procname):
-        """Находит все процессы планировщика, в имя которых входит procname"""
+        """Find all tasks whose name contains procname"""
         res = []
         for k in list(self._frequent.keys()) + list(self._scheduled.keys()):
             if procname in k:
@@ -157,8 +156,7 @@ class Scheduler:
 
     def delete_like(self, procname):
         """
-            Удаляет процессы планировщика, имя которых содержит procname
-            Возвращает словарь {имя процесса: результат выполнения, ...}
+            Delete all processes whose name contains procname
         """
         prcs = self.find(procname)
         res = {}

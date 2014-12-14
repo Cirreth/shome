@@ -1,7 +1,7 @@
 import json
 import logging
 
-__author__ = 'Кирилл'
+__author__ = 'cirreth'
 from core.actproctree.AbstractNode import AbstractNode
 import re
 
@@ -20,9 +20,9 @@ class ConditionalNode(AbstractNode):
 
     def __build__(self):
         """
-        1. Установить condition
-        2. Создать узлы со сниппетами
-        3. Сохранить retvar
+        1. Set condition
+        2. Create nodes with snippets
+        3. Set return variable name (retvar)
         """
         self._condition = self._structure['condition'][1:-1]
         if 'variables' in self._structure:
@@ -40,10 +40,10 @@ class ConditionalNode(AbstractNode):
 
     def execute(self, values={}):
         """
-        1. Заменить плейсхолдеры
-            1.1 Из values
-            1.2 Из глобальный переменных процесса
-        2. Вычислить условие
+        1. Replace placeholders
+            1.1 From values
+            1.2 From process global scope
+        2. Evaluate condition
         """
         self.execute_direction(self._parallel, values)
         logging.debug('Condition before evaluation: '+self._condition)
@@ -68,7 +68,7 @@ class ConditionalNode(AbstractNode):
         return res
 
     def __prepare_conditon(self, values):
-            """Заменяет токены в ссылке на их текущие значения"""
+            """Replace tokens in reference to their values"""
             pvars = self._action_processor.pss_variables
             ref = ''
             lst = 0
@@ -77,7 +77,7 @@ class ConditionalNode(AbstractNode):
                 name = c.group(0)[1:-1] #variable name
                 #looking for value
                 if not isinstance(values, dict):
-                    raise Exception('Неверный тип параметра values ('+values+')')
+                    raise Exception('Invalid parameter "values" type ('+values+')')
                 if name in values:
                     tknval = values[name]
                 elif self._process_tag in pvars and name in pvars[self._process_tag]:

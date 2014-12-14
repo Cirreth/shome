@@ -86,14 +86,13 @@ class ActionProcessor:
 
     def process(self, message, queue=None, message_id=None):
         """
-        1 Выполняется проверка соответсвует ли переданное значение формату: тег{значения}
-        2 Проверка наличия выбранного тега в списке процессов
-            +:  выполенение .execute() на полученном объекте
-            -:  сообщение о том, что объект не найден
+            1. Parameter 'message' checking for tag{values} format accordance
+            2. Find requested tag in _processes and execute it.
 
-        Если установлены переменные queue и message_id, метод выполняется в отдельном потоке,
-        а результат помещается в очередь queue в виде словаря {message_id: response}
-        Если переменные не установлены, выполнение происходит в текущем потоке, результат возвращается с помощью return
+            If queue and message_id passed to the function, method will run new thread.
+            Evaluation result will be placed in queue in format {message_id: result}
+            If queue or message_id skipped, result will be evaluated in current thread
+            and result will be returned by return operator
         """
         def process_wrapper(message, queue=None, message_id=None):
             logging.debug('process wrapper with ( '+message+' )')
@@ -183,9 +182,7 @@ class ActionProcessor:
 
     def create_process(self, tag, expression, writedb=False):
         """
-            Создает дерево процесса на основе строки
-            1. Строится дерево процесса
-            2. Корневой элемент добавляется в словарь с процессами
+            Build process tree, add root element to _processes
         """
         if tag in self._processes:
             raise Exception('Process ('+tag+') already exists')
@@ -203,7 +200,8 @@ class ActionProcessor:
             return str(e)
 
     def update_process(self, tag, expression):
-        if tag not in self._processes: return 'Process does not exist'
+        if tag not in self._processes:
+            return 'Process does not exist'
         try:
             self._processes[tag] = self.build_process_tree(tag, expression)
             self._processes_str[tag] = expression
@@ -217,13 +215,10 @@ class ActionProcessor:
 
     def build_process_tree(self, tag, expression):
         """
-            Строит дерево процесса
-            возвращает корень дерева
+            Returns tree node
         """
-        # TODO этот метод должен выполняться в транзакции
-        #Корень может быть ExpressionNode / ActionNode / RequestNode / массив из перечисленных
+        # TODO Processing in transaction required
         logging.debug('Begin building expression tree with ( '+expression+' )')
-        # TODO участок кода необходимо откатывать назад, если создание одного из узлов провалилось
         #
         root_struct = parse_level(expression)
         if isinstance(root_struct, list):
@@ -232,23 +227,11 @@ class ActionProcessor:
             raise ParsingException
         return create_node(tag, root_struct)
 
-    def get_node_with_label(self, process_tag, label):
-        """
-            Выполняет поиск по процессу с именем process tag и возвращает ссылку на узел.
-            Если узел не найден, возвращает None
-        """
-        raise NotImplementedError
-
     def create_node_direction(self, tag, expression):
         expression = expression.strip()
         try:
-            """Парсинг json может порождать ValueException"""
-            """
-               Этот блок отрабатывает, если передан корректный json,
-               содержащий корректные структуры узлов
-            """
             structure = parse_level(expression)
-            #{...}/[...] = > node/[node, ...]
+            #{...}/[...] = > node/[node, node, ...]
             if isinstance(structure, dict):
                 res = []
                 res.append(create_node(tag, structure))
@@ -257,21 +240,14 @@ class ActionProcessor:
                 for i in range(0, len(structure)):
                     structure[i] = create_node(tag, structure[i])
         except ValueError:
-            """сюда мы вываливаемся если в выражении передан не узел и не список узлов"""
-            """Варианты:
-                1. Лэйбл (ссылка на узел текущего процесса)
-                2. Команда (команда в том виде, в котором её передает клиент). В этом случаем мы просто записываем строку.
-                   при запуске она без изменений передается в ActionProcessor на выполненеие
-            """
-            #одиночное значение или список?
-            structure = [] #в любом случае собираем список
+            """json parsing error?"""
+            structure = []
             if expression[0] == '[':
-                #список
                 lbllist = [i.strip() for i in expression[1:-1].split(',')]
                 for label in lbllist:
                     node = self.get_node_with_label(tag, label)
                     if node: structure.append(node)
-                    else: structure.append(label) #тут должна быть проверка существования процесса?
+                    else: structure.append(label) #process existing checking required?
             else:
                 node = self.get_node_with_label(tag, expression)
                 if node: structure.append(node)
@@ -284,7 +260,7 @@ def parse_command(message):
         Returns tuple
             (tag,None), if command contains address only,
             (tag,dic), if parameters provided
-            False, если строка не подходит под шаблоны
+            else False
         """
         logging.debug('ActionProcessor: parsing message( '+message+' )')
         cmd = re.compile('^([^{}]+)\{([^{}]+)\}$').search(message)
@@ -314,11 +290,10 @@ def create_node(tag, structure):
     else:
         raise InvalidNodeTypeException
 
-#@TODO AbstractNode duplicate!
+#@TODO AbstractNode method duplicate!
 def parse_level(ci):
     """
-        Преобразовывает строку в json структуру,
-        при этом уровни ниже нулевого остаются строками
+        Convert first structure level to json
     """
     if re.search('^\\s*\\[', ci): #array of objects
         return [{k: json.dumps(v) for k, v in e.items()} for e in json.loads(ci)]
@@ -326,10 +301,9 @@ def parse_level(ci):
         return {k: json.dumps(v) for k, v in json.loads(ci).items()}
 
 def prepare_parameter(parameter):
-    # TODO Test
     """
-        Подготовливает полученный параметр к использованию
-        Числовые параметры приводятся к числовым типам, у строковых параметров исключается обертка в виде ковычек
+        Convert parameter to python object.
+        Convert: string to int/float if it is numeric, or delete wrapping quotes.
     """
     logging.debug('Prepairing parameter '+parameter+'...')
     if parameter[0] == "'" or parameter[0] == '"':
@@ -347,7 +321,4 @@ def prepare_parameter(parameter):
             return parameter
 
 def prepare_parameters(parameters):
-    """
-        Выполяет prepare_parameter над всеми значениями словаря
-    """
     return {k: prepare_parameter(parameters[k]) for k in parameters}

@@ -3,7 +3,7 @@ import logging
 import re
 import uuid
 
-__author__ = 'Кирилл'
+__author__ = 'cirreth'
 
 import tornado.httpserver
 import tornado.ioloop

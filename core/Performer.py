@@ -1,23 +1,8 @@
-__author__ = 'Кирилл'
+__author__ = 'cirreth'
 
 import os
-import sys
 import importlib
-from plugins.SHomePlugin import SHomePlugin
 import logging
-"""
-#plugins!
-self.performer.add_plugin('onewire', OneWirePlugin('192.168.1.2', 4304))
-self.performer.add_plugin('sysexec', SystemExecPlugin())
-#self.performer.add_plugin('old_db', DatabaseMySQLPlugin('192.168.1.2', 'dev', 'dev', 'tcontrol'))
-#self.performer.add_plugin('shome_db', DatabaseMySQLPlugin('192.168.1.2', 'dev', 'dev', 'shome'))
-self.performer.add_plugin('delay', DelayPlugin())
-self.performer.add_plugin('procexec', ProcessExecPlugin(self.action_processor))
-self.performer.add_plugin('scheduler', SchedulerControlPlugin(self.scheduler))
-self.performer.add_plugin('ledstrip', LedStripPlugin())
-#self.performer.add_plugin('onewire', OneWirePlugin('25.196.219.36', 4304))
-#end
-"""
 
 class Performer:
 

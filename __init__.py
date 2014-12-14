@@ -1,4 +1,4 @@
-__author__ = 'Кирилл'
+__author__ = 'cirreth'
 
 from core.Context import Context
 

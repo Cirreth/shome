@@ -1,4 +1,4 @@
-__author__ = 'Кирилл'
+__author__ = 'cirreth'
 
 from libs import ownet
 from plugins.SHomePlugin import SHomePlugin
