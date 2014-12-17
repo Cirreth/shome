@@ -19,6 +19,18 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         return self.render("views/main.tpl")
 
+class SchedulerHandler(tornado.web.RequestHandler):
+    """Serves Admin UI:Scheduler"""
+
+    #web server instance
+    _ws = None
+
+    def initialize(self, ws):
+        self._ws = ws
+
+    def get(self):
+        self.write(json.dumps(self._ws._scheduler.list_all()).encode())
+
 class CommandHandler(tornado.web.RequestHandler):
 
     #web server instance
@@ -70,7 +82,8 @@ class WebServer():
             (r"/", MainHandler),
             (r"/command", CommandHandler, {'ws': self}),
             (r"/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
-            (r"/admin/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
+            (r"/admin/", SchedulerHandler, {'ws': self}),
+            (r"/admin/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
         ], debug=True, **settings)
         http_server = tornado.httpserver.HTTPServer(application)
         http_server.listen(options.port)
@@ -78,8 +91,7 @@ class WebServer():
 
     def process_message(self, message):
         """
-        Описывает сетевой протокол взаимодействия web-слоя с приложением.
-        При получении команды интерпретирует её и передает соответствуюшему модулю
+        Command line handler
         """
         logging.debug('Message recieved: body ( '+message+' )')
         if message.startswith('process'):

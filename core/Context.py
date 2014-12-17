@@ -28,7 +28,7 @@ class Context:
 
 
         #load processes
-        """
+
         processes = self.config.get_all_processes()
 
         for k in processes:
@@ -44,5 +44,5 @@ class Context:
             if k['runned'] is True:
                 self.scheduler.start(k['name'])
 
-        """
+
         self.web_server = WebServer(self)
