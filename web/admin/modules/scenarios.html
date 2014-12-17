@@ -1,0 +1,30 @@
+<div id="scenarios">
+  <h1 class="app-hdr">Scenarios</h1>
+  <h2>Module is not implemented yet</h2>
+    <button class="sch-btn" type="button" ng-click="">
+      New scenario
+    </button>
+
+  <div class="row">
+
+    <div class="col-sm-4" ng-repeat="scenario in scenarios">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{scenario.title}} <div class="fa fa-fw fa-wrench sch-cfg"></div></h3>
+        </div>        
+        <div class="panel-body">
+          <p>{{scenario.description}}</p>
+          <div class="scn-cfg-cont">
+            <button class="sch-btn scn-btn">Связи</button>
+            <button class="sch-btn scn-btn">Редактировать</button>
+            <button class="sch-btn scn-btn">Удалить</button>
+          </div>              
+        </div>
+      </div> <!--panel-default end-->  
+    </div> <!--col-sm-4 end-->
+    
+  </div> <!--row end-->
+
+</div>
+

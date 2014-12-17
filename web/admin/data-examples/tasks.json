@@ -1,0 +1,43 @@
+[
+  {
+    "id": "tsk1",
+    "title": "Doorbell process",
+    "description": "Doorbell polling",
+    "scheduling": {
+      "type": "Interval",
+      "schema": 2
+    },
+    "enabled": true
+  },
+  {
+    "id": "tsk2",
+    "title": "Write nursery temperature",
+    "description": "Save temp. in DB",
+    "scheduling": {
+      "type": "interval",
+      "schema": 720
+    },
+    "nextafter": 118,
+    "enabled": false
+  },
+  {
+    "id": "tsk3",
+    "title": "Hall temperature",
+    "description": "Save temp. in DB",
+    "scheduling": {
+      "type": "interval",
+      "schema": 720 
+    },
+    "enabled": false
+  },
+  {
+    "id": "tsk4",
+    "title": "Alarm",
+    "description": "Alarm",
+    "scheduling": {
+      "type": "mask",
+      "schema": "7:40, mo-fr"
+    },
+    "enabled": false
+  }
+]

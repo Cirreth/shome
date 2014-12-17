@@ -1,0 +1,60 @@
+<div id="panel">
+
+    <div id="panel-tabs" class="row" ng-init="paneltab='elements'">
+        <div class="panel-tab" ng-class="{active: paneltab=='elements'}" ng-click="paneltab='elements'">Elements</div>
+        <div class="panel-tab" ng-class="{active: paneltab=='configure'}" ng-click="paneltab='configure'">Configure</div>
+    </div>
+
+    <div ng-show="paneltab=='elements'">
+        <div class="panel-ctr" >
+            <request-node mock ng-click="newRequestNode()">
+            <table>
+              <tr><td colspan="3"><i>new </i></td></tr>
+              <tr><td colspan="3">RequestNode</td></tr>
+              <tr><td>...</td><td>→[]→</td><td>...</td></tr>
+            </table>
+            </request-node>
+        </div>
+        <div class="panel-ctr">
+            <conditional-node mock ng-click="newConditionalNode()">
+                <div class="shape"></div>
+                <div class="block">
+                  <div >ConditionalNode</div>
+                  <div >< no | yes ></div>
+                </div>
+            </conditional-node>
+        </div>
+    </div>
+
+    <div ng-show="paneltab=='configure'">
+
+    </div>
+</div>
+
+<div id="workspace" ng-init="init()">
+<table>
+  <tr ng-repeat="node in nodes">
+    <td>{{ node | json }}</td>
+  </tr>
+</table>
+
+    <request-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-class="{active: node.active}"
+        ng-repeat="node in nodes" ng-if="node.type=='RequestNode'">
+        <!--ng-style="{left: node.position.left, top: node.position.top}"-->
+        <table>
+          <tr><td colspan="3"><i>{{node.plugin}}</i></td></tr>
+          <tr><td colspan="3">{{node.reference}}</td></tr>
+          <tr><td>in</td><td>→[]→</td><td>out</td></tr>
+        </table>
+    </request-node>
+
+    <conditional-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-repeat="node in nodes"
+    ng-class="{active: node.active}" ng-if="node.type=='ConditionalNode'" >
+        <div class="shape"  ></div>
+        <div class="block">
+          <div >{{node.condition}}</div>
+          <div >< no | yes ></div>
+        </div>
+    </conditional-node>
+
+</div> <!--workspace-->
