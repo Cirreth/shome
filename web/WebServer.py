@@ -82,7 +82,7 @@ class WebServer():
             (r"/", MainHandler),
             (r"/command", CommandHandler, {'ws': self}),
             (r"/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
-            (r"/admin/", SchedulerHandler, {'ws': self}),
+            (r"/admin/scheduler/alltasks", SchedulerHandler, {'ws': self}),
             (r"/admin/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
         ], debug=True, **settings)
         http_server = tornado.httpserver.HTTPServer(application)
