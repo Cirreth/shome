@@ -409,7 +409,7 @@
   app.controller('SchedulerController', ['$scope', '$http', function($scope, $http) {
     //$scope.editing = false;
     $scope.mode = undefined;
-    $http.get('http://localhost:8082/admin/')
+    $http.get('http://localhost:8082/admin/scheduler/tasks')
     .success(function(data){
         $scope.tasks = data;
     });

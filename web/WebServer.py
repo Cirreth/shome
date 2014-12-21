@@ -79,10 +79,10 @@ class WebServer():
             "admin_path": os.path.join(os.path.dirname(__file__), "admin"),
         }
         application = tornado.web.Application([
-            (r"/", MainHandler),
+            (r"/oldadmin", MainHandler),
             (r"/command", CommandHandler, {'ws': self}),
             (r"/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
-            (r"/admin/", SchedulerHandler, {'ws': self}),
+            (r"/admin/scheduler/tasks", SchedulerHandler, {'ws': self}),
             (r"/admin/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
         ], debug=True, **settings)
         http_server = tornado.httpserver.HTTPServer(application)

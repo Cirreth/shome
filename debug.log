@@ -1,0 +1,141 @@
+[DEBUG] [2014-12-21 22:09:26,971] (MainThread) Action processor initialization
+[DEBUG] [2014-12-21 22:09:26,971] (MainThread) Scheduler initialization
+[DEBUG] [2014-12-21 22:09:26,971] (MainThread) Performer initialization
+[INFO] [2014-12-21 22:09:26,971] (MainThread) SQL_conf: SELECT name, params, enabled FROM plugin
+[ERROR] [2014-12-21 22:09:26,976] (MainThread) Not loaded database - No module named 'pymysql'
+[DEBUG] [2014-12-21 22:09:26,978] (MainThread) SystemExecPlugin initialization
+[DEBUG] [2014-12-21 22:09:26,978] (MainThread) MockPlugin initialization
+[DEBUG] [2014-12-21 22:09:26,978] (MainThread) OneWirePlugin initialization
+[DEBUG] [2014-12-21 22:09:26,979] (MainThread) 
+OneWirePlugin list dir:
+[DEBUG] [2014-12-21 22:09:27,146] (MainThread) b'/28.345805050000'
+[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/28.F2CF39040000'
+[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/28.259039040000'
+[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/28.1D9D39040000'
+[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/3A.F2360D000000'
+[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/3A.C9330D000000'
+[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/81.F34132000000'
+[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/bus.0'
+[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/uncached'
+[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/settings'
+[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/system'
+[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/statistics'
+[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/structure'
+[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/simultaneous'
+[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/alarm'
+[DEBUG] [2014-12-21 22:09:27,149] (MainThread) 
+
+[INFO] [2014-12-21 22:09:27,149] (MainThread) initialized successfully: {'sysexec': <plugins.sysexec.SystemExecPlugin.SystemExecPlugin object at 0x7f475dbb9860>, 'mock': <plugins.mock.MockPlugin.MockPlugin object at 0x7f475dbb9898>, 'onewire': <plugins.onewire.OneWirePlugin.OneWirePlugin object at 0x7f475dbb9a20>}
+[INFO] [2014-12-21 22:09:27,149] (MainThread) found plugins: {'sysexec': <class 'plugins.sysexec.SystemExecPlugin.SystemExecPlugin'>, 'ledstrip': <class 'plugins.ledstrip.LedStripPlugin.LedStripPlugin'>, 'mock': <class 'plugins.mock.MockPlugin.MockPlugin'>, 'onewire': <class 'plugins.onewire.OneWirePlugin.OneWirePlugin'>}
+[INFO] [2014-12-21 22:09:27,149] (MainThread) not loaded plugins: {'ledstrip': 'Threre is no device ttyACM* in /dev', 'database': "No module named 'pymysql'"}
+[INFO] [2014-12-21 22:09:27,149] (MainThread) Context initialized
+[INFO] [2014-12-21 22:09:27,149] (MainThread) SQL_conf: SELECT name, definition, runoninit FROM process
+[DEBUG] [2014-12-21 22:09:27,150] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.345805050000/temperature", "retvar": "t"} )
+[DEBUG] [2014-12-21 22:09:27,150] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"/28.345805050000/temperature"', 'retvar': '"t"', 'plugin': '"onewire"'}
+[DEBUG] [2014-12-21 22:09:27,151] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"/28.345805050000/temperature\"", "retvar": "\"t\"", "plugin": "\"onewire\""} )
+[DEBUG] [2014-12-21 22:09:27,151] (MainThread) Request node constructing...
+[DEBUG] [2014-12-21 22:09:27,151] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.F2CF39040000/temperature10", "retvar":"v"} )
+[DEBUG] [2014-12-21 22:09:27,151] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"/28.F2CF39040000/temperature10"', 'retvar': '"v"', 'plugin': '"onewire"'}
+[DEBUG] [2014-12-21 22:09:27,151] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"/28.F2CF39040000/temperature10\"", "retvar": "\"v\"", "plugin": "\"onewire\""} )
+[DEBUG] [2014-12-21 22:09:27,151] (MainThread) Request node constructing...
+[DEBUG] [2014-12-21 22:09:27,152] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.1D9D39040000/temperature10", "retvar":"v"} )
+[DEBUG] [2014-12-21 22:09:27,152] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"/28.1D9D39040000/temperature10"', 'retvar': '"v"', 'plugin': '"onewire"'}
+[DEBUG] [2014-12-21 22:09:27,152] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"/28.1D9D39040000/temperature10\"", "retvar": "\"v\"", "plugin": "\"onewire\""} )
+[DEBUG] [2014-12-21 22:09:27,152] (MainThread) Request node constructing...
+[DEBUG] [2014-12-21 22:09:27,152] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.259039040000/temperature10", "retvar":"v"} )
+[DEBUG] [2014-12-21 22:09:27,153] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"/28.259039040000/temperature10"', 'retvar': '"v"', 'plugin': '"onewire"'}
+[DEBUG] [2014-12-21 22:09:27,153] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"/28.259039040000/temperature10\"", "retvar": "\"v\"", "plugin": "\"onewire\""} )
+[DEBUG] [2014-12-21 22:09:27,153] (MainThread) Request node constructing...
+[DEBUG] [2014-12-21 22:09:27,153] (MainThread) Begin building expression tree with ( {"type": "RequestNode",	"plugin": "sysexec",	"reference": "cvlc --play-and-exit sounds/<filename>"} )
+[DEBUG] [2014-12-21 22:09:27,153] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"sysexec"', 'reference': '"cvlc --play-and-exit sounds/<filename>"'}
+[DEBUG] [2014-12-21 22:09:27,153] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"sysexec\"", "reference": "\"cvlc --play-and-exit sounds/<filename>\""} )
+[DEBUG] [2014-12-21 22:09:27,154] (MainThread) Request node constructing...
+[DEBUG] [2014-12-21 22:09:27,154] (MainThread) Begin building expression tree with ( { "type": "RequestNode", 	"plugin": "procexec", 	"reference": "t_outdoor", 	"retvar": "t_outdoor", "next": [ { 			"type": "RequestNode", 			"plugin": "shome_db", 			"reference": "INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor');" 		} 	] } )
+[DEBUG] [2014-12-21 22:09:27,154] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"t_outdoor"', 'retvar': '"t_outdoor"', 'next': '[{"type": "RequestNode", "plugin": "shome_db", "reference": "INSERT INTO temperature VALUES(NULL, \'<@DATETIME>\', <t_outdoor>, \'t_outdoor\');"}]', 'plugin': '"procexec"'}
+[DEBUG] [2014-12-21 22:09:27,154] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"t_outdoor\"", "retvar": "\"t_outdoor\"", "next": "[{\"type\": \"RequestNode\", \"plugin\": \"shome_db\", \"reference\": \"INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor');\"}]", "plugin": "\"procexec\""} )
+[DEBUG] [2014-12-21 22:09:27,154] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"shome_db"', 'reference': '"INSERT INTO temperature VALUES(NULL, \'<@DATETIME>\', <t_outdoor>, \'t_outdoor\');"'}
+[DEBUG] [2014-12-21 22:09:27,155] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"shome_db\"", "reference": "\"INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor');\""} )
+[DEBUG] [2014-12-21 22:09:27,155] (MainThread) Request node constructing...
+[DEBUG] [2014-12-21 22:09:27,155] (MainThread) Request node constructing...
+[DEBUG] [2014-12-21 22:09:27,155] (MainThread) Begin building expression tree with ( {
+  "type":"RequestNode",
+  "plugin": "sysexec",
+  "reference":"echo aslfkjfs",
+  "retvar":"z"
+} )
+[DEBUG] [2014-12-21 22:09:27,155] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"echo aslfkjfs"', 'retvar': '"z"', 'plugin': '"sysexec"'}
+[DEBUG] [2014-12-21 22:09:27,155] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"echo aslfkjfs\"", "retvar": "\"z\"", "plugin": "\"sysexec\""} )
+[DEBUG] [2014-12-21 22:09:27,156] (MainThread) Request node constructing...
+[INFO] [2014-12-21 22:09:27,156] (MainThread) SQL_conf: SELECT process, title, description, scheme, isrunned FROM task. Result: [{'process': 't_outdoor_get_and_write', 'title': 'Get outdoor temperature', 'scheme': '720.0', 'description': None, 'isrunned': True}, {'process': 'echo', 'title': 'Test echo', 'scheme': '60', 'description': 'Simple echo process', 'isrunned': False}]
+[DEBUG] [2014-12-21 22:09:27,156] (MainThread) Loading: ('t_outdoor_get_and_write', 'Get outdoor temperature', None, '720.0', True)
+[DEBUG] [2014-12-21 22:09:27,157] (MainThread) t_outdoor_get_and_write started
+[DEBUG] [2014-12-21 22:09:27,157] (MainThread) ActionProcessor process method call with message ( t_outdoor_get_and_write )
+[DEBUG] [2014-12-21 22:09:27,157] (MainThread) action processor process method call in the same thread
+[DEBUG] [2014-12-21 22:09:27,157] (MainThread) process wrapper with ( t_outdoor_get_and_write )
+[DEBUG] [2014-12-21 22:09:27,157] (MainThread) ActionProcessor: parsing message( t_outdoor_get_and_write )
+[DEBUG] [2014-12-21 22:09:27,158] (MainThread) Message matched as command t_outdoor_get_and_write without value 
+[INFO] [2014-12-21 22:09:27,158] (MainThread) Process t_outdoor_get_and_write executed
+[DEBUG] [2014-12-21 22:09:27,158] (MainThread) thread executed in process ( t_outdoor_get_and_write )
+[DEBUG] [2014-12-21 22:09:27,158] (Thread-1  ) Executed RequestNode with reference ( t_outdoor )
+[INFO] [2014-12-21 22:09:27,159] (Thread-2  ) Threads alive: 3
+[ERROR] [2014-12-21 22:09:27,159] (Thread-2  ) Plugin procexec is not found.
+[DEBUG] [2014-12-21 22:09:27,160] (Thread-2  ) Thread with ref ( t_outdoor ) evaluation result: Plugin procexec is not found.
+[DEBUG] [2014-12-21 22:09:27,160] (Thread-1  ) current node thread joined to main
+[DEBUG] [2014-12-21 22:09:27,160] (Thread-1  ) All parallel nodes of process t_outdoor_get_and_write completed
+[DEBUG] [2014-12-21 22:09:27,160] (Thread-1  ) Thread started
+[DEBUG] [2014-12-21 22:09:27,160] (Thread-3  ) Executed RequestNode with reference ( INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor'); )
+[DEBUG] [2014-12-21 22:09:27,160] (Thread-3  ) AbstractNode_PF: var with name ( @DATETIME ) found
+[DEBUG] [2014-12-21 22:09:27,161] (Thread-3  ) ... and detected as keyword
+[DEBUG] [2014-12-21 22:09:27,161] (Thread-1  ) node from process t_outdoor_get_and_write thread joined to main
+[DEBUG] [2014-12-21 22:09:27,161] (Thread-3  ) AbstractNode_PF: var with name ( t_outdoor ) found
+[DEBUG] [2014-12-21 22:09:27,161] (Thread-3  ) ... and name in process variables
+[INFO] [2014-12-21 22:09:27,162] (Thread-4  ) Threads alive: 4
+[DEBUG] [2014-12-21 22:09:27,162] (Thread-3  ) current node thread joined to main
+[ERROR] [2014-12-21 22:09:27,162] (Thread-4  ) Plugin shome_db is not found.
+[DEBUG] [2014-12-21 22:09:27,162] (Thread-4  ) Thread with ref ( INSERT INTO temperature VALUES(NULL, '2014-12-21 22:09:27', Plugin procexec is not found., 't_outdoor'); ) evaluation result: Plugin shome_db is not found.
+[DEBUG] [2014-12-21 22:09:27,163] (Thread-3  ) All parallel nodes of process t_outdoor_get_and_write completed
+[DEBUG] [2014-12-21 22:09:27,163] (Thread-3  ) All ways of INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor'); completed
+[DEBUG] [2014-12-21 22:09:27,163] (Thread-1  ) All ways of t_outdoor completed
+[DEBUG] [2014-12-21 22:09:27,164] (MainThread) Loading: ('echo', 'Test echo', 'Simple echo process', '60', False)
+[INFO] [2014-12-21 22:09:35,490] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 9.55ms
+[INFO] [2014-12-21 22:09:35,519] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.20ms
+[INFO] [2014-12-21 22:09:35,520] (MainThread) 200 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.73ms
+[INFO] [2014-12-21 22:09:35,521] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.66ms
+[INFO] [2014-12-21 22:09:35,522] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.51ms
+[INFO] [2014-12-21 22:09:35,523] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.58ms
+[INFO] [2014-12-21 22:09:35,525] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.57ms
+[INFO] [2014-12-21 22:09:35,527] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.39ms
+[INFO] [2014-12-21 22:09:35,528] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.22ms
+[INFO] [2014-12-21 22:09:35,530] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.62ms
+[INFO] [2014-12-21 22:09:35,531] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.61ms
+[INFO] [2014-12-21 22:09:35,533] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.57ms
+[INFO] [2014-12-21 22:09:35,534] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.61ms
+[INFO] [2014-12-21 22:09:35,535] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.95ms
+[INFO] [2014-12-21 22:09:35,536] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.67ms
+[INFO] [2014-12-21 22:09:35,537] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.64ms
+[INFO] [2014-12-21 22:09:35,539] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.75ms
+[INFO] [2014-12-21 22:09:35,540] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.50ms
+[INFO] [2014-12-21 22:09:35,544] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.61ms
+[INFO] [2014-12-21 22:09:35,742] (MainThread) 200 GET /admin/static/modules/scheduler.html (127.0.0.1) 0.69ms
+[INFO] [2014-12-21 22:09:35,829] (MainThread) 200 GET /admin/scheduler/tasks (127.0.0.1) 0.45ms
+[INFO] [2014-12-21 22:09:57,068] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.35ms
+[INFO] [2014-12-21 22:09:57,089] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.08ms
+[INFO] [2014-12-21 22:09:57,090] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.70ms
+[INFO] [2014-12-21 22:09:57,091] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.66ms
+[INFO] [2014-12-21 22:09:57,092] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.58ms
+[INFO] [2014-12-21 22:09:57,093] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.64ms
+[INFO] [2014-12-21 22:09:57,095] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.81ms
+[INFO] [2014-12-21 22:09:57,097] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.19ms
+[INFO] [2014-12-21 22:09:57,099] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.69ms
+[INFO] [2014-12-21 22:09:57,102] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.13ms
+[INFO] [2014-12-21 22:09:57,103] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.69ms
+[INFO] [2014-12-21 22:09:57,104] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.61ms
+[INFO] [2014-12-21 22:09:57,105] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.86ms
+[INFO] [2014-12-21 22:09:57,106] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.50ms
+[INFO] [2014-12-21 22:09:57,107] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.47ms
+[INFO] [2014-12-21 22:09:57,108] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.47ms
+[INFO] [2014-12-21 22:09:57,109] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.43ms
+[INFO] [2014-12-21 22:09:57,109] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.46ms
+[INFO] [2014-12-21 22:09:57,112] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.57ms
+[INFO] [2014-12-21 22:09:57,303] (MainThread) 304 GET /admin/static/modules/scheduler.html (127.0.0.1) 0.59ms
+[INFO] [2014-12-21 22:09:57,391] (MainThread) 304 GET /admin/scheduler/tasks (127.0.0.1) 0.44ms
