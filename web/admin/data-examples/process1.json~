@@ -1,0 +1,49 @@
+[
+  {
+    "id": "rn0",
+    "type": "RequestNode",
+    "plugin": "onewire",
+    "reference": "/28.BCA10023A00000/PIO.A",
+    "position": {
+      "left": 300,
+      "top": 100
+    },
+    "next": ["rn1"],
+    "parallel": []
+  },
+  {
+    "id": "rn1",
+    "type": "RequestNode",
+    "plugin": "onewire",
+    "reference": "/28.BCA10023A00000/PIO.A",
+    "position": {
+      "left": 550,
+      "top": 200
+    },
+    "next": [],
+    "parallel": []
+  },
+  {
+    "id": "rn2",
+    "type": "ConditionalNode",
+    "condition": "<s> == 2",
+    "position": {
+      "left": 400,
+      "top": 400
+    },
+    "next": [],
+    "parallel": []
+  },
+  {
+    "id": "rn3",
+    "type": "ConditionalNode",
+    "condition": "<v> == 1",
+    "position": {
+      "left": 700,
+      "top": 400
+    },
+    "next": [],
+    "parallel": []
+  }
+]
+

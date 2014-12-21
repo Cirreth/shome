@@ -1,0 +1,35 @@
+[
+    {
+      id: "tsk1",
+      title: "Мигание звонка",
+      description: "Периодическое помаргивание дверного звонка в режиме ожидания",
+      type: "Interval",
+      schema: 3,
+      enabled: true
+    },
+    {
+      id: "tsk2",
+      title: "Записать температуру в детской",
+      description: "Сохранение температуры в БД",
+      type: "interval",
+      schema: 720,
+      nextafter: 118,
+      enabled: false
+    },
+    {
+      id: "tsk3",
+      title: "Записать температуру в комнате",
+      description: "Сохранение температуры в БД",
+      type: "interval",
+      schema: 720,
+      enabled: false
+    },
+    {
+      id: "tsk4",
+      title: "Будильник",
+      description: "Будильник",
+      type: "mask",
+      schema: "7:40, пн-пт",
+      enabled: false
+    }
+  ]

@@ -1,0 +1,34 @@
+<div id="workspace" nodes ng-init="init()">
+
+<table>
+  <tr ng-repeat="node in nodes">
+    <td>{{ node | json }}</td>
+  </tr>
+</table>
+	<button ng-click="newnode()">append node</button>
+  <request-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-class="{active: node.active}" 
+    ng-repeat="node in nodes" ng-if="node.type=='RequestNode'">
+  <!--ng-style="{left: node.position.left, top: node.position.top}"-->
+    <table>
+      <tr><td colspan="3"><i>{{node.plugin}}</i></td></tr>
+      <tr><td colspan="3">{{node.reference}}</td></tr>
+      <tr><td>	in</td><td>→[]→</td><td ng-click="node.position.left=node.position.left+100">  out</td></tr>
+    </table>
+  </request-node>
+
+  <conditional-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-repeat="node in nodes" 
+    ng-class="{active: node.active}" ng-if="node.type=='ConditionalNode'">
+    <div class="shape">
+    </div>
+    <div class="block">
+      <table>
+        <tr><td></td><td><i><b>if</b></i></td><td></td></tr>
+        <tr><td colspan="3">{{node.condition}}</td></tr>
+        <tr><td></td><td>no | yes</td><td></td></tr>
+      </table>
+    </div>
+  </conditional-node>
+
+</div> <!--workspace-->
+
+

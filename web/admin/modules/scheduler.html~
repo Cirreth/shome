@@ -1,0 +1,148 @@
+<div id="scenarios" >
+  <h1 class="app-hdr">Задачи</h1>
+
+
+<button class="sch-btn" type="button" ng-click="create=true" ng-hide="create">
+    Создать задачу
+</button>
+
+<div ng-show="create" class="animate-new">
+
+<div id="newtask" class="row">
+    <div class="col-sm-4">          
+      <div class="panel panel-default">          
+        <div class="panel-heading">
+          <h3 class="panel-title">
+          <input class="form-control sch-fld-title" placeholder="Укажите имя сценария" text ng-model="newtask.title" set-focus="{{create}}"></h3>
+        </div>        
+        <div class="panel-body">
+          <textarea class="form-control" rows="2" placeholder="Приведите краткое описание" ng-model="newtask.description"></textarea>
+          <div class="form-group sch-radio">
+            <input id="sch-type-interval" type="radio" ng-model="newtask.scheduling.type" value="interval" ng-click="startScheduling()"></input><label class="radio-inline" for="sch-type-interval">Интервал</label>
+            <input id="sch-type-plan" type="radio" ng-model="newtask.scheduling.type" value="plan" ng-click="startScheduling()"></input><label for="sch-type-plan" class="radio-inline">План</label>
+            <input id="sch-type-runonce" type="radio" ng-model="newtask.scheduling.type" value="runonce" ng-click="startScheduling()"></input><label class="radio-inline" for="sch-type-runonce">Разово</label>
+          </div>
+          <i class="pull-left">{{newtask.scheduling.type}} : {{newtask.scheduling.schema}} c.</i>
+            <div class="sch-st-cont ">
+              <div class="sch-stop">
+                <div class="slider-check-box">
+                  <input id="{{'enbl-cb-'+newtask.id}}" ng-model="newtask.enabled" type="checkbox" ng-checked="newtask.enabled"></input>
+                  <label id="{{'enbl-ch-lbl-'+newtask.id}}" for="{{'enbl-cb-'+newtask.id}}"></label>
+                </div>
+              </div>
+            </div>
+        </div><!--panel-body-->
+      </div><!--panel-default-->
+    </div><!--col-sm-4-->
+
+    <div class="col-sm-4 animate-flipx" ng-show="newtask.scheduling.editing && newtask.scheduling.type=='interval'">    
+      <div class="panel panel-default panel-helper">  
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Настройка интервала
+            <div class="fa fa-fw fa-times sch-cfg" ng-click="newtask.scheduling.editing=false"></div>
+          </h3>
+        </div>
+        <div class="panel-body">
+         
+          <div class="form-group input-group font-black m-r-10">
+            <input class="form-control font-black" placeholder="Укажите интервал" ng-model="newtask.scheduling.schema" set-focus="{{newtask.scheduling.type=='interval'}}" type="text"></input>
+            <span class="input-group-addon font-black" >c.</span>
+          </div>
+          <button class="sch-btn pull-right m-r-10 m-b-5" type="button" ng-click="newtask.scheduling.editing=false">
+            Ок
+          </button>
+        </div>
+      </div><!--panel-default-->
+    </div><!--col-sm-4-->
+
+    <div class="col-sm-4 animate-flipx" ng-show="newtask.scheduling.editing && newtask.scheduling.type=='plan'">    
+      <div class="panel panel-default panel-helper">  
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Настройка запуска по расписанию
+            <div class="fa fa-fw fa-times sch-cfg" ng-click="newtask.scheduling.editing=false">
+            </div>
+          </h3>
+        </div>
+        <div class="panel-body">
+          <div>Конфигурация запуска по интервалу</div>
+        </div>
+      </div><!--panel-default-->
+    </div><!--col-sm-4-->
+
+    <div class="col-sm-4 animate-flipx" ng-show="newtask.scheduling.editing && newtask.scheduling.type=='runonce'">    
+      <div class="panel panel-default panel-helper">  
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Непериодический запуск
+            <div class="fa fa-fw fa-times sch-cfg" ng-click="newtask.scheduling.editing=false">
+            </div>
+          </h3>
+        </div>
+        <div class="panel-body">
+          <div id="sch-datepicker-uper" class="sch-datepicker"></div>
+          <div>a<br>b<br>c</div>
+        </div>
+      </div><!--panel-default-->
+    </div><!--col-sm-4-->
+
+    <div class="col-sm-4 animate-flipx" ng-show="newtask.scheduling.editing && newtask.scheduling.type=='runonce'">    
+      <div class="panel panel-default panel-helper">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Запланировано
+            <div class="fa fa-fw fa-times sch-cfg" ng-click="newtask.scheduling.editing=false">
+            </div>
+          </h3>
+        </div>
+        <div class="panel-body">
+          
+        </div>
+      </div><!--panel-default-->
+    </div><!--col-sm-4-->
+
+  </div><!--row-->
+
+<button class="sch-btn" type="button" ng-click="saveTask()">
+    Сохранить
+</button>
+<button class="sch-btn" type="button" ng-click="create=false">
+    Отмена
+</button>
+
+  <hr>
+</div>
+
+      <div class="row">
+
+        <div class="col-sm-4" ng-repeat="task in tasks">          
+          <div class="panel panel-default">
+            
+            <div class="panel-heading">
+              <h3 class="panel-title">{{task.title}} <div class="fa fa-fw fa-wrench sch-cfg"></div></h3>
+            </div>
+            
+            <div class="panel-body">
+              <p>{{task.description}}</p>
+              <i>{{task.scheduling.type}} : {{task.scheduling.schema}}
+                <span ng-show="task.type=='interval'"с.</span>
+                <span ng-show="task.nextafter && task.enabled">({{task.nextafter}} с.)</span>
+              </i>
+              <div class="sch-st-cont" >
+                <div class="sch-stop">
+                  <div class="slider-check-box">
+                    <input id="{{'enbl-cb-'+task.id}}" ng-model="task.enabled" type="checkbox" ng-checked="task.enabled"></input>
+                    <label id="{{'enbl-ch-lbl-'+task.id}}" for="{{'enbl-cb-'+task.id}}"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+       </div>
+
+      </div>
+    </div>
