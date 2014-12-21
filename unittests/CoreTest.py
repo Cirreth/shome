@@ -54,7 +54,7 @@ class MyTestCase(unittest.TestCase):
         """
         self.createproc('sch-css', """{"type": "RequestNode",
                             "plugin": "mock", "reference": "test SchedulerNode create start stop", "retvar": "x"}""")
-        self.context.scheduler.create('sch-css', 1)
+        self.context.scheduler.create('sch-css', 'sch-css', 1)
         self.createproc('start-sch-css', """{"type":"SchedulerNode","task":"sch-css","action":"start"}""")
         self.createproc('stop-sch-css', """{"type":"SchedulerNode","task":"sch-css","action":"stop"}""")
         self.assertEqual(self.context.scheduler._frequent['sch-css'].stopped, True)
@@ -108,3 +108,18 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(prepare_parameter('2.5'), float(2.5))
         self.assertEqual(prepare_parameter('hello'), 'hello')
         self.assertEqual(prepare_parameter('"2.5"'), '2.5')
+
+    def test_task_db(self):
+        dao = self.context.config
+        process = 'testtask'
+        title = 'tasktitle'
+        description = 'testdescr'
+        newdescr = 'testdescr2'
+        scheme = 15
+        isrunned = False
+        dao.delete_task(process)
+        dao.add_task(process, title, scheme, isrunned, description)
+        self.assertEqual(dao.get_task_by_process(process), (title, description, str(scheme), 1 if isrunned else 0))
+        dao.update_task(process, title, scheme, isrunned, newdescr)
+        self.assertEqual(dao.get_task_by_process(process), (title, newdescr, str(scheme), 1 if isrunned else 0))
+        dao.delete_task(process)

@@ -1,5 +1,12 @@
 (function(){
+
   var app = angular.module('shomeAdm',['ngAnimate','ngRoute']);
+
+  app.filter('capitalize',function(){
+    return function(input) {
+        return input.charAt(0).toUpperCase()+input.slice(1);
+    };
+  });
 
   app.config(['$routeProvider',
     function($routeProvider) {
@@ -323,9 +330,9 @@
           }, 200);
           /* end */
         });
-        
+
     }
-    
+
 	  $scope.newRequestNode = function() {
 	    Constructor.nodes.push({
 	      "id": 'rn'+parseInt(Math.random()*500),
@@ -341,7 +348,7 @@
         "expectional": []
       });
 	  };
-	  
+
 	  $scope.newConditionalNode = function() {
 	    Constructor.nodes.push({
 	      "id": 'cn'+parseInt(Math.random()*500),
@@ -364,7 +371,7 @@
     });
 
   }]);
-  
+
   app.directive('requestNode', ['Constructor', function(Constructor) {
     return {
       restrict: 'E',
@@ -376,19 +383,19 @@
       }
     }
   }]);
-  
+
   app.directive('conditionalNode', ['Constructor', function(Constructor) {
     return {
       restrict: 'E',
       require: 'ngModel',
       link: function(scope, element, attrs, model) {
         if (attrs.hasOwnProperty('mock')) return false;
-        Constructor.initNode(scope, element, attrs, model, 'C');      
+        Constructor.initNode(scope, element, attrs, model, 'C');
         scope.connect = function() {Constructor.connect(scope, element, attrs, model)};
       }
     }
   }]);
-  
+
   /* end */
 
   app.controller('ScenariosController', ['$scope', '$http', function($scope, $http) {
@@ -398,42 +405,66 @@
                 $scope.scenarios = data;
             });
   }]);
-  
+
   app.controller('SchedulerController', ['$scope', '$http', function($scope, $http) {
-    $scope.create = false;    
-    $scope.newtask = getNewTask();
-    $http.get('./data-examples/tasks.json')
-            .success(function(data){
-                $scope.tasks = data;
-            });
+    //$scope.editing = false;
+    $scope.mode = undefined;
+    $http.get('http://localhost:8082/admin/')
+    .success(function(data){
+        $scope.tasks = data;
+    });
 
     $scope.startScheduling = function(){
-      $scope.newtask.scheduling.editing = true;
+      $scope.schemeconfig = true;
     }
-	
+
+    $scope.stopScheduling = function(){
+      $scope.schemeconfig = false;
+    }
+
+    $scope.edit = function(task) {
+        $scope.oldtask = {};
+        angular.copy(task, $scope.oldtask);
+        $scope.mode = 'edit';
+        $scope.editing = task;
+    }
+
+    $scope.newTask = function() {
+        $scope.editing = getNewTask();
+        $scope.mode='new';
+    }
+
 	$scope.saveTask = function() {
-	  $scope.create = false;
-	  $scope.tasks.push($scope.newtask);
-	  $scope.newtask = getNewTask();
+	    if ($scope.mode == 'new') {
+	    	$scope.tasks.push($scope.editing);
+        }
+        $scope.mode = undefined;
+        $scope.editing = undefined;
+	}
+
+	$scope.cancel = function(task) {
+        if ($scope.mode == 'edit') {
+            for (var i=0; i<$scope.tasks.length; i++) {
+                if ($scope.tasks[i].title == task.title) {
+                    $scope.tasks[i] = $scope.oldtask;
+                }
+            }
+            $scope.oldtask = undefined;
+        }
+        $scope.editing = undefined;
+        $scope.mode = undefined;
 	}
 	
 	function getNewTask() {
-		  return {
-      id: getNewTaskId(),
-		  title: "",
-		  description: "",
-		  scheduling: {
-			type: "",
-			schema: null,
-			editing: false
-		  },
-		  enabled: false
+        return {
+            title: "",
+            description: "",
+            process: "",
+            type: "",
+            schema: null,
+            isrunned: false
 		}
 	}
- 
-  function getNewTaskId() {
-    return Math.random(1000,9999);
-  }
 
   }]);
 

@@ -1,33 +1,34 @@
 <div id="scenarios" >
   <h1 class="app-hdr">Scheduler</h1>
 
-<button class="sch-btn" type="button" ng-click="create=true" ng-hide="create">
+<button class="sch-btn" type="button" ng-click="newTask()" ng-hide="editing">
     New task
 </button>
 
-<div ng-show="create" class="animate-new">
+<div ng-show="editing" class="animate-new">
 
-<div id="newtask" class="row">
-    <form novalidate name="newtask">
-        <div class="col-sm-4">
+<div class="row">
+    <form novalidate>
+        <div id="editing" class="col-sm-4">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">
-              <input required class="form-control sch-fld-title" placeholder="Task name" text ng-model="newtask.title" set-focus="{{create}}"></h3>
+              <input required class="form-control sch-fld-title" placeholder="Task name" text ng-model="editing.title" set-focus="{{editing}}"></h3>
             </div>
             <div class="panel-body">
-              <textarea required class="form-control" rows="2" placeholder="Short description" ng-model="newtask.description"></textarea>
+              <textarea required class="form-control" rows="2" placeholder="Short description" ng-model="editing.description"></textarea>
+              <input required class="form-control" placeholder="Process name" ng-model="editing.process">
               <div class="form-group sch-radio">
-                <input id="sch-type-interval" type="radio" ng-model="newtask.scheduling.type" value="interval" ng-click="startScheduling()"></input><label class="radio-inline" for="sch-type-interval">Interval</label>
-                <input id="sch-type-plan" type="radio" ng-model="newtask.scheduling.type" value="plan" ng-click="startScheduling()"></input><label for="sch-type-plan" class="radio-inline">Plan</label>
-                <input id="sch-type-runonce" type="radio" ng-model="newtask.scheduling.type" value="runonce" ng-click="startScheduling()"></input><label class="radio-inline" for="sch-type-runonce">Run once</label>
+                <input id="sch-type-interval" type="radio" ng-model="editing.type" value="interval" ng-click="startScheduling()"><label class="radio-inline" for="sch-type-interval">Interval</label>
+                <input id="sch-type-plan" type="radio" ng-model="editing.type" value="plan" ng-click="startScheduling()"><label for="sch-type-plan" class="radio-inline">Plan</label>
+                <input id="sch-type-runonce" type="radio" ng-model="editing.type" value="runonce" ng-click="startScheduling()"><label class="radio-inline" for="sch-type-runonce">Run once</label>
               </div>
-              <i class="pull-left">{{newtask.scheduling.type}} : {{newtask.scheduling.schema}} s.</i>
+              <i class="pull-left">{{editing.type}} : {{editing.scheme}} s.</i>
                 <div class="sch-st-cont ">
                   <div class="sch-stop">
                     <div class="slider-check-box">
-                      <input id="{{'enbl-cb-'+newtask.id}}" ng-model="newtask.enabled" type="checkbox" ng-checked="newtask.enabled"></input>
-                      <label id="{{'enbl-ch-lbl-'+newtask.id}}" for="{{'enbl-cb-'+newtask.id}}"></label>
+                      <input id="{{'enbl-cb-'+editing.process}}" ng-model="editing.isrunned" type="checkbox" ng-checked="editing.isrunned">
+                      <label id="{{'enbl-ch-lbl-'+editing.process}}" for="{{'enbl-cb-'+editing.process}}"></label>
                     </div>
                   </div>
                 </div>
@@ -35,33 +36,33 @@
           </div><!--panel-default-->
         </div><!--col-sm-4-->
 
-        <div class="col-sm-4 animate-flipx" ng-show="newtask.scheduling.editing && newtask.scheduling.type=='interval'">
+        <div class="col-sm-4 animate-flipx" ng-show="schemeconfig && editing.type=='interval'">
           <div class="panel panel-default panel-helper">
             <div class="panel-heading">
               <h3 class="panel-title">
                 Interval settings
-                <div class="fa fa-fw fa-times sch-cfg" ng-click="newtask.scheduling.editing=false"></div>
+                <div class="fa fa-fw fa-times sch-cfg" ng-click="stopScheduling()"></div>
               </h3>
             </div>
             <div class="panel-body">
 
               <div class="form-group input-group font-black m-r-10">
-                <input class="form-control font-black" name="interval" placeholder="Interval" ng-model="newtask.scheduling.schema" set-focus="{{newtask.scheduling.type=='interval'}}" type="number"></input>
+                <input class="form-control font-black" name="interval" placeholder="Interval" ng-model="editing.scheme" set-focus="{{editing.type=='interval'}}" type="number">
                 <span class="input-group-addon font-black" >c.</span>
               </div>
-              <button class="sch-btn pull-right m-r-10 m-b-5" type="button" ng-click="newtask.scheduling.editing=false">
+              <button class="sch-btn pull-right m-r-10 m-b-5" type="button" ng-click="stopScheduling()">
                 OK
               </button>
             </div>
           </div><!--panel-default-->
         </div><!--col-sm-4-->
 
-        <div class="col-sm-4 animate-flipx" ng-show="newtask.scheduling.editing && newtask.scheduling.type=='plan'">
+        <div class="col-sm-4 animate-flipx" ng-show="schemeconfig && editing.type=='plan'">
           <div class="panel panel-default panel-helper">
             <div class="panel-heading">
               <h3 class="panel-title">
                 Schedule
-                <div class="fa fa-fw fa-times sch-cfg" ng-click="newtask.scheduling.editing=false">
+                <div class="fa fa-fw fa-times sch-cfg" ng-click="stopScheduling()">
                 </div>
               </h3>
             </div>
@@ -71,12 +72,12 @@
           </div><!--panel-default-->
         </div><!--col-sm-4-->
 
-        <div class="col-sm-4 animate-flipx" ng-show="newtask.scheduling.editing && newtask.scheduling.type=='runonce'">
+        <div class="col-sm-4 animate-flipx" ng-show="schemeconfig && editing.type=='runonce'">
           <div class="panel panel-default panel-helper">
             <div class="panel-heading">
               <h3 class="panel-title">
                 Run once
-                <div class="fa fa-fw fa-times sch-cfg" ng-click="newtask.scheduling.editing=false">
+                <div class="fa fa-fw fa-times sch-cfg" ng-click="stopScheduling()">
                 </div>
               </h3>
             </div>
@@ -87,12 +88,12 @@
           </div><!--panel-default-->
         </div><!--col-sm-4-->
 
-        <div class="col-sm-4 animate-flipx" ng-show="newtask.scheduling.editing && newtask.scheduling.type=='runonce'">
+        <div class="col-sm-4 animate-flipx" ng-show="schemeconfig && editing.type=='runonce'">
           <div class="panel panel-default panel-helper">
             <div class="panel-heading">
               <h3 class="panel-title">
                 Scheduled
-                <div class="fa fa-fw fa-times sch-cfg" ng-click="newtask.scheduling.editing=false">
+                <div class="fa fa-fw fa-times sch-cfg" ng-click="stopScheduling()">
                 </div>
               </h3>
             </div>
@@ -104,12 +105,9 @@
     </form>
   </div><!--row-->
 
-<button class="sch-btn" type="button" ng-click="saveTask()">
-    Save
-</button>
-<button class="sch-btn" type="button" ng-click="create=false">
-    Cancel
-</button>
+<button class="sch-btn" type="button" ng-click="saveTask()">Save</button>
+<button class="sch-btn" type="button" ng-click="cancel(editing)">Cancel</button>
+
   <hr>
 </div>
 
@@ -119,20 +117,21 @@
           <div class="panel panel-default" ng-if="tasks[idx+colidx]" ng-init="task=tasks[idx+colidx]">
             
             <div class="panel-heading">
-              <h3 class="panel-title">{{task.title}} <div class="fa fa-fw fa-wrench sch-cfg"></div></h3>
+              <h3 class="panel-title" ng-click="edit(task)">{{task.title}} <div class="fa fa-fw fa-wrench sch-cfg"></div></h3>
             </div>
             
             <div class="panel-body">
-              <p>{{task.description}}</p>
-              <i>{{task.scheduling.type}} : {{task.scheduling.schema}}
-                <span ng-show="task.type=='interval'"с.</span>
-                <span ng-show="task.nextafter && task.enabled">({{task.nextafter}} с.)</span>
+              <p>{{task.description}}<span class="transparent6" ng-show="!task.description">Is not described</span></p>
+              <p><strong>Process: </strong>{{task.process}}</p>
+              <i><strong>{{task.type | capitalize}}</strong> : {{task.scheme}}
+                <span ng-show="task.type=='interval'">с.</span>
+                <span ng-show="task.nextafter && task.isrunned">({{task.nextafter}} с.)</span>
               </i>
               <div class="sch-st-cont" >
                 <div class="sch-stop">
                   <div class="slider-check-box">
-                    <input id="{{'enbl-cb-'+task.id}}" ng-model="task.enabled" type="checkbox" ng-checked="task.enabled"></input>
-                    <label id="{{'enbl-ch-lbl-'+task.id}}" for="{{'enbl-cb-'+task.id}}"></label>
+                    <input id="{{'enbl-cb-'+task.process}}" ng-model="task.isrunned" type="checkbox" ng-checked="task.isrunned">
+                    <label id="{{'enbl-ch-lbl-'+task.process}}" for="{{'enbl-cb-'+task.process}}"></label>
                   </div>
                 </div>
               </div>

@@ -11,55 +11,68 @@ class Scheduler:
     _frequent = {}
     _scheduled = {}
 
-    class FrequentTask:
+    class Task:
 
         _action_processor = None
-        _procname = None
-        interval = 0
-        _timer = None
-        """Set True value when you need to stop task"""
+        procname = None
         stopped = True
+        title = None
+        description = None
 
-        def __init__(self, ap, procname, interval):
+        def __init__(self, ap, procname, title):
             self._action_processor = ap
-            self._procname = procname
+            self.procname = procname
+            self.title = title
+
+    class FrequentTask(Task):
+
+        interval = None
+        _timer = None
+
+        def __init__(self, ap, procname, title, interval):
+            super().__init__(ap, procname, title)
             self.interval = interval
             self._queue = queue.Queue()
 
         def start(self):
-            logging.debug(self._procname+' started')
+            logging.debug(self.procname+' started')
             self.stopped = False
             def tick():
                 if self.stopped:
                     return
-                self._action_processor.process(self._procname)
+                self._action_processor.process(self.procname)
                 t = threading.Timer(self.interval, tick)
                 t.start()
                 return t
             self._timer = tick()
 
         def stop(self):
-            logging.debug(self._procname+' stopped')
+            logging.debug(self.procname+' stopped')
             self.stopped = True
             self._timer.cancel()
 
         def dict_repr(self):
             return {
-                'name': self._procname,
+                'title': self.title,
+                'description': self.description,
+                'process': self.procname,
+                'type': 'interval',
                 'scheme': self.interval,
                 'isrunned': not self.stopped
             }
 
-    class ScheduledTask:
+    class ScheduledTask(Task):
+        """NOT IMPLEMENTED"""
 
-        _procname = None
         """Cron-like time format"""
         expression = None
-        isrunned = False
+
+        def __init__(self):
+            raise NotImplementedError
 
         def dict_repr(self):
             return {
-                'name': self._procname,
+                'process': self._procname,
                 'scheme': self.expression,
                 'isrunned': self.stopped
             }
@@ -73,17 +86,19 @@ class Scheduler:
         self._action_processor = context.action_processor
         self._configuration = context.config
 
-    def create(self, procname, timescheme, writedb=False):
+    def create(self, procname, title, timescheme, description='', writedb=False):
         if self.get(procname):
             return 'Process with name '+procname+' already scheduled with scheme ' \
             + str(self._frequent[procname].interval) if procname in self._frequent else self._scheduled[procname].expression
         try:
             interval = float(timescheme)
-            self._frequent[procname] = Scheduler.FrequentTask(self._action_processor, procname, interval)
+            self._frequent[procname] = Scheduler.FrequentTask(self._action_processor, procname, title, interval)
+            if description:
+                self._frequent[procname].description = description
             msg = ''
             if writedb:
                 try:
-                    self._configuration.add_task(procname, timescheme, False)
+                    self._configuration.add_task(procname, title, timescheme, description, False)
                 except Exception as e:
                    msg = ', but database does not updated. Reason:'+str(e)
             return 'Succesefuly created'+msg
