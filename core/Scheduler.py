@@ -87,7 +87,7 @@ class Scheduler:
         self._configuration = context.config
 
     def create(self, procname, title, timescheme, description='', writedb=False):
-        if self.get(procname):
+        if self.get_by_procname(procname):
             return 'Process with name '+procname+' already scheduled with scheme ' \
             + str(self._frequent[procname].interval) if procname in self._frequent else self._scheduled[procname].expression
         try:
@@ -108,10 +108,10 @@ class Scheduler:
 
     def setscheme(self, procname, timescheme):
         procname = procname.strip()
-        if self.get(procname):
+        if self.get_by_procname(procname):
             try:
                 wasrunned = False
-                if self.get(procname).isrunned:
+                if self.get_by_procname(procname).isrunned:
                     wasrunned = True
                     self.stop(procname)
                 interval = float(timescheme)
@@ -134,7 +134,7 @@ class Scheduler:
             self._frequent[procname].start()
             msg = ''
             try:
-                self._configuration.update_task(procname, self.get(procname).interval, True)
+                self._configuration.update_task(procname, self.get_by_procname(procname).interval, True)
             except Exception as e:
                 msg = ', but not saved in database: '+str(e)
             return procname+' in scheduler is started'+msg
@@ -146,20 +146,29 @@ class Scheduler:
             self._frequent[procname].stop()
             msg = ''
             try:
-                self._configuration.update_task(procname, self.get(procname).interval, False)
+                self._configuration.update_task(procname, self.get_by_procname(procname).interval, False)
             except Exception as e:
                 msg = ', but not saved in database: '+str(e)
             return procname+' in scheduler is stopped'+msg
         elif procname in self._scheduled:
             raise NotImplementedError
 
-    def get(self, procname):
+    def get_by_procname(self, procname):
         if procname in self._frequent:
             return self._frequent[procname]
         elif procname in self._scheduled:
             return self._scheduled[procname]
         else:
             return None
+
+    def get_by_title(self, title):
+        for procname in self._frequent:
+            if self._frequent[procname].title == title:
+                return self._frequent[procname]
+        for procname in self._scheduled:
+            if self._scheduled[procname].title == title:
+                return self._scheduled[procname]
+        return None
 
     def find(self, procname):
         """Find all tasks whose name contains procname"""

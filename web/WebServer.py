@@ -19,8 +19,8 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         return self.render("views/main.tpl")
 
-class SchedulerHandler(tornado.web.RequestHandler):
-    """Serves Admin UI:Scheduler"""
+class SchedulerAllTasksHandler(tornado.web.RequestHandler):
+    """Serves /admin/scheduler/alltasks. Return tasklist"""
 
     #web server instance
     _ws = None
@@ -30,6 +30,26 @@ class SchedulerHandler(tornado.web.RequestHandler):
 
     def get(self):
         self.write(json.dumps(self._ws._scheduler.list_all()).encode())
+
+class SchedulerTaskHandler(tornado.web.RequestHandler):
+    """Single task REST service"""
+    _ws = None
+
+    def initialize(self, ws):
+        self._ws = ws
+
+    def get(self, title):
+        self.write(json.dumps(self._ws._scheduler.get_by_title(title)))
+
+    def post(self, title):
+        logging.debug('SchedulerTaskHandler post: '+title)
+
+    def put(self, title):
+        logging.debug('SchedulerTaskHandler put: '+title)
+
+    def delete(self, title):
+        logging.debug('SchedulerTaskHandler delete: '+title)
+
 
 class CommandHandler(tornado.web.RequestHandler):
 
@@ -82,7 +102,8 @@ class WebServer():
             (r"/", MainHandler),
             (r"/command", CommandHandler, {'ws': self}),
             (r"/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
-            (r"/admin/scheduler/alltasks", SchedulerHandler, {'ws': self}),
+            (r"/admin/scheduler/alltasks", SchedulerAllTasksHandler, {'ws': self}),
+            (r"/admin/scheduler/task/(.+)", SchedulerTaskHandler, {'ws': self}),
             (r"/admin/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
         ], debug=True, **settings)
         http_server = tornado.httpserver.HTTPServer(application)

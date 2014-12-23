@@ -47,11 +47,62 @@
     };
   });
 
-  app.controller('MenuController', ['$scope', '$http', function($scope, $http) {
+  app.service('InfoMessage', ['$rootScope', '$timeout', function($rootScope, $timeout) {
+
+    var type = undefined //message type: ok, info, error
+    var timeout;
+
+    var setMessage = function(type, data) {
+        if (angular.isDefined(timeout)) $timeout.cancel(timeout);
+        service.type = type;
+        service.message = data;
+        $rootScope.$broadcast('changeMessage');
+        timeout = $timeout(function() {
+            service.message = undefined;
+            service.type = undefined;
+            $rootScope.$broadcast('changeMessage');
+        }, 4500); //change it in pair with animation
+    }
+
+    var service = {
+        type: undefined,
+        message: '',
+        okMessage: function(data) {
+            setMessage('ok', data);
+        },
+        infoMessage: function(data) {
+            setMessage('info', data);
+        },
+        errorMessage: function(data) {
+            setMessage('error', data);
+        },
+        clear: function() {
+            service.message = undefined;
+            type = undefined;
+            $rootScope.$broadcast('changeMessage');
+        }
+    }
+
+    return service;
+
+  }]);
+
+
+  app.controller('InfoMessageController', ['$scope', 'InfoMessage', function($scope, InfoMessage) {
+
+    $scope.$on('changeMessage', function() {
+        $scope.message = InfoMessage.message;
+        $scope.type = InfoMessage.type;
+    });
 
 
   }]);
 
+
+  app.controller('MenuController', ['$scope', '$http', function($scope, $http) {
+
+
+  }]);
 
   app.controller('OverviewController', ['$scope', '$http', function($scope, $http) {
 
@@ -406,13 +457,20 @@
             });
   }]);
 
-  app.controller('SchedulerController', ['$scope', '$http', function($scope, $http) {
-    //$scope.editing = false;
+  app.controller('SchedulerController', ['$scope', '$http', 'InfoMessage', function($scope, $http, InfoMessage) {
+
+    $scope.im = InfoMessage;
+
     $scope.mode = undefined;
-    $http.get('http://localhost:8082/admin/scheduler/alltasks')
-    .success(function(data){
-        $scope.tasks = data;
-    });
+
+    $scope.load = function() {
+        $http.get('http://localhost:8082/admin/scheduler/alltasks')
+        .success(function(data){
+            $scope.tasks = data;
+        });
+    }
+
+    $scope.load();
 
     $scope.startScheduling = function(){
       $scope.schemeconfig = true;
@@ -434,12 +492,63 @@
         $scope.mode='new';
     }
 
-	$scope.saveTask = function() {
-	    if ($scope.mode == 'new') {
-	    	$scope.tasks.push($scope.editing);
-        }
+    function endEditing() {
         $scope.mode = undefined;
         $scope.editing = undefined;
+    }
+
+    $scope.delete = function() {
+        $scope.mode = 'delete';
+    }
+
+    $scope.updateTaskStatus = function(task) {
+        $http.put('http://localhost:8082/admin/scheduler/task/'+task.title, task)
+            .success(function() {
+                $scope.im.okMessage(task.title+' '+(task.isrunned ? 'enabled' : 'disabled'));
+            })
+            .error(function(data, status){
+                $scope.im.errorMessage(status+': '+data);
+        });
+    }
+
+	$scope.saveTask = function() {
+	    if ($scope.mode == 'new') {
+	    	$http.post('http://localhost:8082/admin/scheduler/task/'+$scope.editing.title, $scope.editing)
+	    	.success(function() {
+                $scope.im.okMessage($scope.editing.title+' saved');
+                endEditing();
+	    	    $scope.load();
+	    	})
+	    	.error(function(data, status){
+                $scope.im.errorMessage(status+': '+data);
+	    	});
+	    } else if ($scope.mode == 'delete') {
+            $http.delete('http://localhost:8082/admin/scheduler/task/'+$scope.editing.title, $scope.editing)
+	    	.success(function() {
+	    	    $scope.im.okMessage($scope.editing.title+' deleted');
+                for (var i=0; i<$scope.tasks.length; i++) {
+                    if ($scope.tasks[i].title == $scope.editing.title) {
+                        delete $scope.tasks[i];
+                        break;
+                    }
+                }
+                endEditing();
+                $scope.load();
+	    	})
+	    	.error(function(data, status){
+                $scope.im.errorMessage(status+': '+data);
+	    	});
+	    } else {
+            $http.put('http://localhost:8082/admin/scheduler/task/'+$scope.editing.title, $scope.editing)
+	    	.success(function() {
+	    	    $scope.im.okMessage($scope.editing.title+' updated');
+                endEditing();
+                $scope.load();
+	    	})
+	    	.error(function(data, status){
+                $scope.im.errorMessage(status+': '+data);
+	    	});
+        }
 	}
 
 	$scope.cancel = function(task) {
