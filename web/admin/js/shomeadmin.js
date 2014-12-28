@@ -464,7 +464,7 @@
     $scope.mode = undefined;
 
     $scope.load = function() {
-        $http.get('http://localhost:8082/admin/scheduler/alltasks')
+        $http.get('/admin/scheduler/alltasks')
         .success(function(data){
             $scope.tasks = data;
         });
@@ -502,7 +502,10 @@
     }
 
     $scope.updateTaskStatus = function(task) {
-        $http.put('http://localhost:8082/admin/scheduler/task/'+task.title, task)
+        $http.put('/admin/scheduler/task/'+task.title,
+            {
+                isrunned: !task.isrunned
+            })
             .success(function() {
                 $scope.im.okMessage(task.title+' '+(task.isrunned ? 'enabled' : 'disabled'));
             })
@@ -511,9 +514,20 @@
         });
     }
 
+    /*
+        {
+            title: task.title,
+            description: task.description,
+            process: task.process,
+            type: task.type,
+            scheme: task.scheme,
+            isrunned: !task.isrunned
+        }
+    */
+
 	$scope.saveTask = function() {
 	    if ($scope.mode == 'new') {
-	    	$http.post('http://localhost:8082/admin/scheduler/task/'+$scope.editing.title, $scope.editing)
+	    	$http.post('/admin/scheduler/task/'+$scope.editing.title, $scope.editing)
 	    	.success(function() {
                 $scope.im.okMessage($scope.editing.title+' saved');
                 endEditing();
@@ -523,9 +537,9 @@
                 $scope.im.errorMessage(status+': '+data);
 	    	});
 	    } else if ($scope.mode == 'delete') {
-            $http.delete('http://localhost:8082/admin/scheduler/task/'+$scope.editing.title, $scope.editing)
-	    	.success(function() {
-	    	    $scope.im.okMessage($scope.editing.title+' deleted');
+            $http.delete('/admin/scheduler/task/'+$scope.editing.title)
+	    	.success(function(data) {
+	    	    $scope.im.okMessage(data);
                 for (var i=0; i<$scope.tasks.length; i++) {
                     if ($scope.tasks[i].title == $scope.editing.title) {
                         delete $scope.tasks[i];
@@ -539,7 +553,7 @@
                 $scope.im.errorMessage(status+': '+data);
 	    	});
 	    } else {
-            $http.put('http://localhost:8082/admin/scheduler/task/'+$scope.editing.title, $scope.editing)
+            $http.put('/admin/scheduler/task/'+$scope.editing.title, $scope.editing)
 	    	.success(function() {
 	    	    $scope.im.okMessage($scope.editing.title+' updated');
                 endEditing();
@@ -570,7 +584,7 @@
             description: "",
             process: "",
             type: "",
-            schema: null,
+            scheme: null,
             isrunned: false
 		}
 	}

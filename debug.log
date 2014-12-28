@@ -1,0 +1,217 @@
+[DEBUG] [2014-12-28 01:28:20,001] (MainThread) Action processor initialization
+[DEBUG] [2014-12-28 01:28:20,001] (MainThread) Scheduler initialization
+[DEBUG] [2014-12-28 01:28:20,001] (MainThread) Performer initialization
+[INFO] [2014-12-28 01:28:20,001] (MainThread) SQL_conf: SELECT name, params, enabled FROM plugin
+[ERROR] [2014-12-28 01:28:20,007] (MainThread) Not loaded database - No module named 'pymysql'
+[DEBUG] [2014-12-28 01:28:20,008] (MainThread) OneWirePlugin initialization
+[DEBUG] [2014-12-28 01:28:20,009] (MainThread) 
+OneWirePlugin list dir:
+[DEBUG] [2014-12-28 01:28:20,596] (MainThread) b'/28.345805050000'
+[DEBUG] [2014-12-28 01:28:20,596] (MainThread) b'/28.F2CF39040000'
+[DEBUG] [2014-12-28 01:28:20,597] (MainThread) b'/28.259039040000'
+[DEBUG] [2014-12-28 01:28:20,597] (MainThread) b'/28.1D9D39040000'
+[DEBUG] [2014-12-28 01:28:20,597] (MainThread) b'/3A.F2360D000000'
+[DEBUG] [2014-12-28 01:28:20,597] (MainThread) b'/3A.C9330D000000'
+[DEBUG] [2014-12-28 01:28:20,597] (MainThread) b'/81.F34132000000'
+[DEBUG] [2014-12-28 01:28:20,597] (MainThread) b'/bus.0'
+[DEBUG] [2014-12-28 01:28:20,598] (MainThread) b'/uncached'
+[DEBUG] [2014-12-28 01:28:20,598] (MainThread) b'/settings'
+[DEBUG] [2014-12-28 01:28:20,598] (MainThread) b'/system'
+[DEBUG] [2014-12-28 01:28:20,598] (MainThread) b'/statistics'
+[DEBUG] [2014-12-28 01:28:20,598] (MainThread) b'/structure'
+[DEBUG] [2014-12-28 01:28:20,598] (MainThread) b'/simultaneous'
+[DEBUG] [2014-12-28 01:28:20,598] (MainThread) b'/alarm'
+[DEBUG] [2014-12-28 01:28:20,599] (MainThread) 
+
+[DEBUG] [2014-12-28 01:28:20,599] (MainThread) SystemExecPlugin initialization
+[INFO] [2014-12-28 01:28:20,599] (MainThread) initialized successfully: {'onewire': <plugins.onewire.OneWirePlugin.OneWirePlugin object at 0x7f4aa7175ac8>, 'sysexec': <plugins.sysexec.SystemExecPlugin.SystemExecPlugin object at 0x7f4aa7175ba8>}
+[INFO] [2014-12-28 01:28:20,599] (MainThread) found plugins: {'onewire': <class 'plugins.onewire.OneWirePlugin.OneWirePlugin'>, 'mock': <class 'plugins.mock.MockPlugin.MockPlugin'>, 'sysexec': <class 'plugins.sysexec.SystemExecPlugin.SystemExecPlugin'>, 'ledstrip': <class 'plugins.ledstrip.LedStripPlugin.LedStripPlugin'>}
+[INFO] [2014-12-28 01:28:20,599] (MainThread) not loaded plugins: {'database': "No module named 'pymysql'", 'ledstrip': 'Threre is no device ttyACM* in /dev'}
+[INFO] [2014-12-28 01:28:20,600] (MainThread) Context initialized
+[INFO] [2014-12-28 01:28:20,600] (MainThread) SQL_conf: SELECT name, definition, runoninit FROM process
+[DEBUG] [2014-12-28 01:28:20,600] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.345805050000/temperature", "retvar": "t"} )
+[DEBUG] [2014-12-28 01:28:20,601] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"onewire"', 'retvar': '"t"', 'reference': '"/28.345805050000/temperature"'}
+[DEBUG] [2014-12-28 01:28:20,601] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"onewire\"", "retvar": "\"t\"", "reference": "\"/28.345805050000/temperature\""} )
+[DEBUG] [2014-12-28 01:28:20,601] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,601] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.F2CF39040000/temperature10", "retvar":"v"} )
+[DEBUG] [2014-12-28 01:28:20,602] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"onewire"', 'retvar': '"v"', 'reference': '"/28.F2CF39040000/temperature10"'}
+[DEBUG] [2014-12-28 01:28:20,602] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"onewire\"", "retvar": "\"v\"", "reference": "\"/28.F2CF39040000/temperature10\""} )
+[DEBUG] [2014-12-28 01:28:20,602] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,602] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.1D9D39040000/temperature10", "retvar":"v"} )
+[DEBUG] [2014-12-28 01:28:20,602] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"onewire"', 'retvar': '"v"', 'reference': '"/28.1D9D39040000/temperature10"'}
+[DEBUG] [2014-12-28 01:28:20,603] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"onewire\"", "retvar": "\"v\"", "reference": "\"/28.1D9D39040000/temperature10\""} )
+[DEBUG] [2014-12-28 01:28:20,603] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,603] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.259039040000/temperature10", "retvar":"v"} )
+[DEBUG] [2014-12-28 01:28:20,603] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"onewire"', 'retvar': '"v"', 'reference': '"/28.259039040000/temperature10"'}
+[DEBUG] [2014-12-28 01:28:20,603] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"onewire\"", "retvar": "\"v\"", "reference": "\"/28.259039040000/temperature10\""} )
+[DEBUG] [2014-12-28 01:28:20,603] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,604] (MainThread) Begin building expression tree with ( {"type": "RequestNode",	"plugin": "sysexec",	"reference": "cvlc --play-and-exit sounds/<filename>"} )
+[DEBUG] [2014-12-28 01:28:20,604] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"sysexec"', 'reference': '"cvlc --play-and-exit sounds/<filename>"'}
+[DEBUG] [2014-12-28 01:28:20,604] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"sysexec\"", "reference": "\"cvlc --play-and-exit sounds/<filename>\""} )
+[DEBUG] [2014-12-28 01:28:20,604] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,604] (MainThread) Begin building expression tree with ( { "type": "RequestNode", 	"plugin": "procexec", 	"reference": "t_outdoor", 	"retvar": "t_outdoor", "next": [ { 			"type": "RequestNode", 			"plugin": "shome_db", 			"reference": "INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor');" 		} 	] } )
+[DEBUG] [2014-12-28 01:28:20,604] (MainThread) create node decomposition result: {'next': '[{"type": "RequestNode", "plugin": "shome_db", "reference": "INSERT INTO temperature VALUES(NULL, \'<@DATETIME>\', <t_outdoor>, \'t_outdoor\');"}]', 'type': '"RequestNode"', 'plugin': '"procexec"', 'retvar': '"t_outdoor"', 'reference': '"t_outdoor"'}
+[DEBUG] [2014-12-28 01:28:20,605] (MainThread) AbstractNode constructor call ( {"next": "[{\"type\": \"RequestNode\", \"plugin\": \"shome_db\", \"reference\": \"INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor');\"}]", "type": "\"RequestNode\"", "plugin": "\"procexec\"", "retvar": "\"t_outdoor\"", "reference": "\"t_outdoor\""} )
+[DEBUG] [2014-12-28 01:28:20,605] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"shome_db"', 'reference': '"INSERT INTO temperature VALUES(NULL, \'<@DATETIME>\', <t_outdoor>, \'t_outdoor\');"'}
+[DEBUG] [2014-12-28 01:28:20,605] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"shome_db\"", "reference": "\"INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor');\""} )
+[DEBUG] [2014-12-28 01:28:20,605] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,605] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,606] (MainThread) Begin building expression tree with ( {
+  "type": "RequestNode",
+  "plugin": "onewire",
+  "reference": "/3A.F2360D000000/sensed.B",
+  "retvar": "state",
+  "next": [
+      {
+        "type": "ConditionalNode",
+        "condition": "<state> == 1",
+        "yes": [
+          {"type": "RequestNode","plugin": "scheduler","reference": "stop doorbell"},
+          {"type": "RequestNode","plugin": "ledstrip","reference":"#00FFFF:1"},
+          {"type": "RequestNode","plugin": "procexec","reference": "playsound{filename=doorbell.mp3}"},
+          {"type": "RequestNode","plugin": "shome_db","reference": "INSERT INTO events VALUES(NULL, 'doorbell', 'ring', '<@DATETIME>', NULL)"},
+          {"type": "RequestNode","plugin": "onewire","reference": "/3A.F2360D000000/PIO.A","value":0},
+          {"type": "RequestNode",
+           "plugin": "delay",
+           "reference": "10",
+           "next": [
+             {"type": "RequestNode","plugin": "onewire","reference": "/3A.F2360D000000/PIO.A","value":1},
+             {"type": "RequestNode","plugin": "ledstrip","reference":"#000000:1"},
+             {"type": "RequestNode","plugin": "scheduler","reference": "start doorbell"}
+           ] 
+          }
+        ]
+      }
+  ]
+} )
+[DEBUG] [2014-12-28 01:28:20,606] (MainThread) create node decomposition result: {'next': '[{"type": "ConditionalNode", "yes": [{"type": "RequestNode", "plugin": "scheduler", "reference": "stop doorbell"}, {"type": "RequestNode", "plugin": "ledstrip", "reference": "#00FFFF:1"}, {"type": "RequestNode", "plugin": "procexec", "reference": "playsound{filename=doorbell.mp3}"}, {"type": "RequestNode", "plugin": "shome_db", "reference": "INSERT INTO events VALUES(NULL, \'doorbell\', \'ring\', \'<@DATETIME>\', NULL)"}, {"type": "RequestNode", "plugin": "onewire", "value": 0, "reference": "/3A.F2360D000000/PIO.A"}, {"next": [{"type": "RequestNode", "plugin": "onewire", "value": 1, "reference": "/3A.F2360D000000/PIO.A"}, {"type": "RequestNode", "plugin": "ledstrip", "reference": "#000000:1"}, {"type": "RequestNode", "plugin": "scheduler", "reference": "start doorbell"}], "type": "RequestNode", "plugin": "delay", "reference": "10"}], "condition": "<state> == 1"}]', 'type': '"RequestNode"', 'plugin': '"onewire"', 'retvar': '"state"', 'reference': '"/3A.F2360D000000/sensed.B"'}
+[DEBUG] [2014-12-28 01:28:20,606] (MainThread) AbstractNode constructor call ( {"next": "[{\"type\": \"ConditionalNode\", \"yes\": [{\"type\": \"RequestNode\", \"plugin\": \"scheduler\", \"reference\": \"stop doorbell\"}, {\"type\": \"RequestNode\", \"plugin\": \"ledstrip\", \"reference\": \"#00FFFF:1\"}, {\"type\": \"RequestNode\", \"plugin\": \"procexec\", \"reference\": \"playsound{filename=doorbell.mp3}\"}, {\"type\": \"RequestNode\", \"plugin\": \"shome_db\", \"reference\": \"INSERT INTO events VALUES(NULL, 'doorbell', 'ring', '<@DATETIME>', NULL)\"}, {\"type\": \"RequestNode\", \"plugin\": \"onewire\", \"value\": 0, \"reference\": \"/3A.F2360D000000/PIO.A\"}, {\"next\": [{\"type\": \"RequestNode\", \"plugin\": \"onewire\", \"value\": 1, \"reference\": \"/3A.F2360D000000/PIO.A\"}, {\"type\": \"RequestNode\", \"plugin\": \"ledstrip\", \"reference\": \"#000000:1\"}, {\"type\": \"RequestNode\", \"plugin\": \"scheduler\", \"reference\": \"start doorbell\"}], \"type\": \"RequestNode\", \"plugin\": \"delay\", \"reference\": \"10\"}], \"condition\": \"<state> == 1\"}]", "type": "\"RequestNode\"", "plugin": "\"onewire\"", "retvar": "\"state\"", "reference": "\"/3A.F2360D000000/sensed.B\""} )
+[DEBUG] [2014-12-28 01:28:20,606] (MainThread) create node decomposition result: {'type': '"ConditionalNode"', 'yes': '[{"type": "RequestNode", "plugin": "scheduler", "reference": "stop doorbell"}, {"type": "RequestNode", "plugin": "ledstrip", "reference": "#00FFFF:1"}, {"type": "RequestNode", "plugin": "procexec", "reference": "playsound{filename=doorbell.mp3}"}, {"type": "RequestNode", "plugin": "shome_db", "reference": "INSERT INTO events VALUES(NULL, \'doorbell\', \'ring\', \'<@DATETIME>\', NULL)"}, {"type": "RequestNode", "plugin": "onewire", "value": 0, "reference": "/3A.F2360D000000/PIO.A"}, {"next": [{"type": "RequestNode", "plugin": "onewire", "value": 1, "reference": "/3A.F2360D000000/PIO.A"}, {"type": "RequestNode", "plugin": "ledstrip", "reference": "#000000:1"}, {"type": "RequestNode", "plugin": "scheduler", "reference": "start doorbell"}], "type": "RequestNode", "plugin": "delay", "reference": "10"}]', 'condition': '"<state> == 1"'}
+[DEBUG] [2014-12-28 01:28:20,606] (MainThread) AbstractNode constructor call ( {"type": "\"ConditionalNode\"", "yes": "[{\"type\": \"RequestNode\", \"plugin\": \"scheduler\", \"reference\": \"stop doorbell\"}, {\"type\": \"RequestNode\", \"plugin\": \"ledstrip\", \"reference\": \"#00FFFF:1\"}, {\"type\": \"RequestNode\", \"plugin\": \"procexec\", \"reference\": \"playsound{filename=doorbell.mp3}\"}, {\"type\": \"RequestNode\", \"plugin\": \"shome_db\", \"reference\": \"INSERT INTO events VALUES(NULL, 'doorbell', 'ring', '<@DATETIME>', NULL)\"}, {\"type\": \"RequestNode\", \"plugin\": \"onewire\", \"value\": 0, \"reference\": \"/3A.F2360D000000/PIO.A\"}, {\"next\": [{\"type\": \"RequestNode\", \"plugin\": \"onewire\", \"value\": 1, \"reference\": \"/3A.F2360D000000/PIO.A\"}, {\"type\": \"RequestNode\", \"plugin\": \"ledstrip\", \"reference\": \"#000000:1\"}, {\"type\": \"RequestNode\", \"plugin\": \"scheduler\", \"reference\": \"start doorbell\"}], \"type\": \"RequestNode\", \"plugin\": \"delay\", \"reference\": \"10\"}]", "condition": "\"<state> == 1\""} )
+[DEBUG] [2014-12-28 01:28:20,606] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"scheduler"', 'reference': '"stop doorbell"'}
+[DEBUG] [2014-12-28 01:28:20,606] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"scheduler\"", "reference": "\"stop doorbell\""} )
+[DEBUG] [2014-12-28 01:28:20,606] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,606] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"ledstrip"', 'reference': '"#00FFFF:1"'}
+[DEBUG] [2014-12-28 01:28:20,606] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"ledstrip\"", "reference": "\"#00FFFF:1\""} )
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"procexec"', 'reference': '"playsound{filename=doorbell.mp3}"'}
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"procexec\"", "reference": "\"playsound{filename=doorbell.mp3}\""} )
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"shome_db"', 'reference': '"INSERT INTO events VALUES(NULL, \'doorbell\', \'ring\', \'<@DATETIME>\', NULL)"'}
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"shome_db\"", "reference": "\"INSERT INTO events VALUES(NULL, 'doorbell', 'ring', '<@DATETIME>', NULL)\""} )
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"onewire"', 'value': '0', 'reference': '"/3A.F2360D000000/PIO.A"'}
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"onewire\"", "value": "0", "reference": "\"/3A.F2360D000000/PIO.A\""} )
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) create node decomposition result: {'next': '[{"type": "RequestNode", "plugin": "onewire", "value": 1, "reference": "/3A.F2360D000000/PIO.A"}, {"type": "RequestNode", "plugin": "ledstrip", "reference": "#000000:1"}, {"type": "RequestNode", "plugin": "scheduler", "reference": "start doorbell"}]', 'type': '"RequestNode"', 'plugin': '"delay"', 'reference': '"10"'}
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) AbstractNode constructor call ( {"next": "[{\"type\": \"RequestNode\", \"plugin\": \"onewire\", \"value\": 1, \"reference\": \"/3A.F2360D000000/PIO.A\"}, {\"type\": \"RequestNode\", \"plugin\": \"ledstrip\", \"reference\": \"#000000:1\"}, {\"type\": \"RequestNode\", \"plugin\": \"scheduler\", \"reference\": \"start doorbell\"}]", "type": "\"RequestNode\"", "plugin": "\"delay\"", "reference": "\"10\""} )
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"onewire"', 'value': '1', 'reference': '"/3A.F2360D000000/PIO.A"'}
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"onewire\"", "value": "1", "reference": "\"/3A.F2360D000000/PIO.A\""} )
+[DEBUG] [2014-12-28 01:28:20,607] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,608] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"ledstrip"', 'reference': '"#000000:1"'}
+[DEBUG] [2014-12-28 01:28:20,608] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"ledstrip\"", "reference": "\"#000000:1\""} )
+[DEBUG] [2014-12-28 01:28:20,608] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,608] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"scheduler"', 'reference': '"start doorbell"'}
+[DEBUG] [2014-12-28 01:28:20,608] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"scheduler\"", "reference": "\"start doorbell\""} )
+[DEBUG] [2014-12-28 01:28:20,608] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,608] (MainThread) Request node constructing...
+[DEBUG] [2014-12-28 01:28:20,608] (MainThread) Conditional node constructing...
+[DEBUG] [2014-12-28 01:28:20,608] (MainThread) Request node constructing...
+[INFO] [2014-12-28 01:28:20,608] (MainThread) SQL_conf: SELECT process, title, description, scheme, isrunned FROM task. Result: [{'isrunned': False, 'title': 'doorbell', 'description': 'Doorbell control process', 'scheme': '0.5', 'process': 'doorbell'}]
+[DEBUG] [2014-12-28 01:28:20,608] (MainThread) Loading: ('doorbell', 'doorbell', 'Doorbell control process', '0.5', False)
+[WARNING] [2014-12-28 01:28:33,505] (MainThread) 404 GET /admin/index.html (127.0.0.1) 1.37ms
+[INFO] [2014-12-28 01:28:48,002] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 6.91ms
+[INFO] [2014-12-28 01:28:50,603] (MainThread) 304 GET /admin/static/data-examples/scenarios.json (127.0.0.1) 2.03ms
+[INFO] [2014-12-28 01:28:50,800] (MainThread) 200 GET /admin/static/modules/scheduler.html (127.0.0.1) 0.80ms
+[INFO] [2014-12-28 01:28:50,986] (MainThread) 200 GET /admin/scheduler/alltasks (127.0.0.1) 0.44ms
+[INFO] [2014-12-28 01:29:10,996] (MainThread) 304 GET / (127.0.0.1) 1.74ms
+[DEBUG] [2014-12-28 01:29:46,912] (MainThread) Message recieved: body ( process create pause: {
+  "type":"DelayNode",
+  "delay":"5"
+} )
+[DEBUG] [2014-12-28 01:29:46,912] (MainThread) Input string interpreted as request to process reconfiguring ( process create pause: {
+  "type":"DelayNode",
+  "delay":"5"
+}
+[DEBUG] [2014-12-28 01:29:46,912] (MainThread) Input parsed as: create process with name ( pause ) and definition ( 
+[DEBUG] [2014-12-28 01:29:46,913] (MainThread) Begin building expression tree with ( {
+  "type":"DelayNode",
+  "delay":"5"
+} )
+[DEBUG] [2014-12-28 01:29:46,913] (MainThread) create node decomposition result: {'type': '"DelayNode"', 'delay': '"5"'}
+[DEBUG] [2014-12-28 01:29:46,913] (MainThread) AbstractNode constructor call ( {"type": "\"DelayNode\"", "delay": "\"5\""} )
+[ERROR] [2014-12-28 01:29:46,913] (MainThread) could not convert string to float: '"5"'
+[INFO] [2014-12-28 01:29:46,913] (MainThread) 200 POST /command (127.0.0.1) 2.72ms
+[DEBUG] [2014-12-28 01:32:25,596] (MainThread) Message recieved: body ( process create pause: {
+  "type":"DelayNode",
+  "delay":5
+} )
+[DEBUG] [2014-12-28 01:32:25,596] (MainThread) Input string interpreted as request to process reconfiguring ( process create pause: {
+  "type":"DelayNode",
+  "delay":5
+}
+[DEBUG] [2014-12-28 01:32:25,596] (MainThread) Input parsed as: create process with name ( pause ) and definition ( 
+[DEBUG] [2014-12-28 01:32:25,597] (MainThread) Begin building expression tree with ( {
+  "type":"DelayNode",
+  "delay":5
+} )
+[DEBUG] [2014-12-28 01:32:25,597] (MainThread) create node decomposition result: {'type': '"DelayNode"', 'delay': '5'}
+[DEBUG] [2014-12-28 01:32:25,597] (MainThread) AbstractNode constructor call ( {"type": "\"DelayNode\"", "delay": "5"} )
+[DEBUG] [2014-12-28 01:32:25,597] (MainThread) Delay node constructing...
+[INFO] [2014-12-28 01:32:25,597] (MainThread) SQL_conf: INSERT INTO process (name, definition, runoninit) VALUES('pause', '{
+  "type":"DelayNode",
+  "delay":5
+}', NULL)
+[INFO] [2014-12-28 01:32:25,673] (MainThread) 200 POST /command (127.0.0.1) 77.03ms
+[DEBUG] [2014-12-28 01:32:35,398] (MainThread) Message recieved: body ( pause )
+[DEBUG] [2014-12-28 01:32:35,399] (MainThread) Input string interpreted as process tag
+[DEBUG] [2014-12-28 01:32:35,399] (MainThread) ActionProcessor process method call with message ( pause )
+[DEBUG] [2014-12-28 01:32:35,399] (MainThread) action processor process method call in the same thread
+[DEBUG] [2014-12-28 01:32:35,399] (MainThread) process wrapper with ( pause )
+[DEBUG] [2014-12-28 01:32:35,399] (MainThread) ActionProcessor: parsing message( pause )
+[DEBUG] [2014-12-28 01:32:35,400] (MainThread) Message matched as command pause without value 
+[INFO] [2014-12-28 01:32:35,400] (MainThread) Process pause executed
+[DEBUG] [2014-12-28 01:32:35,401] (MainThread) thread executed in process ( pause )
+[DEBUG] [2014-12-28 01:32:35,401] (Thread-1  ) Executed DelayNode ofpause with delay on 5.0
+[DEBUG] [2014-12-28 01:32:35,401] (Thread-1  ) All parallel nodes of process pause completed
+[DEBUG] [2014-12-28 01:32:40,407] (Thread-1  ) All ways DelayNode completed
+[INFO] [2014-12-28 01:32:40,408] (MainThread) 200 POST /command (127.0.0.1) 5010.28ms
+[DEBUG] [2014-12-28 01:33:33,795] (MainThread) SchedulerTaskHandler post: Creating // {process: pause, isrunned:True, type: interval, scheme: 60, description: 
+[DEBUG] [2014-12-28 01:33:33,795] (MainThread) pause started
+[DEBUG] [2014-12-28 01:33:33,795] (MainThread) ActionProcessor process method call with message ( pause )
+[DEBUG] [2014-12-28 01:33:33,796] (MainThread) action processor process method call in the same thread
+[DEBUG] [2014-12-28 01:33:33,796] (MainThread) process wrapper with ( pause )
+[DEBUG] [2014-12-28 01:33:33,796] (MainThread) ActionProcessor: parsing message( pause )
+[DEBUG] [2014-12-28 01:33:33,796] (MainThread) Message matched as command pause without value 
+[INFO] [2014-12-28 01:33:33,796] (MainThread) Process pause executed
+[DEBUG] [2014-12-28 01:33:33,796] (MainThread) thread executed in process ( pause )
+[DEBUG] [2014-12-28 01:33:33,796] (Thread-2  ) Executed DelayNode ofpause with delay on 5.0
+[DEBUG] [2014-12-28 01:33:33,796] (Thread-2  ) All parallel nodes of process pause completed
+[DEBUG] [2014-12-28 01:33:38,800] (Thread-2  ) All ways DelayNode completed
+[INFO] [2014-12-28 01:33:38,801] (MainThread) SQL_conf: ('INSERT INTO task (process, title, scheme, isrunned, description) VALUES(?,?,?,?,?)', ('pause', 'Creating', 60, True, ''))
+[INFO] [2014-12-28 01:33:38,806] (MainThread) 200 POST /admin/scheduler/task/Creating (127.0.0.1) 5011.48ms
+[INFO] [2014-12-28 01:33:38,852] (MainThread) 200 GET /admin/scheduler/alltasks (127.0.0.1) 0.45ms
+[DEBUG] [2014-12-28 01:33:42,690] (MainThread) SchedulerTaskHandler put: Creating // {process: None, isrunned:False, type: None, scheme: None, description: None
+[DEBUG] [2014-12-28 01:33:42,690] (MainThread) pause stopping...
+[INFO] [2014-12-28 01:33:42,907] (MainThread) SQL_conf: ('UPDATE task SET scheme=?, isrunned=?, process=? WHERE title=?', (60.0, False, 'pause', 'Creating')); rows affected: 1
+[INFO] [2014-12-28 01:33:42,908] (MainThread) 200 PUT /admin/scheduler/task/Creating (127.0.0.1) 218.37ms
+[DEBUG] [2014-12-28 01:33:48,539] (MainThread) SchedulerTaskHandler delete: Creating
+[DEBUG] [2014-12-28 01:33:48,658] (MainThread) trying to delete task with title Creating from scheduler
+[DEBUG] [2014-12-28 01:33:48,658] (MainThread) pause stopping...
+[INFO] [2014-12-28 01:33:48,658] (MainThread) SQL_conf: DELETE FROM task WHERE title=? with Creating
+[INFO] [2014-12-28 01:33:48,665] (MainThread) 200 DELETE /admin/scheduler/task/Creating (127.0.0.1) 125.57ms
+[INFO] [2014-12-28 01:33:48,668] (MainThread) 200 GET /admin/scheduler/alltasks (127.0.0.1) 0.44ms
+[DEBUG] [2014-12-28 01:34:04,790] (MainThread) SchedulerTaskHandler post: czcz // {process: pause, isrunned:False, type: interval, scheme: 59, description: 
+[INFO] [2014-12-28 01:34:04,790] (MainThread) SQL_conf: ('INSERT INTO task (process, title, scheme, isrunned, description) VALUES(?,?,?,?,?)', ('pause', 'czcz', 59, False, ''))
+[INFO] [2014-12-28 01:34:04,997] (MainThread) 200 POST /admin/scheduler/task/czcz (127.0.0.1) 208.17ms
+[INFO] [2014-12-28 01:34:05,001] (MainThread) 200 GET /admin/scheduler/alltasks (127.0.0.1) 0.45ms
+[DEBUG] [2014-12-28 01:34:21,369] (MainThread) SchedulerTaskHandler delete: czcz
+[DEBUG] [2014-12-28 01:34:21,369] (MainThread) trying to delete task with title czcz from scheduler
+[DEBUG] [2014-12-28 01:34:21,369] (MainThread) pause stopping...
+[INFO] [2014-12-28 01:34:21,370] (MainThread) SQL_conf: DELETE FROM task WHERE title=? with czcz
+[INFO] [2014-12-28 01:34:21,577] (MainThread) 200 DELETE /admin/scheduler/task/czcz (127.0.0.1) 208.33ms
+[INFO] [2014-12-28 01:34:21,583] (MainThread) 200 GET /admin/scheduler/alltasks (127.0.0.1) 1.22ms
+[WARNING] [2014-12-28 01:34:51,826] (MainThread) 404 GET /admin/static/js/angular.min.js.map (127.0.0.1) 1.23ms
+[INFO] [2014-12-28 01:34:51,831] (MainThread) 200 GET /admin/static/js/angular-animate.min.js.map (127.0.0.1) 2.18ms
+[INFO] [2014-12-28 01:34:51,832] (MainThread) 200 GET /admin/static/js/angular-route.min.js.map (127.0.0.1) 1.51ms
+[WARNING] [2014-12-28 01:34:51,953] (MainThread) 404 GET /admin/static/js/angular-animate.js (127.0.0.1) 0.75ms

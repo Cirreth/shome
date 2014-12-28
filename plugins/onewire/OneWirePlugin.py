@@ -28,7 +28,7 @@ class OneWirePlugin(SHomePlugin):
 
     def _read(self, address):
         attempt = 0
-        logging.debug('OneWirePlugin read address '+address+' (attempt: '+attempt+')')
+        logging.debug('OneWirePlugin read address '+address+' (attempt: '+str(attempt)+')')
         while attempt < self._READ_ATTEMPTS_COUNT:
             try:
                 if address.find('dir ') == 0:
@@ -47,7 +47,7 @@ class OneWirePlugin(SHomePlugin):
         logging.debug('OneWirePlugin have writen value ' + str(value) + ' to address '+address+' with result : '+str(res))
 
     def call(self, reference, value=None):
-        if value != None: #zero is value, but it is falsy
+        if value is not None: #zero is value, but it is falsy
                 return self._write(reference, value)
         else:
             return self._read(reference)

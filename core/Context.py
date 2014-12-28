@@ -41,9 +41,6 @@ class Context:
         #load tasks
         for k in self.config.get_all_tasks():
             logging.debug('Loading: '+str((k['process'], k['title'], k['description'], k['scheme'], k['isrunned'])))
-            self.scheduler.create(k['process'], k['title'], k['scheme'], k['description'])
-            if k['isrunned'] is True:
-                self.scheduler.start(k['process'])
-
+            self.scheduler.create(k['process'], k['title'], k['scheme'], k['isrunned'], k['description'])
 
         self.web_server = WebServer(self)
