@@ -38,6 +38,8 @@
   </tr>
 </table>
 
+    <button class="sch-btn" ng-click="test()">test process</button>
+
     <request-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-class="{active: node.active}"
         ng-repeat="node in nodes" ng-if="node.type=='RequestNode'">
         <!--ng-style="{left: node.position.left, top: node.position.top}"-->

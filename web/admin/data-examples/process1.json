@@ -20,8 +20,8 @@
       "left": 340,
       "top": 176
     },
-    "next": ["rn2", "rn3"],
-    "parallel": []
+    "next": ["rn2"],
+    "parallel": ["rn3"]
   },
   {
     "id": "rn2",

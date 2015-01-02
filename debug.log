@@ -1,141 +1,1575 @@
-[DEBUG] [2014-12-21 22:09:26,971] (MainThread) Action processor initialization
-[DEBUG] [2014-12-21 22:09:26,971] (MainThread) Scheduler initialization
-[DEBUG] [2014-12-21 22:09:26,971] (MainThread) Performer initialization
-[INFO] [2014-12-21 22:09:26,971] (MainThread) SQL_conf: SELECT name, params, enabled FROM plugin
-[ERROR] [2014-12-21 22:09:26,976] (MainThread) Not loaded database - No module named 'pymysql'
-[DEBUG] [2014-12-21 22:09:26,978] (MainThread) SystemExecPlugin initialization
-[DEBUG] [2014-12-21 22:09:26,978] (MainThread) MockPlugin initialization
-[DEBUG] [2014-12-21 22:09:26,978] (MainThread) OneWirePlugin initialization
-[DEBUG] [2014-12-21 22:09:26,979] (MainThread) 
+[DEBUG] [2015-01-02 10:56:25,627] (MainThread) Action processor initialization
+[DEBUG] [2015-01-02 10:56:25,627] (MainThread) Scheduler initialization
+[DEBUG] [2015-01-02 10:56:25,628] (MainThread) Performer initialization
+[INFO] [2015-01-02 10:56:25,628] (MainThread) SQL_conf: SELECT name, params, enabled FROM plugin
+[ERROR] [2015-01-02 10:56:25,637] (MainThread) Not loaded database - No module named 'pymysql'
+[DEBUG] [2015-01-02 10:56:25,641] (MainThread) SystemExecPlugin initialization
+[DEBUG] [2015-01-02 10:56:25,641] (MainThread) OneWirePlugin initialization
+[DEBUG] [2015-01-02 10:56:25,641] (MainThread) 
 OneWirePlugin list dir:
-[DEBUG] [2014-12-21 22:09:27,146] (MainThread) b'/28.345805050000'
-[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/28.F2CF39040000'
-[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/28.259039040000'
-[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/28.1D9D39040000'
-[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/3A.F2360D000000'
-[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/3A.C9330D000000'
-[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/81.F34132000000'
-[DEBUG] [2014-12-21 22:09:27,147] (MainThread) b'/bus.0'
-[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/uncached'
-[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/settings'
-[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/system'
-[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/statistics'
-[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/structure'
-[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/simultaneous'
-[DEBUG] [2014-12-21 22:09:27,148] (MainThread) b'/alarm'
-[DEBUG] [2014-12-21 22:09:27,149] (MainThread) 
+[DEBUG] [2015-01-02 10:56:25,808] (MainThread) b'/28.345805050000'
+[DEBUG] [2015-01-02 10:56:25,808] (MainThread) b'/28.F2CF39040000'
+[DEBUG] [2015-01-02 10:56:25,808] (MainThread) b'/28.259039040000'
+[DEBUG] [2015-01-02 10:56:25,808] (MainThread) b'/28.1D9D39040000'
+[DEBUG] [2015-01-02 10:56:25,809] (MainThread) b'/3A.F2360D000000'
+[DEBUG] [2015-01-02 10:56:25,809] (MainThread) b'/3A.C9330D000000'
+[DEBUG] [2015-01-02 10:56:25,809] (MainThread) b'/81.F34132000000'
+[DEBUG] [2015-01-02 10:56:25,809] (MainThread) b'/bus.0'
+[DEBUG] [2015-01-02 10:56:25,809] (MainThread) b'/uncached'
+[DEBUG] [2015-01-02 10:56:25,809] (MainThread) b'/settings'
+[DEBUG] [2015-01-02 10:56:25,809] (MainThread) b'/system'
+[DEBUG] [2015-01-02 10:56:25,809] (MainThread) b'/statistics'
+[DEBUG] [2015-01-02 10:56:25,809] (MainThread) b'/structure'
+[DEBUG] [2015-01-02 10:56:25,809] (MainThread) b'/simultaneous'
+[DEBUG] [2015-01-02 10:56:25,809] (MainThread) b'/alarm'
+[DEBUG] [2015-01-02 10:56:25,809] (MainThread) 
 
-[INFO] [2014-12-21 22:09:27,149] (MainThread) initialized successfully: {'sysexec': <plugins.sysexec.SystemExecPlugin.SystemExecPlugin object at 0x7f475dbb9860>, 'mock': <plugins.mock.MockPlugin.MockPlugin object at 0x7f475dbb9898>, 'onewire': <plugins.onewire.OneWirePlugin.OneWirePlugin object at 0x7f475dbb9a20>}
-[INFO] [2014-12-21 22:09:27,149] (MainThread) found plugins: {'sysexec': <class 'plugins.sysexec.SystemExecPlugin.SystemExecPlugin'>, 'ledstrip': <class 'plugins.ledstrip.LedStripPlugin.LedStripPlugin'>, 'mock': <class 'plugins.mock.MockPlugin.MockPlugin'>, 'onewire': <class 'plugins.onewire.OneWirePlugin.OneWirePlugin'>}
-[INFO] [2014-12-21 22:09:27,149] (MainThread) not loaded plugins: {'ledstrip': 'Threre is no device ttyACM* in /dev', 'database': "No module named 'pymysql'"}
-[INFO] [2014-12-21 22:09:27,149] (MainThread) Context initialized
-[INFO] [2014-12-21 22:09:27,149] (MainThread) SQL_conf: SELECT name, definition, runoninit FROM process
-[DEBUG] [2014-12-21 22:09:27,150] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.345805050000/temperature", "retvar": "t"} )
-[DEBUG] [2014-12-21 22:09:27,150] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"/28.345805050000/temperature"', 'retvar': '"t"', 'plugin': '"onewire"'}
-[DEBUG] [2014-12-21 22:09:27,151] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"/28.345805050000/temperature\"", "retvar": "\"t\"", "plugin": "\"onewire\""} )
-[DEBUG] [2014-12-21 22:09:27,151] (MainThread) Request node constructing...
-[DEBUG] [2014-12-21 22:09:27,151] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.F2CF39040000/temperature10", "retvar":"v"} )
-[DEBUG] [2014-12-21 22:09:27,151] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"/28.F2CF39040000/temperature10"', 'retvar': '"v"', 'plugin': '"onewire"'}
-[DEBUG] [2014-12-21 22:09:27,151] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"/28.F2CF39040000/temperature10\"", "retvar": "\"v\"", "plugin": "\"onewire\""} )
-[DEBUG] [2014-12-21 22:09:27,151] (MainThread) Request node constructing...
-[DEBUG] [2014-12-21 22:09:27,152] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.1D9D39040000/temperature10", "retvar":"v"} )
-[DEBUG] [2014-12-21 22:09:27,152] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"/28.1D9D39040000/temperature10"', 'retvar': '"v"', 'plugin': '"onewire"'}
-[DEBUG] [2014-12-21 22:09:27,152] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"/28.1D9D39040000/temperature10\"", "retvar": "\"v\"", "plugin": "\"onewire\""} )
-[DEBUG] [2014-12-21 22:09:27,152] (MainThread) Request node constructing...
-[DEBUG] [2014-12-21 22:09:27,152] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.259039040000/temperature10", "retvar":"v"} )
-[DEBUG] [2014-12-21 22:09:27,153] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"/28.259039040000/temperature10"', 'retvar': '"v"', 'plugin': '"onewire"'}
-[DEBUG] [2014-12-21 22:09:27,153] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"/28.259039040000/temperature10\"", "retvar": "\"v\"", "plugin": "\"onewire\""} )
-[DEBUG] [2014-12-21 22:09:27,153] (MainThread) Request node constructing...
-[DEBUG] [2014-12-21 22:09:27,153] (MainThread) Begin building expression tree with ( {"type": "RequestNode",	"plugin": "sysexec",	"reference": "cvlc --play-and-exit sounds/<filename>"} )
-[DEBUG] [2014-12-21 22:09:27,153] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"sysexec"', 'reference': '"cvlc --play-and-exit sounds/<filename>"'}
-[DEBUG] [2014-12-21 22:09:27,153] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"sysexec\"", "reference": "\"cvlc --play-and-exit sounds/<filename>\""} )
-[DEBUG] [2014-12-21 22:09:27,154] (MainThread) Request node constructing...
-[DEBUG] [2014-12-21 22:09:27,154] (MainThread) Begin building expression tree with ( { "type": "RequestNode", 	"plugin": "procexec", 	"reference": "t_outdoor", 	"retvar": "t_outdoor", "next": [ { 			"type": "RequestNode", 			"plugin": "shome_db", 			"reference": "INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor');" 		} 	] } )
-[DEBUG] [2014-12-21 22:09:27,154] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"t_outdoor"', 'retvar': '"t_outdoor"', 'next': '[{"type": "RequestNode", "plugin": "shome_db", "reference": "INSERT INTO temperature VALUES(NULL, \'<@DATETIME>\', <t_outdoor>, \'t_outdoor\');"}]', 'plugin': '"procexec"'}
-[DEBUG] [2014-12-21 22:09:27,154] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"t_outdoor\"", "retvar": "\"t_outdoor\"", "next": "[{\"type\": \"RequestNode\", \"plugin\": \"shome_db\", \"reference\": \"INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor');\"}]", "plugin": "\"procexec\""} )
-[DEBUG] [2014-12-21 22:09:27,154] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'plugin': '"shome_db"', 'reference': '"INSERT INTO temperature VALUES(NULL, \'<@DATETIME>\', <t_outdoor>, \'t_outdoor\');"'}
-[DEBUG] [2014-12-21 22:09:27,155] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "plugin": "\"shome_db\"", "reference": "\"INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor');\""} )
-[DEBUG] [2014-12-21 22:09:27,155] (MainThread) Request node constructing...
-[DEBUG] [2014-12-21 22:09:27,155] (MainThread) Request node constructing...
-[DEBUG] [2014-12-21 22:09:27,155] (MainThread) Begin building expression tree with ( {
-  "type":"RequestNode",
-  "plugin": "sysexec",
-  "reference":"echo aslfkjfs",
-  "retvar":"z"
+[INFO] [2015-01-02 10:56:25,809] (MainThread) initialized successfully: {'sysexec': <plugins.sysexec.SystemExecPlugin.SystemExecPlugin object at 0x7f440dd84a20>, 'onewire': <plugins.onewire.OneWirePlugin.OneWirePlugin object at 0x7f440dd84ac8>}
+[INFO] [2015-01-02 10:56:25,809] (MainThread) found plugins: {'sysexec': <class 'plugins.sysexec.SystemExecPlugin.SystemExecPlugin'>, 'ledstrip': <class 'plugins.ledstrip.LedStripPlugin.LedStripPlugin'>, 'mock': <class 'plugins.mock.MockPlugin.MockPlugin'>, 'onewire': <class 'plugins.onewire.OneWirePlugin.OneWirePlugin'>}
+[INFO] [2015-01-02 10:56:25,809] (MainThread) not loaded plugins: {'database': "No module named 'pymysql'", 'ledstrip': 'Threre is no device ttyACM* in /dev'}
+[INFO] [2015-01-02 10:56:25,809] (MainThread) Context initialized
+[INFO] [2015-01-02 10:56:25,809] (MainThread) SQL_conf: SELECT name, definition, runoninit FROM process
+[DEBUG] [2015-01-02 10:56:25,810] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.345805050000/temperature", "retvar": "t"} )
+[DEBUG] [2015-01-02 10:56:25,810] (MainThread) create node decomposition result: {'reference': '"/28.345805050000/temperature"', 'type': '"RequestNode"', 'retvar': '"t"', 'plugin': '"onewire"'}
+[DEBUG] [2015-01-02 10:56:25,810] (MainThread) AbstractNode constructor call ( {"reference": "\"/28.345805050000/temperature\"", "type": "\"RequestNode\"", "retvar": "\"t\"", "plugin": "\"onewire\""} )
+[DEBUG] [2015-01-02 10:56:25,810] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,810] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.F2CF39040000/temperature10", "retvar":"v"} )
+[DEBUG] [2015-01-02 10:56:25,810] (MainThread) create node decomposition result: {'reference': '"/28.F2CF39040000/temperature10"', 'type': '"RequestNode"', 'retvar': '"v"', 'plugin': '"onewire"'}
+[DEBUG] [2015-01-02 10:56:25,810] (MainThread) AbstractNode constructor call ( {"reference": "\"/28.F2CF39040000/temperature10\"", "type": "\"RequestNode\"", "retvar": "\"v\"", "plugin": "\"onewire\""} )
+[DEBUG] [2015-01-02 10:56:25,810] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,810] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.1D9D39040000/temperature10", "retvar":"v"} )
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) create node decomposition result: {'reference': '"/28.1D9D39040000/temperature10"', 'type': '"RequestNode"', 'retvar': '"v"', 'plugin': '"onewire"'}
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) AbstractNode constructor call ( {"reference": "\"/28.1D9D39040000/temperature10\"", "type": "\"RequestNode\"", "retvar": "\"v\"", "plugin": "\"onewire\""} )
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) Begin building expression tree with ( {"type": "RequestNode", "plugin": "onewire", "reference": "/28.259039040000/temperature10", "retvar":"v"} )
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) create node decomposition result: {'reference': '"/28.259039040000/temperature10"', 'type': '"RequestNode"', 'retvar': '"v"', 'plugin': '"onewire"'}
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) AbstractNode constructor call ( {"reference": "\"/28.259039040000/temperature10\"", "type": "\"RequestNode\"", "retvar": "\"v\"", "plugin": "\"onewire\""} )
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) Begin building expression tree with ( {"type": "RequestNode",	"plugin": "sysexec",	"reference": "cvlc --play-and-exit sounds/<filename>"} )
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) create node decomposition result: {'reference': '"cvlc --play-and-exit sounds/<filename>"', 'type': '"RequestNode"', 'plugin': '"sysexec"'}
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) AbstractNode constructor call ( {"reference": "\"cvlc --play-and-exit sounds/<filename>\"", "type": "\"RequestNode\"", "plugin": "\"sysexec\""} )
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) Begin building expression tree with ( { "type": "RequestNode", 	"plugin": "procexec", 	"reference": "t_outdoor", 	"retvar": "t_outdoor", "next": [ { 			"type": "RequestNode", 			"plugin": "shome_db", 			"reference": "INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor');" 		} 	] } )
+[DEBUG] [2015-01-02 10:56:25,811] (MainThread) create node decomposition result: {'next': '[{"reference": "INSERT INTO temperature VALUES(NULL, \'<@DATETIME>\', <t_outdoor>, \'t_outdoor\');", "type": "RequestNode", "plugin": "shome_db"}]', 'reference': '"t_outdoor"', 'type': '"RequestNode"', 'retvar': '"t_outdoor"', 'plugin': '"procexec"'}
+[DEBUG] [2015-01-02 10:56:25,812] (MainThread) AbstractNode constructor call ( {"next": "[{\"reference\": \"INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor');\", \"type\": \"RequestNode\", \"plugin\": \"shome_db\"}]", "reference": "\"t_outdoor\"", "type": "\"RequestNode\"", "retvar": "\"t_outdoor\"", "plugin": "\"procexec\""} )
+[DEBUG] [2015-01-02 10:56:25,812] (MainThread) create node decomposition result: {'reference': '"INSERT INTO temperature VALUES(NULL, \'<@DATETIME>\', <t_outdoor>, \'t_outdoor\');"', 'type': '"RequestNode"', 'plugin': '"shome_db"'}
+[DEBUG] [2015-01-02 10:56:25,812] (MainThread) AbstractNode constructor call ( {"reference": "\"INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor');\"", "type": "\"RequestNode\"", "plugin": "\"shome_db\""} )
+[DEBUG] [2015-01-02 10:56:25,812] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,812] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,812] (MainThread) Begin building expression tree with ( {
+  "type": "RequestNode",
+  "plugin": "onewire",
+  "reference": "/3A.F2360D000000/sensed.B",
+  "retvar": "state",
+  "next": [
+      {
+        "type": "ConditionalNode",
+        "condition": "<state> == 1",
+        "yes": [
+          {"type": "RequestNode","plugin": "scheduler","reference": "stop doorbell"},
+          {"type": "RequestNode","plugin": "ledstrip","reference":"#00FFFF:1"},
+          {"type": "RequestNode","plugin": "procexec","reference": "playsound{filename=doorbell.mp3}"},
+          {"type": "RequestNode","plugin": "shome_db","reference": "INSERT INTO events VALUES(NULL, 'doorbell', 'ring', '<@DATETIME>', NULL)"},
+          {"type": "RequestNode","plugin": "onewire","reference": "/3A.F2360D000000/PIO.A","value":0},
+          {"type": "RequestNode",
+           "plugin": "delay",
+           "reference": "10",
+           "next": [
+             {"type": "RequestNode","plugin": "onewire","reference": "/3A.F2360D000000/PIO.A","value":1},
+             {"type": "RequestNode","plugin": "ledstrip","reference":"#000000:1"},
+             {"type": "RequestNode","plugin": "scheduler","reference": "start doorbell"}
+           ] 
+          }
+        ]
+      }
+  ]
 } )
-[DEBUG] [2014-12-21 22:09:27,155] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"echo aslfkjfs"', 'retvar': '"z"', 'plugin': '"sysexec"'}
-[DEBUG] [2014-12-21 22:09:27,155] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"echo aslfkjfs\"", "retvar": "\"z\"", "plugin": "\"sysexec\""} )
-[DEBUG] [2014-12-21 22:09:27,156] (MainThread) Request node constructing...
-[INFO] [2014-12-21 22:09:27,156] (MainThread) SQL_conf: SELECT process, title, description, scheme, isrunned FROM task. Result: [{'process': 't_outdoor_get_and_write', 'title': 'Get outdoor temperature', 'scheme': '720.0', 'description': None, 'isrunned': True}, {'process': 'echo', 'title': 'Test echo', 'scheme': '60', 'description': 'Simple echo process', 'isrunned': False}]
-[DEBUG] [2014-12-21 22:09:27,156] (MainThread) Loading: ('t_outdoor_get_and_write', 'Get outdoor temperature', None, '720.0', True)
-[DEBUG] [2014-12-21 22:09:27,157] (MainThread) t_outdoor_get_and_write started
-[DEBUG] [2014-12-21 22:09:27,157] (MainThread) ActionProcessor process method call with message ( t_outdoor_get_and_write )
-[DEBUG] [2014-12-21 22:09:27,157] (MainThread) action processor process method call in the same thread
-[DEBUG] [2014-12-21 22:09:27,157] (MainThread) process wrapper with ( t_outdoor_get_and_write )
-[DEBUG] [2014-12-21 22:09:27,157] (MainThread) ActionProcessor: parsing message( t_outdoor_get_and_write )
-[DEBUG] [2014-12-21 22:09:27,158] (MainThread) Message matched as command t_outdoor_get_and_write without value 
-[INFO] [2014-12-21 22:09:27,158] (MainThread) Process t_outdoor_get_and_write executed
-[DEBUG] [2014-12-21 22:09:27,158] (MainThread) thread executed in process ( t_outdoor_get_and_write )
-[DEBUG] [2014-12-21 22:09:27,158] (Thread-1  ) Executed RequestNode with reference ( t_outdoor )
-[INFO] [2014-12-21 22:09:27,159] (Thread-2  ) Threads alive: 3
-[ERROR] [2014-12-21 22:09:27,159] (Thread-2  ) Plugin procexec is not found.
-[DEBUG] [2014-12-21 22:09:27,160] (Thread-2  ) Thread with ref ( t_outdoor ) evaluation result: Plugin procexec is not found.
-[DEBUG] [2014-12-21 22:09:27,160] (Thread-1  ) current node thread joined to main
-[DEBUG] [2014-12-21 22:09:27,160] (Thread-1  ) All parallel nodes of process t_outdoor_get_and_write completed
-[DEBUG] [2014-12-21 22:09:27,160] (Thread-1  ) Thread started
-[DEBUG] [2014-12-21 22:09:27,160] (Thread-3  ) Executed RequestNode with reference ( INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor'); )
-[DEBUG] [2014-12-21 22:09:27,160] (Thread-3  ) AbstractNode_PF: var with name ( @DATETIME ) found
-[DEBUG] [2014-12-21 22:09:27,161] (Thread-3  ) ... and detected as keyword
-[DEBUG] [2014-12-21 22:09:27,161] (Thread-1  ) node from process t_outdoor_get_and_write thread joined to main
-[DEBUG] [2014-12-21 22:09:27,161] (Thread-3  ) AbstractNode_PF: var with name ( t_outdoor ) found
-[DEBUG] [2014-12-21 22:09:27,161] (Thread-3  ) ... and name in process variables
-[INFO] [2014-12-21 22:09:27,162] (Thread-4  ) Threads alive: 4
-[DEBUG] [2014-12-21 22:09:27,162] (Thread-3  ) current node thread joined to main
-[ERROR] [2014-12-21 22:09:27,162] (Thread-4  ) Plugin shome_db is not found.
-[DEBUG] [2014-12-21 22:09:27,162] (Thread-4  ) Thread with ref ( INSERT INTO temperature VALUES(NULL, '2014-12-21 22:09:27', Plugin procexec is not found., 't_outdoor'); ) evaluation result: Plugin shome_db is not found.
-[DEBUG] [2014-12-21 22:09:27,163] (Thread-3  ) All parallel nodes of process t_outdoor_get_and_write completed
-[DEBUG] [2014-12-21 22:09:27,163] (Thread-3  ) All ways of INSERT INTO temperature VALUES(NULL, '<@DATETIME>', <t_outdoor>, 't_outdoor'); completed
-[DEBUG] [2014-12-21 22:09:27,163] (Thread-1  ) All ways of t_outdoor completed
-[DEBUG] [2014-12-21 22:09:27,164] (MainThread) Loading: ('echo', 'Test echo', 'Simple echo process', '60', False)
-[INFO] [2014-12-21 22:09:35,490] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 9.55ms
-[INFO] [2014-12-21 22:09:35,519] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.20ms
-[INFO] [2014-12-21 22:09:35,520] (MainThread) 200 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.73ms
-[INFO] [2014-12-21 22:09:35,521] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.66ms
-[INFO] [2014-12-21 22:09:35,522] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.51ms
-[INFO] [2014-12-21 22:09:35,523] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.58ms
-[INFO] [2014-12-21 22:09:35,525] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.57ms
-[INFO] [2014-12-21 22:09:35,527] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.39ms
-[INFO] [2014-12-21 22:09:35,528] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.22ms
-[INFO] [2014-12-21 22:09:35,530] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.62ms
-[INFO] [2014-12-21 22:09:35,531] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.61ms
-[INFO] [2014-12-21 22:09:35,533] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.57ms
-[INFO] [2014-12-21 22:09:35,534] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.61ms
-[INFO] [2014-12-21 22:09:35,535] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.95ms
-[INFO] [2014-12-21 22:09:35,536] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.67ms
-[INFO] [2014-12-21 22:09:35,537] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.64ms
-[INFO] [2014-12-21 22:09:35,539] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.75ms
-[INFO] [2014-12-21 22:09:35,540] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.50ms
-[INFO] [2014-12-21 22:09:35,544] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.61ms
-[INFO] [2014-12-21 22:09:35,742] (MainThread) 200 GET /admin/static/modules/scheduler.html (127.0.0.1) 0.69ms
-[INFO] [2014-12-21 22:09:35,829] (MainThread) 200 GET /admin/scheduler/tasks (127.0.0.1) 0.45ms
-[INFO] [2014-12-21 22:09:57,068] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.35ms
-[INFO] [2014-12-21 22:09:57,089] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.08ms
-[INFO] [2014-12-21 22:09:57,090] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.70ms
-[INFO] [2014-12-21 22:09:57,091] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.66ms
-[INFO] [2014-12-21 22:09:57,092] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.58ms
-[INFO] [2014-12-21 22:09:57,093] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.64ms
-[INFO] [2014-12-21 22:09:57,095] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.81ms
-[INFO] [2014-12-21 22:09:57,097] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.19ms
-[INFO] [2014-12-21 22:09:57,099] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.69ms
-[INFO] [2014-12-21 22:09:57,102] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.13ms
-[INFO] [2014-12-21 22:09:57,103] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.69ms
-[INFO] [2014-12-21 22:09:57,104] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.61ms
-[INFO] [2014-12-21 22:09:57,105] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.86ms
-[INFO] [2014-12-21 22:09:57,106] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.50ms
-[INFO] [2014-12-21 22:09:57,107] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.47ms
-[INFO] [2014-12-21 22:09:57,108] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.47ms
-[INFO] [2014-12-21 22:09:57,109] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.43ms
-[INFO] [2014-12-21 22:09:57,109] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.46ms
-[INFO] [2014-12-21 22:09:57,112] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.57ms
-[INFO] [2014-12-21 22:09:57,303] (MainThread) 304 GET /admin/static/modules/scheduler.html (127.0.0.1) 0.59ms
-[INFO] [2014-12-21 22:09:57,391] (MainThread) 304 GET /admin/scheduler/tasks (127.0.0.1) 0.44ms
+[DEBUG] [2015-01-02 10:56:25,812] (MainThread) create node decomposition result: {'next': '[{"yes": [{"reference": "stop doorbell", "type": "RequestNode", "plugin": "scheduler"}, {"reference": "#00FFFF:1", "type": "RequestNode", "plugin": "ledstrip"}, {"reference": "playsound{filename=doorbell.mp3}", "type": "RequestNode", "plugin": "procexec"}, {"reference": "INSERT INTO events VALUES(NULL, \'doorbell\', \'ring\', \'<@DATETIME>\', NULL)", "type": "RequestNode", "plugin": "shome_db"}, {"value": 0, "reference": "/3A.F2360D000000/PIO.A", "type": "RequestNode", "plugin": "onewire"}, {"next": [{"value": 1, "reference": "/3A.F2360D000000/PIO.A", "type": "RequestNode", "plugin": "onewire"}, {"reference": "#000000:1", "type": "RequestNode", "plugin": "ledstrip"}, {"reference": "start doorbell", "type": "RequestNode", "plugin": "scheduler"}], "reference": "10", "type": "RequestNode", "plugin": "delay"}], "type": "ConditionalNode", "condition": "<state> == 1"}]', 'reference': '"/3A.F2360D000000/sensed.B"', 'type': '"RequestNode"', 'retvar': '"state"', 'plugin': '"onewire"'}
+[DEBUG] [2015-01-02 10:56:25,812] (MainThread) AbstractNode constructor call ( {"next": "[{\"yes\": [{\"reference\": \"stop doorbell\", \"type\": \"RequestNode\", \"plugin\": \"scheduler\"}, {\"reference\": \"#00FFFF:1\", \"type\": \"RequestNode\", \"plugin\": \"ledstrip\"}, {\"reference\": \"playsound{filename=doorbell.mp3}\", \"type\": \"RequestNode\", \"plugin\": \"procexec\"}, {\"reference\": \"INSERT INTO events VALUES(NULL, 'doorbell', 'ring', '<@DATETIME>', NULL)\", \"type\": \"RequestNode\", \"plugin\": \"shome_db\"}, {\"value\": 0, \"reference\": \"/3A.F2360D000000/PIO.A\", \"type\": \"RequestNode\", \"plugin\": \"onewire\"}, {\"next\": [{\"value\": 1, \"reference\": \"/3A.F2360D000000/PIO.A\", \"type\": \"RequestNode\", \"plugin\": \"onewire\"}, {\"reference\": \"#000000:1\", \"type\": \"RequestNode\", \"plugin\": \"ledstrip\"}, {\"reference\": \"start doorbell\", \"type\": \"RequestNode\", \"plugin\": \"scheduler\"}], \"reference\": \"10\", \"type\": \"RequestNode\", \"plugin\": \"delay\"}], \"type\": \"ConditionalNode\", \"condition\": \"<state> == 1\"}]", "reference": "\"/3A.F2360D000000/sensed.B\"", "type": "\"RequestNode\"", "retvar": "\"state\"", "plugin": "\"onewire\""} )
+[DEBUG] [2015-01-02 10:56:25,812] (MainThread) create node decomposition result: {'yes': '[{"reference": "stop doorbell", "type": "RequestNode", "plugin": "scheduler"}, {"reference": "#00FFFF:1", "type": "RequestNode", "plugin": "ledstrip"}, {"reference": "playsound{filename=doorbell.mp3}", "type": "RequestNode", "plugin": "procexec"}, {"reference": "INSERT INTO events VALUES(NULL, \'doorbell\', \'ring\', \'<@DATETIME>\', NULL)", "type": "RequestNode", "plugin": "shome_db"}, {"type": "RequestNode", "reference": "/3A.F2360D000000/PIO.A", "value": 0, "plugin": "onewire"}, {"next": [{"type": "RequestNode", "reference": "/3A.F2360D000000/PIO.A", "value": 1, "plugin": "onewire"}, {"reference": "#000000:1", "type": "RequestNode", "plugin": "ledstrip"}, {"reference": "start doorbell", "type": "RequestNode", "plugin": "scheduler"}], "reference": "10", "type": "RequestNode", "plugin": "delay"}]', 'type': '"ConditionalNode"', 'condition': '"<state> == 1"'}
+[DEBUG] [2015-01-02 10:56:25,812] (MainThread) AbstractNode constructor call ( {"yes": "[{\"reference\": \"stop doorbell\", \"type\": \"RequestNode\", \"plugin\": \"scheduler\"}, {\"reference\": \"#00FFFF:1\", \"type\": \"RequestNode\", \"plugin\": \"ledstrip\"}, {\"reference\": \"playsound{filename=doorbell.mp3}\", \"type\": \"RequestNode\", \"plugin\": \"procexec\"}, {\"reference\": \"INSERT INTO events VALUES(NULL, 'doorbell', 'ring', '<@DATETIME>', NULL)\", \"type\": \"RequestNode\", \"plugin\": \"shome_db\"}, {\"type\": \"RequestNode\", \"reference\": \"/3A.F2360D000000/PIO.A\", \"value\": 0, \"plugin\": \"onewire\"}, {\"next\": [{\"type\": \"RequestNode\", \"reference\": \"/3A.F2360D000000/PIO.A\", \"value\": 1, \"plugin\": \"onewire\"}, {\"reference\": \"#000000:1\", \"type\": \"RequestNode\", \"plugin\": \"ledstrip\"}, {\"reference\": \"start doorbell\", \"type\": \"RequestNode\", \"plugin\": \"scheduler\"}], \"reference\": \"10\", \"type\": \"RequestNode\", \"plugin\": \"delay\"}]", "type": "\"ConditionalNode\"", "condition": "\"<state> == 1\""} )
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) create node decomposition result: {'reference': '"stop doorbell"', 'type': '"RequestNode"', 'plugin': '"scheduler"'}
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) AbstractNode constructor call ( {"reference": "\"stop doorbell\"", "type": "\"RequestNode\"", "plugin": "\"scheduler\""} )
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) create node decomposition result: {'reference': '"#00FFFF:1"', 'type': '"RequestNode"', 'plugin': '"ledstrip"'}
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) AbstractNode constructor call ( {"reference": "\"#00FFFF:1\"", "type": "\"RequestNode\"", "plugin": "\"ledstrip\""} )
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) create node decomposition result: {'reference': '"playsound{filename=doorbell.mp3}"', 'type': '"RequestNode"', 'plugin': '"procexec"'}
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) AbstractNode constructor call ( {"reference": "\"playsound{filename=doorbell.mp3}\"", "type": "\"RequestNode\"", "plugin": "\"procexec\""} )
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) create node decomposition result: {'reference': '"INSERT INTO events VALUES(NULL, \'doorbell\', \'ring\', \'<@DATETIME>\', NULL)"', 'type': '"RequestNode"', 'plugin': '"shome_db"'}
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) AbstractNode constructor call ( {"reference": "\"INSERT INTO events VALUES(NULL, 'doorbell', 'ring', '<@DATETIME>', NULL)\"", "type": "\"RequestNode\"", "plugin": "\"shome_db\""} )
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,813] (MainThread) create node decomposition result: {'type': '"RequestNode"', 'reference': '"/3A.F2360D000000/PIO.A"', 'value': '0', 'plugin': '"onewire"'}
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) AbstractNode constructor call ( {"type": "\"RequestNode\"", "reference": "\"/3A.F2360D000000/PIO.A\"", "value": "0", "plugin": "\"onewire\""} )
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) create node decomposition result: {'next': '[{"value": 1, "reference": "/3A.F2360D000000/PIO.A", "type": "RequestNode", "plugin": "onewire"}, {"reference": "#000000:1", "type": "RequestNode", "plugin": "ledstrip"}, {"reference": "start doorbell", "type": "RequestNode", "plugin": "scheduler"}]', 'reference': '"10"', 'type': '"RequestNode"', 'plugin': '"delay"'}
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) AbstractNode constructor call ( {"next": "[{\"value\": 1, \"reference\": \"/3A.F2360D000000/PIO.A\", \"type\": \"RequestNode\", \"plugin\": \"onewire\"}, {\"reference\": \"#000000:1\", \"type\": \"RequestNode\", \"plugin\": \"ledstrip\"}, {\"reference\": \"start doorbell\", \"type\": \"RequestNode\", \"plugin\": \"scheduler\"}]", "reference": "\"10\"", "type": "\"RequestNode\"", "plugin": "\"delay\""} )
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) create node decomposition result: {'value': '1', 'reference': '"/3A.F2360D000000/PIO.A"', 'type': '"RequestNode"', 'plugin': '"onewire"'}
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) AbstractNode constructor call ( {"value": "1", "reference": "\"/3A.F2360D000000/PIO.A\"", "type": "\"RequestNode\"", "plugin": "\"onewire\""} )
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) create node decomposition result: {'reference': '"#000000:1"', 'type': '"RequestNode"', 'plugin': '"ledstrip"'}
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) AbstractNode constructor call ( {"reference": "\"#000000:1\"", "type": "\"RequestNode\"", "plugin": "\"ledstrip\""} )
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) create node decomposition result: {'reference': '"start doorbell"', 'type': '"RequestNode"', 'plugin': '"scheduler"'}
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) AbstractNode constructor call ( {"reference": "\"start doorbell\"", "type": "\"RequestNode\"", "plugin": "\"scheduler\""} )
+[DEBUG] [2015-01-02 10:56:25,814] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,815] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,815] (MainThread) Conditional node constructing...
+[DEBUG] [2015-01-02 10:56:25,815] (MainThread) Request node constructing...
+[DEBUG] [2015-01-02 10:56:25,815] (MainThread) Begin building expression tree with ( {
+  "type":"DelayNode",
+  "delay":5
+} )
+[DEBUG] [2015-01-02 10:56:25,815] (MainThread) create node decomposition result: {'delay': '5', 'type': '"DelayNode"'}
+[DEBUG] [2015-01-02 10:56:25,815] (MainThread) AbstractNode constructor call ( {"delay": "5", "type": "\"DelayNode\""} )
+[DEBUG] [2015-01-02 10:56:25,815] (MainThread) Delay node constructing...
+[INFO] [2015-01-02 10:56:25,815] (MainThread) SQL_conf: SELECT process, title, description, scheme, isrunned FROM task. Result: [{'isrunned': False, 'process': 'doorbell', 'scheme': '0.5', 'description': 'Doorbell control process', 'title': 'doorbell'}]
+[DEBUG] [2015-01-02 10:56:25,815] (MainThread) Loading: ('doorbell', 'doorbell', 'Doorbell control process', '0.5', False)
+[INFO] [2015-01-02 10:56:27,176] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 210.27ms
+[INFO] [2015-01-02 10:56:27,193] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.58ms
+[INFO] [2015-01-02 10:56:27,195] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 1.01ms
+[INFO] [2015-01-02 10:56:27,196] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.98ms
+[INFO] [2015-01-02 10:56:27,197] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 10:56:27,199] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.16ms
+[INFO] [2015-01-02 10:56:27,201] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.60ms
+[INFO] [2015-01-02 10:56:27,204] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 2.07ms
+[INFO] [2015-01-02 10:56:27,207] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.62ms
+[INFO] [2015-01-02 10:56:27,209] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 1.07ms
+[INFO] [2015-01-02 10:56:27,210] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 10:56:27,211] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 10:56:27,213] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.34ms
+[INFO] [2015-01-02 10:56:27,214] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 10:56:27,215] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 10:56:27,216] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 10:56:27,217] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 10:56:27,218] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 10:56:27,219] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 10:56:27,487] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 2.16ms
+[INFO] [2015-01-02 10:56:27,646] (MainThread) 304 GET /admin/static/data-examples/process1.json (127.0.0.1) 0.99ms
+[INFO] [2015-01-02 11:00:03,928] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 11:00:03,944] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.54ms
+[INFO] [2015-01-02 11:00:03,946] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 1.04ms
+[INFO] [2015-01-02 11:00:03,947] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.94ms
+[INFO] [2015-01-02 11:00:03,949] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 11:00:03,950] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.99ms
+[INFO] [2015-01-02 11:00:03,952] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 11:00:03,953] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.02ms
+[INFO] [2015-01-02 11:00:03,956] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.35ms
+[INFO] [2015-01-02 11:00:03,958] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.06ms
+[INFO] [2015-01-02 11:00:03,959] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 11:00:03,961] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 11:00:03,962] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 11:00:03,964] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.98ms
+[INFO] [2015-01-02 11:00:03,965] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 11:00:03,966] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 11:00:03,967] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 11:00:03,968] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 11:00:03,969] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 11:00:04,165] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 11:00:15,364] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 11:00:15,391] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.35ms
+[INFO] [2015-01-02 11:00:15,392] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 11:00:15,393] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 11:00:15,395] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 11:00:15,396] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 11:00:15,397] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 11:00:15,399] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.37ms
+[INFO] [2015-01-02 11:00:15,401] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.37ms
+[INFO] [2015-01-02 11:00:15,403] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.67ms
+[INFO] [2015-01-02 11:00:15,404] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 11:00:15,405] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 11:00:15,406] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 11:00:15,407] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 11:00:15,408] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.45ms
+[INFO] [2015-01-02 11:00:15,408] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.46ms
+[INFO] [2015-01-02 11:00:15,409] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.46ms
+[INFO] [2015-01-02 11:00:15,410] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 11:00:15,411] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.45ms
+[INFO] [2015-01-02 11:00:15,623] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 11:00:31,046] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.30ms
+[INFO] [2015-01-02 11:00:31,058] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 11:00:31,060] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 11:00:31,061] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 11:00:31,063] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 11:00:31,064] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 11:00:31,067] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 11:00:31,068] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.11ms
+[INFO] [2015-01-02 11:00:31,070] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.48ms
+[INFO] [2015-01-02 11:00:31,073] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.95ms
+[INFO] [2015-01-02 11:00:31,074] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 11:00:31,076] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 11:00:31,077] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 11:00:31,078] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 11:00:31,080] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 11:00:31,081] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 11:00:31,082] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 11:00:31,083] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 11:00:31,086] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 11:00:31,279] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 11:01:32,641] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 11:01:32,653] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.18ms
+[INFO] [2015-01-02 11:01:32,655] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 11:01:32,656] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 11:01:32,657] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 11:01:32,659] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 11:01:32,660] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 11:01:32,662] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 11:01:32,664] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.37ms
+[INFO] [2015-01-02 11:01:32,666] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.84ms
+[INFO] [2015-01-02 11:01:32,668] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 1.01ms
+[INFO] [2015-01-02 11:01:32,669] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 11:01:32,670] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 11:01:32,672] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.21ms
+[INFO] [2015-01-02 11:01:32,673] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 11:01:32,675] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 11:01:32,676] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 11:01:32,677] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 11:01:32,680] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 11:01:32,891] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 11:01:41,588] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 11:01:41,603] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.92ms
+[INFO] [2015-01-02 11:01:41,604] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 11:01:41,605] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 11:01:41,606] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 11:01:41,607] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 11:01:41,608] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 11:01:41,609] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 11:01:41,611] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.31ms
+[INFO] [2015-01-02 11:01:41,612] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 11:01:41,614] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.64ms
+[INFO] [2015-01-02 11:01:41,615] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 11:01:41,616] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 11:01:41,617] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 11:01:41,618] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.46ms
+[INFO] [2015-01-02 11:01:41,619] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 11:01:41,619] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 11:01:41,620] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.45ms
+[INFO] [2015-01-02 11:01:41,622] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 11:01:41,869] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 11:01:46,758] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 11:01:46,960] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.35ms
+[INFO] [2015-01-02 11:01:46,961] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 11:01:46,962] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 11:01:46,963] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 11:01:46,963] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.45ms
+[INFO] [2015-01-02 11:01:46,964] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.43ms
+[INFO] [2015-01-02 11:01:46,965] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 11:01:46,967] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.32ms
+[INFO] [2015-01-02 11:01:46,968] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 11:01:46,968] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 11:01:46,969] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.43ms
+[INFO] [2015-01-02 11:01:46,970] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.99ms
+[INFO] [2015-01-02 11:01:46,972] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 11:01:46,972] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 11:01:46,973] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 11:01:46,974] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 11:01:46,974] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.44ms
+[INFO] [2015-01-02 11:01:46,975] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 11:01:47,149] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 11:01:51,522] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.24ms
+[INFO] [2015-01-02 11:01:51,538] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.18ms
+[INFO] [2015-01-02 11:01:51,540] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 11:01:51,541] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 11:01:51,543] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 11:01:51,544] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 11:01:51,545] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 11:01:51,547] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.03ms
+[INFO] [2015-01-02 11:01:51,549] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.35ms
+[INFO] [2015-01-02 11:01:51,551] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.91ms
+[INFO] [2015-01-02 11:01:51,553] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 11:01:51,554] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 11:01:51,555] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 11:01:51,557] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.09ms
+[INFO] [2015-01-02 11:01:51,558] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 11:01:51,559] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 11:01:51,560] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 11:01:51,562] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 11:01:51,564] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 11:01:51,764] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 11:02:27,016] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 11:02:27,031] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.24ms
+[INFO] [2015-01-02 11:02:27,033] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 11:02:27,034] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 11:02:27,035] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 11:02:27,037] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 11:02:27,038] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 11:02:27,040] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.18ms
+[INFO] [2015-01-02 11:02:27,042] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.56ms
+[INFO] [2015-01-02 11:02:27,044] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.00ms
+[INFO] [2015-01-02 11:02:27,046] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 11:02:27,047] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 11:02:27,048] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 11:02:27,050] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 11:02:27,051] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 11:02:27,052] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 11:02:27,053] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 11:02:27,054] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 11:02:27,057] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 11:02:27,243] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.98ms
+[INFO] [2015-01-02 13:11:18,469] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 1.40ms
+[INFO] [2015-01-02 13:11:18,483] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.04ms
+[INFO] [2015-01-02 13:11:18,485] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 13:11:18,486] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 13:11:18,486] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 13:11:18,487] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 13:11:18,489] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 13:11:18,491] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.05ms
+[INFO] [2015-01-02 13:11:18,493] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.49ms
+[INFO] [2015-01-02 13:11:18,494] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 13:11:18,495] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 13:11:18,496] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 13:11:18,497] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 13:11:18,498] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 13:11:18,498] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 13:11:18,499] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 13:11:18,500] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 13:11:18,503] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 13:11:18,506] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 13:11:18,690] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 13:11:18,727] (MainThread) 200 GET /admin/static/data-examples/process1.json (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 13:11:36,076] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 13:11:36,088] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.24ms
+[INFO] [2015-01-02 13:11:36,090] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 13:11:36,091] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 13:11:36,092] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 13:11:36,094] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 13:11:36,095] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 13:11:36,096] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.07ms
+[INFO] [2015-01-02 13:11:36,099] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.56ms
+[INFO] [2015-01-02 13:11:36,101] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.89ms
+[INFO] [2015-01-02 13:11:36,103] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 13:11:36,104] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 13:11:36,105] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 13:11:36,107] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.16ms
+[INFO] [2015-01-02 13:11:36,108] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 13:11:36,109] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 13:11:36,110] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 13:11:36,112] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 13:11:36,114] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 13:11:36,299] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 13:11:50,536] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 13:11:50,557] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.10ms
+[INFO] [2015-01-02 13:11:50,558] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 13:11:50,559] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 13:11:50,560] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 13:11:50,561] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 13:11:50,562] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 13:11:50,563] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 13:11:50,565] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.32ms
+[INFO] [2015-01-02 13:11:50,568] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.02ms
+[INFO] [2015-01-02 13:11:50,569] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 13:11:50,570] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 13:11:50,571] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 13:11:50,572] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 13:11:50,573] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 13:11:50,574] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 13:11:50,575] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 13:11:50,575] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.43ms
+[INFO] [2015-01-02 13:11:50,577] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 13:11:50,767] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 13:13:11,749] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.88ms
+[INFO] [2015-01-02 13:13:11,764] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.19ms
+[INFO] [2015-01-02 13:13:11,766] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 1.05ms
+[INFO] [2015-01-02 13:13:11,767] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 13:13:11,769] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 13:13:11,770] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 13:13:11,771] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.08ms
+[INFO] [2015-01-02 13:13:11,773] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.25ms
+[INFO] [2015-01-02 13:13:11,775] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.75ms
+[INFO] [2015-01-02 13:13:11,778] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.96ms
+[INFO] [2015-01-02 13:13:11,779] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 1.02ms
+[INFO] [2015-01-02 13:13:11,781] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 13:13:11,782] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 13:13:11,784] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.02ms
+[INFO] [2015-01-02 13:13:11,785] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 13:13:11,786] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 13:13:11,787] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 13:13:11,789] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 13:13:11,791] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 13:13:11,989] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 13:14:03,901] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 13:14:03,921] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 13:14:03,922] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 13:14:03,925] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 13:14:03,928] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 13:14:03,932] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.15ms
+[INFO] [2015-01-02 13:14:03,935] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.10ms
+[INFO] [2015-01-02 13:14:03,937] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.46ms
+[INFO] [2015-01-02 13:14:03,940] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.91ms
+[INFO] [2015-01-02 13:14:03,943] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.47ms
+[INFO] [2015-01-02 13:14:03,945] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 1.08ms
+[INFO] [2015-01-02 13:14:03,947] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.33ms
+[INFO] [2015-01-02 13:14:03,948] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 1.02ms
+[INFO] [2015-01-02 13:14:03,950] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 1.10ms
+[INFO] [2015-01-02 13:14:03,952] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 1.18ms
+[INFO] [2015-01-02 13:14:03,954] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 1.05ms
+[INFO] [2015-01-02 13:14:03,955] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 1.03ms
+[INFO] [2015-01-02 13:14:03,957] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 1.17ms
+[INFO] [2015-01-02 13:14:03,958] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 1.07ms
+[INFO] [2015-01-02 13:14:04,165] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 13:14:05,222] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 13:14:05,238] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.15ms
+[INFO] [2015-01-02 13:14:05,239] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 13:14:05,240] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 13:14:05,241] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 13:14:05,243] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.09ms
+[INFO] [2015-01-02 13:14:05,246] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.76ms
+[INFO] [2015-01-02 13:14:05,247] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 13:14:05,248] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 13:14:05,250] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.53ms
+[INFO] [2015-01-02 13:14:05,251] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 13:14:05,252] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 13:14:05,253] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 13:14:05,254] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 13:14:05,255] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 13:14:05,256] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 13:14:05,256] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 13:14:05,257] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 13:14:05,258] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 13:14:05,452] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 13:14:22,636] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.96ms
+[INFO] [2015-01-02 13:14:22,647] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.03ms
+[INFO] [2015-01-02 13:14:22,649] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 13:14:22,650] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 13:14:22,651] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 13:14:22,651] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 13:14:22,653] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 13:14:22,654] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.14ms
+[INFO] [2015-01-02 13:14:22,656] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.32ms
+[INFO] [2015-01-02 13:14:22,659] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.76ms
+[INFO] [2015-01-02 13:14:22,660] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 13:14:22,662] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 13:14:22,662] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 13:14:22,663] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 13:14:22,664] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 13:14:22,665] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 13:14:22,666] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 13:14:22,666] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.46ms
+[INFO] [2015-01-02 13:14:22,667] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 13:14:22,862] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 13:14:36,441] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 13:14:36,466] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.09ms
+[INFO] [2015-01-02 13:14:36,467] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 13:14:36,468] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 13:14:36,469] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 13:14:36,471] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 13:14:36,472] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 13:14:36,473] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 13:14:36,475] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.32ms
+[INFO] [2015-01-02 13:14:36,476] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 13:14:36,479] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.90ms
+[INFO] [2015-01-02 13:14:36,480] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 13:14:36,482] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 13:14:36,483] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 13:14:36,483] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 13:14:36,484] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 13:14:36,485] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.45ms
+[INFO] [2015-01-02 13:14:36,486] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 13:14:36,488] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 1.18ms
+[INFO] [2015-01-02 13:14:36,713] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 13:14:42,064] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 13:14:42,073] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 13:14:42,074] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 13:14:42,075] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 13:14:42,076] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 13:14:42,078] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.96ms
+[INFO] [2015-01-02 13:14:42,079] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.12ms
+[INFO] [2015-01-02 13:14:42,080] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 13:14:42,081] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 13:14:42,082] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 13:14:42,083] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 13:14:42,084] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 13:14:42,086] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.58ms
+[INFO] [2015-01-02 13:14:42,087] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 13:14:42,088] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 13:14:42,089] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 13:14:42,089] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 13:14:42,090] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 13:14:42,091] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 13:14:42,286] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 13:15:26,888] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 13:15:26,900] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.37ms
+[INFO] [2015-01-02 13:15:26,902] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 13:15:26,903] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 13:15:26,904] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 13:15:26,905] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 13:15:26,909] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 3.63ms
+[INFO] [2015-01-02 13:15:26,913] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 2.91ms
+[INFO] [2015-01-02 13:15:26,915] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.38ms
+[INFO] [2015-01-02 13:15:26,917] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.99ms
+[INFO] [2015-01-02 13:15:26,919] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 1.04ms
+[INFO] [2015-01-02 13:15:26,920] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 13:15:26,921] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 13:15:26,923] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 13:15:26,924] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 13:15:26,925] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 13:15:26,926] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.92ms
+[INFO] [2015-01-02 13:15:26,928] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 13:15:26,929] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 13:15:27,154] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 13:15:31,731] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.84ms
+[INFO] [2015-01-02 13:15:31,741] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.42ms
+[INFO] [2015-01-02 13:15:31,743] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 13:15:31,744] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 13:15:31,745] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 13:15:31,747] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 13:15:31,748] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.06ms
+[INFO] [2015-01-02 13:15:31,749] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 13:15:31,752] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.34ms
+[INFO] [2015-01-02 13:15:31,753] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 13:15:31,755] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.80ms
+[INFO] [2015-01-02 13:15:31,757] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 13:15:31,758] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 13:15:31,759] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 13:15:31,760] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 13:15:31,761] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 13:15:31,762] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 13:15:31,764] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 13:15:31,768] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 13:15:32,000] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 13:16:26,343] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.39ms
+[INFO] [2015-01-02 13:16:26,355] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 13:16:26,357] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 1.34ms
+[INFO] [2015-01-02 13:16:26,358] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 13:16:26,360] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 1.11ms
+[INFO] [2015-01-02 13:16:26,362] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.20ms
+[INFO] [2015-01-02 13:16:26,363] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 13:16:26,365] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.40ms
+[INFO] [2015-01-02 13:16:26,367] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.72ms
+[INFO] [2015-01-02 13:16:26,369] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.51ms
+[INFO] [2015-01-02 13:16:26,370] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 13:16:26,371] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 13:16:26,372] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 13:16:26,373] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 13:16:26,374] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 13:16:26,375] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 13:16:26,376] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 13:16:26,377] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.46ms
+[INFO] [2015-01-02 13:16:26,380] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 13:16:26,567] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:34:54,498] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:34:54,514] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.16ms
+[INFO] [2015-01-02 17:34:54,516] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:34:54,517] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:34:54,519] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 17:34:54,521] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 17:34:54,524] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.19ms
+[INFO] [2015-01-02 17:34:54,527] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.73ms
+[INFO] [2015-01-02 17:34:54,529] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.06ms
+[INFO] [2015-01-02 17:34:54,531] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 17:34:54,532] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:34:54,733] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:34:54,734] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:34:54,736] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.94ms
+[INFO] [2015-01-02 17:34:54,737] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 1.03ms
+[INFO] [2015-01-02 17:34:54,738] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:34:54,740] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.01ms
+[INFO] [2015-01-02 17:34:54,741] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:34:54,742] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:34:54,818] (MainThread) 200 GET /admin/static/modules/constructor.html (127.0.0.1) 0.98ms
+[INFO] [2015-01-02 17:34:54,856] (MainThread) 200 GET /admin/static/data-examples/process1.json (127.0.0.1) 1.04ms
+[INFO] [2015-01-02 17:35:07,913] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:35:07,928] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.92ms
+[INFO] [2015-01-02 17:35:07,929] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:35:07,930] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:35:07,931] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:35:07,932] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:35:07,933] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:35:07,935] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.98ms
+[INFO] [2015-01-02 17:35:07,937] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.39ms
+[INFO] [2015-01-02 17:35:07,939] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.61ms
+[INFO] [2015-01-02 17:35:07,940] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 17:35:07,941] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 17:35:07,942] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 17:35:07,945] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.45ms
+[INFO] [2015-01-02 17:35:07,947] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 1.36ms
+[INFO] [2015-01-02 17:35:07,949] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 1.67ms
+[INFO] [2015-01-02 17:35:07,952] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 2.03ms
+[INFO] [2015-01-02 17:35:07,953] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 1.06ms
+[INFO] [2015-01-02 17:35:07,955] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 17:35:08,148] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 17:35:19,018] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 17:35:19,033] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.96ms
+[INFO] [2015-01-02 17:35:19,034] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:35:19,035] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 17:35:19,036] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:35:19,037] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:35:19,039] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:35:19,040] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:35:19,042] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.05ms
+[INFO] [2015-01-02 17:35:19,044] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.65ms
+[INFO] [2015-01-02 17:35:19,046] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 17:35:19,046] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 17:35:19,048] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.16ms
+[INFO] [2015-01-02 17:35:19,049] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 17:35:19,050] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:35:19,051] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 17:35:19,052] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:35:19,053] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 17:35:19,055] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 1.10ms
+[INFO] [2015-01-02 17:35:19,282] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 17:35:19,663] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 17:35:19,687] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.38ms
+[INFO] [2015-01-02 17:35:19,688] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.98ms
+[INFO] [2015-01-02 17:35:19,690] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:35:19,691] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 17:35:19,693] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 17:35:19,694] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 17:35:19,696] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.08ms
+[INFO] [2015-01-02 17:35:19,698] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.31ms
+[INFO] [2015-01-02 17:35:19,700] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.95ms
+[INFO] [2015-01-02 17:35:19,702] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.14ms
+[INFO] [2015-01-02 17:35:19,703] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 17:35:19,705] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 17:35:19,706] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:35:19,707] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 17:35:19,708] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 17:35:19,709] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 17:35:19,710] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 17:35:19,713] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:35:19,907] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:40:43,157] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 17:40:43,169] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.04ms
+[INFO] [2015-01-02 17:40:43,170] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 17:40:43,171] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:40:43,172] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:40:43,173] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:40:43,174] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 17:40:43,176] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.97ms
+[INFO] [2015-01-02 17:40:43,178] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.72ms
+[INFO] [2015-01-02 17:40:43,179] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.16ms
+[INFO] [2015-01-02 17:40:43,181] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 17:40:43,182] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 17:40:43,183] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 17:40:43,185] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.07ms
+[INFO] [2015-01-02 17:40:43,186] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 17:40:43,187] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:40:43,188] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.45ms
+[INFO] [2015-01-02 17:40:43,189] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 17:40:43,190] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 17:40:43,444] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 17:40:50,706] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 17:40:50,718] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.24ms
+[INFO] [2015-01-02 17:40:50,719] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 17:40:50,721] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 17:40:50,722] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:40:50,723] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 17:40:50,725] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 17:40:50,727] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.42ms
+[INFO] [2015-01-02 17:40:50,728] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.11ms
+[INFO] [2015-01-02 17:40:50,730] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 17:40:50,732] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.81ms
+[INFO] [2015-01-02 17:40:50,734] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 17:40:50,735] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 17:40:50,736] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.99ms
+[INFO] [2015-01-02 17:40:50,738] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.12ms
+[INFO] [2015-01-02 17:40:50,739] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:40:50,740] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 17:40:50,742] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:40:50,744] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 17:40:50,966] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 9.60ms
+[INFO] [2015-01-02 17:40:59,212] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.04ms
+[INFO] [2015-01-02 17:40:59,226] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.10ms
+[INFO] [2015-01-02 17:40:59,227] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:40:59,228] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 17:40:59,229] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 17:40:59,231] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 17:40:59,232] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:40:59,234] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.04ms
+[INFO] [2015-01-02 17:40:59,236] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.46ms
+[INFO] [2015-01-02 17:40:59,238] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.70ms
+[INFO] [2015-01-02 17:40:59,239] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 17:40:59,240] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:40:59,241] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 17:40:59,242] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:40:59,243] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:40:59,243] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:40:59,244] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.44ms
+[INFO] [2015-01-02 17:40:59,245] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.44ms
+[INFO] [2015-01-02 17:40:59,248] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:40:59,469] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:44:25,050] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 17:44:25,064] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.24ms
+[INFO] [2015-01-02 17:44:25,065] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 17:44:25,067] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 17:44:25,068] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:44:25,069] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 17:44:25,071] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:44:25,072] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.18ms
+[INFO] [2015-01-02 17:44:25,074] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.48ms
+[INFO] [2015-01-02 17:44:25,077] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.13ms
+[INFO] [2015-01-02 17:44:25,079] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:44:25,080] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 17:44:25,082] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.05ms
+[INFO] [2015-01-02 17:44:25,083] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 17:44:25,084] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:44:25,086] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 17:44:25,087] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 17:44:25,088] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:44:25,091] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.96ms
+[INFO] [2015-01-02 17:44:25,282] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:47:33,486] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:47:33,499] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.01ms
+[INFO] [2015-01-02 17:47:33,500] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 17:47:33,501] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:47:33,502] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 17:47:33,503] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:47:33,508] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 3.53ms
+[INFO] [2015-01-02 17:47:33,510] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.22ms
+[INFO] [2015-01-02 17:47:33,512] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.59ms
+[INFO] [2015-01-02 17:47:33,513] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:47:33,514] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:47:33,515] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:47:33,516] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:47:33,517] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:47:33,518] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:47:33,519] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:47:33,519] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:47:33,520] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 17:47:33,521] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:47:33,727] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:47:34,996] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 17:47:35,006] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.18ms
+[INFO] [2015-01-02 17:47:35,008] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 17:47:35,009] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:47:35,010] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:47:35,012] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 17:47:35,013] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:47:35,015] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.26ms
+[INFO] [2015-01-02 17:47:35,017] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.09ms
+[INFO] [2015-01-02 17:47:35,019] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.33ms
+[INFO] [2015-01-02 17:47:35,021] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:47:35,022] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:47:35,023] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.99ms
+[INFO] [2015-01-02 17:47:35,024] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:47:35,026] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:47:35,027] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:47:35,028] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 17:47:35,029] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:47:35,030] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:47:35,219] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 17:47:35,541] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 17:47:35,581] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.98ms
+[INFO] [2015-01-02 17:47:35,582] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 17:47:35,583] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 17:47:35,584] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 17:47:35,585] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 17:47:35,587] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.14ms
+[INFO] [2015-01-02 17:47:35,588] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.97ms
+[INFO] [2015-01-02 17:47:35,590] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.40ms
+[INFO] [2015-01-02 17:47:35,592] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 17:47:35,593] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 17:47:35,595] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 17:47:35,595] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 17:47:35,597] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.40ms
+[INFO] [2015-01-02 17:47:35,598] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:47:35,599] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 17:47:35,600] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:47:35,601] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 17:47:35,602] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:47:35,816] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 17:47:35,834] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 17:47:35,874] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.02ms
+[INFO] [2015-01-02 17:47:35,875] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:47:35,876] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 17:47:35,877] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:47:35,878] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 17:47:35,879] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:47:35,881] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.18ms
+[INFO] [2015-01-02 17:47:35,883] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.55ms
+[INFO] [2015-01-02 17:47:35,885] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.12ms
+[INFO] [2015-01-02 17:47:35,887] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 17:47:35,888] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 17:47:35,889] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:47:35,890] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:47:35,890] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 17:47:35,891] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:47:35,892] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:47:35,893] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 17:47:35,894] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 17:47:35,940] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:47:36,236] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.44ms
+[INFO] [2015-01-02 17:47:36,238] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.94ms
+[INFO] [2015-01-02 17:47:36,239] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:47:36,240] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 17:47:36,241] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:47:36,243] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 17:47:36,244] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 17:47:36,245] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.01ms
+[INFO] [2015-01-02 17:47:36,247] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.47ms
+[INFO] [2015-01-02 17:47:36,248] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 17:47:36,249] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:47:36,250] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:47:36,251] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:47:36,252] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 17:47:36,253] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:47:36,254] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 17:47:36,255] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:47:36,259] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:47:36,293] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:47:36,326] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 17:47:36,327] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 17:47:36,328] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:47:36,329] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:47:36,331] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 17:47:36,332] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.16ms
+[INFO] [2015-01-02 17:47:36,334] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.04ms
+[INFO] [2015-01-02 17:47:36,335] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 17:47:36,336] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 17:47:36,338] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.07ms
+[INFO] [2015-01-02 17:47:36,339] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.60ms
+[INFO] [2015-01-02 17:47:36,341] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:47:36,341] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:47:36,342] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 17:47:36,343] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:47:36,344] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:47:36,345] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:47:36,346] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:47:36,544] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 17:47:37,523] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.33ms
+[INFO] [2015-01-02 17:47:37,540] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.27ms
+[INFO] [2015-01-02 17:47:37,541] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 17:47:37,543] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:47:37,544] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:47:37,545] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 17:47:37,547] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 17:47:37,548] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.04ms
+[INFO] [2015-01-02 17:47:37,550] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.81ms
+[INFO] [2015-01-02 17:47:37,552] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.52ms
+[INFO] [2015-01-02 17:47:37,554] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 17:47:37,555] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 17:47:37,556] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:47:37,558] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.94ms
+[INFO] [2015-01-02 17:47:37,559] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:47:37,560] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:47:37,561] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 17:47:37,562] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 17:47:37,564] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 17:47:37,758] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:47:38,523] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.23ms
+[INFO] [2015-01-02 17:47:38,548] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:47:38,549] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:47:38,550] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:47:38,551] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 17:47:38,552] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 17:47:38,553] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 17:47:38,554] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.98ms
+[INFO] [2015-01-02 17:47:38,556] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.34ms
+[INFO] [2015-01-02 17:47:38,557] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 17:47:38,559] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.54ms
+[INFO] [2015-01-02 17:47:38,560] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:47:38,561] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 17:47:38,562] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 17:47:38,563] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 17:47:38,564] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.46ms
+[INFO] [2015-01-02 17:47:38,564] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.46ms
+[INFO] [2015-01-02 17:47:38,565] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 17:47:38,566] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.46ms
+[INFO] [2015-01-02 17:47:38,824] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 17:47:40,636] (MainThread) 200 GET /admin/static/modules/scenarios.html (127.0.0.1) 194.67ms
+[INFO] [2015-01-02 17:47:40,648] (MainThread) 200 GET /admin/static/data-examples/scenarios.json (127.0.0.1) 1.49ms
+[INFO] [2015-01-02 17:47:41,798] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.87ms
+[INFO] [2015-01-02 17:47:41,814] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.51ms
+[INFO] [2015-01-02 17:47:41,816] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 1.01ms
+[INFO] [2015-01-02 17:47:41,817] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:47:41,819] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:47:41,820] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.97ms
+[INFO] [2015-01-02 17:47:41,824] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 17:47:41,826] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.36ms
+[INFO] [2015-01-02 17:47:41,828] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.01ms
+[INFO] [2015-01-02 17:47:41,830] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.93ms
+[INFO] [2015-01-02 17:47:41,832] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 17:47:41,833] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 17:47:41,834] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:47:41,836] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.03ms
+[INFO] [2015-01-02 17:47:41,837] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:47:41,838] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:47:41,839] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:47:41,840] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:47:41,841] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:47:42,043] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 17:47:42,289] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 17:47:42,300] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.02ms
+[INFO] [2015-01-02 17:47:42,301] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:47:42,302] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:47:42,303] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:47:42,304] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 17:47:42,306] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.97ms
+[INFO] [2015-01-02 17:47:42,307] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:47:42,309] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 17:47:42,310] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 17:47:42,312] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.50ms
+[INFO] [2015-01-02 17:47:42,313] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 17:47:42,314] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:47:42,315] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:47:42,315] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 17:47:42,316] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:47:42,317] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:47:42,318] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 17:47:42,319] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:47:42,562] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 17:47:42,607] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 17:47:42,691] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.94ms
+[INFO] [2015-01-02 17:47:42,693] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 17:47:42,694] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 17:47:42,695] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:47:42,696] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 17:47:42,697] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.92ms
+[INFO] [2015-01-02 17:47:42,698] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 17:47:42,700] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.30ms
+[INFO] [2015-01-02 17:47:42,702] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.56ms
+[INFO] [2015-01-02 17:47:42,703] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 17:47:42,704] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:47:42,705] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:47:42,706] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 17:47:42,707] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.46ms
+[INFO] [2015-01-02 17:47:42,707] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 17:47:42,708] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.45ms
+[INFO] [2015-01-02 17:47:42,709] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.45ms
+[INFO] [2015-01-02 17:47:42,710] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 17:47:43,022] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 17:50:33,318] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.94ms
+[INFO] [2015-01-02 17:50:33,334] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.14ms
+[INFO] [2015-01-02 17:50:33,336] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:50:33,337] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:50:33,339] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 17:50:33,340] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 17:50:33,343] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.14ms
+[INFO] [2015-01-02 17:50:33,345] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.38ms
+[INFO] [2015-01-02 17:50:33,348] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.85ms
+[INFO] [2015-01-02 17:50:33,349] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:50:33,350] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 17:50:33,352] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:50:33,353] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 17:50:33,354] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 17:50:33,355] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 17:50:33,356] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:50:33,357] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 17:50:33,358] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:50:33,364] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 17:50:35,672] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 17:50:35,686] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.98ms
+[INFO] [2015-01-02 17:50:35,687] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:50:35,688] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:50:35,689] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:50:35,690] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 17:50:35,691] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.99ms
+[INFO] [2015-01-02 17:50:35,693] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:50:35,694] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.07ms
+[INFO] [2015-01-02 17:50:35,696] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.69ms
+[INFO] [2015-01-02 17:50:35,698] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.96ms
+[INFO] [2015-01-02 17:50:35,701] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.46ms
+[INFO] [2015-01-02 17:50:35,702] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.92ms
+[INFO] [2015-01-02 17:50:35,703] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.99ms
+[INFO] [2015-01-02 17:50:35,704] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 17:50:35,705] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:50:35,706] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:50:35,707] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 17:50:35,708] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 17:51:00,927] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:51:00,941] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.23ms
+[INFO] [2015-01-02 17:51:00,943] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.92ms
+[INFO] [2015-01-02 17:51:00,945] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:51:00,946] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:51:00,947] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 17:51:00,949] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 17:51:00,951] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.41ms
+[INFO] [2015-01-02 17:51:00,953] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.58ms
+[INFO] [2015-01-02 17:51:00,956] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.99ms
+[INFO] [2015-01-02 17:51:00,958] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 1.10ms
+[INFO] [2015-01-02 17:51:00,959] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 17:51:00,961] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 1.22ms
+[INFO] [2015-01-02 17:51:00,964] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 1.33ms
+[INFO] [2015-01-02 17:51:00,965] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 1.17ms
+[INFO] [2015-01-02 17:51:00,967] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 1.06ms
+[INFO] [2015-01-02 17:51:00,968] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.27ms
+[INFO] [2015-01-02 17:51:00,970] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 1.51ms
+[INFO] [2015-01-02 17:51:00,973] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 2.14ms
+[INFO] [2015-01-02 17:51:02,284] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:51:02,294] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 17:51:02,295] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 17:51:02,296] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:51:02,297] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:51:02,298] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:51:02,299] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:51:02,300] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:51:02,302] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.05ms
+[INFO] [2015-01-02 17:51:02,303] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.56ms
+[INFO] [2015-01-02 17:51:02,305] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 17:51:02,305] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 17:51:02,306] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 17:51:02,308] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:51:02,309] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 17:51:02,309] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:51:02,310] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 17:51:02,311] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 17:51:02,313] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:51:02,707] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.11ms
+[INFO] [2015-01-02 17:51:02,722] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.30ms
+[INFO] [2015-01-02 17:51:02,723] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 17:51:02,725] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 17:51:02,726] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:51:02,727] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:51:02,729] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:51:02,730] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.02ms
+[INFO] [2015-01-02 17:51:02,732] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.36ms
+[INFO] [2015-01-02 17:51:02,734] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.84ms
+[INFO] [2015-01-02 17:51:02,736] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.98ms
+[INFO] [2015-01-02 17:51:02,737] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 17:51:02,739] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:51:02,740] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 17:51:02,741] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 17:51:02,743] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.99ms
+[INFO] [2015-01-02 17:51:02,744] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:51:02,745] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 17:51:02,747] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:51:03,016] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:51:03,028] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.18ms
+[INFO] [2015-01-02 17:51:03,030] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 17:51:03,031] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 17:51:03,032] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.07ms
+[INFO] [2015-01-02 17:51:03,034] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 1.43ms
+[INFO] [2015-01-02 17:51:03,036] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:51:03,038] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.30ms
+[INFO] [2015-01-02 17:51:03,040] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.62ms
+[INFO] [2015-01-02 17:51:03,040] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:51:03,041] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:51:03,042] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 17:51:03,043] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 17:51:03,044] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:51:03,045] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 17:51:03,046] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 17:51:03,047] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:51:03,047] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:51:03,048] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 17:51:03,132] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:51:03,250] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.22ms
+[INFO] [2015-01-02 17:51:03,254] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 2.95ms
+[INFO] [2015-01-02 17:51:03,255] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:51:03,257] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.21ms
+[INFO] [2015-01-02 17:51:03,259] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.34ms
+[INFO] [2015-01-02 17:51:03,260] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.92ms
+[INFO] [2015-01-02 17:51:03,262] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 17:51:03,264] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.32ms
+[INFO] [2015-01-02 17:51:03,265] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 17:51:03,266] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:51:03,268] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.81ms
+[INFO] [2015-01-02 17:51:03,270] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.03ms
+[INFO] [2015-01-02 17:51:03,271] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 17:51:03,272] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 17:51:03,273] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:51:03,274] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 17:51:03,275] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 17:51:03,277] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 17:51:03,350] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.07ms
+[INFO] [2015-01-02 17:51:03,476] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 17:51:03,478] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:51:03,479] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:51:03,480] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 17:51:03,482] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:51:03,483] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:51:03,485] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.10ms
+[INFO] [2015-01-02 17:51:03,487] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.37ms
+[INFO] [2015-01-02 17:51:03,489] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.80ms
+[INFO] [2015-01-02 17:51:03,490] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 17:51:03,492] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:51:03,494] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 2.06ms
+[INFO] [2015-01-02 17:51:03,495] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:51:03,497] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:51:03,498] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:51:03,499] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 17:51:03,500] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:51:03,502] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 17:51:03,921] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.21ms
+[INFO] [2015-01-02 17:51:04,119] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 17:51:04,121] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.08ms
+[INFO] [2015-01-02 17:51:04,121] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 17:51:04,122] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.37ms
+[INFO] [2015-01-02 17:51:04,123] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:51:04,124] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:51:04,124] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.34ms
+[INFO] [2015-01-02 17:51:04,125] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 17:51:04,126] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.36ms
+[INFO] [2015-01-02 17:51:04,127] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 17:51:04,147] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.32ms
+[INFO] [2015-01-02 17:51:04,148] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 17:51:04,149] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:51:04,151] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 17:51:04,153] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 1.09ms
+[INFO] [2015-01-02 17:51:04,154] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.14ms
+[INFO] [2015-01-02 17:51:04,156] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:51:04,158] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.60ms
+[INFO] [2015-01-02 17:51:04,159] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:51:04,160] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:51:04,161] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 0.99ms
+[INFO] [2015-01-02 17:51:04,162] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 17:51:04,163] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 17:51:04,164] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:51:04,165] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:51:04,166] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:51:04,166] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 17:51:04,167] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 17:51:04,995] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.23ms
+[INFO] [2015-01-02 17:51:05,012] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.11ms
+[INFO] [2015-01-02 17:51:05,013] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 17:51:05,015] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 17:51:05,016] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 17:51:05,017] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:51:05,019] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.01ms
+[INFO] [2015-01-02 17:51:05,020] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:51:05,022] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.21ms
+[INFO] [2015-01-02 17:51:05,024] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.65ms
+[INFO] [2015-01-02 17:51:05,025] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.92ms
+[INFO] [2015-01-02 17:51:05,026] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 17:51:05,028] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 17:51:05,029] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.97ms
+[INFO] [2015-01-02 17:51:05,030] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:51:05,031] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:51:05,033] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.17ms
+[INFO] [2015-01-02 17:51:05,034] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 17:51:05,035] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:51:44,611] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 1.18ms
+[INFO] [2015-01-02 17:51:44,625] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.05ms
+[INFO] [2015-01-02 17:51:44,626] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:51:44,628] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 1.14ms
+[INFO] [2015-01-02 17:51:44,629] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.94ms
+[INFO] [2015-01-02 17:51:44,631] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.16ms
+[INFO] [2015-01-02 17:51:44,633] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.63ms
+[INFO] [2015-01-02 17:51:44,635] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.29ms
+[INFO] [2015-01-02 17:51:44,637] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 1.25ms
+[INFO] [2015-01-02 17:51:44,640] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.38ms
+[INFO] [2015-01-02 17:51:44,642] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 17:51:44,643] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.99ms
+[INFO] [2015-01-02 17:51:44,644] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.97ms
+[INFO] [2015-01-02 17:51:44,646] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 1.15ms
+[INFO] [2015-01-02 17:51:44,647] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 17:51:44,649] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 17:51:44,650] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.92ms
+[INFO] [2015-01-02 17:51:44,651] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 17:51:44,656] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 17:53:31,830] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 1.06ms
+[INFO] [2015-01-02 17:53:31,894] (MainThread) 200 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.57ms
+[INFO] [2015-01-02 17:53:31,895] (MainThread) 200 GET /admin/static/css/sb-admin.css (127.0.0.1) 1.07ms
+[INFO] [2015-01-02 17:53:31,897] (MainThread) 200 GET /admin/static/css/constructor.css (127.0.0.1) 0.92ms
+[INFO] [2015-01-02 17:53:31,898] (MainThread) 200 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:53:31,900] (MainThread) 200 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.03ms
+[INFO] [2015-01-02 17:53:31,902] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:53:31,903] (MainThread) 200 GET /admin/static/js/jquery.js (127.0.0.1) 1.14ms
+[INFO] [2015-01-02 17:53:31,906] (MainThread) 200 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.87ms
+[INFO] [2015-01-02 17:53:31,909] (MainThread) 200 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 3.04ms
+[INFO] [2015-01-02 17:53:31,911] (MainThread) 200 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.98ms
+[INFO] [2015-01-02 17:53:31,912] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 17:53:31,914] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 17:53:31,915] (MainThread) 200 GET /admin/static/js/angular.min.js (127.0.0.1) 1.27ms
+[INFO] [2015-01-02 17:53:31,917] (MainThread) 200 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 17:53:31,918] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 17:53:31,919] (MainThread) 200 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 17:53:31,921] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 17:53:31,924] (MainThread) 200 GET /admin/static/logo.png (127.0.0.1) 1.32ms
+[INFO] [2015-01-02 17:53:33,117] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:53:33,172] (MainThread) 200 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.07ms
+[INFO] [2015-01-02 17:53:33,173] (MainThread) 200 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 17:53:33,175] (MainThread) 200 GET /admin/static/css/constructor.css (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:53:33,177] (MainThread) 200 GET /admin/static/css/plugins/morris.css (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 17:53:33,178] (MainThread) 200 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.06ms
+[INFO] [2015-01-02 17:53:33,180] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 1.06ms
+[INFO] [2015-01-02 17:53:33,182] (MainThread) 200 GET /admin/static/js/jquery.js (127.0.0.1) 1.37ms
+[INFO] [2015-01-02 17:53:33,184] (MainThread) 200 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.93ms
+[INFO] [2015-01-02 17:53:33,188] (MainThread) 200 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.71ms
+[INFO] [2015-01-02 17:53:33,189] (MainThread) 200 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 17:53:33,191] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 1.03ms
+[INFO] [2015-01-02 17:53:33,192] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:53:33,194] (MainThread) 200 GET /admin/static/js/angular.min.js (127.0.0.1) 1.15ms
+[INFO] [2015-01-02 17:53:33,195] (MainThread) 200 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 17:53:33,196] (MainThread) 200 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 17:53:33,198] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:53:33,199] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 17:53:33,200] (MainThread) 200 GET /admin/static/logo.png (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:53:33,773] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 17:53:33,839] (MainThread) 200 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.05ms
+[INFO] [2015-01-02 17:53:33,840] (MainThread) 200 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:53:33,842] (MainThread) 200 GET /admin/static/css/constructor.css (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 17:53:33,842] (MainThread) 200 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 17:53:33,844] (MainThread) 200 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:53:33,845] (MainThread) 200 GET /admin/static/js/jquery.js (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 17:53:33,846] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:53:33,847] (MainThread) 200 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.35ms
+[INFO] [2015-01-02 17:53:33,850] (MainThread) 200 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.33ms
+[INFO] [2015-01-02 17:53:33,851] (MainThread) 200 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:53:33,852] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:53:33,853] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 17:53:33,854] (MainThread) 200 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 17:53:33,855] (MainThread) 200 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:53:33,856] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 17:53:33,857] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:53:33,858] (MainThread) 200 GET /admin/static/js/angular.min.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:53:33,859] (MainThread) 200 GET /admin/static/logo.png (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:53:34,168] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 1.12ms
+[INFO] [2015-01-02 17:53:34,212] (MainThread) 200 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.21ms
+[INFO] [2015-01-02 17:53:34,213] (MainThread) 200 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:53:34,214] (MainThread) 200 GET /admin/static/css/constructor.css (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 17:53:34,216] (MainThread) 200 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:53:34,216] (MainThread) 200 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 17:53:34,217] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 17:53:34,219] (MainThread) 200 GET /admin/static/js/jquery.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:53:34,221] (MainThread) 200 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.42ms
+[INFO] [2015-01-02 17:53:34,223] (MainThread) 200 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.62ms
+[INFO] [2015-01-02 17:53:34,225] (MainThread) 200 GET /admin/static/js/angular.min.js (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 17:53:34,226] (MainThread) 200 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:53:34,227] (MainThread) 200 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:53:34,228] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:53:34,228] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:53:34,229] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:53:34,230] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:53:34,231] (MainThread) 200 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:53:34,232] (MainThread) 200 GET /admin/static/logo.png (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:53:34,999] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:53:35,052] (MainThread) 200 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.17ms
+[INFO] [2015-01-02 17:53:35,053] (MainThread) 200 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 17:53:35,054] (MainThread) 200 GET /admin/static/css/constructor.css (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 17:53:35,055] (MainThread) 200 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 17:53:35,056] (MainThread) 200 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 17:53:35,058] (MainThread) 200 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.51ms
+[INFO] [2015-01-02 17:53:35,059] (MainThread) 200 GET /admin/static/js/jquery.js (127.0.0.1) 1.06ms
+[INFO] [2015-01-02 17:53:35,060] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 17:53:35,062] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 17:53:35,063] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 17:53:35,064] (MainThread) 200 GET /admin/static/js/angular.min.js (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:53:35,066] (MainThread) 200 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.28ms
+[INFO] [2015-01-02 17:53:35,067] (MainThread) 200 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 17:53:35,069] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:53:35,069] (MainThread) 200 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 17:53:35,070] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:53:35,071] (MainThread) 200 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:53:35,072] (MainThread) 200 GET /admin/static/logo.png (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:53:35,371] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 1.08ms
+[INFO] [2015-01-02 17:53:35,454] (MainThread) 200 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.28ms
+[INFO] [2015-01-02 17:53:35,456] (MainThread) 200 GET /admin/static/css/sb-admin.css (127.0.0.1) 1.90ms
+[INFO] [2015-01-02 17:53:35,458] (MainThread) 200 GET /admin/static/css/constructor.css (127.0.0.1) 1.18ms
+[INFO] [2015-01-02 17:53:35,460] (MainThread) 200 GET /admin/static/css/plugins/morris.css (127.0.0.1) 1.20ms
+[INFO] [2015-01-02 17:53:35,462] (MainThread) 200 GET /admin/static/js/jquery.js (127.0.0.1) 1.90ms
+[INFO] [2015-01-02 17:53:35,464] (MainThread) 200 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.03ms
+[INFO] [2015-01-02 17:53:35,467] (MainThread) 200 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.93ms
+[INFO] [2015-01-02 17:53:35,469] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:53:35,471] (MainThread) 200 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.64ms
+[INFO] [2015-01-02 17:53:35,472] (MainThread) 200 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.98ms
+[INFO] [2015-01-02 17:53:35,474] (MainThread) 200 GET /admin/static/js/angular.min.js (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 17:53:35,475] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 17:53:35,476] (MainThread) 200 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 17:53:35,477] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 17:53:35,479] (MainThread) 200 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:53:35,480] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:53:35,481] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 17:53:35,482] (MainThread) 200 GET /admin/static/logo.png (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 17:53:35,633] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:53:35,724] (MainThread) 200 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.32ms
+[INFO] [2015-01-02 17:53:35,726] (MainThread) 200 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 17:53:35,728] (MainThread) 200 GET /admin/static/css/constructor.css (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 17:53:35,729] (MainThread) 200 GET /admin/static/css/plugins/morris.css (127.0.0.1) 1.05ms
+[INFO] [2015-01-02 17:53:35,731] (MainThread) 200 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.21ms
+[INFO] [2015-01-02 17:53:35,734] (MainThread) 200 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 2.24ms
+[INFO] [2015-01-02 17:53:35,736] (MainThread) 200 GET /admin/static/js/jquery.js (127.0.0.1) 1.54ms
+[INFO] [2015-01-02 17:53:35,737] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 17:53:35,739] (MainThread) 200 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.96ms
+[INFO] [2015-01-02 17:53:35,740] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 17:53:35,742] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:53:35,745] (MainThread) 200 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.71ms
+[INFO] [2015-01-02 17:53:35,746] (MainThread) 200 GET /admin/static/js/angular.min.js (127.0.0.1) 1.30ms
+[INFO] [2015-01-02 17:53:35,748] (MainThread) 200 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:53:35,749] (MainThread) 200 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 17:53:35,751] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 17:53:35,752] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:53:35,753] (MainThread) 200 GET /admin/static/logo.png (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 17:53:35,861] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 1.05ms
+[INFO] [2015-01-02 17:53:35,979] (MainThread) 200 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.71ms
+[INFO] [2015-01-02 17:53:35,981] (MainThread) 200 GET /admin/static/css/sb-admin.css (127.0.0.1) 1.16ms
+[INFO] [2015-01-02 17:53:35,982] (MainThread) 200 GET /admin/static/css/constructor.css (127.0.0.1) 1.09ms
+[INFO] [2015-01-02 17:53:35,984] (MainThread) 200 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.26ms
+[INFO] [2015-01-02 17:53:35,986] (MainThread) 200 GET /admin/static/css/plugins/morris.css (127.0.0.1) 1.15ms
+[INFO] [2015-01-02 17:53:35,987] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 1.08ms
+[INFO] [2015-01-02 17:53:35,989] (MainThread) 200 GET /admin/static/js/jquery.js (127.0.0.1) 1.45ms
+[INFO] [2015-01-02 17:53:35,992] (MainThread) 200 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 2.44ms
+[INFO] [2015-01-02 17:53:35,995] (MainThread) 200 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 1.36ms
+[INFO] [2015-01-02 17:53:35,997] (MainThread) 200 GET /admin/static/js/angular.min.js (127.0.0.1) 1.52ms
+[INFO] [2015-01-02 17:53:35,998] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 1.04ms
+[INFO] [2015-01-02 17:53:35,999] (MainThread) 200 GET /admin/static/js/angular-route.min.js (127.0.0.1) 1.04ms
+[INFO] [2015-01-02 17:53:36,003] (MainThread) 200 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 3.40ms
+[INFO] [2015-01-02 17:53:36,005] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 1.19ms
+[INFO] [2015-01-02 17:53:36,006] (MainThread) 200 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 1.01ms
+[INFO] [2015-01-02 17:53:36,008] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 1.03ms
+[INFO] [2015-01-02 17:53:36,009] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 1.05ms
+[INFO] [2015-01-02 17:53:36,011] (MainThread) 200 GET /admin/static/logo.png (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 17:53:37,268] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 1.03ms
+[INFO] [2015-01-02 17:53:37,326] (MainThread) 200 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.99ms
+[INFO] [2015-01-02 17:53:37,327] (MainThread) 200 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:53:37,328] (MainThread) 200 GET /admin/static/css/constructor.css (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 17:53:37,328] (MainThread) 200 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:53:37,329] (MainThread) 200 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 17:53:37,330] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:53:37,332] (MainThread) 200 GET /admin/static/js/jquery.js (127.0.0.1) 1.23ms
+[INFO] [2015-01-02 17:53:37,335] (MainThread) 200 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.36ms
+[INFO] [2015-01-02 17:53:37,336] (MainThread) 200 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.44ms
+[INFO] [2015-01-02 17:53:37,338] (MainThread) 200 GET /admin/static/js/angular.min.js (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 17:53:37,339] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:53:37,340] (MainThread) 200 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 17:53:37,340] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:53:37,341] (MainThread) 200 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 17:53:37,342] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 17:53:37,343] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 17:53:37,344] (MainThread) 200 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 17:53:37,344] (MainThread) 200 GET /admin/static/logo.png (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 17:53:58,470] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 17:53:58,522] (MainThread) 200 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.16ms
+[INFO] [2015-01-02 17:53:58,523] (MainThread) 200 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 17:53:58,525] (MainThread) 200 GET /admin/static/css/constructor.css (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:53:58,526] (MainThread) 200 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 17:53:58,527] (MainThread) 200 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:53:58,528] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:53:58,529] (MainThread) 200 GET /admin/static/js/jquery.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:53:58,531] (MainThread) 200 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.38ms
+[INFO] [2015-01-02 17:53:58,534] (MainThread) 200 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 2.45ms
+[INFO] [2015-01-02 17:53:58,535] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:53:58,536] (MainThread) 200 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:53:58,537] (MainThread) 200 GET /admin/static/js/angular.min.js (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 17:53:58,538] (MainThread) 200 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 17:53:58,539] (MainThread) 200 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:53:58,540] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:53:58,541] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 17:53:58,542] (MainThread) 200 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 17:53:58,544] (MainThread) 200 GET /admin/static/logo.png (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 17:55:02,930] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:55:02,949] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.04ms
+[INFO] [2015-01-02 17:55:02,950] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:55:02,952] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.86ms
+[INFO] [2015-01-02 17:55:02,953] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:55:02,954] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:55:02,959] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 2.81ms
+[INFO] [2015-01-02 17:55:02,962] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.75ms
+[INFO] [2015-01-02 17:55:02,963] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.21ms
+[INFO] [2015-01-02 17:55:02,965] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 17:55:02,966] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 17:55:02,967] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.96ms
+[INFO] [2015-01-02 17:55:02,968] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 17:55:02,969] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:55:02,970] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:55:02,971] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:55:02,972] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:55:02,975] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:55:02,981] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.80ms
+[INFO] [2015-01-02 17:55:03,192] (MainThread) 304 GET /admin/static/modules/scenarios.html (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 17:55:04,995] (MainThread) 200 GET /admin/static/modules/scheduler.html (127.0.0.1) 1.44ms
+[INFO] [2015-01-02 17:55:05,074] (MainThread) 200 GET /admin/scheduler/alltasks (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 17:55:06,878] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.87ms
+[INFO] [2015-01-02 17:55:06,902] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.92ms
+[INFO] [2015-01-02 17:55:06,903] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:55:06,904] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 17:55:06,905] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 17:55:06,906] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 17:55:06,907] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.81ms
+[INFO] [2015-01-02 17:55:06,909] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 17:55:06,911] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.61ms
+[INFO] [2015-01-02 17:55:06,914] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.97ms
+[INFO] [2015-01-02 17:55:06,915] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 17:55:06,916] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:55:06,917] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 17:55:06,918] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 17:55:06,919] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 17:55:06,920] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 17:55:06,920] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 17:55:06,921] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 17:55:06,922] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 17:55:07,113] (MainThread) 304 GET /admin/static/modules/scheduler.html (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 17:55:07,191] (MainThread) 304 GET /admin/scheduler/alltasks (127.0.0.1) 0.43ms
+[INFO] [2015-01-02 17:55:11,149] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.38ms
+[INFO] [2015-01-02 17:55:11,164] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.03ms
+[INFO] [2015-01-02 17:55:11,165] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:55:11,166] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:55:11,167] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 17:55:11,168] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 17:55:11,170] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 17:55:11,171] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 17:55:11,172] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.65ms
+[INFO] [2015-01-02 17:55:11,173] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 17:55:11,174] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 17:55:11,176] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.54ms
+[INFO] [2015-01-02 17:55:11,177] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.71ms
+[INFO] [2015-01-02 17:55:11,178] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.45ms
+[INFO] [2015-01-02 17:55:11,179] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.44ms
+[INFO] [2015-01-02 17:55:11,179] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.48ms
+[INFO] [2015-01-02 17:55:11,180] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.46ms
+[INFO] [2015-01-02 17:55:11,181] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.45ms
+[INFO] [2015-01-02 17:55:11,182] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 17:55:11,372] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 17:58:01,840] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:58:01,872] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.05ms
+[INFO] [2015-01-02 17:58:01,875] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 1.10ms
+[INFO] [2015-01-02 17:58:01,877] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:58:01,879] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:58:01,880] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 17:58:01,883] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.29ms
+[INFO] [2015-01-02 17:58:01,885] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.48ms
+[INFO] [2015-01-02 17:58:01,888] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.80ms
+[INFO] [2015-01-02 17:58:01,889] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:58:01,890] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 17:58:01,891] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 17:58:01,892] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 17:58:01,893] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 17:58:01,894] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 17:58:01,895] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:58:01,896] (MainThread) 200 GET /admin/static/js/constructor.js (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 17:58:01,902] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.80ms
+[INFO] [2015-01-02 17:58:01,906] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.82ms
+[INFO] [2015-01-02 17:58:02,120] (MainThread) 304 GET /admin/static/modules/constructor.html (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 17:58:03,908] (MainThread) 200 GET /admin/static/modules/scheduler/scheduler.html (127.0.0.1) 1.00ms
+[INFO] [2015-01-02 17:58:04,160] (MainThread) 304 GET /admin/scheduler/alltasks (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 18:03:14,825] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 1.16ms
+[INFO] [2015-01-02 18:03:14,839] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.26ms
+[INFO] [2015-01-02 18:03:14,840] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 18:03:14,841] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 18:03:14,842] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 18:03:14,843] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 18:03:14,845] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.94ms
+[INFO] [2015-01-02 18:03:14,846] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.08ms
+[INFO] [2015-01-02 18:03:14,848] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.64ms
+[INFO] [2015-01-02 18:03:14,850] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 18:03:14,851] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 18:03:14,852] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 18:03:14,853] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.85ms
+[INFO] [2015-01-02 18:03:14,854] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 18:03:14,855] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 18:03:14,856] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.53ms
+[WARNING] [2015-01-02 18:03:14,861] (MainThread) 404 GET /admin/static/scheduler/scheduler.js (127.0.0.1) 3.76ms
+[INFO] [2015-01-02 18:03:14,862] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 18:03:14,863] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 18:03:14,866] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.86ms
+[WARNING] [2015-01-02 18:03:15,027] (MainThread) 404 GET /admin/static/scheduler/scheduler.js (127.0.0.1) 1.43ms
+[INFO] [2015-01-02 18:03:15,107] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.html (127.0.0.1) 0.88ms
+[INFO] [2015-01-02 18:03:44,897] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.79ms
+[INFO] [2015-01-02 18:03:44,909] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.12ms
+[INFO] [2015-01-02 18:03:44,910] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 18:03:44,911] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 18:03:44,912] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 18:03:44,913] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 18:03:44,915] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.83ms
+[INFO] [2015-01-02 18:03:44,917] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.28ms
+[INFO] [2015-01-02 18:03:44,919] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.58ms
+[INFO] [2015-01-02 18:03:44,920] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 18:03:44,921] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 18:03:44,922] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 18:03:44,923] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.87ms
+[INFO] [2015-01-02 18:03:44,924] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.93ms
+[INFO] [2015-01-02 18:03:44,925] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 18:03:44,926] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 18:03:44,927] (MainThread) 200 GET /admin/static/modules/scheduler/scheduler.js (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 18:03:44,928] (MainThread) 304 GET /admin/static/js/constructor.js (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 18:03:44,933] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 1.08ms
+[INFO] [2015-01-02 18:03:44,935] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 18:03:45,190] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.html (127.0.0.1) 0.90ms
+[INFO] [2015-01-02 18:03:45,275] (MainThread) 304 GET /admin/scheduler/alltasks (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 18:08:21,185] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.76ms
+[INFO] [2015-01-02 18:08:21,197] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 18:08:21,198] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 18:08:21,199] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 18:08:21,200] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 18:08:21,201] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 18:08:21,204] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.09ms
+[INFO] [2015-01-02 18:08:21,206] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.84ms
+[INFO] [2015-01-02 18:08:21,208] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.68ms
+[INFO] [2015-01-02 18:08:21,210] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 18:08:21,211] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 18:08:21,212] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 18:08:21,213] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 18:08:21,213] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 18:08:21,215] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 18:08:21,216] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 18:08:21,217] (MainThread) 200 GET /admin/static/modules/constructor/constructor.js (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 18:08:21,217] (MainThread) 200 GET /admin/static/modules/scenarios/scenarios.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 18:08:21,218] (MainThread) 200 GET /admin/static/modules/scheduler/scheduler.js (127.0.0.1) 0.52ms
+[INFO] [2015-01-02 18:08:21,220] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 18:08:21,222] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 18:08:21,417] (MainThread) 200 GET /admin/static/modules/scenarios/scenarios.html (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 18:08:22,579] (MainThread) 304 GET /admin/scheduler/alltasks (127.0.0.1) 0.68ms
+[INFO] [2015-01-02 18:08:54,377] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 18:08:54,391] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.95ms
+[INFO] [2015-01-02 18:08:54,393] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 18:08:54,394] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 18:08:54,395] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 18:08:54,395] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 18:08:54,398] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 0.92ms
+[INFO] [2015-01-02 18:08:54,399] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.16ms
+[INFO] [2015-01-02 18:08:54,401] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.56ms
+[INFO] [2015-01-02 18:08:54,402] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 18:08:54,403] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 18:08:54,404] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 18:08:54,406] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 18:08:54,407] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 18:08:54,407] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 18:08:54,408] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 18:08:54,412] (MainThread) 200 GET /admin/static/modules/constructor/constructor-svc.js (127.0.0.1) 0.84ms
+[INFO] [2015-01-02 18:08:54,413] (MainThread) 200 GET /admin/static/modules/scenarios/scenarios.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 18:08:54,416] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 18:08:54,419] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 18:08:54,424] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.75ms
+[INFO] [2015-01-02 18:08:54,425] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 18:08:54,629] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.html (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 18:08:54,714] (MainThread) 304 GET /admin/scheduler/alltasks (127.0.0.1) 0.47ms
+[INFO] [2015-01-02 18:08:55,240] (MainThread) 200 GET /admin/static/modules/constructor/constructor.html (127.0.0.1) 0.91ms
+[INFO] [2015-01-02 18:20:19,988] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.78ms
+[INFO] [2015-01-02 18:20:20,010] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 0.89ms
+[INFO] [2015-01-02 18:20:20,011] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 18:20:20,012] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 18:20:20,013] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 18:20:20,014] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 0.58ms
+[INFO] [2015-01-02 18:20:20,016] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.10ms
+[INFO] [2015-01-02 18:20:20,018] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.13ms
+[INFO] [2015-01-02 18:20:20,020] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.40ms
+[INFO] [2015-01-02 18:20:20,021] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 18:20:20,023] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.60ms
+[INFO] [2015-01-02 18:20:20,024] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.70ms
+[INFO] [2015-01-02 18:20:20,025] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.61ms
+[INFO] [2015-01-02 18:20:20,026] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.77ms
+[INFO] [2015-01-02 18:20:20,027] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.73ms
+[INFO] [2015-01-02 18:20:20,028] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.63ms
+[INFO] [2015-01-02 18:20:20,029] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 18:20:20,030] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 18:20:20,031] (MainThread) 200 GET /admin/static/modules/constructor/constructor.js (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 18:20:20,033] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.67ms
+[INFO] [2015-01-02 18:20:20,037] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (127.0.0.1) 0.97ms
+[INFO] [2015-01-02 18:20:20,038] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (127.0.0.1) 0.53ms
+[INFO] [2015-01-02 18:20:20,236] (MainThread) 304 GET /admin/static/modules/constructor/constructor.html (127.0.0.1) 0.74ms
+[INFO] [2015-01-02 18:20:46,437] (MainThread) 200 GET /admin/static/modules/main.html (127.0.0.1) 2.02ms
+[INFO] [2015-01-02 18:21:35,172] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.57ms
+[INFO] [2015-01-02 18:21:35,185] (MainThread) 304 GET /admin/static/css/bootstrap.min.css (127.0.0.1) 1.19ms
+[INFO] [2015-01-02 18:21:35,187] (MainThread) 304 GET /admin/static/css/sb-admin.css (127.0.0.1) 1.21ms
+[INFO] [2015-01-02 18:21:35,189] (MainThread) 304 GET /admin/static/css/constructor.css (127.0.0.1) 0.96ms
+[INFO] [2015-01-02 18:21:35,191] (MainThread) 304 GET /admin/static/css/plugins/morris.css (127.0.0.1) 1.17ms
+[INFO] [2015-01-02 18:21:35,193] (MainThread) 304 GET /admin/static/font-awesome-4.1.0/css/font-awesome.min.css (127.0.0.1) 1.08ms
+[INFO] [2015-01-02 18:21:35,195] (MainThread) 304 GET /admin/static/index.html (127.0.0.1) 1.08ms
+[INFO] [2015-01-02 18:21:35,197] (MainThread) 304 GET /admin/static/js/jquery.js (127.0.0.1) 1.56ms
+[INFO] [2015-01-02 18:21:35,199] (MainThread) 304 GET /admin/static/js/jquery-ui.min.js (127.0.0.1) 1.65ms
+[INFO] [2015-01-02 18:21:35,201] (MainThread) 304 GET /admin/static/js/jquery.jsPlumb-min.js (127.0.0.1) 1.62ms
+[INFO] [2015-01-02 18:21:35,202] (MainThread) 304 GET /admin/static/js/bootstrap.min.js (127.0.0.1) 0.64ms
+[INFO] [2015-01-02 18:21:35,203] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.min.js (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 18:21:35,204] (MainThread) 304 GET /admin/static/js/jquery.pickmeup.twitter-bootstrap.min.js (127.0.0.1) 0.50ms
+[INFO] [2015-01-02 18:21:35,205] (MainThread) 304 GET /admin/static/js/angular.min.js (127.0.0.1) 0.78ms
+[INFO] [2015-01-02 18:21:35,206] (MainThread) 304 GET /admin/static/js/angular-route.min.js (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 18:21:35,207] (MainThread) 304 GET /admin/static/js/angular-animate.min.js (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 18:21:35,208] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (127.0.0.1) 0.51ms
+[INFO] [2015-01-02 18:21:35,209] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (127.0.0.1) 0.66ms
+[INFO] [2015-01-02 18:21:35,210] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (127.0.0.1) 0.49ms
+[INFO] [2015-01-02 18:21:35,214] (MainThread) 304 GET /admin/static/logo.png (127.0.0.1) 0.69ms
+[INFO] [2015-01-02 18:21:35,220] (MainThread) 304 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 18:21:35,221] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 18:21:35,411] (MainThread) 304 GET /admin/static/modules/constructor/constructor.html (127.0.0.1) 0.72ms
+[INFO] [2015-01-02 18:51:32,473] (MainThread) 304 GET /admin/scheduler/alltasks (127.0.0.1) 0.60ms
+[INFO] [2015-01-02 19:55:33,289] (MainThread) 200 GET /admin/static/data-examples/process1.json (127.0.0.1) 0.97ms
+[INFO] [2015-01-02 20:30:09,997] (MainThread) 200 GET /admin/static/index.html (127.0.0.1) 0.59ms
+[INFO] [2015-01-02 20:30:10,034] (MainThread) 200 GET /admin/static/js/shomeadmin.js (127.0.0.1) 0.62ms
+[INFO] [2015-01-02 20:30:10,036] (MainThread) 200 GET /admin/static/modules/scheduler/scheduler.js (127.0.0.1) 0.57ms
+[INFO] [2015-01-02 20:30:10,038] (MainThread) 200 GET /admin/static/modules/constructor/constructor.js (127.0.0.1) 0.55ms
+[INFO] [2015-01-02 20:30:10,040] (MainThread) 200 GET /admin/static/modules/constructor/constructor-svc.js (127.0.0.1) 0.56ms
+[INFO] [2015-01-02 20:30:10,042] (MainThread) 200 GET /admin/static/modules/scenarios/scenarios.js (127.0.0.1) 0.54ms
+[INFO] [2015-01-02 20:30:10,238] (MainThread) 200 GET /admin/static/modules/constructor/constructor.html (127.0.0.1) 0.63ms
+[WARNING] [2015-01-02 20:30:10,334] (MainThread) 404 GET /favicon.ico (127.0.0.1) 0.56ms
+[WARNING] [2015-01-02 20:30:10,468] (MainThread) 404 GET /favicon.ico (127.0.0.1) 0.82ms

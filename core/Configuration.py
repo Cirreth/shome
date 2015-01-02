@@ -58,17 +58,17 @@ class Configuration():
 
     def update_task(self, procname, title, scheme, isrunned, description=''):
         """Update task with passed name"""
-        r = "UPDATE task SET scheme=?, isrunned=?, title=?, description=? WHERE process=?"
-        task = scheme, isrunned, title, description, procname
-        logging.info('SQL_conf: '+str((r, task)))
+        r = "UPDATE task SET scheme=?, isrunned=?, process=?"+(", "+description if description else "") +" WHERE title=?"
+        task = (scheme, isrunned, procname, description, title) if description else (scheme, isrunned, procname, title)
         self.cur.execute(r, task)
         self.connection.commit()
+        logging.info('SQL_conf: '+str((r, task))+'; rows affected: '+str(self.cur.rowcount))
 
-    def delete_task(self, procname):
+    def delete_task(self, title):
         """Delete task with passed name"""
-        r = "DELETE FROM task WHERE process=?"
-        logging.info('SQL_conf: '+r+' with '+procname)
-        self.cur.execute(r, (procname, ))
+        r = "DELETE FROM task WHERE title=?"
+        logging.info('SQL_conf: '+r+' with '+title)
+        self.cur.execute(r, (title, ))
         self.connection.commit()
 
     def get_task_by_process(self, procname):
@@ -87,7 +87,7 @@ class Configuration():
                    'title': r[1],
                    'description': r[2],
                    'scheme': r[3],
-                   'isrunned': True if r[4] == 'True' else False
+                   'isrunned': True if r[4] == 1 else False
                } for r in self.cur.fetchall()]
         logging.info('SQL_conf: '+r+'. Result: '+str(res))
         return res

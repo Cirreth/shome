@@ -1,19 +1,18 @@
 <div id="scenarios" >
   <h1 class="app-hdr">Scheduler</h1>
-
-<button class="sch-btn" type="button" ng-click="newTask()" ng-hide="editing">
+<button class="sch-btn animate-new-btn" type="button" ng-click="newTask()" ng-hide="editing">
     New task
 </button>
 
 <div ng-show="editing" class="animate-new">
-
 <div class="row">
     <form novalidate>
         <div id="editing" class="col-sm-4">
+          <i class="fa fa-times deleted" ng-show="mode=='delete'"></i>
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">
-              <input required class="form-control sch-fld-title" placeholder="Task name" text ng-model="editing.title" set-focus="{{editing}}"></h3>
+              <input required class="form-control sch-fld-title" placeholder="Task name" text ng-model="editing.title" ng-disabled="mode!='new'" set-focus="{{editing}}"></h3>
             </div>
             <div class="panel-body">
               <textarea required class="form-control" rows="2" placeholder="Short description" ng-model="editing.description"></textarea>
@@ -107,11 +106,12 @@
 
 <button class="sch-btn" type="button" ng-click="saveTask()">Save</button>
 <button class="sch-btn" type="button" ng-click="cancel(editing)">Cancel</button>
+<button class="sch-btn" type="button" ng-click="delete()" ng-show="mode == 'edit'">Delete</button>
 
-  <hr>
 </div>
+<hr>
 
-      <div class="row" ng-repeat="(idx, task) in tasks" ng-if="idx % 3 == 0">
+    <div class="row" ng-repeat="(idx, task) in tasks" ng-if="idx % 3 == 0">
 
         <div class="col-sm-4" ng-repeat="colidx in [0,1,2]">
           <div class="panel panel-default" ng-if="tasks[idx+colidx]" ng-init="task=tasks[idx+colidx]">
@@ -130,7 +130,7 @@
               <div class="sch-st-cont" >
                 <div class="sch-stop">
                   <div class="slider-check-box">
-                    <input id="{{'enbl-cb-'+task.process}}" ng-model="task.isrunned" type="checkbox" ng-checked="task.isrunned">
+                    <input id="{{'enbl-cb-'+task.process}}" ng-model="task.isrunned" type="checkbox" ng-checked="task.isrunned" ng-click="updateTaskStatus(task)">
                     <label id="{{'enbl-ch-lbl-'+task.process}}" for="{{'enbl-cb-'+task.process}}"></label>
                   </div>
                 </div>

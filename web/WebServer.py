@@ -19,8 +19,8 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         return self.render("views/main.tpl")
 
-class SchedulerHandler(tornado.web.RequestHandler):
-    """Serves Admin UI:Scheduler"""
+class SchedulerAllTasksHandler(tornado.web.RequestHandler):
+    """Serves /admin/scheduler/alltasks. Return tasklist"""
 
     #web server instance
     _ws = None
@@ -30,6 +30,54 @@ class SchedulerHandler(tornado.web.RequestHandler):
 
     def get(self):
         self.write(json.dumps(self._ws._scheduler.list_all()).encode())
+
+class SchedulerTaskHandler(tornado.web.RequestHandler):
+    """Single task REST service"""
+    _ws = None
+
+    def initialize(self, ws):
+        self._ws = ws
+
+    def get(self, title):
+        self.write(json.dumps(self._ws._scheduler.get_by_title(title)))
+
+    def post(self, title):
+        data = tornado.escape.json_decode(self.request.body)
+        tasktype = data['type'] if 'type' in data else None
+        scheme = data['scheme'] if 'scheme' in data else None
+        description = data['description'] if 'description' in data else None
+        isrunned = data['isrunned'] if 'isrunned' in data else None
+        process = data['process'] if 'process' in data else None
+        logging.debug('SchedulerTaskHandler post: '+title+' // {process: '+str(process)+', isrunned:'+ \
+            str(isrunned)+', type: '+str(tasktype)+', scheme: '+str(scheme)+', description: '+str(description))
+        self.write('okokok')
+        self._ws._scheduler.create(process, title, scheme, isrunned, description, writedb=True)
+
+    def put(self, title):
+        data = tornado.escape.json_decode(self.request.body)
+        tasktype = data['type'] if 'type' in data else None
+        scheme = data['scheme'] if 'scheme' in data else None
+        description = data['description'] if 'description' in data else None
+        isrunned = data['isrunned'] if 'isrunned' in data else None
+        process = data['process'] if 'process' in data else None
+        logging.debug('SchedulerTaskHandler put: '+title+' // {process: '+str(process)+', isrunned:'+ \
+            str(isrunned)+', type: '+str(tasktype)+', scheme: '+str(scheme)+', description: '+str(description))
+        if isrunned is not None:
+            if isrunned:
+                self._ws._scheduler.start(title)
+            else:
+                self._ws._scheduler.stop(title)
+        if scheme is not None:
+            self._ws._scheduler.set
+
+
+    def delete(self, title):
+        logging.debug('SchedulerTaskHandler delete: '+title)
+        try:
+            self._ws._scheduler.delete(title)
+            self.write(title + ' successfully deleted')
+        except Exception as e:
+            return str(e)
 
 class CommandHandler(tornado.web.RequestHandler):
 
@@ -50,7 +98,6 @@ class CommandHandler(tornado.web.RequestHandler):
                     self.write(json.dumps(res))
             else:
                 self.write('Accepted')
-
         except Exception as e:
             return self.write(str(e))
 
@@ -79,10 +126,11 @@ class WebServer():
             "admin_path": os.path.join(os.path.dirname(__file__), "admin"),
         }
         application = tornado.web.Application([
-            (r"/oldadmin", MainHandler),
+            (r"/", MainHandler),
             (r"/command", CommandHandler, {'ws': self}),
             (r"/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
-            (r"/admin/scheduler/tasks", SchedulerHandler, {'ws': self}),
+            (r"/admin/scheduler/alltasks", SchedulerAllTasksHandler, {'ws': self}),
+            (r"/admin/scheduler/task/(.+)", SchedulerTaskHandler, {'ws': self}),
             (r"/admin/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
         ], debug=True, **settings)
         http_server = tornado.httpserver.HTTPServer(application)
@@ -125,27 +173,13 @@ class WebServer():
             msg = re.search('^schedule create (.+?)\\s*:\\s*((.*\\n?)+)', message, re.MULTILINE)
             if msg and msg.group(0):
                 logging.debug('Input parsed as: schedule command ( '+msg.group(1)+' ) with scheme(interval) ( '+msg.group(2)+' )')
-                return self._scheduler.create(msg.group(1), msg.group(2), writedb=True)
+                return self._scheduler.create(msg.group(1), msg.group(1), msg.group(2), writedb=True)
 
             msg = re.search('^schedule setscheme (.+?)\\s*:\\s*((.*\\n?)+)', message, re.MULTILINE)
             if msg and msg.group(0):
                 logging.debug('Input parsed as: schedule command ( '+msg.group(1)+' ) with scheme(interval) ( '+msg.group(2)+' )')
                 return self._scheduler.setscheme(msg.group(1), msg.group(2))
 
-            msg = re.search('^schedule start (.+)', message)
-            if msg and msg.group(0):
-                logging.debug('Input parsed as: start scheduled command ( '+msg.group(1)+' )')
-                return self._scheduler.start(msg.group(1))
-
-            msg = re.search('^schedule stop (.+)', message)
-            if msg and msg.group(0):
-                logging.debug('Input parsed as: stop scheduled command ( '+msg.group(1)+' )')
-                return self._scheduler.stop(msg.group(1))
-
-            msg = re.search('^schedule delete (.+)', message)
-            if msg and msg.group(0):
-                logging.debug('Input parsed as: delete scheduled command ( '+msg.group(1)+' )')
-                return self._scheduler.delete(msg.group(1))
             if message == 'schedule list':
                 return self._scheduler.list_all()
         elif message.startswith('system'):
