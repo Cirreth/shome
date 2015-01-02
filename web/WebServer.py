@@ -67,8 +67,8 @@ class SchedulerTaskHandler(tornado.web.RequestHandler):
                 self._ws._scheduler.start(title)
             else:
                 self._ws._scheduler.stop(title)
-        if scheme is not None:
-            self._ws._scheduler.set
+        #if scheme is not None:
+        #    self._ws._scheduler.set
 
 
     def delete(self, title):
