@@ -1,8 +1,9 @@
-import queue
-
 __author__ = 'cirreth'
+
+import queue
 import logging
 import threading
+
 
 #@TODO Needs full refactoring. Reason: pk changed to 'title'
 class Scheduler:
@@ -79,7 +80,6 @@ class Scheduler:
                 'schema': self.expression,
                 'isrunned': self.stopped
             }
-
 
     def __init__(self):
         pass

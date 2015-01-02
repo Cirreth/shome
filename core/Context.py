@@ -6,8 +6,8 @@ from core.Performer import Performer
 from web.WebServer import WebServer
 import logging
 
-class Context:
 
+class Context:
     action_processor = None
     scheduler = None
     performer = None
@@ -15,7 +15,9 @@ class Context:
     config = None
 
     def __init__(self):
-        logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s', filename='debug.log', filemode='w')
+        logging.basicConfig(level=logging.DEBUG,
+                            format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s',
+                            filename='debug.log', filemode='w')
         self.config = Configuration()
         self.action_processor = ActionProcessor()
         self.scheduler = Scheduler()
@@ -25,10 +27,7 @@ class Context:
         self.performer.init(self)
         logging.info('Context initialized')
 
-
-
-        #load processes
-
+        # load processes
         processes = self.config.get_all_processes()
 
         for k in processes:
@@ -40,7 +39,8 @@ class Context:
 
         #load tasks
         for k in self.config.get_all_tasks():
-            logging.debug('Loading: '+str((k['process'], k['title'], k['description'], k['scheme'], k['isrunned'])))
+            logging.debug('Loading: ' + str((k['process'], k['title'], k['description'], k['scheme'], k['isrunned'])))
             self.scheduler.create(k['process'], k['title'], k['scheme'], k['isrunned'], k['description'])
 
+        #start web server
         self.web_server = WebServer(self)

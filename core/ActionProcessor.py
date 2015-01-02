@@ -1,5 +1,4 @@
 __author__ = 'cirreth'
-
 from core.actproctree import *
 from core.exceptions.InvalidNodeTypeException import InvalidNodeTypeException
 from core.exceptions.ParsingException import ParsingException
@@ -28,11 +27,9 @@ class ActionProcessor:
     def __init__(self):
         pass
 
-    # mock process initalization
     def init(self, context):
         logging.debug("Action processor initialization")
         self._performer = context.performer
-        #tree nodes classes initialization
         if not context.performer:
             raise Exception('Performer is null')
         AbstractNode._performer = context.performer

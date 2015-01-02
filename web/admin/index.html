@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="cirreth">
 
     <title>SHome Administration</title>
 
@@ -28,7 +28,7 @@
 
 <body>
 
-    <div id="info-message" ng-controller="InfoMessageController"  ng-show="message">
+    <div id="info-message" ng-controller="InfoMessageController"  ng-show="message" ng-cloac>
             <i class="fa fa-check green" ng-show="type=='ok'"></i>
             <i class="fa fa-times red" ng-show="type=='error'"></i>
             <i class="fa fa-exclamation-circle" ng-show="type=='info'"></i>
@@ -214,8 +214,15 @@
     <!-- Application script -->
     <script src="js/shomeadmin.js"></script>
 
+    <!-- Scheduler script -->
+    <script src="modules/scheduler/scheduler.js"></script>
+
     <!-- Constructor script -->
-    <script src="js/constructor.js"></script>
+    <script src="modules/constructor/constructor.js"></script>
+    <script src="modules/constructor/constructor-svc.js"></script>
+
+    <!-- Scenarios script -->
+    <script src="modules/scenarios/scenarios.js"></script>
 
 
 </body>

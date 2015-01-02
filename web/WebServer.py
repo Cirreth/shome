@@ -98,7 +98,6 @@ class CommandHandler(tornado.web.RequestHandler):
                     self.write(json.dumps(res))
             else:
                 self.write('Accepted')
-
         except Exception as e:
             return self.write(str(e))
 
