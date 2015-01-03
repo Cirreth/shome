@@ -1,5 +1,11 @@
 [
   {
+    "id": "start",
+    "type": "StartNode",
+    "next": ["rn0"],
+    "parallel": []
+  },
+  {
     "id": "rn0",
     "type": "RequestNode",
     "plugin": "onewire",

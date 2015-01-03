@@ -2,22 +2,33 @@
 
     var app = angular.module('shomeAdm');
 
+    app.directive('startNode', ['Constructor', function(Constructor) {
+        return {
+            restrict: 'E',
+            require: '?ngModel',
+            link: function(scope, element, attrs, model) {
+                Constructor.initNode(scope, element, attrs, model, 'Start');
+                scope.connect = function() {Constructor.connect(scope, element, attrs, model)};
+            }
+        }
+    }]);
+
     app.directive('requestNode', ['Constructor', function(Constructor) {
         return {
-        restrict: 'E',
-        require: 'ngModel',
-        link: function(scope, element, attrs, model) {
-            if (attrs.hasOwnProperty('mock')) return false;
-            Constructor.initNode(scope, element, attrs, model, 'R');
-            scope.connect = function() {Constructor.connect(scope, element, attrs, model)};
-        }
+            restrict: 'E',
+            require: '?ngModel',
+            link: function(scope, element, attrs, model) {
+                if (attrs.hasOwnProperty('mock')) return false;
+                Constructor.initNode(scope, element, attrs, model, 'R');
+                scope.connect = function() {Constructor.connect(scope, element, attrs, model)};
+            }
         }
     }]);
 
     app.directive('conditionalNode', ['Constructor', function(Constructor) {
         return {
             restrict: 'E',
-            require: 'ngModel',
+            require: '?ngModel',
             link: function(scope, element, attrs, model) {
                 if (attrs.hasOwnProperty('mock')) return false;
                 Constructor.initNode(scope, element, attrs, model, 'C');
@@ -26,14 +37,67 @@
         }
     }]);
 
+    /*
+    --- Expected Constructor service methods ---
+
+        before we are beginning, notice:
+            1. link to model is stored in Constructor service
+
+
+    */
+
     app.controller('ConstructorController', ['$scope', '$http', '$interval', 'Constructor',
                                                     function($scope, $http, $interval, Constructor) {
 
+        /* convert server process representation to client process representation */
+        function convertToViewFormat(data) {
+            var start = {
+                id: 'Start',
+                type: 'StartNode',
+                next: [].concat(data)
+            };
+            return treeToList(start);
+        }
+
+        function treeToList(root) {
+            var list = [];
+            list.push(root);
+            var nextNames = [];
+            var parallelNames = [];
+            var exceptionalNames = [];
+            if (root.next) {
+                for (var i=0; i<root.next.length; i++) {
+                    var nl = treeToList(root.next[i]);
+                    list = list.concat(nl);
+                    nextNames.push(root.next[i].id);
+                }
+            }
+            if (root.parallel) {
+                for (var i=0; i<root.parallel.length; i++) {
+                    list = list.concat(treeToList(root.parallel[i]));
+                    parallelNames.push(root.parallel[i].id);
+                }
+            }
+            if (root.exceptional) {
+                for (var i=0; i<root.exceptional.length; i++) {
+                    //var exceptional = root.exceptional[i];
+                    //exceptionalNames.push(root.exceptional[i].id);
+                }
+            }
+            root.next = nextNames;
+            root.parallel = parallelNames;
+            root.exceptional = exceptionalNames;
+            return list;
+        }
+
         $scope.init = function() {
-            $http.get('./data-examples/process1.json')
+            //$http.get('./data-examples/process1.json')
+            $http.get('/admin/scenarios/t_nursery')
             .success(function(data){
+                Constructor.init();
                 Constructor.name = "test";
-                Constructor.nodes = data;
+                Constructor.nodes = convertToViewFormat(data);
+                console.log('nodes', Constructor.nodes);
                 $scope.nodes = Constructor.nodes;
                 /* endpoints polling for init connections*/
                 var epp = setInterval(function() {

@@ -31,14 +31,20 @@
     </div>
 </div>
 
-<div id="workspace" ng-init="init()">
-<table>
-  <tr ng-repeat="node in nodes">
-    <td>{{ node | json }}</td>
-  </tr>
-</table>
+<div id="workspace" ng-init="init(); showmodel=false;">
 
+    <button class="sch-btn" ng-click="showmodel = !showmodel">model</button>
     <button class="sch-btn" ng-click="test()">test process</button>
+    <table ng-show="showmodel">
+      <tr ng-repeat="node in nodes">
+        <td>{{ node | json }}</td>
+      </tr>
+    </table>
+
+    <start-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-class="{active: node.active}"
+        ng-repeat="node in nodes" ng-if="node.type=='StartNode'">
+        Start
+    </start-node>
 
     <request-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-class="{active: node.active}"
         ng-repeat="node in nodes" ng-if="node.type=='RequestNode'">
@@ -46,7 +52,7 @@
         <table>
           <tr><td colspan="3"><i>{{node.plugin}}</i></td></tr>
           <tr><td colspan="3">{{node.reference}}</td></tr>
-          <tr><td>in</td><td>→[]→</td><td>out</td></tr>
+          <tr><td>{{node.value}}{{node.variable}}</td><td>→[]→</td><td>{{node.retvar}}</td></tr>
         </table>
     </request-node>
 

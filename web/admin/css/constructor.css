@@ -1,15 +1,15 @@
 #workspace {
-  height: 800px;
-  margin-right: 225px;
-  overflow-x:hidden;
-  overflow-y: auto;
-  position:relative;
+    height: 800px;
+    margin-right: 225px;
+    overflow-x:visible;
+    overflow-y: auto;
+    position:relative;
 }
 
 #workspace * {
-  user-select: none;
-  -moz-user-select: none;
-  font-size: 8pt;
+    user-select: none;
+    -moz-user-select: none;
+    font-size: 8pt;
 }
 
 #panel {
@@ -57,68 +57,87 @@
     background: rgba(0,0,0,0)!important;
 }
 
-request-node.active, conditional-node.active .shape{
+request-node.active, conditional-node.active .shape, start-node.active{
   box-shadow: 1px 1px 10px #fff;
 }
+/* start node */
+start-node {
+    border-radius: 25px;
+    width: 90px;
+    height: 32px;
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    background: none repeat scroll 0% 0% rgba(49, 191, 49, 0.93);
+    box-shadow: 1px 1px #257D42;
+    border-right: 2px solid #216E2D;
+    border-bottom: 2px solid #164B13;
+    color: white;
+    text-align: center;
+    font-size: 16pt !important;
+    font-weight: bold;
+}
 
+/* Request node */
 request-node {
-  border-radius: 7px;
-  width: 180px;
-  height: 65px;
-  position: absolute;
-  background: rgba(0,0,0,0.7); /*#3895BD;*/
-  box-shadow: 1px 1px #25637D;
-  border-right: 2px solid #25637D;
-  border-bottom: 2px solid #12303D;
-  font-size: 9pt;
+    border-radius: 7px;
+    width: 180px;
+    height: 65px;
+    position: absolute;
+    background: rgba(0,0,0,0.8); /*#3895BD;*/
+    box-shadow: 1px 1px #25637D;
+    border-right: 2px solid #25637D;
+    border-bottom: 2px solid #12303D;
+    font-size: 9pt;
 }
 request-node table {
-  font-size: 9pt;
-  color: white;
-  width:100%;
+    font-size: 9pt;
+    color: white;
+    width:100%;
 }
 request-node table tr:not(:last-child) td{
-  border-bottom: 1px dotted #fff;
-  padding-left: 6px;
+    border-bottom: 1px dotted #fff;
+    padding-left: 6px;
 }
 request-node table tr:last-child td{
-  text-align: center;
-  width: 30%;
+    text-align: center;
+    width: 30%;
 }
+
 conditional-node {
-  width:218px;
-  height:85px;
-  position:absolute;
+    width:218px;
+    height:85px;
+    position:absolute;
 }
 conditional-node .shape {
-  width: 60px;
-  height: 60px;
-  position:relative;
-  background: rgba(177,0,0,0.7);/*#3895BD;*/
-  box-shadow: 1px 1px #25637D;
-  border-bottom: 2px solid #12303D;
-  transform: scaleX(2.5) rotate(-45deg);
-  left: 78px;
-  top: 12px;
-  float:left;
+    width: 60px;
+    height: 60px;
+    position:relative;
+    background: rgba(177,0,0,0.8);/*#3895BD;*/
+    box-shadow: 1px 1px #25637D;
+    border-bottom: 2px solid #12303D;
+    transform: scaleX(2.5) rotate(-45deg);
+    left: 78px;
+    top: 12px;
+    float:left;
 }
 conditional-node .block {
-  position: relative;
-  height:100%;
-  width:100%;
+    position: relative;
+    height:100%;
+    width:100%;
 }
 conditional-node .block div{
-  font-size: 9pt;
-  color: white;
-  border-bottom: 1px dotted #fff;
-  text-align: center;
-  margin: 0 auto;
+    font-size: 9pt;
+    color: white;
+    border-bottom: 1px dotted #fff;
+    text-align: center;
+    margin: 0 auto;
 }
 conditional-node .block div:nth-of-type(1){
-  padding-top: 15%;
-  width: 70%;
+    padding-top: 15%;
+    width: 70%;
 }
 conditional-node .block div:nth-of-type(2){
-  width: 30%;
+    width: 30%;
 }
 

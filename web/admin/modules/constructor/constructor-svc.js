@@ -2,7 +2,7 @@
     angular.module('shomeAdm')
     .service('Constructor', ['$rootScope', '$http', function($rootScope, $http) {
 
-        var instance = jsPlumb.getInstance({Container: "workspace"});
+        var instance = null;
 
         var nodeById =  function(id){
           for (i=0; i<service.nodes.length; i++) {
@@ -16,8 +16,49 @@
           }
         };
 
-        /* RequestNode */
+        /* endpoints variables */
         var radius = 4;
+
+        /* StartNode */
+        var initStartNode = function(scope, element, attrs, model) {
+          /* Bottom endpoint */
+          var bottom = instance.addEndpoint(element, {
+              endpoint: ["Dot", {
+              radius:radius}],
+              anchor:["Bottom"],
+              maxConnections:-1
+          });
+          /*
+          var left = instance.addEndpoint(element, {
+            endpoint: ["Dot", {
+              radius:radius}],
+              anchor:["Left"],
+              maxConnections:-1
+          });
+          var right = instance.addEndpoint(element, {
+            endpoint: ["Dot", {
+              radius:radius}],
+              anchor:["Right"],
+              maxConnections:-1
+          });
+          */
+          /* Exceptional endpoint */
+          var err = instance.addEndpoint(element, {
+              endpoint: ["Dot", {
+              radius:radius}],
+              anchor:[0.8,1,1,1],
+              paintStyle:{ fillStyle:"#e66" },
+              maxConnections:-1
+          });
+          service.start = {};
+          service.start.position = {};
+          service.start.position.left = parseInt(angular.element("start-node").css("left").slice(0,-2));
+          service.start.position.right = service.start.position.left
+                                            + parseInt(angular.element("start-node").css("width").slice(0,-2));
+          service.endpoints.push({id: attrs.cid, bottom: bottom, err: err}); /* left: left, right: right, */
+        }
+
+        /* RequestNode */
         var initRequestNode = function(scope, element, attrs, model) {
           /* Top endpoint */
           var top = instance.addEndpoint(element, {
@@ -108,19 +149,25 @@
           /* initialize process */
           initNode: function(scope, element, attrs, model, type) {
             if (type==='R') {
-              initRequestNode(scope, element, attrs, model);
+                initRequestNode(scope, element, attrs, model);
+            } else if (type==='Start') {
+                initStartNode(scope, element, attrs, model);
             } else if (type==='C') {
-              initConditionalNode(scope, element, attrs, model);
+                initConditionalNode(scope, element, attrs, model);
             } else {
-              return new Error('Unknown node type');
+                return new Error('Unknown node type');
             }
-            service.bindNodeEvents(scope, element, attrs, model);
+            if (type!=='Start') {
+                service.bindNodeEvents(scope, element, attrs, model);
+            }
           },
           bindNodeEvents: function(scope, element, attrs, model) {
+            scope.node.dimension = {};
+            scope.node.dimension.width = parseInt(element.css("width").slice(0,-2));
+            scope.node.dimension.height = parseInt(element.css("height").slice(0,-2));
             instance.draggable(element,
             {
               containment: 'parent',
-              //view -> model binding
               drag: function() {
               },
               stop: function() {
@@ -131,68 +178,89 @@
               }
             });
 
-            //model -> view binding
             scope.$watchCollection('node.position', function(value) {
               element.css("left", model.$viewValue.position.left);
               element.css("top", model.$viewValue.position.top);
               service.repaint();
             });
 
+            /*
             scope.$watchCollection('node.next',function () {
               var id = attrs.cid;
               var cur = nodeById(id);
               var src = endpointsById(id).bottom;
             });
-
+            */
           },
           connect: function(scope, element, attrs, model) {
               var selected = service.selected;
               var curid = attrs.cid; //current element id
+              /* first clicked - select it */
               if (!selected) {
                 service.selected = curid;
                 nodeById(service.selected).active = true;
+              /* click on already selected - unselect */
               } else if (selected==curid) {
                 nodeById(service.selected).active = false;
                 service.selected = null;
+              /* two different nodes */
               } else {
-                //Constructor.selected
-                nodeById(selected).active = false;
-                nodeById(curid).active = false;
-                request_node_height = 65;
-                request_node_width = 180;
-                fh = parseInt(element.css("height").slice(0,-2));
-                fw = parseInt(element.css("width").slice(0,-2));
-                sh = parseInt(angular.element('[cid="'+selected+'"]').css("height").slice(0,-2));
-                sw = parseInt(angular.element('[cid="'+selected+'"]').css("width").slice(0,-2));
-                console.log('fw:'+fw, 'fh:'+fh, 'sh:'+sh, 'sw:'+sw);
-                //
-                //selected first
-                ft = nodeById(curid).position.top;
-                fl = nodeById(curid).position.left;
-                fb = ft + fh;
-                fr = fl + fw;
-                //selected second
-                st = nodeById(selected).position.top;
-                sl = nodeById(selected).position.left;
-                sb = st + sh;
-                sr = sl + sw;
-                //swap elements if the first element above than the second.
-                if (fb > st) {
-                  var t;
-                  t = ft; ft = st; st = t;
-                  t = fl; fl = sl; sl = t;
-                  t = fb; fb = sb; sb = t;
-                  t = fr; fr = sr; sr = t;
-                  t = curid; curid = selected; selected = t;
-                }
-                if (fr < sl || fl > sr) {
-                  nodeById(curid).parallel.push(selected);
+                var sel = nodeById(selected);
+                var cur = nodeById(curid);
+                sel.active = false;
+                cur.active = false;
+                service.selected = null;
+
+                /* start node processing */
+                if (sel.type === 'StartNode' || cur.type === 'StartNode') {
+                    if (sel.type === 'StartNode') {
+                        var start = sel;
+                        var node = cur;
+                    } else {
+                        var start = cur;
+                        var node = sel;
+                    }
+                    var sl = service.start.position.left;
+                    var sr = service.start.position.right;
+                    var nl = node.position.left;
+                    var nr = node.position.left+node.dimension.width;
+                    if (nr > sl && nl < sr) {
+                        start.next.push(node.id);
+                    } else {
+                        start.parallel.push(node.id);
+                    }
                 } else {
-                  nodeById(curid).next.push(selected);
+                    var fh = nodeById(curid).dimension.height;
+                    var fw = nodeById(curid).dimension.width;
+                    var sh = nodeById(selected).dimension.height;
+                    var sw = nodeById(selected).dimension.width;
+                    //selected first
+                    var ft = cur.position.top;
+                    var fl = cur.position.left;
+                    var fb = ft + fh;
+                    var fr = fl + fw;
+                    //selected second
+                    var st = sel.position.top;
+                    var sl = sel.position.left;
+                    var sb = st + sh;
+                    var sr = sl + sw;
+                    //swap elements if the first element above than the second.
+                    if (fb > st) {
+                      var t;
+                      t = ft; ft = st; st = t;
+                      t = fl; fl = sl; sl = t;
+                      t = fb; fb = sb; sb = t;
+                      t = fr; fr = sr; sr = t;
+                      t = curid; curid = selected; selected = t;
+                    }
+                    if (fr < sl || fl > sr) {
+                      cur.parallel.push(selected);
+                    } else {
+                      cur.next.push(selected);
+                    }
                 }
                 instance.detachEveryConnection();
                 service.drawAllConnections();
-                service.selected = null;
               }
           },
           drawConnection: function(e1, e2) {
@@ -205,7 +273,6 @@
           },
           drawElementConnections: function(id) {
             node = nodeById(id);
-            console.log('id: '+id, node);
             angular.forEach(node.next, function(nextnode) {
               curep = endpointsById(node.id).bottom;
               nextep = endpointsById(nextnode).top;
@@ -241,11 +308,16 @@
           repaint: function() {
             instance.repaintEverything();
           },
+          init: function() {
+            instance = jsPlumb.getInstance({Container: "workspace"});
+          },
           destroy: function() {
+            service.endpoints = [];
             instance.reset();
           }
         }
 
         return service;
     }]);
+
 }());

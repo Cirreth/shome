@@ -79,6 +79,19 @@ class SchedulerTaskHandler(tornado.web.RequestHandler):
         except Exception as e:
             return str(e)
 
+
+class ScenariosHandler(tornado.web.RequestHandler):
+
+    #web server instance
+    _ws = None
+
+    def initialize(self, ws):
+        self._ws = ws
+
+    def get(self, name):
+        self.write(self._ws._action_processor.get_process(name))
+
+
 class CommandHandler(tornado.web.RequestHandler):
 
     #web server instance
@@ -131,6 +144,7 @@ class WebServer():
             (r"/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
             (r"/admin/scheduler/alltasks", SchedulerAllTasksHandler, {'ws': self}),
             (r"/admin/scheduler/task/(.+)", SchedulerTaskHandler, {'ws': self}),
+            (r"/admin/scenarios/(.+)", ScenariosHandler, {'ws': self}),
             (r"/admin/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
         ], debug=True, **settings)
         http_server = tornado.httpserver.HTTPServer(application)
@@ -168,20 +182,6 @@ class WebServer():
                 except Exception as e:
                     return 'Operation (delete '+procname+') failed: '+str(e)
                 return '<b>'+procname+' delete command result:</b><br/>Scheduler: '+str(schd)+'<br/>ActionProcessor: '+str(acpd)
-        elif message.startswith('schedule'):
-
-            msg = re.search('^schedule create (.+?)\\s*:\\s*((.*\\n?)+)', message, re.MULTILINE)
-            if msg and msg.group(0):
-                logging.debug('Input parsed as: schedule command ( '+msg.group(1)+' ) with scheme(interval) ( '+msg.group(2)+' )')
-                return self._scheduler.create(msg.group(1), msg.group(1), msg.group(2), writedb=True)
-
-            msg = re.search('^schedule setscheme (.+?)\\s*:\\s*((.*\\n?)+)', message, re.MULTILINE)
-            if msg and msg.group(0):
-                logging.debug('Input parsed as: schedule command ( '+msg.group(1)+' ) with scheme(interval) ( '+msg.group(2)+' )')
-                return self._scheduler.setscheme(msg.group(1), msg.group(2))
-
-            if message == 'schedule list':
-                return self._scheduler.list_all()
         elif message.startswith('system'):
             if message == 'system threads':
                 return 'Active threads: '+str(self._action_processor.active_threads)
