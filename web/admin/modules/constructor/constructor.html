@@ -24,6 +24,21 @@
                 </div>
             </conditional-node>
         </div>
+        <div class="panel-ctr" >
+            <delay-node mock ng-click="newDelayNode()">
+            Delay
+            </delay-node>
+        </div>
+        <div class="panel-ctr" >
+            <scheduler-node mock ng-click="newSchedulerNode()">
+            Scheduler node
+            </scheduler-node>
+        </div>
+        <div class="panel-ctr">
+            <execute-node mock ng-click="newExecuteNode()">
+            Execute node
+            </execute-node>
+        </div>
     </div>
 
     <div ng-show="paneltab=='configure'">
@@ -46,9 +61,13 @@
         Start
     </start-node>
 
+    <delay-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-class="{active: node.active}"
+        ng-repeat="node in nodes" ng-if="node.type=='DelayNode'">
+        {{node.delay}} s.
+    </delay-node>
+
     <request-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-class="{active: node.active}"
         ng-repeat="node in nodes" ng-if="node.type=='RequestNode'">
-        <!--ng-style="{left: node.position.left, top: node.position.top}"-->
         <table>
           <tr><td colspan="3"><i>{{node.plugin}}</i></td></tr>
           <tr><td colspan="3">{{node.reference}}</td></tr>
@@ -64,5 +83,15 @@
           <div >< no | yes ></div>
         </div>
     </conditional-node>
+
+    <scheduler-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-class="{active: node.active}"
+        ng-repeat="node in nodes" ng-if="node.type=='SchedulerNode'">
+        {{node.action}} {{node.task}}
+    </scheduler-node>
+
+    <execute-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-class="{active: node.active}"
+        ng-repeat="node in nodes" ng-if="node.type=='ExecuteNode'">
+        {{node.name}}
+    </execute-node>
 
 </div> <!--workspace-->

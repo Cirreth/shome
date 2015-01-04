@@ -140,6 +140,46 @@
           service.endpoints.push({id: attrs.cid, top: top, bottom: bottom, left: left, right: right, err: err});
         }
 
+        /* DelayNode */
+        var initDelayNode = function(scope, element, attrs, model) {
+          /* Top endpoint */
+          var top = instance.addEndpoint(element, {
+              endpoint: ["Dot", {
+              radius:radius}],
+              anchor:[0.5, 0, 0, -1],
+              maxConnections:1
+          });
+          /* Bottom endpoint */
+          var bottom = instance.addEndpoint(element, {
+              endpoint: ["Dot", {
+              radius:radius}],
+              anchor:["Bottom"],
+              maxConnections:-1
+          });
+          var left = instance.addEndpoint(element, {
+            endpoint: ["Dot", {
+              radius:radius}],
+              anchor:["Left"],
+              maxConnections:-1
+          });
+          var right = instance.addEndpoint(element, {
+            endpoint: ["Dot", {
+              radius:radius}],
+              anchor:["Right"],
+              maxConnections:-1
+          });
+          /* Exceptional endpoint */
+          var err = instance.addEndpoint(element, {
+              endpoint: ["Dot", {
+              radius:radius}],
+              anchor:[0.85,0.85,1,1],
+              paintStyle:{ fillStyle:"#e66" },
+              maxConnections:-1
+          });
+
+          service.endpoints.push({id: attrs.cid, top: top, left: left, right: right, bottom: bottom, err: err});
+        }
+
         var service =  {
           name: null,
           instance: instance,
@@ -148,12 +188,18 @@
           selected: null,
           /* initialize process */
           initNode: function(scope, element, attrs, model, type) {
-            if (type==='R') {
+            if (type==='RequestNode') {
                 initRequestNode(scope, element, attrs, model);
-            } else if (type==='Start') {
+            } else if (type==='StartNode') {
                 initStartNode(scope, element, attrs, model);
-            } else if (type==='C') {
+            } else if (type==='ConditionalNode') {
                 initConditionalNode(scope, element, attrs, model);
+            } else if (type==='SchedulerNode') {
+                initRequestNode(scope, element, attrs, model);
+            } else if (type==='ExecuteNode') {
+                initRequestNode(scope, element, attrs, model);
+            } else if (type==='DelayNode') {
+                initDelayNode(scope, element, attrs, model);
             } else {
                 return new Error('Unknown node type');
             }
@@ -173,7 +219,7 @@
               stop: function() {
                 scope.node.position.left = parseInt(element.css("left").slice(0,-2));
                 scope.node.position.top = parseInt(element.css("top").slice(0,-2));
-                if (element[0].tagName==='CONDITIONAL-NODE') element.click();
+                if (element[0].tagName==='CONDITIONAL-NODE' || element[0].tagName==='DELAY-NODE') element.click();
                 scope.$apply();
               }
             });
@@ -282,7 +328,17 @@
                 curep = endpointsById(node.id).right;
                 prlep = endpointsById(prlnode).top;
                 service.drawConnection(curep, prlep);
-              });
+            });
+            angular.forEach(node.yes, function(yesnode) {
+                curep = endpointsById(node.id).right;
+                yesep = endpointsById(yesnode).top;
+                service.drawConnection(curep, yesep);
+            });
+            angular.forEach(node.no, function(nonode) {
+                curep = endpointsById(node.id).left;
+                noep = endpointsById(nonode).top;
+                service.drawConnection(curep, noep);
+            });
           },
           drawAllConnections: function() {
             angular.forEach(service.nodes, function(node) {
@@ -295,6 +351,16 @@
                 curep = endpointsById(node.id).right;
                 prlep = endpointsById(prlnode).top;
                 service.drawConnection(curep, prlep);
+              });
+              angular.forEach(node.yes, function(yesnode) {
+                curep = endpointsById(node.id).right;
+                yesep = endpointsById(yesnode).top;
+                service.drawConnection(curep, yesep);
+              });
+              angular.forEach(node.no, function(nonode) {
+                  curep = endpointsById(node.id).left;
+                  noep = endpointsById(nonode).top;
+                  service.drawConnection(curep, noep);
               });
             });
           },

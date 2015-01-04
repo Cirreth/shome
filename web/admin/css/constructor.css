@@ -23,7 +23,9 @@
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
-    user-select: none;   
+    user-select: none;
+    overflow-y: auto;
+    padding-bottom: 10px;
 }
 
 .panel-ctr {
@@ -34,7 +36,7 @@
     margin: 8px auto;
 }
 
-.panel-ctr request-node {
+.panel-ctr request-node,.panel-ctr scheduler-node,.panel-ctr execute-node {
     margin-left: 15px;
     margin-top: 10px;
 }
@@ -57,16 +59,23 @@
     background: rgba(0,0,0,0)!important;
 }
 
-request-node.active, conditional-node.active .shape, start-node.active{
-  box-shadow: 1px 1px 10px #fff;
+request-node.active,
+conditional-node.active .shape,
+start-node.active,
+delay-node.active,
+scheduler-node.active,
+execute-node.active {
+    box-shadow: 1px 1px 10px #fff;
 }
+
+
 /* start node */
 start-node {
     border-radius: 25px;
     width: 90px;
     height: 32px;
     position: absolute;
-    left: 50%;
+    left: 40%;
     top: 10px;
     background: none repeat scroll 0% 0% rgba(49, 191, 49, 0.93);
     box-shadow: 1px 1px #257D42;
@@ -78,18 +87,39 @@ start-node {
     font-weight: bold;
 }
 
+
+delay-node {
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background: none repeat scroll 0% 0% rgba(49, 111, 191, 0.93);
+    box-shadow: 1px 1px #25457D;
+    border-right: 2px solid #21486E;
+    border-bottom: 2px solid #131C4B;
+    color: white;
+    text-align: center;
+    font-size: 14pt !important;
+    padding-top: 15px;
+}
+
+delay-node[mock] {
+    left: 37%;
+}
+
 /* Request node */
-request-node {
+request-node, scheduler-node, execute-node {
     border-radius: 7px;
     width: 180px;
     height: 65px;
     position: absolute;
-    background: rgba(0,0,0,0.8); /*#3895BD;*/
+    background: rgba(15, 79, 174, 0.8);
     box-shadow: 1px 1px #25637D;
     border-right: 2px solid #25637D;
     border-bottom: 2px solid #12303D;
     font-size: 9pt;
 }
+
 request-node table {
     font-size: 9pt;
     color: white;
@@ -102,6 +132,24 @@ request-node table tr:not(:last-child) td{
 request-node table tr:last-child td{
     text-align: center;
     width: 30%;
+}
+
+scheduler-node, execute-node {
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+}
+
+scheduler-node {
+    background: rgba(0, 147, 74, 0.8);
+}
+
+execute-node {
+    background: rgba(204, 89, 15, 0.8);
+}
+
+scheduler-node[mock], execute-node[mock] {
+
 }
 
 conditional-node {
