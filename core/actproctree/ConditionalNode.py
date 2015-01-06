@@ -59,11 +59,10 @@ class ConditionalNode(AbstractNode):
         if res:
             if self._yes:
                 res_proc.extend(self._yes)
-            self.execute_direction(res_proc, values)
         else:
-            if self._no: res_proc.extend(self._no)
-            self.execute_direction(res_proc, values)
-        self.execute_direction(self._parallel, values)
+            if self._no:
+                res_proc.extend(self._no)
+        self.execute_direction(res_proc, values)
         self.execute_direction(self._next, values)
         return res
 
@@ -73,17 +72,19 @@ class ConditionalNode(AbstractNode):
             ref = ''
             lst = 0
             tknval = None
-            for c in re.finditer('<[a-zA-Z0-9]+?>', self._condition):
+            for c in re.finditer('<@?[a-zA-Z0-9]+?>', self._condition):
                 name = c.group(0)[1:-1] #variable name
                 #looking for value
-                if not isinstance(values, dict):
-                    raise Exception('Invalid parameter "values" type ('+values+')')
-                if name in values:
-                    tknval = values[name]
-                elif self._process_tag in pvars and name in pvars[self._process_tag]:
-                    tknval = pvars[self._process_tag][name]
-                elif name in self._variables:
-                    tknval = self._variables[name]
+                tknval = self.replace_keyword(name)
+                if not tknval:
+                    if not isinstance(values, dict):
+                        raise Exception('Invalid parameter "values" type ('+values+')')
+                    if name in values:
+                        tknval = values[name]
+                    elif self._process_tag in pvars and name in pvars[self._process_tag]:
+                        tknval = pvars[self._process_tag][name]
+                    elif name in self._variables:
+                        tknval = self._variables[name]
                 if not tknval is None:
                     if isinstance(tknval, dict) and len(tknval) == 1:
                         tknval = next(iter(tknval.values()))

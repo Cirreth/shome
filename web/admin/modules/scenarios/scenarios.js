@@ -1,13 +1,30 @@
 (function() {
 
     angular.module('shomeAdm')
-    .controller('ScenariosController', ['$scope', '$http', function($scope, $http) {
+    .controller('ScenariosController', ['$scope', '$http', 'InfoMessage', function($scope, $http, InfoMessage) {
 
-        $http.get('/admin/scenarios/')
-                .success(function(data){
-                    $scope.scenarios = data;
-                    console.log(data);
-                });
+        $scope.im = InfoMessage;
+
+        $scope.load = function() {
+            $http.get('/admin/scenarios/')
+                    .success(function(data){
+                        $scope.scenarios = data;
+                        console.log(data);
+                    });
+        }
+
+        $scope.load();
+
+        $scope.delete = function(tag) {
+            $http.delete('/admin/scenarios/'+tag)
+                .success(function(data) {
+                    $scope.im.okMessage(data);
+                    $scope.load();
+                })
+                .error(function(data, status){
+                    $scope.im.errorMessage(status+': '+data);
+	    	    });
+        }
 
     }]);
 }());

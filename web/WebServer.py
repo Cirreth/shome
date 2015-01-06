@@ -106,6 +106,11 @@ class ScenariosHandler(tornado.web.RequestHandler):
         if expression:
             self.write(self._ws._action_processor.create_process(tag, expression, writedb=True))
 
+    def delete(self, tag):
+        self._ws._action_processor.delete_process(tag)
+        self.write('Success')
+
+
 class ScenariosListAllHandler(tornado.web.RequestHandler):
 
     #web server instance

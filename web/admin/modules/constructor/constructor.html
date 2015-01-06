@@ -67,10 +67,11 @@
 </div>
 
 <button class="sch-btn" ng-click="showmodel = !showmodel">Show model</button>
+<button class="sch-btn" ng-click="">Working with exceptions</button>
 <button class="sch-btn" ng-click="checkScenario()">Check scenario</button>
 <button class="sch-btn" ng-click="saveScenario()">Save scenario</button>
 
-<div id="workspace" ng-init="init(); showmodel=false;">
+<div id="workspace" ng-init="init();">
 
     <input class="name" ng-model="name" maxlength="16" placeholder="Name must be here"/>
     <table ng-show="showmodel">
@@ -78,6 +79,7 @@
         <td>{{ node | json }}</td>
       </tr>
       <tr><td>{{scenario | json}}</td></tr>
+      <tr><td>{{selected | json}}</td></tr>
     </table>
 
     <start-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-class="{active: node.active}"
