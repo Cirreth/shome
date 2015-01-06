@@ -106,6 +106,12 @@
 
         $scope.im = InfoMessage;
 
+        $scope.$watchCollection('selected', function(value) {
+            if ($scope.selected && !$scope.selected.type) {
+                delete $scope.selected;
+            }
+        });
+
         var startNode = {
                 id: 'Start',
                 type: 'StartNode',
@@ -160,22 +166,24 @@
                     resultSet.push(listToTree(data, direction[i]));
                 }
             }
+            /* excess fields */
+            delete node.active;
+            /**/
             if (node.next) prepare(node.next, next);
             if (node.parallel) prepare(node.parallel, parallel);
             if (node.exceptional) prepare(node.exceptional, exceptional);
-            var newnode = angular.copy(node);
-            newnode.next = next;
-            newnode.parallel = parallel;
-            newnode.exceptional = exceptional;
-            if (newnode.type === 'ConditionalNode') {
+            node.next = next;
+            node.parallel = parallel;
+            node.exceptional = exceptional;
+            if (node.type === 'ConditionalNode') {
                 var yes = [];
                 var no = [];
-                if (newnode.yes) prepare(node.yes, yes);
-                if (newnode.no) prepare(node.no, no);
-                newnode.yes = yes;
-                newnode.no = no;
+                if (node.yes) prepare(node.yes, yes);
+                if (node.no) prepare(node.no, no);
+                node.yes = yes;
+                node.no = no;
             }
-            return newnode;
+            return node;
         }
 
         function findNodeWithId(array, id) {
@@ -187,13 +195,14 @@
         }
 
         $scope.packScenario = function() {
-            var start = findNodeWithId($scope.nodes, 'Start');
+            var nodes = angular.copy($scope.nodes);
+            var start = findNodeWithId(nodes, 'Start');
             var list = [];
             for (var i=0; i<start.next.length; i++) {
-                list.push(listToTree($scope.nodes, start.next[i]));
+                list.push(listToTree(nodes, start.next[i]));
             }
             if (list.length === 0 ) {
-                $scope.scenario = {};
+                delete $scope.scenario;
             } else if (list.length === 1) {
                 $scope.scenario = list[0];
             } else {
@@ -255,6 +264,7 @@
             if ($scope.new) {
                 $http.post('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.scenario)})
                 .success(function(data) {
+                    delete $scope.new;
                     $scope.im.okMessage('Result: '+data);
                 })
                 .error(function(data, status){
@@ -273,6 +283,7 @@
 
         //@TODO not working.
         $scope.deleteSelected = function() {
+            /*
             var id=$scope.selected.id;
             var nodes = $scope.nodes;
             var findAndDelete = function(array, id) {
@@ -306,6 +317,7 @@
                     $scope.selected = Constructor.selected;
                 }
             }
+            */
         }
 
         $scope.newRequestNode = function() {
@@ -379,6 +391,8 @@
                     "left": 100,
                     "top": 100
                 },
+                "yes":[],
+                "no":[],
                 "next": [],
                 "parallel": [],
                 "exceptional": []

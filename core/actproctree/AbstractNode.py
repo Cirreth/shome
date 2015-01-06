@@ -134,3 +134,5 @@ class AbstractNode(metaclass=ABCMeta):
             return datetime.datetime.now().strftime('%H:%M')
         elif keyword == '@DATE':
             return datetime.datetime.now().strftime('%Y-%m-%d')
+        else:
+            return False

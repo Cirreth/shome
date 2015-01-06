@@ -109,13 +109,13 @@
           var left = instance.addEndpoint(element, {
               endpoint: ["Dot", {
               radius:radius}],
-              anchors:[0.03, 0.5, -1, 0],
+              anchors:[0.03, 0.5, -1, -1],
               maxConnections:-1
           });
           var right = instance.addEndpoint(element, {
               endpoint: ["Dot", {
               radius:radius}],
-              anchors:[0.97, 0.5, 0, -1],
+              anchors:[0.97, 0.5, 1, -1],
               maxConnections:-1
           });
           var bottom = instance.addEndpoint(element, {
@@ -155,13 +155,13 @@
           var left = instance.addEndpoint(element, {
             endpoint: ["Dot", {
               radius:radius}],
-              anchor:["Left"],
+              anchor:[1, 0.5, -1, -1],
               maxConnections:-1
           });
           var right = instance.addEndpoint(element, {
             endpoint: ["Dot", {
               radius:radius}],
-              anchor:["Right"],
+              anchor:[1, 0.5, 1, -1],
               maxConnections:-1
           });
           /* Exceptional endpoint */
@@ -177,11 +177,11 @@
         }
 
         var service =  {
-          name: null,
+          name: undefined,
           instance: instance,
           nodes: [],
           endpoints: [],
-          selected: null,
+          selected: undefined,
           /* initialize process */
           initNode: function(scope, element, attrs, model, type) {
             if (type==='RequestNode') {
@@ -221,89 +221,99 @@
             });
 
             scope.$watchCollection('node.position', function(value) {
-              if (model.$viewValue.position) {
-                  element.css("left", model.$viewValue.position.left);
-                  element.css("top", model.$viewValue.position.top);
-                  service.repaint();
-              }
+                if (model.$viewValue.position) {
+                   element.css("left", model.$viewValue.position.left);
+                   element.css("top", model.$viewValue.position.top);
+                    service.repaint();
+                }
             });
-
-            /*
-            scope.$watchCollection('node.next',function () {
-              var id = attrs.cid;
-              var cur = nodeById(id);
-              var src = endpointsById(id).bottom;
-            });
-            */
           },
           connect: function(scope, element, attrs, model) {
-              var selected = service.selected ? service.selected.id : null;
+              var selected;
+              if (service.selected) {
+                  if (!service.selected.type) {
+                      delete service.selected;
+                      return;
+                  }
+                  selected = service.selected.id;
+              }
               var curid = attrs.cid;
-              /* first clicked - select it */
+              /* first click. Select element */
               if (!selected) {
                   service.selected = nodeById(curid);
                   service.selected.active = true;
               /* click on already selected - unselect */
               } else if ( selected === curid ) {
-                service.selected.active = false; /* run digest cycle */
-                service.selected = null;
+                  service.selected.active = false; /* run digest cycle */
+                  delete service.selected;
               /* two different nodes */
               } else {
-                var sel = service.selected;
-                var cur = nodeById(curid);
-                /* start node processing */
-                if (sel.type === 'StartNode' || cur.type === 'StartNode') {
-                    if (sel.type === 'StartNode') {
-                        var start = sel;
-                        var node = cur;
-                    } else {
-                        var start = cur;
-                        var node = sel;
-                    }
-                    var sl = service.start.position.left;
-                    var sr = service.start.position.right;
-                    var nl = node.position.left;
-                    var nr = node.position.left+node.dimension.width;
-                    if (nr > sl && nl < sr) {
-                        start.next.push(node.id);
-                    } else {
-                        start.parallel.push(node.id);
-                    }
-                } else {
-                    var fh = cur.dimension.height;
-                    var fw = cur.dimension.width;
-                    var sh = sel.dimension.height;
-                    var sw = sel.dimension.width;
-                    //selected first
-                    var ft = cur.position.top;
-                    var fl = cur.position.left;
-                    var fb = ft + fh;
-                    var fr = fl + fw;
-                    //selected second
-                    var st = sel.position.top;
-                    var sl = sel.position.left;
-                    var sb = st + sh;
-                    var sr = sl + sw;
-                    //swap elements if the first element above than the second.
-                    if (fb > st) {
-                        var t;
-                        t = ft; ft = st; st = t;
-                        t = fl; fl = sl; sl = t;
-                        t = fb; fb = sb; sb = t;
-                        t = fr; fr = sr; sr = t;
-                        t = curid; curid = selected; selected = t;
-                    }
-                    if (fr < sl || fl > sr) {
-                        cur.parallel.push(selected);
-                    } else {
-                        cur.next.push(selected);
-                    }
-                }
-                sel.active = false;
-                cur.active = false;
-                service.selected = null;
-                instance.detachEveryConnection();
-                service.drawAllConnections();
+                  var sel = service.selected;
+                  var cur = nodeById(curid);
+                  /* start node processing */
+                  if (sel.type === 'StartNode' || cur.type === 'StartNode') {
+                      if (sel.type === 'StartNode') {
+                          var start = sel;
+                          var node = cur;
+                      } else {
+                          var start = cur;
+                          var node = sel;
+                      }
+                      var sl = service.start.position.left;
+                      var sr = service.start.position.right;
+                      var nl = node.position.left;
+                      var nr = node.position.left+node.dimension.width;
+                      /*if (nr > sl && nl < sr) {*/
+                          start.next.push(node.id);
+                      /*} else {
+                          start.parallel.push(node.id);
+                      }*/
+                  } else {
+                      var sh = sel.dimension.height;
+                      var sw = sel.dimension.width;
+                      var st = sel.position.top;
+                      var sl = sel.position.left;
+                      var sb = st + sh;
+                      var sr = sl + sw;
+
+                      var ch = cur.dimension.height;
+                      var cw = cur.dimension.width;
+                      var ct = cur.position.top;
+                      var cl = cur.position.left;
+                      var cb = ct + ch;
+                      var cr = cl + cw;
+
+                      // connection always will be built from top element to bottom element
+                      if (cb > st) {
+                          var t;
+                          t = ct; ct = st; st = t;
+                          t = cl; cl = sl; sl = t;
+                          t = cb; cb = sb; sb = t;
+                          t = cr; cr = sr; sr = t;
+                          t = curid; curid = selected; selected = t;
+                          t = cur; cur = sel; sel = t;
+                      }
+                      if (cr < sl || cl > sr) {
+                          if (cur.type === 'ConditionalNode') {
+                              console.log('cur',cur);
+                              console.log('sel',sel);
+                              if (cr < sl) {
+                                  cur.yes.push(selected);
+                              } else {
+                                  cur.no.push(selected);
+                              }
+                          } else {
+                              cur.parallel.push(selected);
+                          }
+                      } else {
+                          cur.next.push(selected);
+                      }
+                  }
+                  sel.active = false;
+                  cur.active = false;
+                  delete service.selected;
+                  instance.detachEveryConnection();
+                  service.drawAllConnections();
               }
           },
           drawConnection: function(e1, e2) {
@@ -366,7 +376,7 @@
               },
               deleteNode: function(id) {
                   if (service.selected.id == id) {
-                      service.selected = null;
+                      delete service.selected;
                   }
                   var eps = service.endpoints;
                   for (var i=0; i<eps.length; i++) {

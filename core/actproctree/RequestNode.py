@@ -97,18 +97,16 @@ class RequestNode(AbstractNode):
         #Use value if setted
         if not self._value is None:
             val = self._value
-        #иначе должно быть установлено имя переменной
+        #...else variable name must be set
         elif self._variable:
             key = next(iter(self._variable.keys()))
-            #ищем сначала в переданных пользователем параметрах
+            #looking for variable value in user set parameters
             if key in values:
                 val = values[key]
             elif self._process_tag in pvars and key in pvars[self._process_tag]:
                 val = pvars[self._process_tag][key]
-            #если там тоже нет, ищем в предустановленных переменных
             elif self._variable[key]:
                 val = self._variable[key]
-            #если нигде не нашли, кидаем исключение
             else:
                 et = """Value in RequestNode not initialized.
                         External values="""+str(values)+', inner value='+self._value if self._value else str(self._variable)
@@ -116,7 +114,8 @@ class RequestNode(AbstractNode):
                 raise Exception(et)
         if isinstance(val, dict):
                     #if dictionary with single value
-                    if len(val) == 1: val = next(iter(val.values()))
+                    if len(val) == 1:
+                        val = next(iter(val.values()))
         return val
 
     def get_node_required_keys(self):

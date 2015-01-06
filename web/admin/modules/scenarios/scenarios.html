@@ -6,7 +6,7 @@
         <div class="panel panel-default scn-line">
             <div class="pull-right">
                 <a ng-href="#/constructor/{{scenario.name}}"><button class="sch-btn scn-btn" >Edit</button></a>
-                <button class="sch-btn scn-btn">Delete</button>
+                <button class="sch-btn scn-btn" ng-click="delete(scenario.name)">Delete</button>
             </div>
             <span class="panel-title">{{scenario.name}}</span>
         </div> <!--panel-default end-->
