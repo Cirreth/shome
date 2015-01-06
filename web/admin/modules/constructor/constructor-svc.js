@@ -21,41 +21,37 @@
 
         /* StartNode */
         var initStartNode = function(scope, element, attrs, model) {
-          /* Bottom endpoint */
-          var bottom = instance.addEndpoint(element, {
-              endpoint: ["Dot", {
-              radius:radius}],
-              anchor:["Bottom"],
-              maxConnections:-1
-          });
-          /*
-          var left = instance.addEndpoint(element, {
-            endpoint: ["Dot", {
-              radius:radius}],
-              anchor:["Left"],
-              maxConnections:-1
-          });
-          var right = instance.addEndpoint(element, {
-            endpoint: ["Dot", {
-              radius:radius}],
-              anchor:["Right"],
-              maxConnections:-1
-          });
-          */
-          /* Exceptional endpoint */
-          var err = instance.addEndpoint(element, {
-              endpoint: ["Dot", {
-              radius:radius}],
-              anchor:[0.8,1,1,1],
-              paintStyle:{ fillStyle:"#e66" },
-              maxConnections:-1
-          });
-          service.start = {};
-          service.start.position = {};
-          service.start.position.left = parseInt(angular.element("start-node").css("left").slice(0,-2));
-          service.start.position.right = service.start.position.left
-                                            + parseInt(angular.element("start-node").css("width").slice(0,-2));
-          service.endpoints.push({id: attrs.cid, bottom: bottom, err: err}); /* left: left, right: right, */
+            /* Bottom endpoint */
+            var bottom = instance.addEndpoint(element, {
+                endpoint: ["Dot", {radius:radius}],
+                anchor:["Bottom"],
+                maxConnections:-1
+            });
+            /* not supported yet
+                var left = instance.addEndpoint(element, {
+                    endpoint: ["Dot", {radius:radius}],
+                    anchor:["Left"],
+                    maxConnections:-1
+                });
+                var right = instance.addEndpoint(element, {
+                    endpoint: ["Dot", {radius:radius}],
+                    anchor:["Right"],
+                    maxConnections:-1
+                });
+                var err = instance.addEndpoint(element, {
+                    endpoint: ["Dot", {
+                    radius:radius}],
+                    anchor:[0.8,1,1,1],
+                    paintStyle:{ fillStyle:"#e66" },
+                    maxConnections:-1
+                });
+            */
+            service.start = {};
+            service.start.position = {};
+            service.start.position.left = parseInt(angular.element("start-node").css("left").slice(0,-2));
+            service.start.position.right = service.start.position.left
+                                              + parseInt(angular.element("start-node").css("width").slice(0,-2));
+            service.endpoints.push({id: attrs.cid, bottom: bottom}); /* left: left, right: right, err: err */
         }
 
         /* RequestNode */
@@ -64,7 +60,7 @@
           var top = instance.addEndpoint(element, {
               endpoint: ["Dot", {
               radius:radius}],
-              anchor:[0.5, 0, 0, -1],
+              anchor:["Top"],
               maxConnections:1
           });
           /* Bottom endpoint */
@@ -119,7 +115,7 @@
           var right = instance.addEndpoint(element, {
               endpoint: ["Dot", {
               radius:radius}],
-              anchors:[0.97, 0.5, 1, 0],
+              anchors:[0.97, 0.5, 0, -1],
               maxConnections:-1
           });
           var bottom = instance.addEndpoint(element, {
@@ -146,7 +142,7 @@
           var top = instance.addEndpoint(element, {
               endpoint: ["Dot", {
               radius:radius}],
-              anchor:[0.5, 0, 0, -1],
+              anchor:["Top"],
               maxConnections:1
           });
           /* Bottom endpoint */
@@ -225,9 +221,11 @@
             });
 
             scope.$watchCollection('node.position', function(value) {
-              element.css("left", model.$viewValue.position.left);
-              element.css("top", model.$viewValue.position.top);
-              service.repaint();
+              if (model.$viewValue.position) {
+                  element.css("left", model.$viewValue.position.left);
+                  element.css("top", model.$viewValue.position.top);
+                  service.repaint();
+              }
             });
 
             /*
@@ -239,24 +237,20 @@
             */
           },
           connect: function(scope, element, attrs, model) {
-              var selected = service.selected;
-              var curid = attrs.cid; //current element id
+              var selected = service.selected ? service.selected.id : null;
+              var curid = attrs.cid;
               /* first clicked - select it */
               if (!selected) {
-                service.selected = curid;
-                nodeById(service.selected).active = true;
+                  service.selected = nodeById(curid);
+                  service.selected.active = true;
               /* click on already selected - unselect */
-              } else if (selected==curid) {
-                nodeById(service.selected).active = false;
+              } else if ( selected === curid ) {
+                service.selected.active = false; /* run digest cycle */
                 service.selected = null;
               /* two different nodes */
               } else {
-                var sel = nodeById(selected);
+                var sel = service.selected;
                 var cur = nodeById(curid);
-                sel.active = false;
-                cur.active = false;
-                service.selected = null;
-
                 /* start node processing */
                 if (sel.type === 'StartNode' || cur.type === 'StartNode') {
                     if (sel.type === 'StartNode') {
@@ -276,10 +270,10 @@
                         start.parallel.push(node.id);
                     }
                 } else {
-                    var fh = nodeById(curid).dimension.height;
-                    var fw = nodeById(curid).dimension.width;
-                    var sh = nodeById(selected).dimension.height;
-                    var sw = nodeById(selected).dimension.width;
+                    var fh = cur.dimension.height;
+                    var fw = cur.dimension.width;
+                    var sh = sel.dimension.height;
+                    var sw = sel.dimension.width;
                     //selected first
                     var ft = cur.position.top;
                     var fl = cur.position.left;
@@ -292,19 +286,22 @@
                     var sr = sl + sw;
                     //swap elements if the first element above than the second.
                     if (fb > st) {
-                      var t;
-                      t = ft; ft = st; st = t;
-                      t = fl; fl = sl; sl = t;
-                      t = fb; fb = sb; sb = t;
-                      t = fr; fr = sr; sr = t;
-                      t = curid; curid = selected; selected = t;
+                        var t;
+                        t = ft; ft = st; st = t;
+                        t = fl; fl = sl; sl = t;
+                        t = fb; fb = sb; sb = t;
+                        t = fr; fr = sr; sr = t;
+                        t = curid; curid = selected; selected = t;
                     }
                     if (fr < sl || fl > sr) {
-                      cur.parallel.push(selected);
+                        cur.parallel.push(selected);
                     } else {
-                      cur.next.push(selected);
+                        cur.next.push(selected);
                     }
                 }
+                sel.active = false;
+                cur.active = false;
+                service.selected = null;
                 instance.detachEveryConnection();
                 service.drawAllConnections();
               }
@@ -332,7 +329,7 @@
             angular.forEach(node.yes, function(yesnode) {
                 curep = endpointsById(node.id).right;
                 yesep = endpointsById(yesnode).top;
-                service.drawConnection(curep, yesep);
+                service.drawConnection(yesep, curep);
             });
             angular.forEach(node.no, function(nonode) {
                 curep = endpointsById(node.id).left;
@@ -341,47 +338,59 @@
             });
           },
           drawAllConnections: function() {
-            angular.forEach(service.nodes, function(node) {
-              angular.forEach(node.next, function(nextnode) {
-                curep = endpointsById(node.id).bottom;
-                nextep = endpointsById(nextnode).top;
-                service.drawConnection(curep, nextep);
-              });
-              angular.forEach(node.parallel, function(prlnode) {
-                curep = endpointsById(node.id).right;
-                prlep = endpointsById(prlnode).top;
-                service.drawConnection(curep, prlep);
-              });
-              angular.forEach(node.yes, function(yesnode) {
-                curep = endpointsById(node.id).right;
-                yesep = endpointsById(yesnode).top;
-                service.drawConnection(curep, yesep);
-              });
-              angular.forEach(node.no, function(nonode) {
-                  curep = endpointsById(node.id).left;
-                  noep = endpointsById(nonode).top;
-                  service.drawConnection(curep, noep);
-              });
-            });
-          },
-          hasEndpoints: function(id) {
-            return endpointsById(id) === undefined ? false : true;
-          },
-          /* post process definition to server */
-          saveProcess: function() {
-            console.log('not implemented');
-          },
-          repaint: function() {
-            instance.repaintEverything();
-          },
-          init: function() {
-            instance = jsPlumb.getInstance({Container: "workspace"});
-          },
-          destroy: function() {
-            service.endpoints = [];
-            instance.reset();
+              angular.forEach(service.nodes, function(node) {
+                  angular.forEach(node.next, function(nextnode) {
+                       curep = endpointsById(node.id).bottom;
+                       nextep = endpointsById(nextnode).top;
+                       service.drawConnection(curep, nextep);
+                  });
+                  angular.forEach(node.parallel, function(prlnode) {
+                      curep = endpointsById(node.id).right;
+                      prlep = endpointsById(prlnode).top;
+                      service.drawConnection(curep, prlep);
+                  });
+                  angular.forEach(node.yes, function(yesnode) {
+                      curep = endpointsById(node.id).right;
+                      yesep = endpointsById(yesnode).top;
+                      service.drawConnection(yesep, curep);
+                  });
+                  angular.forEach(node.no, function(nonode) {
+                      curep = endpointsById(node.id).left;
+                      noep = endpointsById(nonode).top;
+                      service.drawConnection(curep, noep);
+                  });
+                });
+              },
+              hasEndpoints: function(id) {
+                  return endpointsById(id) === undefined ? false : true;
+              },
+              deleteNode: function(id) {
+                  if (service.selected.id == id) {
+                      service.selected = null;
+                  }
+                  var eps = service.endpoints;
+                  for (var i=0; i<eps.length; i++) {
+                      if (eps[i].id === id) {
+                           angular.forEach(eps[i], function(ep) {
+                               instance.deleteEndpoint(ep);
+                           });
+                           eps.splice(i, 1);
+                           service.repaint();
+                           return;
+                      }
+                  }
+              },
+              repaint: function() {
+                  instance.repaintEverything();
+              },
+              init: function() {
+                  instance = jsPlumb.getInstance({Container: "workspace"});
+              },
+              destroy: function() {
+                  service.endpoints = [];
+                  instance.reset();
+              }
           }
-        }
 
         return service;
     }]);

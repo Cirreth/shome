@@ -3,13 +3,17 @@
   var app = angular.module('shomeAdm',['ngAnimate','ngRoute']);
 
   app.config(['$routeProvider',
-    function($routeProvider) {
+    function($routeProvider, $locationProvider) {
       $routeProvider.
         when('/main', {
           templateUrl: 'modules/main.html',
           controller: 'OverviewController',
         }).
-        when('/constructor', {
+        when('/constructor/', {
+          templateUrl: 'modules/constructor/constructor.html',
+          controller: 'ConstructorController'
+        }).
+        when('/constructor/:scenario', {
           templateUrl: 'modules/constructor/constructor.html',
           controller: 'ConstructorController'
         }).

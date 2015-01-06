@@ -565,12 +565,16 @@ input[type=radio]:focus {
   float: left;
 }
 
+.scn-line {
+  padding: 5px 10px 5px 15px;
+}
+
 .font-black {
   color: black;
 }
 
 .transparent6 {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 .m-r-10 {

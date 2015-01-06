@@ -37,13 +37,10 @@ class ActionProcessor:
         AbstractNode._action_processor = self
         self._configuration = context.config
 
-    #@TODO
-    #Remove view functions in data model
     def list_all(self):
         return [
             {
-                'name': p,
-                'blocked': '[x]' if p in self.deny_exec else '[-]'
+                'name': p
             }
             for p in self._processes
         ]
@@ -194,21 +191,18 @@ class ActionProcessor:
             return 'Process '+tag+' created successfully'
         except Exception as e:
             logging.error(e)
-            return str(e)
+            raise e
 
     def update_process(self, tag, expression):
         if tag not in self._processes:
             return 'Process does not exist'
+        self._processes[tag] = self.build_process_tree(tag, expression)
+        self._processes_str[tag] = expression
         try:
-            self._processes[tag] = self.build_process_tree(tag, expression)
-            self._processes_str[tag] = expression
-            try:
-                self._configuration.update_process(tag, expression)
-            except Exception as se:
-                return 'Process tag created, but config update failed. '+str(se)
-            return 'Process '+tag+' updated successfully'
-        except Exception as e:
-            return str(e)
+            self._configuration.update_process(tag, expression)
+        except Exception as se:
+            return 'Process tag created, but config update failed. '+str(se)
+        return 'Process '+tag+' updated successfully'
 
     def build_process_tree(self, tag, expression):
         """

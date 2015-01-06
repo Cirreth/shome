@@ -12,6 +12,23 @@
     font-size: 8pt;
 }
 
+#workspace .name {
+    font-size: 24pt;
+    background: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 35%;
+    margin-top: 10px;
+    user-select: text;
+    -moz-user-select: text;
+}
+
+#workspace .name:focus {
+    background: rgba(0,0,0,0.2);
+}
+
 #panel {
     position:fixed;
     right:0;
@@ -57,6 +74,18 @@
 .panel-tab.active {
     color: white !important;
     background: rgba(0,0,0,0)!important;
+}
+
+.panel-tab.configure {
+    padding: 7px;
+    color: white;
+}
+
+.panel-tab input, .panel-tab textarea {
+    background: transparent;
+    border: 1px solid rgba(128, 128, 128, 0.8);
+    border-radius: 3px;
+    width: 100%;
 }
 
 request-node.active,
@@ -108,7 +137,7 @@ delay-node[mock] {
 }
 
 /* Request node */
-request-node, scheduler-node, execute-node {
+request-node, scheduler-node, execute-node, request-node[mock] {
     border-radius: 7px;
     width: 180px;
     height: 65px;
@@ -134,7 +163,7 @@ request-node table tr:last-child td{
     width: 30%;
 }
 
-scheduler-node, execute-node {
+scheduler-node, execute-node, request-node[mock] {
     color: white;
     text-align: center;
     padding-top: 10px;
@@ -177,15 +206,17 @@ conditional-node .block {
 conditional-node .block div{
     font-size: 9pt;
     color: white;
-    border-bottom: 1px dotted #fff;
+    /*border-bottom: 1px dotted #fff;*/
     text-align: center;
-    margin: 0 auto;
 }
 conditional-node .block div:nth-of-type(1){
     padding-top: 15%;
-    width: 70%;
+    width: 80%;
+    margin: 0;
+    font-weight: bold;
 }
 conditional-node .block div:nth-of-type(2){
-    width: 30%;
+    width: 50%;
+    margin: 0 auto;
 }
 

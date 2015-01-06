@@ -1,59 +1,83 @@
 <div id="panel">
 
-    <div id="panel-tabs" class="row" ng-init="paneltab='elements'">
-        <div class="panel-tab" ng-class="{active: paneltab=='elements'}" ng-click="paneltab='elements'">Elements</div>
-        <div class="panel-tab" ng-class="{active: paneltab=='configure'}" ng-click="paneltab='configure'">Configure</div>
+    <div id="panel-tabs" class="row">
+        <div class="panel-tab" ng-class="{active: !selected}">Elements</div>
+        <div class="panel-tab" ng-class="{active: selected}">Configure</div>
     </div>
 
-    <div ng-show="paneltab=='elements'">
+    <div class="panel-tab elements" ng-show="!selected">
         <div class="panel-ctr" >
             <request-node mock ng-click="newRequestNode()">
-            <table>
-              <tr><td colspan="3"><i>new </i></td></tr>
-              <tr><td colspan="3">RequestNode</td></tr>
-              <tr><td>...</td><td>→[]→</td><td>...</td></tr>
-            </table>
+                <strong>RequestNode</strong><br/>
+                For using plugins functionality
             </request-node>
         </div>
         <div class="panel-ctr">
             <conditional-node mock ng-click="newConditionalNode()">
                 <div class="shape"></div>
                 <div class="block">
-                  <div >ConditionalNode</div>
-                  <div >< no | yes ></div>
+                  <div>Conditional node</div>
+                  <div>Check condition</div>
                 </div>
             </conditional-node>
         </div>
         <div class="panel-ctr" >
             <delay-node mock ng-click="newDelayNode()">
-            Delay
+                Delay
             </delay-node>
         </div>
         <div class="panel-ctr" >
             <scheduler-node mock ng-click="newSchedulerNode()">
-            Scheduler node
+                <strong>Scheduler node</strong><br/>
+                Running and stopping<br/>
+                scenarios
             </scheduler-node>
         </div>
         <div class="panel-ctr">
             <execute-node mock ng-click="newExecuteNode()">
-            Execute node
+                <strong>Execute node</strong><br/>
+                Execute another scenario
             </execute-node>
         </div>
     </div>
 
-    <div ng-show="paneltab=='configure'">
-
+    <div class="panel-tab configure" ng-show="selected">
+        <p>Type: {{selected.type}}</p>
+        <div ng-show="selected.type == 'RequestNode'">
+            <p>Plugin: <input ng-model="selected.plugin"/></p>
+            <p>Reference: <input ng-model="selected.reference"/></p>
+            <p>Value: <input ng-model="selected.value"/></p>
+            <p>Return to: <input ng-model="selected.retvar"/></p>
+        </div>
+        <div ng-show="selected.type == 'ConditionalNode'">
+            <p>Condition: <textarea ng-model="selected.condition"></textarea></p>
+        </div>
+        <div ng-show="selected.type == 'DelayNode'">
+            <p>Delay: <input ng-model="selected.delay" type="number" step="0.1"/></p>
+        </div>
+        <div ng-show="selected.type == 'ExecuteNode'">
+            <p>Execute: <input ng-model="selected.name"/></p>
+        </div>
+        <div ng-show="selected.type == 'SchedulerNode'">
+            <p>Scenario: <input ng-model="selected.task"/></p>
+            <p><label>Set: <input type="checkbox" ng-model="selected.action"/></label></p>
+        </div>
+        <button class="sch-btn" ng-click="deleteSelected()">Delete</button>
     </div>
 </div>
 
+<button class="sch-btn" ng-click="showmodel = !showmodel">Show model</button>
+<button class="sch-btn" ng-click="checkScenario()">Check scenario</button>
+<button class="sch-btn" ng-click="saveScenario()">Save scenario</button>
+
 <div id="workspace" ng-init="init(); showmodel=false;">
 
-    <button class="sch-btn" ng-click="showmodel = !showmodel">model</button>
-    <button class="sch-btn" ng-click="test()">test process</button>
+    <input class="name" ng-model="name" maxlength="16" placeholder="Name must be here"/>
     <table ng-show="showmodel">
       <tr ng-repeat="node in nodes">
         <td>{{ node | json }}</td>
       </tr>
+      <tr><td>{{scenario | json}}</td></tr>
     </table>
 
     <start-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-class="{active: node.active}"
@@ -79,8 +103,7 @@
     ng-class="{active: node.active}" ng-if="node.type=='ConditionalNode'" >
         <div class="shape"  ></div>
         <div class="block">
-          <div >{{node.condition}}</div>
-          <div >< no | yes ></div>
+          <div>{{node.condition}}</div>
         </div>
     </conditional-node>
 

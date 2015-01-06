@@ -2,73 +2,91 @@
 
     var app = angular.module('shomeAdm');
 
-    app.directive('startNode', ['Constructor', function(Constructor) {
+    app.directive('startNode', ['$rootScope', 'Constructor', function($rootScope, Constructor) {
         return {
             restrict: 'E',
             require: '?ngModel',
             link: function(scope, element, attrs, model) {
                 Constructor.initNode(scope, element, attrs, model, 'StartNode');
-                scope.connect = function() {Constructor.connect(scope, element, attrs, model)};
+                scope.connect = function() {
+                    Constructor.connect(scope, element, attrs, model);
+                    $rootScope.selected = Constructor.selected;
+                };
             }
         }
     }]);
 
-    app.directive('delayNode', ['Constructor', function(Constructor) {
+    app.directive('delayNode', ['$rootScope', 'Constructor', function($rootScope, Constructor) {
         return {
             restrict: 'E',
             require: '?ngModel',
             link: function(scope, element, attrs, model) {
                 if (attrs.hasOwnProperty('mock')) return false;
                 Constructor.initNode(scope, element, attrs, model, 'DelayNode');
-                scope.connect = function() {Constructor.connect(scope, element, attrs, model)};
+                scope.connect = function() {
+                    Constructor.connect(scope, element, attrs, model);
+                    $rootScope.selected = Constructor.selected;
+                };
             }
         }
     }]);
 
-    app.directive('requestNode', ['Constructor', function(Constructor) {
+    app.directive('requestNode', ['$rootScope', 'Constructor', function($rootScope, Constructor) {
         return {
             restrict: 'E',
             require: '?ngModel',
             link: function(scope, element, attrs, model) {
                 if (attrs.hasOwnProperty('mock')) return false;
                 Constructor.initNode(scope, element, attrs, model, 'RequestNode');
-                scope.connect = function() {Constructor.connect(scope, element, attrs, model)};
+                scope.connect = function() {
+                    Constructor.connect(scope, element, attrs, model);
+                    $rootScope.selected = Constructor.selected;
+                };
             }
         }
     }]);
 
-    app.directive('conditionalNode', ['Constructor', function(Constructor) {
+    app.directive('conditionalNode', ['$rootScope', 'Constructor', function($rootScope, Constructor) {
         return {
             restrict: 'E',
             require: '?ngModel',
             link: function(scope, element, attrs, model) {
                 if (attrs.hasOwnProperty('mock')) return false;
                 Constructor.initNode(scope, element, attrs, model, 'ConditionalNode');
-                scope.connect = function() {Constructor.connect(scope, element, attrs, model)};
+                scope.connect = function() {
+                    Constructor.connect(scope, element, attrs, model);
+                    $rootScope.selected = Constructor.selected;
+                };
             }
         }
     }]);
 
-    app.directive('schedulerNode', ['Constructor', function(Constructor) {
+    app.directive('schedulerNode', ['$rootScope', 'Constructor', function($rootScope, Constructor) {
         return {
             restrict: 'E',
             require: '?ngModel',
             link: function(scope, element, attrs, model) {
                 if (attrs.hasOwnProperty('mock')) return false;
                 Constructor.initNode(scope, element, attrs, model, 'RequestNode');
-                scope.connect = function() {Constructor.connect(scope, element, attrs, model)};
+                scope.connect = function() {
+                    Constructor.connect(scope, element, attrs, model);
+                    $rootScope.selected = Constructor.selected;
+                };
             }
         }
     }]);
 
-    app.directive('executeNode', ['Constructor', function(Constructor) {
+    app.directive('executeNode', ['$rootScope', 'Constructor', function($rootScope, Constructor) {
         return {
             restrict: 'E',
             require: '?ngModel',
             link: function(scope, element, attrs, model) {
                 if (attrs.hasOwnProperty('mock')) return false;
                 Constructor.initNode(scope, element, attrs, model, 'RequestNode');
-                scope.connect = function() {Constructor.connect(scope, element, attrs, model)};
+                scope.connect = function() {
+                    Constructor.connect(scope, element, attrs, model);
+                    $rootScope.selected = Constructor.selected;
+                };
             }
         }
     }]);
@@ -82,17 +100,23 @@
 
     */
 
-    app.controller('ConstructorController', ['$scope', '$http', '$interval', 'Constructor',
-                                                    function($scope, $http, $interval, Constructor) {
+    app.controller('ConstructorController',
+                            ['$scope', '$http', '$interval', '$routeParams', 'InfoMessage', 'Constructor',
+                             function($scope, $http, $interval, $routeParams, InfoMessage, Constructor) {
+
+        $scope.im = InfoMessage;
+
+        var startNode = {
+                id: 'Start',
+                type: 'StartNode',
+                next: [],
+                parallel: []
+        };
 
         /* convert server process representation to client process representation */
         function unpackScenario(data) {
-            var start = {
-                id: 'Start',
-                type: 'StartNode',
-                next: [].concat(data)
-            };
-            return treeToList(start);
+            startNode.next = startNode.next.concat(data);
+            return treeToList(startNode);
         }
 
         function treeToList(root) {
@@ -103,39 +127,18 @@
             var exceptionalNames = [];
             var yesNames = [];
             var noNames = [];
-            if (root.next) {
-                for (var i=0; i<root.next.length; i++) {
-                    var nl = treeToList(root.next[i]);
+            var prepare = function(direction, resultSet) {
+                for (var i=0; i<direction.length; i++) {
+                    var nl = treeToList(direction[i]);
                     list = list.concat(nl);
-                    nextNames.push(root.next[i].id);
+                    resultSet.push(direction[i].id);
                 }
             }
-            if (root.yes) {
-                for (var i=0; i<root.yes.length; i++) {
-                    var nl = treeToList(root.yes[i]);
-                    list = list.concat(nl);
-                    yesNames.push(root.yes[i].id);
-                }
-            }
-            if (root.no) {
-                for (var i=0; i<root.no.length; i++) {
-                    var nl = treeToList(root.no[i]);
-                    list = list.concat(nl);
-                    noNames.push(root.no[i].id);
-                }
-            }
-            if (root.parallel) {
-                for (var i=0; i<root.parallel.length; i++) {
-                    list = list.concat(treeToList(root.parallel[i]));
-                    parallelNames.push(root.parallel[i].id);
-                }
-            }
-            if (root.exceptional) {
-                for (var i=0; i<root.exceptional.length; i++) {
-                    //var exceptional = root.exceptional[i];
-                    //exceptionalNames.push(root.exceptional[i].id);
-                }
-            }
+            if (root.next) prepare(root.next, nextNames);
+            if (root.yes) prepare(root.yes, yesNames);
+            if (root.no) prepare(root.no, noNames);
+            if (root.parallel) prepare(root.parallel, parallelNames);
+            if (root.exceptional) prepare(root.exceptional, exceptionalNames);
             root.next = nextNames;
             root.parallel = parallelNames;
             root.exceptional = exceptionalNames;
@@ -146,44 +149,174 @@
             return list;
         }
 
-        $scope.init = function() {
-            //$http.get('./data-examples/process1.json')
-            $http.get('/admin/scenarios/dbtest')
-            .success(function(data){
-                Constructor.init();
-                Constructor.name = "test";
-                Constructor.nodes = unpackScenario(data);
-                console.log('nodes', Constructor.nodes);
-                $scope.nodes = Constructor.nodes;
-                /* endpoints polling for init connections*/
-                var epp = setInterval(function() {
-                    var state = true;
-                    /*
-                    for (i=0; i<Constructor.nodes.length; i++) {
-                        if (!Constructor.hasEndpoints(Constructor.nodes[i].id)) {
-                            state = false;
-                            break;
-                        }
-                    }*/
-                    /* all endpoints created */
-                    if (state) {
-                        clearInterval(epp);
-                        Constructor.drawAllConnections();
+        function listToTree(data, nodeId) {
+            var node = findNodeWithId(data, nodeId);
+            if (!node) return;
+            var next = [];
+            var parallel = [];
+            var exceptional = [];
+            var prepare = function(direction, resultSet) {
+                for (var i=0; i<direction.length; i++) {
+                    resultSet.push(listToTree(data, direction[i]));
+                }
+            }
+            if (node.next) prepare(node.next, next);
+            if (node.parallel) prepare(node.parallel, parallel);
+            if (node.exceptional) prepare(node.exceptional, exceptional);
+            var newnode = angular.copy(node);
+            newnode.next = next;
+            newnode.parallel = parallel;
+            newnode.exceptional = exceptional;
+            if (newnode.type === 'ConditionalNode') {
+                var yes = [];
+                var no = [];
+                if (newnode.yes) prepare(node.yes, yes);
+                if (newnode.no) prepare(node.no, no);
+                newnode.yes = yes;
+                newnode.no = no;
+            }
+            return newnode;
+        }
+
+        function findNodeWithId(array, id) {
+            for (var i=0; i<array.length; i++) {
+                if (array[i].id === id) {
+                    return array[i];
+                }
+            }
+        }
+
+        $scope.packScenario = function() {
+            var start = findNodeWithId($scope.nodes, 'Start');
+            var list = [];
+            for (var i=0; i<start.next.length; i++) {
+                list.push(listToTree($scope.nodes, start.next[i]));
+            }
+            if (list.length === 0 ) {
+                $scope.scenario = {};
+            } else if (list.length === 1) {
+                $scope.scenario = list[0];
+            } else {
+                $scope.scenario = list;
+            }
+        }
+
+        function initConstructor(scenario) {
+            Constructor.init();
+            Constructor.name = scenario;
+            /* endpoints polling for init connections*/
+            var epp = setInterval(function() {
+                var state = true;
+                for (i=0; i<Constructor.nodes.length; i++) {
+                    if (!Constructor.hasEndpoints(Constructor.nodes[i].id)) {
+                        state = false;
+                        break;
                     }
-                }, 200);
-                /* end */
+                }
+                /* all endpoints created */
+                if (state) {
+                    clearInterval(epp);
+                    Constructor.drawAllConnections();
+                }
+            }, 200);
+        }
+
+        $scope.init = function() {
+            $scope.name = $routeParams.scenario;
+            if ($scope.name) {
+                $http.get('/admin/scenarios/'+$scope.name)
+                .success(function(data){
+                    Constructor.nodes = unpackScenario(data);
+                    $scope.nodes = Constructor.nodes;
+                    initConstructor($scope.name);
+                });
+            } else {
+                $scope.name = "New scenario";
+                $scope.new = true;
+                Constructor.nodes = [startNode];
+                $scope.nodes = Constructor.nodes;
+                initConstructor($scope.name);
+            }
+        }
+
+        $scope.checkScenario = function() {
+            $scope.packScenario();
+            $http.post('/admin/constructor/check', {expression: angular.toJson($scope.scenario)})
+            .success(function(data) {
+                $scope.im.okMessage('Result: '+angular.toJson(data));
+            })
+            .error(function(data, status){
+                $scope.im.errorMessage('Error: '+data);
             });
+        }
+
+        $scope.saveScenario = function() {
+            $scope.packScenario();
+            if ($scope.new) {
+                $http.post('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.scenario)})
+                .success(function(data) {
+                    $scope.im.okMessage('Result: '+data);
+                })
+                .error(function(data, status){
+                    $scope.im.errorMessage('Error: '+data);
+                });
+            } else {
+                $http.put('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.scenario)})
+                .success(function(data) {
+                    $scope.im.okMessage('Result: '+data);
+                })
+                .error(function(data, status){
+                    $scope.im.errorMessage('Error: '+data);
+                });
+            }
+        }
+
+        //@TODO not working.
+        $scope.deleteSelected = function() {
+            var id=$scope.selected.id;
+            var nodes = $scope.nodes;
+            var findAndDelete = function(array, id) {
+                for (var k=0; k<array.length; k++) {
+                    if (array[k] === id) {
+                        array.splice(k, 1);
+                        return true;
+                    }
+                }
+                return false;
+            }
+            for (var i=0; i<nodes.length; i++) {
+                if (nodes[i].next) {
+                    if (findAndDelete(nodes[i].next, id)) return;
+                }
+                if (nodes[i].parallel) {
+                    if (findAndDelete(nodes[i].parallel, id)) return;
+                }
+                if (nodes[i].exceptional) {
+                    if (findAndDelete(nodes[i].exceptional, id)) return;
+                }
+                if (nodes[i].yes) {
+                    if (findAndDelete(nodes[i].yes, id)) return;
+                }
+                if (nodes[i].no) {
+                    if (findAndDelete(nodes[i].no, id)) return;
+                }
+                if (nodes[i].id == id) {
+                    nodes.splice(i, 1);
+                    Constructor.deleteNode(id);
+                    $scope.selected = Constructor.selected;
+                }
+            }
         }
 
         $scope.newRequestNode = function() {
             Constructor.nodes.push({
                 "id": 'rn'+parseInt(Math.random()*500),
                 "type": "RequestNode",
-                "plugin": "...",
-                "reference": "...",
+                "plugin": "mock",
+                "reference": "change me",
                 "position": {
-                    "left": 680,
-                    "top": 25
+                    "left": 100,
+                    "top": 100
                 },
                 "next": [],
                 "parallel": [],
@@ -198,8 +331,8 @@
                 "task": "...",
                 "action": "...",
                 "position": {
-                    "left": 680,
-                    "top": 25
+                    "left": 100,
+                    "top": 100
                 },
                 "next": [],
                 "parallel": [],
@@ -213,8 +346,8 @@
                 "type": "ExecuteNode",
                 "name": "...",
                 "position": {
-                    "left": 680,
-                    "top": 25
+                    "left": 100,
+                    "top": 100
                 },
                 "next": [],
                 "parallel": [],
@@ -222,16 +355,14 @@
             });
         };
 
-
-
         $scope.newDelayNode = function() {
             Constructor.nodes.push({
                 "id": 'rn'+parseInt(Math.random()*500),
                 "type": "DelayNode",
-                "delay":15,
+                "delay":0,
                 "position": {
-                    "left": 680,
-                    "top": 25
+                    "left": 100,
+                    "top": 100
                 },
                 "next": [],
                 "parallel": [],
@@ -245,8 +376,8 @@
                 "type": "ConditionalNode",
                 "condition": "not defined",
                 "position": {
-                    "left": 653,
-                    "top": 123
+                    "left": 100,
+                    "top": 100
                 },
                 "next": [],
                 "parallel": [],

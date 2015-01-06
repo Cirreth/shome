@@ -50,7 +50,7 @@ class SchedulerTaskHandler(tornado.web.RequestHandler):
         process = data['process'] if 'process' in data else None
         logging.debug('SchedulerTaskHandler post: '+title+' // {process: '+str(process)+', isrunned:'+ \
             str(isrunned)+', type: '+str(tasktype)+', scheme: '+str(scheme)+', description: '+str(description))
-        self.write('okokok')
+        self.write('Success')
         self._ws._scheduler.create(process, title, scheme, isrunned, description, writedb=True)
 
     def put(self, title):
@@ -67,9 +67,6 @@ class SchedulerTaskHandler(tornado.web.RequestHandler):
                 self._ws._scheduler.start(title)
             else:
                 self._ws._scheduler.stop(title)
-        #if scheme is not None:
-        #    self._ws._scheduler.set
-
 
     def delete(self, title):
         logging.debug('SchedulerTaskHandler delete: '+title)
@@ -78,7 +75,6 @@ class SchedulerTaskHandler(tornado.web.RequestHandler):
             self.write(title + ' successfully deleted')
         except Exception as e:
             return str(e)
-
 
 class ScenariosHandler(tornado.web.RequestHandler):
 
@@ -90,6 +86,60 @@ class ScenariosHandler(tornado.web.RequestHandler):
 
     def get(self, name):
         self.write(self._ws._action_processor.get_process(name))
+
+    def put(self, tag):
+        data = tornado.escape.json_decode(self.request.body)
+        newtag = data['tag'] if 'tag' in data else None
+        description = data['description'] if 'description' in data else None
+        expression = data['expression'] if 'expression' in data else None
+        if description:
+            raise NotImplementedError('Description update not supported yet')
+        if newtag:
+            raise NotImplementedError('Process renaming not supported yet')
+        if expression:
+            self.write(self._ws._action_processor.update_process(tag, expression))
+
+    def post(self, tag):
+        data = tornado.escape.json_decode(self.request.body)
+        description = data['description'] if 'description' in data else None
+        expression = data['expression'] if 'expression' in data else None
+        if expression:
+            self.write(self._ws._action_processor.create_process(tag, expression, writedb=True))
+
+class ScenariosListAllHandler(tornado.web.RequestHandler):
+
+    #web server instance
+    _ws = None
+
+    def initialize(self, ws):
+        self._ws = ws
+
+    def get(self):
+        self.write(json.dumps(self._ws._action_processor.list_all()));
+
+
+class ConstructorCheckingHandler(tornado.web.RequestHandler):
+
+    #web server instance
+    _ws = None
+
+    def initialize(self, ws):
+        self._ws = ws
+
+    def post(self):
+        data = tornado.escape.json_decode(self.request.body)
+        expression = data['expression'] if 'expression' in data else None
+        parameters = data['parameters'] if 'parameters' in data else None
+        if expression:
+            gid = 'chk'+str(uuid.uuid4())
+            self._ws._action_processor.create_process(gid, expression)
+            parameters = '{'+parameters+'}' if parameters else ''
+            res = self._ws._action_processor.process(gid+parameters)
+            self._ws._action_processor.delete_process(gid)
+            if (res):
+                self.write(res)
+        else:
+            raise tornado.HTTPError(422, "Expression is not defined")
 
 
 class CommandHandler(tornado.web.RequestHandler):
@@ -144,7 +194,9 @@ class WebServer():
             (r"/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
             (r"/admin/scheduler/alltasks", SchedulerAllTasksHandler, {'ws': self}),
             (r"/admin/scheduler/task/(.+)", SchedulerTaskHandler, {'ws': self}),
+            (r"/admin/scenarios/", ScenariosListAllHandler, {'ws': self}),
             (r"/admin/scenarios/(.+)", ScenariosHandler, {'ws': self}),
+            (r"/admin/constructor/check", ConstructorCheckingHandler, {'ws': self}),
             (r"/admin/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
         ], debug=True, **settings)
         http_server = tornado.httpserver.HTTPServer(application)

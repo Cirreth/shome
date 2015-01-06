@@ -55,7 +55,8 @@
             })
             .error(function(data, status){
                 $scope.im.errorMessage(status+': '+data);
-        });
+            }
+        );
     }
 
     /*
