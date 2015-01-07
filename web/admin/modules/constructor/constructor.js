@@ -246,6 +246,10 @@
                 $scope.nodes = Constructor.nodes;
                 initConstructor($scope.name);
             }
+            $http.get('/admin/plugins/active')
+                .success(function(data){
+                    $scope.plugins = data;
+                });
         }
 
         $scope.checkScenario = function() {

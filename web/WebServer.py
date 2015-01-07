@@ -120,7 +120,22 @@ class ScenariosListAllHandler(tornado.web.RequestHandler):
         self._ws = ws
 
     def get(self):
-        self.write(json.dumps(self._ws._action_processor.list_all()));
+        self.write(json.dumps(self._ws._action_processor.list_all()))
+
+
+class PluginsHandler(tornado.web.RequestHandler):
+
+    #web server instance
+    _ws = None
+
+    def initialize(self, ws):
+        self._ws = ws
+
+    def get(self, path):
+        if path == 'active':
+            self.write(json.dumps(self._ws._performer.list_loaded_plugins()))
+        elif path == 'all':
+            self.write(json.dumps(self._ws._performer.list_all_plugins()))
 
 
 class ConstructorCheckingHandler(tornado.web.RequestHandler):
@@ -178,12 +193,14 @@ class WebServer():
 
     _action_processor = None
     _scheduler = None
+    _performer = None
 
     define("port", default=8082, type=int)
 
     def __init__(self, context):
         self._action_processor = context.action_processor
         self._scheduler = context.scheduler
+        self._performer = context.performer
         self.init_ws()
 
     def init_ws(self):
@@ -202,6 +219,7 @@ class WebServer():
             (r"/admin/scenarios/", ScenariosListAllHandler, {'ws': self}),
             (r"/admin/scenarios/(.+)", ScenariosHandler, {'ws': self}),
             (r"/admin/constructor/check", ConstructorCheckingHandler, {'ws': self}),
+            (r"/admin/plugins/(?P<path>.+)", PluginsHandler, {'ws': self}),
             (r"/admin/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
         ], debug=True, **settings)
         http_server = tornado.httpserver.HTTPServer(application)

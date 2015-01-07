@@ -25,6 +25,10 @@
           templateUrl: 'modules/scenarios/scenarios.html',
           controller: 'ScenariosController'
         }).
+        when('/system', {
+          templateUrl: 'modules/system/system.html',
+          controller: 'SystemController'
+        }).
         otherwise({
           redirectTo: '/main'
         });

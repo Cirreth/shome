@@ -44,7 +44,7 @@
     <div class="panel-tab configure" ng-show="selected">
         <p>Type: {{selected.type}}</p>
         <div ng-show="selected.type == 'RequestNode'">
-            <p>Plugin: <input ng-model="selected.plugin"/></p>
+            <p>Plugin: <div class="tab-select"><select ng-options="plugin for plugin in plugins" ng-model="selected.plugin"></select></div></p>
             <p>Reference: <input ng-model="selected.reference"/></p>
             <p>Value: <input ng-model="selected.value"/></p>
             <p>Return to: <input ng-model="selected.retvar"/></p>

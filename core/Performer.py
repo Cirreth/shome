@@ -13,7 +13,6 @@ class Performer:
             3. Not found, configured, active - error, user notification, PANIC!!!
             4. Not found, configured, inactive - unable to activate, user notification
             5. Found, not configured - allow to config it
-            6. Not found, not configured - you nothing know about it
     """
 
     _plugins = {}
@@ -44,7 +43,30 @@ class Performer:
         self._plugins[name] = plugin
 
     def list_loaded_plugins(self):
-        return self._plugins.keys()
+        return [name for name in self._plugins]
+
+    def list_all_plugins(self):
+        allplugins = []
+        for p in self._plugins:
+            allplugins.append(
+                {
+                    "name": p,
+                    "params": self._known[p]['params'] if p in self._known else '',
+                    "enabled": self._known[p]['enabled'] if p in self._known else '',
+                    "status": "active",
+                }
+            )
+        for p in self._error:
+            allplugins.append(
+                {
+                    "name": p,
+                    "status": "error",
+                    "params": self._known[p]['params'] if p in self._known else '',
+                    "enabled": self._known[p]['enabled'] if p in self._known else '',
+                    "message": self._error[p]
+                }
+            )
+        return allplugins
 
     def scan_plugins_folder(self):
         res = {'found': {}, 'error': {}}
