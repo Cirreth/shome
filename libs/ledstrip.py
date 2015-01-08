@@ -1,15 +1,16 @@
 import serial
 import os
 
+
 class RGB:
 
   def __init__(self):
     for dev in os.listdir('/dev'):
       if 'ttyACM' in dev:
-        self.s = serial.Serial('//dev//'+dev,300)
+        self.s = serial.Serial('//dev//'+dev, 300)
         self.init_pwm()
         return
-    raise Exception('Threre is no device ttyACM* in /dev')
+    raise Exception('There is no device ttyACM* in /dev')
 
   def write(self, com):
     self.s.write((com+' = ').encode())
@@ -24,8 +25,8 @@ class RGB:
 
   def setColor(self, color_hex):
     """
-                  bgr   <- channels
-      ||||||||||||||
+                    bgr   <- channels
+        ||||||||||||||
       [)   atmega8   ]
        ||||||||||||||
     """

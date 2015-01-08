@@ -1,8 +1,9 @@
+__author__ = 'cirreth'
+
 import logging
 import time
 from plugins.SHomePlugin import SHomePlugin
 from libs.ledstrip import *
-__author__ = 'cirreth'
 
 class LedStripPlugin(SHomePlugin):
 
@@ -17,11 +18,18 @@ class LedStripPlugin(SHomePlugin):
     def call(self, reference, values={}):
         """
             #000000 set instantly
-            #000000:0.0 set in interval 0.0
+            #000000:x smoothly, interval: x (float)
         """
         logging.debug('Ledstrip plugin: '+reference)
         spl = reference.split(':')
-        self.set_color(spl[0], float(spl[1]) if len(spl)==2 else 0)
+        color = spl[0], float(spl[1]) if len(spl)==2 else 0
+        try:
+            self.set_color(color)
+        except Exception as e:
+            logging.error(e)
+            self._ledstrip = RGB()
+            self.set_color(color)
+
 
     def set_color(self, color: 'hex str (#000000)', interval=0):
         rn = int(color[1:3], 16)

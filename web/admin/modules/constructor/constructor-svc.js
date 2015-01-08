@@ -375,9 +375,7 @@
                   return endpointsById(id) === undefined ? false : true;
               },
               deleteNode: function(id) {
-                  if (service.selected.id == id) {
-                      delete service.selected;
-                  }
+                  delete service.selected;
                   var eps = service.endpoints;
                   for (var i=0; i<eps.length; i++) {
                       if (eps[i].id === id) {

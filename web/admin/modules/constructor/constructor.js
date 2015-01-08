@@ -101,16 +101,10 @@
     */
 
     app.controller('ConstructorController',
-                            ['$scope', '$http', '$interval', '$routeParams', 'InfoMessage', 'Constructor',
-                             function($scope, $http, $interval, $routeParams, InfoMessage, Constructor) {
+                            ['$scope', '$rootScope', '$http', '$interval', '$routeParams', 'InfoMessage', 'Constructor',
+                             function($scope, $rootScope, $http, $interval, $routeParams, InfoMessage, Constructor) {
 
         $scope.im = InfoMessage;
-
-        $scope.$watchCollection('selected', function(value) {
-            if ($scope.selected && !$scope.selected.type) {
-                delete $scope.selected;
-            }
-        });
 
         var startNode = {
                 id: 'Start',
@@ -240,7 +234,7 @@
                     initConstructor($scope.name);
                 });
             } else {
-                $scope.name = "New scenario";
+                $scope.name = "New scenario name";
                 $scope.new = true;
                 Constructor.nodes = [startNode];
                 $scope.nodes = Constructor.nodes;
@@ -254,6 +248,11 @@
 
         $scope.checkScenario = function() {
             $scope.packScenario();
+            if (!$scope.scenario) {
+                $scope.im.errorMessage('There are no nodes connected to start');
+                return;
+                return;
+            }
             $http.post('/admin/constructor/check', {expression: angular.toJson($scope.scenario)})
             .success(function(data) {
                 $scope.im.okMessage('Result: '+angular.toJson(data));
@@ -285,10 +284,8 @@
             }
         }
 
-        //@TODO not working.
         $scope.deleteSelected = function() {
-            /*
-            var id=$scope.selected.id;
+            var id = $scope.selected.id;
             var nodes = $scope.nodes;
             var findAndDelete = function(array, id) {
                 for (var k=0; k<array.length; k++) {
@@ -299,6 +296,14 @@
                 }
                 return false;
             }
+            Constructor.deleteNode(id);
+            $rootScope.selected = Constructor.selected;
+            for (var i=0; i<nodes.length; i++) {
+                  if (nodes[i].id == id) {
+                      nodes.splice(i, 1);
+                      break;
+                  }
+              }
             for (var i=0; i<nodes.length; i++) {
                 if (nodes[i].next) {
                     if (findAndDelete(nodes[i].next, id)) return;
@@ -315,13 +320,7 @@
                 if (nodes[i].no) {
                     if (findAndDelete(nodes[i].no, id)) return;
                 }
-                if (nodes[i].id == id) {
-                    nodes.splice(i, 1);
-                    Constructor.deleteNode(id);
-                    $scope.selected = Constructor.selected;
-                }
             }
-            */
         }
 
         $scope.newRequestNode = function() {

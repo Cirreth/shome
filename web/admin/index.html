@@ -25,7 +25,7 @@
 
 <body>
 
-    <div id="info-message" ng-controller="InfoMessageController"  ng-show="message" ng-cloac>
+    <div id="info-message" ng-controller="InfoMessageController"  ng-show="message" ng-cloac ng-click="suspendThenHide()">
             <i class="fa fa-check green" ng-show="type=='ok'"></i>
             <i class="fa fa-times red" ng-show="type=='error'"></i>
             <i class="fa fa-exclamation-circle" ng-show="type=='info'"></i>
