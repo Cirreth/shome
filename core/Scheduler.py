@@ -40,14 +40,15 @@ class Scheduler:
         def start(self):
             logging.debug(self.procname+' started')
             self.stopped = False
-            def tick():
+            def tick(first=False):
                 if self.stopped:
                     return
-                self._action_processor.process(self.procname)
+                if not first:
+                    self._action_processor.process(self.procname)
                 t = threading.Timer(self.interval, tick)
                 t.start()
                 return t
-            self._timer = tick()
+            self._timer = tick(True)
 
         def stop(self):
             logging.debug(self.procname+' stopping...')
@@ -167,7 +168,6 @@ class Scheduler:
             if self._scheduled[procname].title == title:
                 return self._scheduled[procname]
         return None
-
 
     def find(self, procname):
         """Find all tasks whose name contains procname"""

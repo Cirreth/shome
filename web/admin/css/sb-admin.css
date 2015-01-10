@@ -474,16 +474,22 @@ background: green;
   color:white;
 }
 
+.btn-red {
+    color: white !important;
+    background: red !important;
+    border: none !important;
+}
+
 .sch-btn {
   border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: rgba(0,0,0,.4);
+  background-color: rgba(0,0,0,.6);
   font-size: 11pt;
   color: white;
 }
 
 .sch-btn:hover {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.7);
   border-color: white;
 }
 
@@ -544,7 +550,7 @@ input[type=radio]:focus {
 .sch-radio input[type=radio] + label {
   border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: rgba(0,0,0,.4);
+  background-color: rgba(0,0,0,.6);
   font-size: 11pt;
   color: white;
   padding: 2px 3px 2px 3px;
@@ -556,7 +562,7 @@ input[type=radio]:focus {
  to make it look like highlighted button
 */
 .sch-radio input[type=radio]:checked + label {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.8);
   border-color: white;
   border: 2px solid #ccc;
 }

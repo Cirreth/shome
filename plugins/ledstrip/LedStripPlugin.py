@@ -22,9 +22,10 @@ class LedStripPlugin(SHomePlugin):
         """
         logging.debug('Ledstrip plugin: '+reference)
         spl = reference.split(':')
-        color = spl[0], float(spl[1]) if len(spl)==2 else 0
+        color = spl[0]
+        delay = float(spl[1]) if len(spl)==2 else 0
         try:
-            self.set_color(color)
+            self.set_color(color, delay)
         except Exception as e:
             logging.error(e)
             self._ledstrip = RGB()

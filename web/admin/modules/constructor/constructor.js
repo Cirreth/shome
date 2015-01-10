@@ -106,6 +106,12 @@
 
         $scope.im = InfoMessage;
 
+        $scope.$watchCollection('selected', function(value) {
+            if ($scope.selected && !$scope.selected.type) {
+                delete $scope.selected;
+            }
+        });
+
         var startNode = {
                 id: 'Start',
                 type: 'StartNode',
@@ -247,10 +253,10 @@
         }
 
         $scope.checkScenario = function() {
+            $scope.im.loader();
             $scope.packScenario();
             if (!$scope.scenario) {
                 $scope.im.errorMessage('There are no nodes connected to start');
-                return;
                 return;
             }
             $http.post('/admin/constructor/check', {expression: angular.toJson($scope.scenario)})

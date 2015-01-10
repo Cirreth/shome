@@ -84,6 +84,9 @@
         errorMessage: function(data) {
             setMessage('error', data);
         },
+        loader: function(data) {
+            setMessage('loader', 'processing');
+        },
         clear: function() {
             service.message = undefined;
             type = undefined;

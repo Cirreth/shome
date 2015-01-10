@@ -15,7 +15,8 @@
 
         $scope.load();
 
-        $scope.delete = function(tag) {
+        $scope.delete = function(tag, accepted) {
+            if (!accepted) return;
             $http.delete('/admin/scenarios/'+tag)
                 .success(function(data) {
                     $scope.im.okMessage(data);

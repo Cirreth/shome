@@ -109,7 +109,7 @@ class ActionProcessor:
                     if isinstance(self._processes[tag], list):
                         self.deny_exec.append(tag)
                         threads = [Thread(target=e.execute, args=(variables, )) for e in self._processes[tag]]
-                        logging.debug(len(threads) + ' threads executed in process ( '+tag+' )')
+                        logging.debug(str(len(threads)) + ' threads executed in process ( '+tag+' )')
                         for t in threads: t.start()
                         for t in threads: t.join()
                         self.deny_exec.remove(tag)
