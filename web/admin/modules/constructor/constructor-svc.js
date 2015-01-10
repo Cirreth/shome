@@ -16,8 +16,18 @@
           }
         };
 
+        var beforeDetachConnection = function(conn) {
+            var src_jpid = conn.sourceId;
+            var tgt_jpid = conn.targetId;
+            var src = nodeById(angular.element('#'+src_jpid)[0].attributes.cid.value);
+            var tgt_id = angular.element('#'+tgt_jpid)[0].attributes.cid.value;
+            service.detachConnections(src, tgt_id);
+            return true;
+        }
+
         /* endpoints variables */
         var radius = 4;
+        var radiusTop = 6;
 
         /* StartNode */
         var initStartNode = function(scope, element, attrs, model) {
@@ -25,7 +35,8 @@
             var bottom = instance.addEndpoint(element, {
                 endpoint: ["Dot", {radius:radius}],
                 anchor:["Bottom"],
-                maxConnections:-1
+                maxConnections:-1,
+                beforeDetach: beforeDetachConnection
             });
             /* not supported yet
                 var left = instance.addEndpoint(element, {
@@ -59,7 +70,7 @@
           /* Top endpoint */
           var top = instance.addEndpoint(element, {
               endpoint: ["Dot", {
-              radius:radius}],
+              radius:radiusTop}],
               anchor:["Top"],
               maxConnections:1
           });
@@ -68,27 +79,31 @@
               endpoint: ["Dot", {
               radius:radius}],
               anchor:["Bottom"],
-              maxConnections:-1
+              maxConnections:-1,
+                beforeDetach: beforeDetachConnection
           });
           var left = instance.addEndpoint(element, {
             endpoint: ["Dot", {
               radius:radius}],
               anchor:["Left"],
-              maxConnections:-1
+              maxConnections:-1,
+              beforeDetach: beforeDetachConnection
           });
           var right = instance.addEndpoint(element, {
             endpoint: ["Dot", {
               radius:radius}],
               anchor:["Right"],
-              maxConnections:-1
+              maxConnections:-1,
+              beforeDetach: beforeDetachConnection
           });
           /* Exceptional endpoint */
           var err = instance.addEndpoint(element, {
               endpoint: ["Dot", {
               radius:radius}],
-              anchor:[0.9,1,1,1],
+              anchor:[0.9,1,0,1],
               paintStyle:{ fillStyle:"#e66" },
-              maxConnections:-1
+              maxConnections:-1,
+              beforeDetach: beforeDetachConnection
           });
 
           service.endpoints.push({id: attrs.cid, top: top, left: left, right: right, bottom: bottom, err: err});
@@ -101,7 +116,7 @@
           /*Top endpoint*/
           var top = instance.addEndpoint(element, {
               endpoint: ["Dot", {
-              radius:radius}],
+              radius:radiusTop}],
               anchors:[0.5, 0, 0, -1],
               maxConnections:1
           });
@@ -110,19 +125,22 @@
               endpoint: ["Dot", {
               radius:radius}],
               anchors:[0.03, 0.5, -1, -1],
-              maxConnections:-1
+              maxConnections:-1,
+              beforeDetach: beforeDetachConnection
           });
           var right = instance.addEndpoint(element, {
               endpoint: ["Dot", {
               radius:radius}],
               anchors:[0.97, 0.5, 1, -1],
-              maxConnections:-1
+              maxConnections:-1,
+              beforeDetach: beforeDetachConnection
           });
           var bottom = instance.addEndpoint(element, {
             endpoint: ["Dot", {
             radius:radius}],
             anchors:[0.5, 1, 0, 1],
-            maxConnections:-1
+            maxConnections:-1,
+            beforeDetach: beforeDetachConnection
           });
           /*Exceptional endpoint*/
           var err = instance.addEndpoint(element, {
@@ -130,7 +148,8 @@
             radius:radius}],
             anchors:[0.75, 0.75, 0, 1],
             paintStyle:{ fillStyle:"#e66" },
-            maxConnections:-1
+            maxConnections:-1,
+            beforeDetach: beforeDetachConnection
           });
           //problem with add one connection twice
           service.endpoints.push({id: attrs.cid, top: top, bottom: bottom, left: left, right: right, err: err});
@@ -141,7 +160,7 @@
           /* Top endpoint */
           var top = instance.addEndpoint(element, {
               endpoint: ["Dot", {
-              radius:radius}],
+              radius:radiusTop}],
               anchor:["Top"],
               maxConnections:1
           });
@@ -150,19 +169,22 @@
               endpoint: ["Dot", {
               radius:radius}],
               anchor:["Bottom"],
-              maxConnections:-1
+              maxConnections:-1,
+              beforeDetach: beforeDetachConnection
           });
           var left = instance.addEndpoint(element, {
             endpoint: ["Dot", {
               radius:radius}],
               anchor:[1, 0.5, -1, -1],
-              maxConnections:-1
+              maxConnections:-1,
+              beforeDetach: beforeDetachConnection
           });
           var right = instance.addEndpoint(element, {
             endpoint: ["Dot", {
               radius:radius}],
               anchor:[1, 0.5, 1, -1],
-              maxConnections:-1
+              maxConnections:-1,
+              beforeDetach: beforeDetachConnection
           });
           /* Exceptional endpoint */
           var err = instance.addEndpoint(element, {
@@ -170,7 +192,8 @@
               radius:radius}],
               anchor:[0.85,0.85,1,1],
               paintStyle:{ fillStyle:"#e66" },
-              maxConnections:-1
+              maxConnections:-1,
+              beforeDetach: beforeDetachConnection
           });
 
           service.endpoints.push({id: attrs.cid, top: top, left: left, right: right, bottom: bottom, err: err});
@@ -182,6 +205,7 @@
           nodes: [],
           endpoints: [],
           selected: undefined,
+          exceptionalMode: false,
           /* initialize process */
           initNode: function(scope, element, attrs, model, type) {
             if (type==='RequestNode') {
@@ -293,20 +317,25 @@
                           t = curid; curid = selected; selected = t;
                           t = cur; cur = sel; sel = t;
                       }
-                      if (cr < sl || cl > sr) {
-                          if (cur.type === 'ConditionalNode') {
-                              console.log('cur',cur);
-                              console.log('sel',sel);
-                              if (cr < sl) {
-                                  cur.yes.push(selected);
+                      if (endpointsById(selected).top.connections.length>0) {
+                          return;
+                      }
+                      if (service.exceptionalMode) {
+                          cur.exceptional.push(selected);
+                      } else {
+                          if (cr < sl || cl > sr) {
+                              if (cur.type === 'ConditionalNode') {
+                                  if (cr < sl) {
+                                      cur.yes.push(selected);
+                                  } else {
+                                      cur.no.push(selected);
+                                  }
                               } else {
-                                  cur.no.push(selected);
+                                  cur.parallel.push(selected);
                               }
                           } else {
-                              cur.parallel.push(selected);
+                              cur.next.push(selected);
                           }
-                      } else {
-                          cur.next.push(selected);
                       }
                   }
                   sel.active = false;
@@ -338,41 +367,55 @@
             });
             angular.forEach(node.yes, function(yesnode) {
                 curep = endpointsById(node.id).right;
-                yesep = endpointsById(yesnode).top;
-                service.drawConnection(yesep, curep);
+                yesep = endpointsById(yesnode).top
+                service.drawConnection(curep, yesep);
             });
             angular.forEach(node.no, function(nonode) {
                 curep = endpointsById(node.id).left;
                 noep = endpointsById(nonode).top;
                 service.drawConnection(curep, noep);
             });
+            angular.forEach(node.exceptional, function(excnode) {
+                curep = endpointsById(node.id).err;
+                excep = endpointsById(excnode).top;
+                service.drawConnection(curep, excep);
+            });
           },
           drawAllConnections: function() {
               angular.forEach(service.nodes, function(node) {
-                  angular.forEach(node.next, function(nextnode) {
-                       curep = endpointsById(node.id).bottom;
-                       nextep = endpointsById(nextnode).top;
-                       service.drawConnection(curep, nextep);
-                  });
-                  angular.forEach(node.parallel, function(prlnode) {
-                      curep = endpointsById(node.id).right;
-                      prlep = endpointsById(prlnode).top;
-                      service.drawConnection(curep, prlep);
-                  });
-                  angular.forEach(node.yes, function(yesnode) {
-                      curep = endpointsById(node.id).right;
-                      yesep = endpointsById(yesnode).top;
-                      service.drawConnection(yesep, curep);
-                  });
-                  angular.forEach(node.no, function(nonode) {
-                      curep = endpointsById(node.id).left;
-                      noep = endpointsById(nonode).top;
-                      service.drawConnection(curep, noep);
-                  });
-                });
-              },
+                  service.drawElementConnections(node.id);
+              });
+          },
               hasEndpoints: function(id) {
                   return endpointsById(id) === undefined ? false : true;
+              },
+              detachConnections: function(src, tgt_id) {
+                var findAndDelete = function(array, id) {
+                    for (var k=0; k<array.length; k++) {
+                        if (array[k] === id) {
+                            array.splice(k, 1);
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                if (src.next) {
+                    findAndDelete(src.next, tgt_id);
+                }
+                if (src.parallel) {
+                    findAndDelete(src.parallel, tgt_id);
+                }
+                if (src.exceptional) {
+                    findAndDelete(src.exceptional, tgt_id);
+                }
+                if (src.yes) {
+                    findAndDelete(src.yes, tgt_id);
+                }
+                if (src.no) {
+                    findAndDelete(src.no, tgt_id);
+                }
+                service.drawElementConnections(src.id);
+                $rootScope.$apply();
               },
               deleteNode: function(id) {
                   delete service.selected;

@@ -11,17 +11,17 @@ import logging
 class ActionProcessor:
 
     _performer = None
-    #processes dictionary
+    # processes dictionary
     _processes = {}
-    #processes string representations
+    # processes string representations
     _processes_str = {}
-    #config storage
+    # config storage
     _configuration = None
-    #processes variable
+    # processes variable
     pss_variables = {}
-    #deny executing for
+    # deny executing for
     deny_exec = []
-    #active threads
+    # active threads
     active_threads = None
 
     def __init__(self):
@@ -66,7 +66,8 @@ class ActionProcessor:
         if name in self._processes_str:
             procusgs = self.find_process_usages(name)
             if len(procusgs) > 0:
-                raise Exception('Process are used in ['+', '.join(procusgs)+']. Delete or modify related processes.')
+                raise Exception('Process are used in ['+', '.join(procusgs) +
+                                ']. Delete or modify related processes.')
             self._configuration.delete_process(name)
             del self._processes_str[name]
             del self._processes[name]
@@ -74,7 +75,7 @@ class ActionProcessor:
                 del self.pss_variables[name]
 
     def update_proc_var(self, tag, name, value):
-        if not tag in self.pss_variables:
+        if tag not in self.pss_variables:
             self.pss_variables[tag] = {}
         self.pss_variables[tag][name] = value
 
@@ -105,17 +106,19 @@ class ActionProcessor:
                         splitted = self.separate_values(splitted_values)
                         for k in splitted:
                             variables[k] = prepare_parameter(splitted[k])
-                    #when few processes on one level
+                    # when few processes on one level
                     if isinstance(self._processes[tag], list):
                         self.deny_exec.append(tag)
                         threads = [Thread(target=e.execute, args=(variables, )) for e in self._processes[tag]]
                         logging.debug(str(len(threads)) + ' threads executed in process ( '+tag+' )')
-                        for t in threads: t.start()
-                        for t in threads: t.join()
+                        for t in threads:
+                            t.start()
+                        for t in threads:
+                            t.join()
                         self.deny_exec.remove(tag)
                     else:
                         self.deny_exec.append(tag)
-                        t = Thread(target=self._processes[tag].execute, args=(variables, ))  # put to processing
+                        t = Thread(target=self._processes[tag].execute, args=(variables, ))
                         logging.debug('thread executed in process ( '+tag+' )')
                         t.start()
                         t.join()
@@ -157,8 +160,7 @@ class ActionProcessor:
 
     @staticmethod
     def split_parameters(string):
-        # TODO infinitely bad result on
-        # a=1, b=' =_= hello, my \'friends\''
+        # TODO not working on a=1, b=' =_= hello, my \'friends\''
         res = []
         lock = False
         cur = 0
@@ -224,25 +226,27 @@ class ActionProcessor:
             structure = parse_level(expression)
             #{...}/[...] = > node/[node, node, ...]
             if isinstance(structure, dict):
-                res = []
-                res.append(create_node(tag, structure))
+                res = [create_node(tag, structure)]
                 structure = res
             elif isinstance(structure, list):
                 for i in range(0, len(structure)):
                     structure[i] = create_node(tag, structure[i])
         except ValueError:
-            """json parsing error?"""
             structure = []
             if expression[0] == '[':
                 lbllist = [i.strip() for i in expression[1:-1].split(',')]
                 for label in lbllist:
                     node = self.get_node_with_label(tag, label)
-                    if node: structure.append(node)
-                    else: structure.append(label) #process existing checking required?
+                    if node:
+                        structure.append(node)
+                    else:
+                        structure.append(label)  # process existing checking required?
             else:
                 node = self.get_node_with_label(tag, expression)
-                if node: structure.append(node)
-                else: structure.append(expression)
+                if node:
+                    structure.append(node)
+                else:
+                    structure.append(expression)
         return structure
 
 def parse_command(message):
@@ -281,15 +285,17 @@ def create_node(tag, structure):
     else:
         raise InvalidNodeTypeException
 
-#@TODO AbstractNode method duplicate!
+
+#  @TODO AbstractNode method duplicate!
 def parse_level(ci):
     """
         Convert first structure level to json
     """
-    if re.search('^\\s*\\[', ci): #array of objects
+    if re.search('^\\s*\\[', ci):
         return [{k: json.dumps(v) for k, v in e.items()} for e in json.loads(ci)]
     else:
         return {k: json.dumps(v) for k, v in json.loads(ci).items()}
+
 
 def prepare_parameter(parameter):
     """
@@ -310,6 +316,7 @@ def prepare_parameter(parameter):
         except ValueError:
             logging.debug('neither digit nor quoted string')
             return parameter
+
 
 def prepare_parameters(parameters):
     return {k: prepare_parameter(parameters[k]) for k in parameters}

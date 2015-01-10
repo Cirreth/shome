@@ -56,18 +56,39 @@
             <p>Delay: <input ng-model="selected.delay" type="number" step="0.1"/></p>
         </div>
         <div ng-show="selected.type == 'ExecuteNode'">
-            <p>Execute: <input ng-model="selected.name"/></p>
+            <div class="tab-select">
+                <select ng-options="sc for sc in scenarios" ng-model="selected.name"></select>
+            </div>
+            <p>
+                <a ng-href="#/constructor/{{selected.name}}" target="_blank">
+                    Open in new tab
+                </a>
+            </p>
+            <p>Parameters: <input ng-model="selected.values"/></p>
+            Merge variables:
+            <div class="form-group sch-radio">
+                <input id="cb-merge" type="radio" ng-model="selected.merge" value="true"><label for="cb-merge" class="radio-inline">Merge</label>
+                <input id="cb-nomerge" type="radio" ng-model="selected.merge" value="false"><label for="cb-nomerge" class="radio-inline">No merge</label>
+             </div>
         </div>
         <div ng-show="selected.type == 'SchedulerNode'">
-            <p>Scenario: <input ng-model="selected.task"/></p>
-            <p><label>Set: <input type="checkbox" ng-model="selected.action"/></label></p>
+            Action:
+             <div class="form-group sch-radio">
+                <input id="cb-start" type="radio" ng-model="selected.action" value="start"><label for="cb-start" class="radio-inline">Start</label>
+                <input id="cb-stop" type="radio" ng-model="selected.action" value="stop"><label for="cb-stop" class="radio-inline">Stop</label>
+             </div>
+            <p>Scenario:
+                <div class="tab-select">
+                    <select ng-options="sc for sc in scenarios" ng-model="selected.task"></select>
+                </div>
+            </p>
         </div>
         <button class="sch-btn" ng-click="deleteSelected()">Delete</button>
     </div>
 </div>
 
 <button class="sch-btn" ng-click="showmodel = !showmodel">Show model</button>
-<button class="sch-btn" ng-click="">Working with exceptions</button>
+<button class="sch-btn" ng-class="{'btn-red': exceptionalMode}" ng-click="toggleExceptional()">Working with exceptions</button>
 <button class="sch-btn" ng-click="checkScenario()">Check scenario</button>
 <button class="sch-btn" ng-click="saveScenario()">Save scenario</button>
 
@@ -116,7 +137,9 @@
 
     <execute-node ng-model="node" ng-click="connect()" cid="{{node.id}}" ng-class="{active: node.active}"
         ng-repeat="node in nodes" ng-if="node.type=='ExecuteNode'">
-        {{node.name}}
+        Scenario: {{node.name}}<br/>
+        {{node.values}}<br/>
+        Merge: {{node.merge}}
     </execute-node>
 
 </div> <!--workspace-->

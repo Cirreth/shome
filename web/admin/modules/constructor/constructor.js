@@ -106,6 +106,8 @@
 
         $scope.im = InfoMessage;
 
+        $scope.exceptionalMode = Constructor.exceptionalMode;
+
         $scope.$watchCollection('selected', function(value) {
             if ($scope.selected && !$scope.selected.type) {
                 delete $scope.selected;
@@ -250,6 +252,18 @@
                 .success(function(data){
                     $scope.plugins = data;
                 });
+            $http.get('/admin/scenarios/')
+                .success(function(data){
+                    $scope.scenarios = [];
+                    angular.forEach(data, function(v) {
+                        $scope.scenarios.push(v.name);
+                    });
+                });
+        }
+
+        $scope.toggleExceptional = function() {
+            Constructor.exceptionalMode = !Constructor.exceptionalMode;
+            $scope.exceptionalMode = Constructor.exceptionalMode;
         }
 
         $scope.checkScenario = function() {
@@ -331,80 +345,82 @@
 
         $scope.newRequestNode = function() {
             Constructor.nodes.push({
-                "id": 'rn'+parseInt(Math.random()*500),
-                "type": "RequestNode",
-                "plugin": "mock",
-                "reference": "change me",
-                "position": {
-                    "left": 100,
-                    "top": 100
+                id: 'rn'+parseInt(Math.random()*500),
+                type: "RequestNode",
+                plugin: "mock",
+                reference: "change me",
+                position: {
+                    left: 100,
+                    top: 100
                 },
-                "next": [],
-                "parallel": [],
-                "exceptional": []
+                next: [],
+                parallel: [],
+                exceptional: []
             });
         };
 
         $scope.newSchedulerNode = function() {
             Constructor.nodes.push({
-                "id": 'rn'+parseInt(Math.random()*500),
-                "type": "SchedulerNode",
-                "task": "...",
-                "action": "...",
-                "position": {
-                    "left": 100,
-                    "top": 100
+                id: 'rn'+parseInt(Math.random()*500),
+                type: "SchedulerNode",
+                task: "...",
+                action: "...",
+                position: {
+                    left: 100,
+                    top: 100
                 },
-                "next": [],
-                "parallel": [],
-                "exceptional": []
+                next: [],
+                parallel: [],
+                exceptional: []
             });
         };
 
         $scope.newExecuteNode = function() {
             Constructor.nodes.push({
-                "id": 'rn'+parseInt(Math.random()*500),
-                "type": "ExecuteNode",
-                "name": "...",
-                "position": {
-                    "left": 100,
-                    "top": 100
+                id: 'rn'+parseInt(Math.random()*500),
+                type: "ExecuteNode",
+                name: "",
+                position: {
+                    left: 100,
+                    top: 100
                 },
-                "next": [],
-                "parallel": [],
-                "exceptional": []
+                next: [],
+                parallel: [],
+                exceptional: [],
+                values: "",
+                merge: 'false'
             });
         };
 
         $scope.newDelayNode = function() {
             Constructor.nodes.push({
-                "id": 'rn'+parseInt(Math.random()*500),
-                "type": "DelayNode",
-                "delay":0,
-                "position": {
-                    "left": 100,
-                    "top": 100
+                id: 'rn'+parseInt(Math.random()*500),
+                type: "DelayNode",
+                delay:0,
+                position: {
+                    left: 100,
+                    top: 100
                 },
-                "next": [],
-                "parallel": [],
-                "exceptional": []
+                next: [],
+                parallel: [],
+                exceptional: []
             });
         };
 
         $scope.newConditionalNode = function() {
             Constructor.nodes.push({
-                "id": 'cn'+parseInt(Math.random()*500),
-                "type": "ConditionalNode",
-                "condition": "not defined",
-                "position": {
-                    "left": 100,
-                    "top": 100
+                id: 'cn'+parseInt(Math.random()*500),
+                type: "ConditionalNode",
+                condition: "not defined",
+                position: {
+                    left: 100,
+                    top: 100
                 },
-                "yes":[],
-                "no":[],
-                "next": [],
-                "parallel": [],
-                "exceptional": []
+                yes:[],
+                no:[],
+                next: [],
+                parallel: [],
+                exceptional: []
             });
         };
 

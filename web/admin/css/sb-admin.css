@@ -477,7 +477,7 @@ background: green;
 .btn-red {
     color: white !important;
     background: red !important;
-    border: none !important;
+    border: 2px solid #ccc !important;
 }
 
 .sch-btn {
