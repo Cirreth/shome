@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="shome">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="cirreth">
+
+    <title>SHome</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/userapp.css" rel="stylesheet">
+    <link href="/resources/css/animations.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/resources/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <div id="info-message" ng-controller="InfoMessageController"  ng-show="message" ng-cloak ng-click="suspendThenHide()">
+            <i class="fa fa-check green" ng-show="type=='ok'"></i>
+            <i class="fa fa-times red" ng-show="type=='error'"></i>
+            <i class="fa fa-exclamation-circle" ng-show="type=='info'"></i>
+            <i ng-show="type=='loader'">
+                <div class="sk-spinner sk-spinner-three-bounce">
+                  <div class="sk-bounce1"></div>
+                  <div class="sk-bounce2"></div>
+                  <div class="sk-bounce3"></div>
+                </div>
+            </i>
+            <span>{{ message }}</span>
+    </div>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">SHome</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <div class="navbar-form navbar-right">
+            <a class="btn btn-sm btn-default" href="/admin/static/index.html">Configure system</a>
+          </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <div class="container" id="wrapper">
+
+
+    </div> <!-- /container -->
+
+    <!-- jQuery -->
+    <script src="/resources/js/jquery.js"></script>
+
+    <!-- JQuery UI for JSPlumb -->
+    <script src="/resources/js/jquery-ui.min.js"></script>
+	
+    <!-- JSPlumb -->
+    <script src="/resources/js/jquery.jsPlumb-min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/resources/js/bootstrap.min.js"></script>
+	
+    <!-- Datepicker -->
+    <script src="/resources/js/jquery.pickmeup.min.js"></script>
+    <script src="/resources/js/jquery.pickmeup.twitter-bootstrap.min.js"></script>
+
+    <!-- Angular JS -->
+    <script src="/resources/js/angular.min.js"></script>
+
+    <!-- Angular animate JS -->
+    <script src="/resources/js/angular-route.min.js"></script>
+
+    <!-- Angular routes JS -->
+    <script src="/resources/js/angular-animate.min.js"></script>
+
+    <!-- Application script -->
+    <script src="shome.js"></script>
+
+</body>
+
+</html>

@@ -9,24 +9,24 @@
     <meta name="description" content="">
     <meta name="author" content="cirreth">
 
-    <title>SHome Administration</title>
+    <title>SHome</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/animations.css" rel="stylesheet">
+    <link href="/resources/css/sb-admin.css" rel="stylesheet">
+    <link href="/resources/css/animations.css" rel="stylesheet">
     <link href="modules/constructor/constructor.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/resources/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
 
-    <div id="info-message" ng-controller="InfoMessageController"  ng-show="message" ng-cloac ng-click="suspendThenHide()">
+    <div id="info-message" ng-controller="InfoMessageController"  ng-show="message" ng-cloak ng-click="suspendThenHide()">
             <i class="fa fa-check green" ng-show="type=='ok'"></i>
             <i class="fa fa-times red" ng-show="type=='error'"></i>
             <i class="fa fa-exclamation-circle" ng-show="type=='info'"></i>
@@ -52,7 +52,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#main"><img id="shome-logo" src="logo.png">SHome</a>
+                <a class="navbar-brand" href="#main"><img id="shome-logo" src="/resources/logo.png">SHome</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -192,32 +192,32 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="/resources/js/jquery.js"></script>
 
     <!-- JQuery UI for JSPlumb -->
-    <script src="js/jquery-ui.min.js"></script>
+    <script src="/resources/js/jquery-ui.min.js"></script>
 	
     <!-- JSPlumb -->
-    <script src="js/jquery.jsPlumb-min.js"></script>
+    <script src="/resources/js/jquery.jsPlumb-min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
 	
     <!-- Datepicker -->
-    <script src="js/jquery.pickmeup.min.js"></script>
-    <script src="js/jquery.pickmeup.twitter-bootstrap.min.js"></script>
+    <script src="/resources/js/jquery.pickmeup.min.js"></script>
+    <script src="/resources/js/jquery.pickmeup.twitter-bootstrap.min.js"></script>
 
     <!-- Angular JS -->
-    <script src="js/angular.min.js"></script>
+    <script src="/resources/js/angular.min.js"></script>
 
     <!-- Angular animate JS -->
-    <script src="js/angular-route.min.js"></script>
+    <script src="/resources/js/angular-route.min.js"></script>
 
     <!-- Angular routes JS -->
-    <script src="js/angular-animate.min.js"></script>
+    <script src="/resources/js/angular-animate.min.js"></script>
 
     <!-- Application script -->
-    <script src="js/shomeadmin.js"></script>
+    <script src="shomeadmin.js"></script>s
 
     <!-- Scheduler script -->
     <script src="modules/scheduler/scheduler.js"></script>

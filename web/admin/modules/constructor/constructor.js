@@ -104,6 +104,10 @@
                             ['$scope', '$rootScope', '$http', '$interval', '$routeParams', 'InfoMessage', 'Constructor',
                              function($scope, $rootScope, $http, $interval, $routeParams, InfoMessage, Constructor) {
 
+        window.onresize = function(event) {
+            Constructor.repaint();
+        };
+
         $scope.im = InfoMessage;
 
         $scope.exceptionalMode = Constructor.exceptionalMode;

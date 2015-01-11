@@ -14,8 +14,8 @@ from tornado.options import define, options
 
 class MainHandler(tornado.web.RequestHandler):
 
-    def get(self):
-        return self.render("views/main.tpl")
+    def get(self, url):
+        self.redirect('/app/index.html')
 
 class SchedulerAllTasksHandler(tornado.web.RequestHandler):
 
@@ -177,12 +177,13 @@ class WebServer():
         tornado.options.parse_command_line()
         logging.getLogger().setLevel(logging.DEBUG)
         settings = {
-            "static_path": os.path.join(os.path.dirname(__file__), "static"),
+            "static_path": os.path.join(os.path.dirname(__file__), "resources"),
+            "app_path": os.path.join(os.path.dirname(__file__), "app"),
             "admin_path": os.path.join(os.path.dirname(__file__), "admin"),
         }
         application = tornado.web.Application([
-            (r"/", MainHandler),
-            (r"/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
+            (r"/resources/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
+            (r"/app/(.*)", tornado.web.StaticFileHandler, dict(path=settings['app_path'])),
             (r"/admin/scheduler/alltasks", SchedulerAllTasksHandler, {'ws': self}),
             (r"/admin/scheduler/task/(.+)", SchedulerTaskHandler, {'ws': self}),
             (r"/admin/scenarios/", ScenariosListAllHandler, {'ws': self}),
@@ -190,6 +191,7 @@ class WebServer():
             (r"/admin/constructor/check", ConstructorCheckingHandler, {'ws': self}),
             (r"/admin/plugins/(?P<path>.+)", PluginsHandler, {'ws': self}),
             (r"/admin/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
+            (r"/(.*)", MainHandler),
         ], debug=True, **settings)
         http_server = tornado.httpserver.HTTPServer(application)
         http_server.listen(options.port)

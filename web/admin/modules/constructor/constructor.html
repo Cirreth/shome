@@ -87,10 +87,12 @@
     </div>
 </div>
 
-<button class="sch-btn" ng-click="showmodel = !showmodel">Show model</button>
-<button class="sch-btn" ng-class="{'btn-red': exceptionalMode}" ng-click="toggleExceptional()">Working with exceptions</button>
-<button class="sch-btn" ng-click="checkScenario()">Check scenario</button>
-<button class="sch-btn" ng-click="saveScenario()">Save scenario</button>
+<div>
+    <button class="sch-btn" ng-click="showmodel = !showmodel">Show model</button>
+    <button class="sch-btn" ng-class="{'btn-red': exceptionalMode}" ng-click="toggleExceptional()">Working with exceptions</button>
+    <button class="sch-btn" ng-click="checkScenario()">Check scenario</button>
+    <button class="sch-btn" ng-click="saveScenario()">Save scenario</button>
+</div>
 
 <div id="workspace" ng-init="init();">
 
