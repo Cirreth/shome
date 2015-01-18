@@ -1,8 +1,9 @@
 # sHome
 Smart home system
-Stage: early prototype
 
-Build your home automation system with sHome.
+##Stage: early prototype
+
+##Build your home automation system with sHome.
 
 1. Connect devices
 2. Install and run sHome
@@ -10,9 +11,13 @@ Build your home automation system with sHome.
 3. Create automation scenarios
 4. Schedule them and publish them in UI
 
-Programming languages and frameworks
+SHome main aims at providing quick system deploying and simple administrator UI.
 
-SHome writt e
+##Programming languages and frameworks
+
+SHome are writting with using Python programming language. Web served by [Tornado](http://tornadoweb.org/)
+framework, frontend JavaScript framework - [AngularJS](http://angularjs.org/).
+
 
 
 
