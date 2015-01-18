@@ -15,7 +15,7 @@ SHome main aims at providing quick system deploying and simple administrator UI.
 
 ##Programming languages and frameworks
 
-SHome are writting with using Python programming language. Web UI are served by [Tornado](http://tornadoweb.org/) framework and frontend JavaScript framework [AngularJS](http://angularjs.org/).
+SHome is written in Python programming language. Web UI are served by [Tornado](http://tornadoweb.org/) framework and frontend JavaScript framework [AngularJS](http://angularjs.org/).
 
 ##UI modules
 
