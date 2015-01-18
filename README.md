@@ -1,5 +1,6 @@
 # sHome
 Smart home system
+Stage: early prototype
 
 Build your home automation system with sHome.
 
@@ -7,9 +8,11 @@ Build your home automation system with sHome.
 2. Install and run sHome
 3. Configure plugins
 3. Create automation scenarios
-4. Schedule them and publish in UI
+4. Schedule them and publish them in UI
 
+Programming languages and frameworks
 
+SHome writt e
 
 
 
