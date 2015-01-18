@@ -17,10 +17,19 @@ SHome main aims at providing quick system deploying and simple administrator UI.
 
 SHome are writting with using Python programming language. Web UI are served by [Tornado](http://tornadoweb.org/) framework and frontend JavaScript framework [AngularJS](http://angularjs.org/).
 
+##UI modules
 
+###Constructor
+Allows to create new scenario and edit existing.
+![](https://github.com/Cirreth/shome/blob/master/images/constructor-ui.png)
 
+###Scenarios 
+Here you can view scenarios list, publish them in UI or delete them.
+![](https://github.com/Cirreth/shome/blob/master/images/scenarios-ui.png)
 
-
+###Scheduler
+Allows you to schedule periodically execution for existing scenarios
+![](https://github.com/Cirreth/shome/blob/master/images/scheduler-ui.png)
 
 
 
