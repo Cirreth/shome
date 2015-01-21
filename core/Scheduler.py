@@ -4,7 +4,6 @@ import queue
 import logging
 import threading
 
-
 #@TODO Needs full refactoring. Reason: pk changed to 'title'
 class Scheduler:
 
@@ -44,7 +43,7 @@ class Scheduler:
                 if self.stopped:
                     return
                 if not first:
-                    self._action_processor.process(self.procname)
+                    self._action_processor.execute(self.procname)
                 t = threading.Timer(self.interval, tick)
                 t.start()
                 return t

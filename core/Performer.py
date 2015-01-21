@@ -84,7 +84,11 @@ class Performer:
         return res
 
     def init_plugins(self):
-        self._known = {p['name']: {'params': p['params'], 'enabled': p['enabled']} for p in self._configuration.get_all_plugins()}
+        self._known = {
+            p['name']: {
+                'params': p['params'],
+                'enabled': p['enabled']
+            } for p in self._configuration.get_all_plugins()}
         scanres = self.scan_plugins_folder()
         self._found = scanres['found']
         self._error = scanres['error']

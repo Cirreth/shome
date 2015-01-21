@@ -35,7 +35,7 @@ class Context:
 
         for k in processes:
             if not k['runoninit'] is None:
-                self.action_processor.process(k['name'])
+                self.action_processor.execute(k['name'])
 
         #load tasks
         for k in self.config.get_all_tasks():

@@ -1,0 +1,4 @@
+[DEBUG] [2015-01-20 12:58:54,904] (MainThread) Action processor initialization
+[DEBUG] [2015-01-20 12:58:54,905] (MainThread) Scheduler initialization
+[DEBUG] [2015-01-20 12:58:54,905] (MainThread) Performer initialization
+[INFO] [2015-01-20 12:58:54,906] (MainThread) SQL_conf: SELECT name, params, enabled FROM plugin

@@ -89,12 +89,20 @@ class ScenariosHandler(tornado.web.RequestHandler):
         newtag = data['tag'] if 'tag' in data else None
         description = data['description'] if 'description' in data else None
         expression = data['expression'] if 'expression' in data else None
-        if description:
+        runoninit = data['runoninit'] if 'runoninit' in data else False
+        published = data['published'] if 'published' in data else False
+        """if description:
             raise NotImplementedError('Description update not supported yet')
         if newtag:
             raise NotImplementedError('Process renaming not supported yet')
-        if expression:
-            self.write(self._ws._action_processor.update_process(tag, expression))
+        """
+        try:
+            if expression:
+                self.write(self._ws._action_processor.update_process(
+                    tag, expression, description, published, runoninit))
+        except Exception as e:
+            self.write(e)
+
 
     def post(self, tag):
         data = tornado.escape.json_decode(self.request.body)
@@ -151,7 +159,7 @@ class ConstructorCheckingHandler(tornado.web.RequestHandler):
             gid = 'chk'+str(uuid.uuid4())
             self._ws._action_processor.create_process(gid, expression)
             parameters = '{'+parameters+'}' if parameters else ''
-            res = self._ws._action_processor.process(gid+parameters)
+            res = self._ws._action_processor.execute(gid+parameters)
             self._ws._action_processor.delete_process(gid)
             if (res):
                 self.write(res)

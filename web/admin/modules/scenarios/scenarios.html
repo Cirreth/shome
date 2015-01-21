@@ -5,6 +5,8 @@
     <div class="col-md-12" ng-repeat="scenario in scenarios">
         <div class="panel panel-default scn-line">
             <div class="pull-right">
+                <button class="sch-btn scn-btn" ng-class="{'btn-green': scenario.published}" ng-click="publish(scenario)"><span ng-hide="scenario.published">Publish in UI</span><span ng-show="scenario.published">Published</span></button>
+                <button class="sch-btn scn-btn" ng-class="{'btn-blue': scenario.runoninit}" ng-click="runoninit(scenario)">Run on init</button>
                 <a ng-href="#/constructor/{{scenario.name}}"><button class="sch-btn scn-btn" >Edit</button></a>
                 <button class="sch-btn scn-btn" ng-class="{'btn-red': scenario.delete}" ng-click="delete(scenario.name, scenario.delete); scenario.delete=true;">Delete</button>
                 <button class="sch-btn scn-btn btn-red" ng-show="scenario.delete" ng-click="scenario.delete=false;">Cancel</button>

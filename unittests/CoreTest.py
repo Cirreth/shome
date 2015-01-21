@@ -32,7 +32,7 @@ class MyTestCase(unittest.TestCase):
     context = Context()
     delproc = context.action_processor.delete_process
     createproc = context.action_processor.create_process
-    process = context.action_processor.process
+    process = context.action_processor.execute
 
     def test_actionprocessor_create_execute_delete(self):
         """Create process, execute and delete it"""
@@ -44,7 +44,7 @@ class MyTestCase(unittest.TestCase):
                                         }""")
         self.assertEqual(self.process('runmock'), {'x': 'test ActionProcessor create execute delete'})
         self.delproc('runmock')
-        self.assertEqual('runmock' in self.context.action_processor._processes, False)
+        self.assertEqual('runmock' in self.context.action_processor._scenarios, False)
 
     def test_schedulernode_create_start_stop(self):
         """

@@ -42,7 +42,7 @@ class DatabaseMySQLPlugin(SHomePlugin):
             return str(e)
 
     def __connect(self):
-        self._connection._connect(host=self._host, user=self._login, passwd=self._password, db=self._database)
+        self._connection = pymysql.connect(host=self._host, user=self._login, passwd=self._password, db=self._database)
         self._connection.autocommit(True)
         self._cursor = self._connection.cursor(pymysql.cursors.DictCursor)
 

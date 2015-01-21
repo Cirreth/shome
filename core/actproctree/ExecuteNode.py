@@ -31,7 +31,7 @@ class ExecuteNode(AbstractNode):
         ret = queue.Queue()
         #@TODO WHAT?!
         uid = 'abcde'
-        current_thread = Thread(target=AbstractNode._action_processor.process, args=(self._name,ret,uid))
+        current_thread = Thread(target=AbstractNode._action_processor.execute, args=(self._name,ret,uid))
         current_thread.start()
         #
         #CALL PARALLEL
