@@ -28,12 +28,15 @@ class ActionProcessor:
         Scenario._action_processor = self
         Scenario._config = context.config
         self._config = context.config
-        self._config.mapper(ActionProcessor.Scenario)
 
     def add_scenario(self, name, expression, description='', runoninit=False, published=False):
         if name in self._scenarios:
             raise Exception('Scenario with name '+name+' already exists')
         self._scenarios[name] = Scenario(name, expression, description, runoninit, published)
+
+    def get_scenario(self, name):
+        if name in self._scenarios:
+            return self._scenarios[name]
 
     def delete_scenario(self, name):
         raise NotImplementedError()

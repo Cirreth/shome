@@ -3,6 +3,7 @@ __author__ = 'cirreth'
 import os
 import importlib
 import logging
+from core.entities.Plugin import Plugin
 
 class Performer:
 
@@ -16,17 +17,16 @@ class Performer:
     """
 
     _plugins = {}
-
-    _new = {}
     _known = {}
-    _found = {}
     _error = {}
 
     _configuration = None
 
     def init(self, context):
         logging.debug("Performer initialization")
-        self._configuration = context.config
+        self._config = context.config
+
+    def reload_plugins(self):
         self.init_plugins()
 
     def call(self, plugin, reference, values):
@@ -50,20 +50,20 @@ class Performer:
         for p in self._plugins:
             allplugins.append(
                 {
-                    "name": p,
-                    "params": self._known[p]['params'] if p in self._known else '',
-                    "enabled": self._known[p]['enabled'] if p in self._known else '',
-                    "status": "active",
+                    'name': p,
+                    'params': self._known[p]['params'] if p in self._known else '',
+                    'enabled': self._known[p]['enabled'] if p in self._known else '',
+                    'status': 'active',
                 }
             )
         for p in self._error:
             allplugins.append(
                 {
-                    "name": p,
-                    "status": "error",
-                    "params": self._known[p]['params'] if p in self._known else '',
-                    "enabled": self._known[p]['enabled'] if p in self._known else '',
-                    "message": self._error[p]
+                    'name': p,
+                    'status': 'error',
+                    'params': self._known[p]['params'] if p in self._known else '',
+                    'enabled': self._known[p]['enabled'] if p in self._known else '',
+                    'message': self._error[p]
                 }
             )
         return allplugins
@@ -71,11 +71,11 @@ class Performer:
     def scan_plugins_folder(self):
         res = {'found': {}, 'error': {}}
         for plugin in os.listdir('plugins'):
-            if not plugin.startswith('__') and not plugin.endswith('.py'): #folders only
+            if not plugin.startswith('__') and not plugin.endswith('.py'):  # folders only
                 for module in os.listdir('plugins/'+plugin):
                     if not module.startswith('__'):
                         try:
-                            module_name = module[:-3]
+                            module_name = module[:-3]  # -py
                             m = importlib.import_module('plugins.'+plugin+'.'+module_name)
                             res['found'][plugin] = getattr(m, module_name)
                         except Exception as e:
@@ -85,10 +85,10 @@ class Performer:
 
     def init_plugins(self):
         self._known = {
-            p['name']: {
-                'params': p['params'],
-                'enabled': p['enabled']
-            } for p in self._configuration.get_all_plugins()}
+            p.name: {
+                'params': p.get_params(),
+                'enabled': p.enabled
+            } for p in Plugin.get_all()}
         scanres = self.scan_plugins_folder()
         self._found = scanres['found']
         self._error = scanres['error']
