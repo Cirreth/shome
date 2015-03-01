@@ -2,6 +2,7 @@ __author__ = 'cirreth'
 
 import json
 from core.entities import Base
+from plugins.SHomePlugin import SHomePlugin
 from sqlalchemy import Column, String, Boolean
 
 
@@ -22,15 +23,31 @@ class Plugin(Base):
         self._params = params
         self.enabled = enabled
         #runtime
-        self._params_dict = dict()
+        self._params_dict = None
         self.plugin_instance = None
+        #init
+        self.__update_dict_repr()
 
-    def set_parameter(self, name, value: "None to delete parameter"):
-        if value:
-            self._params_dict[name] = value
-        else:
-            del self._params_dict[name]
+    def __update_str_repr(self):
         self._params = json.dumps(self._params_dict)
+
+    def __update_dict_repr(self):
+        self._params_dict = json.loads(self._params)
+
+    def set_param(self, name, value):
+        self._params_dict[name] = value
+        self.__update_str_repr()
+
+    def del_param(self, param):
+        if param in self._params_dict:
+            del self._params_dict[param]
+            self.__update_str_repr()
+
+    def get_param(self, param):
+        if param in self._params_dict:
+            return self._params_dict[param]
+        else:
+            return None
 
     def get_params(self):
         return self._params_dict

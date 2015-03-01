@@ -1,6 +1,6 @@
 import os
-import logging
 import unittest
+from core.entities.Plugin import Plugin
 from core.entities.Scenario import Scenario
 from core.Configuration import Configuration
 from core.entities.Task import Task
@@ -10,6 +10,20 @@ class MyTestCase(unittest.TestCase):
     os.remove('config.db')
     conf = Configuration()
     conf.create_database()
+
+    def test_plugin_CRUD(self):
+        pl = Plugin(instname='test0',
+                    name='plugin0')
+        pl.save()
+        pll = Plugin.get('test0')
+        self.assertEqual(pl, pll)
+        pl.set_param('p0', 3)
+        pl.save()
+        pll = Plugin.get('test0')
+        self.assertEqual(pll.get_params(), {'p0': 3})
+        pl.delete()
+        pll = Plugin.get('test0')
+        self.assertEqual(pll, None)
 
     def test_scenario_CRUD(self):
         sc = Scenario(name='test0',
@@ -48,7 +62,8 @@ class MyTestCase(unittest.TestCase):
         tsk = Task(name='test0',
                    scenario='test_sc_0',
                    task_type='interval',
-                   scheme='10'
+                   scheme='10',
+                   enabled=True
         )
         tsk.save()
         tskl = Task.get('test0')
