@@ -8,11 +8,11 @@ import logging
 
 
 class Context:
-    action_processor = None
-    scheduler = None
-    performer = None
-    socket_server = None
-    config = None
+    #action_processor = None
+    #scheduler = None
+    #performer = None
+    #socket_server = None
+    #config = None
 
     def __init__(self):
         logging.basicConfig(level=logging.DEBUG,
@@ -27,6 +27,7 @@ class Context:
         self.performer.init(self)
         logging.info('Context initialized')
 
+        """
         # load processes
         processes = self.config.get_all_processes()
 
@@ -44,3 +45,4 @@ class Context:
 
         #start web server
         self.web_server = WebServer(self)
+        """

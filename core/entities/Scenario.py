@@ -1,20 +1,18 @@
 __author__ = 'cirreth'
 
 import json
-from sqlalchemy.ext.declarative import declarative_base
+from core.entities import Base
 from sqlalchemy import Column, String, Boolean
-
-Base = declarative_base()
 
 
 class Scenario(Base):
-    __tablename__ = 'scenario'
+    __tablename__ = 'scenarios'
 
     _action_processor = None
     _config = None
 
-    name = Column('name', String(16), primary_key=True)
-    description = Column('description', String(128))
+    name = Column('name', String(32), primary_key=True)
+    description = Column('description', String(255))
     expression = Column('expression', String(16000))
     runoninit = Column('runoninit', Boolean)
     published = Column('published', Boolean)

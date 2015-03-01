@@ -1,19 +1,17 @@
 __author__ = 'cirreth'
 
 import json
-from sqlalchemy.ext.declarative import declarative_base
+from core.entities import Base
 from sqlalchemy import Column, String, Boolean
-
-Base = declarative_base()
 
 
 class Plugin(Base):
-    __tablename__ = 'plugin'
+    __tablename__ = 'plugins'
 
     _config = None
 
-    instname = Column('instname', String(16), primary_key=True)
-    name = Column('name', String(128))
+    instname = Column('instname', String(32), primary_key=True)
+    name = Column('name', String(32))
     _params = Column('params', String(16000))
     enabled = Column('enabled', Boolean)
 

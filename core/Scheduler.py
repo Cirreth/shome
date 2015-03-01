@@ -7,6 +7,8 @@ import threading
 #@TODO Needs full refactoring. Reason: pk changed to 'title'
 class Scheduler:
 
+    """
+
     _action_processor = None
     _configuration = None
     _frequent = {}
@@ -14,11 +16,11 @@ class Scheduler:
 
     class Task:
 
-        _action_processor = None
-        procname = None
-        stopped = True
-        title = None
-        description = None
+        #_action_processor = None
+        #procname = None
+        #stopped = True
+        #title = None
+        #description = None
 
         def __init__(self, ap, procname, title, description):
             self._action_processor = ap
@@ -66,9 +68,9 @@ class Scheduler:
             }
 
     class ScheduledTask(Task):
-        """NOT IMPLEMENTED"""
+        #NOT IMPLEMENTED
 
-        """Cron-like time format"""
+        #Cron-like time format
         expression = None
 
         def __init__(self):
@@ -80,6 +82,8 @@ class Scheduler:
                 'schema': self.expression,
                 'isrunned': self.stopped
             }
+
+    """
 
     def __init__(self):
         pass

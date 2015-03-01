@@ -6,6 +6,7 @@ import json
 import queue
 import logging
 
+
 class RequestNode(AbstractNode):
     """Request value from plugin"""
 

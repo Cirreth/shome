@@ -5,6 +5,7 @@ import importlib
 import logging
 from core.entities.Plugin import Plugin
 
+
 class Performer:
 
     """
@@ -16,11 +17,11 @@ class Performer:
             5. Found, not configured - allow to config it
     """
 
-    _plugins = {}
-    _known = {}
-    _error = {}
+    #_plugins = {}
+    #_known = {}
+    #_error = {}
 
-    _configuration = None
+    #_configuration = None
 
     def init(self, context):
         logging.debug("Performer initialization")

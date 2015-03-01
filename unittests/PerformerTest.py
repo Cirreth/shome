@@ -1,7 +1,7 @@
 import os
 import logging
 import unittest
-from core.Config import Config
+from core.Configuration import Config
 from core.Performer import Performer
 from core.entities.Plugin import Plugin
 

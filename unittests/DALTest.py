@@ -2,11 +2,13 @@ import os
 import logging
 import unittest
 from core.entities.Scenario import Scenario
-from core.Config import Config
+from core.Configuration import Configuration
+from core.entities.Task import Task
+
 
 class MyTestCase(unittest.TestCase):
-
-    conf = Config()
+    os.remove('config.db')
+    conf = Configuration()
     conf.create_database()
 
     def test_scenario_CRUD(self):
@@ -31,4 +33,31 @@ class MyTestCase(unittest.TestCase):
         scld = Scenario.get('test0')
         self.assertEqual(scld, None)
 
-
+    def test_task_CRUD(self):
+        sc = Scenario(name='test0',
+                      expression="""
+                        {
+                            "type":"RequestNode",
+                            "plugin":"mock",
+                            "reference":"0",
+                            "retvar":"x"
+                        }
+                        """,
+                      description='blank')
+        sc.save()
+        tsk = Task(name='test0',
+                   scenario='test_sc_0',
+                   task_type='interval',
+                   scheme='10'
+        )
+        tsk.save()
+        tskl = Task.get('test0')
+        self.assertEqual(tsk, tskl)
+        tsk.description = "demo descr"
+        tsk.save()
+        tskl = Task.get('test0')
+        self.assertEqual(tskl.description, "demo descr")
+        tsk.delete()
+        sc.delete()
+        tskl = Task.get('test0')
+        self.assertEqual(tskl, None)

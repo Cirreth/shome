@@ -10,11 +10,11 @@ from core.entities.Scenario import Scenario
 
 class ActionProcessor:
 
-    _performer = None
+    #_performer = None
     # processes dictionary
-    _scenarios = {}
+    #_scenarios = {}
     # active threads
-    active_threads = None
+    #active_threads = None
 
     def __init__(self):
         pass
