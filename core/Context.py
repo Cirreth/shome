@@ -8,11 +8,6 @@ import logging
 
 
 class Context:
-    #action_processor = None
-    #scheduler = None
-    #performer = None
-    #socket_server = None
-    #config = None
 
     def __init__(self):
         logging.basicConfig(level=logging.DEBUG,

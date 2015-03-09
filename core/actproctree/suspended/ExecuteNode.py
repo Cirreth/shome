@@ -2,7 +2,7 @@ __author__ = 'cirreth'
 
 import queue
 from threading import Thread
-from core.actproctree.AbstractNode import AbstractNode
+#from core.actproctree.AbstractNode_OLD import AbstractNode
 import logging
 
 class ExecuteNode(AbstractNode):

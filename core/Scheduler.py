@@ -8,7 +8,6 @@ import threading
 class Scheduler:
 
     """
-
     _action_processor = None
     _configuration = None
     _frequent = {}
