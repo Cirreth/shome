@@ -1,3 +1,6 @@
+import importlib
+import os
+
 __author__ = 'cirreth'
 
 import json
@@ -23,10 +26,36 @@ class Plugin(Base):
         self._params = params
         self.enabled = enabled
         #runtime
+        self.state = 'unknown'
         self._params_dict = None
         self.plugin_instance = None
         #init
         self.__update_dict_repr()
+        self.__load()
+
+    def call(self, reference, values={}):
+        return self.plugin_instance.call(reference, values)
+
+    def __load(self):
+        for name in os.listdir('../plugins/'+self.name):
+            if not name.startswith('__') and name.endswith('.py'):
+                mdl = importlib.import_module('plugins.'+self.name+'.'+name[:-3])
+                plg = getattr(mdl, name[:-3])
+                self.plugin_instance = plg(self._params_dict)
+
+    """
+    for plugin in os.listdir('plugins'):
+            if not plugin.startswith('__') and not plugin.endswith('.py'):  # folders only
+                for module in os.listdir('plugins/'+plugin):
+                    if not module.startswith('__'):
+                        try:
+                            module_name = module[:-3]  # -py
+                            m = importlib.import_module('plugins.'+plugin+'.'+module_name)
+                            res['found'][plugin] = getattr(m, module_name)
+                        except Exception as e:
+                            logging.error('Not loaded '+plugin+' - '+str(e))
+                            res['error'][plugin] = str(e)
+    """
 
     def __update_str_repr(self):
         self._params = json.dumps(self._params_dict)
@@ -52,14 +81,17 @@ class Plugin(Base):
     def get_params(self):
         return self._params_dict
 
-    def __repr__(self):
-        return json.dumps({
+    def json_repr(self):
+        return {
             'instname': self.instname,
             'name': self.name,
             'params': self._params,
             'enabled': self.enabled,
             'state': self.state
-        })
+        }
+
+    def __repr__(self):
+        return json.dumps(self.json_repr())
 
     def save(self):
         session = self._config.get_session()

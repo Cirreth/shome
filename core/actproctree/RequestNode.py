@@ -13,4 +13,4 @@ class RequestNode(AbstractNode):
         super().__init__(structure)
 
     def action(self, parameters):
-        return 100500
+        raise NotImplementedError

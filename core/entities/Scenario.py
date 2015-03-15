@@ -1,4 +1,5 @@
 import logging
+from core.actproctree.NodeBuilder import NodeBuilder
 
 __author__ = 'cirreth'
 
@@ -37,70 +38,19 @@ class Scenario(Base):
         self.root = []
         struct = json.loads(self.expression)
         struct = {node['id']: node for node in struct}
-        self.root = struct['Start'].next
+        self.root = struct['Start']['next']
         del struct['Start']
-        self.nodes = {node['id']: AbstractNode(struct[node]) for node in struct}
+        self.nodes = {node: NodeBuilder.create_node(struct[node]) for node in struct}
 
     def execute(self, parameters):
         for root_node in self.root:
             node = self.nodes[root_node]
             result = node.execute(parameters)
-
-        """
-        {
-          "id": "Start",
-          "type": "StartNode",
-          "next": [
-            "rn144",
-            "rn148"
-          ],
-          "parallel": [],
-          "dimension": {
-            "width": 90,
-            "height": 32
-          },
-          "active": false
-        }, {
-          "id": "rn144",
-          "type": "RequestNode",
-          "plugin": "mock",
-          "reference": "right",
-          "position": {
-            "left": 360,
-            "top": 175
-          },
-          "next": [],
-          "parallel": [],
-          "exceptional": [],
-          "dimension": {
-            "width": 180,
-            "height": 65
-          },
-          "active": false,
-          "retvar": "b"
-        }, {
-          "id": "rn148",
-          "type": "RequestNode",
-          "plugin": "mock",
-          "reference": "left",
-          "position": {
-            "left": 152,
-            "top": 175
-          },
-          "next": [],
-          "parallel": [],
-          "exceptional": [],
-          "dimension": {
-            "width": 180,
-            "height": 65
-          },
-          "active": false,
-          "retvar": "a"
-        }
-        """
+            print(result)
 
     def execute(self, params):
-        raise NotImplementedError()
+        return 100500
+        #raise NotImplementedError()
 
     def __repr__(self):
         return json.dumps({

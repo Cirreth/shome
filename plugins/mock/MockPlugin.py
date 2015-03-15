@@ -1,19 +1,14 @@
 __author__ = 'cirreth'
-from plugins.SHomePlugin import SHomePlugin
+
 import logging
+from core.entities.Plugin import Plugin
 
-class MockPlugin(SHomePlugin):
 
-    def __init__(self, parameters):
-        logging.debug('MockPlugin initialization')
+class MockPlugin(Plugin):
 
     def call(self, reference, values={}):
         logging.debug('MockPlugin call with '+reference)
-        return self._execute(reference)
-
-    def _execute(self, command):
-        print('execute mock! '+command)
-        return command
+        return reference
 
     def list(self, reference=''):
         return 'Any value'

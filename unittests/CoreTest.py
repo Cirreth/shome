@@ -2,7 +2,7 @@ import time
 from core.Configuration import Configuration
 from core.ActionProcessor import ActionProcessor, prepare_parameter
 from core.Scheduler import Scheduler
-from core.Performer import Performer
+from core.Performer_OLD import Performer
 import os
 import logging
 import unittest

@@ -1,7 +1,6 @@
-import queue
-
 __author__ = 'cirreth'
 
+import queue
 import logging
 from time import sleep
 from core.actproctree.AbstractNode import AbstractNode

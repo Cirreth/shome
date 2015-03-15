@@ -2,7 +2,7 @@ import os
 import logging
 import unittest
 from core.Configuration import Config
-from core.Performer import Performer
+from core.Performer_OLD import Performer
 from core.entities.Plugin import Plugin
 
 class PerformerTest(unittest.TestCase):

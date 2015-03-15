@@ -2,7 +2,7 @@ __author__ = 'cirreth'
 from core.Configuration import Configuration
 from core.ActionProcessor import ActionProcessor
 from core.Scheduler import Scheduler
-from core.Performer import Performer
+from core.Performer_OLD import Performer
 from web.WebServer import WebServer
 import logging
 
@@ -15,11 +15,11 @@ class Context:
                             filename='debug.log', filemode='w')
         self.config = Configuration()
         self.action_processor = ActionProcessor()
-        self.scheduler = Scheduler()
-        self.performer = Performer()
+        #self.scheduler = Scheduler()
+        #self.performer = Performer()
         self.action_processor.init(self)
-        self.scheduler.init(self)
-        self.performer.init(self)
+        #self.scheduler.init(self)
+        #self.performer.init(self)
         logging.info('Context initialized')
 
         """

@@ -8,8 +8,8 @@ __author__ = 'Кирилл'
 class NodeBuilder:
 
     @classmethod
-    def create_node(cls, expression):
-        structure = json.loads(expression)
+    def create_node(cls, structure):
+        #structure = json.loads(expression)
         node_type = structure['type']
         if node_type == 'RequestNode':
             return RequestNode(structure)

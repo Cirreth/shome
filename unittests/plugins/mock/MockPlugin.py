@@ -8,7 +8,6 @@ class MockPlugin(SHomePlugin):
         logging.debug('MockPlugin initialization')
 
     def call(self, reference, values={}):
-        logging.debug('MockPlugin call with '+reference)
         return self._execute(reference)
 
     def _execute(self, command):

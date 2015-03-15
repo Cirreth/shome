@@ -1,12 +1,14 @@
+import json
 import os
 import logging
 import unittest
+import time
 from core.actproctree.NodeBuilder import NodeBuilder
 
 logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s', filename='debug.log', filemode='w')
 
 
-class PerformerTest(unittest.TestCase):
+class NodesTest(unittest.TestCase):
 
     def test_request_node(self):
         expression = """
@@ -21,15 +23,16 @@ class PerformerTest(unittest.TestCase):
                 }
             }
         """
-        node = NodeBuilder.create_node(expression)
-        print(node.execute({}))
+        structure = json.loads(expression)
+        node = NodeBuilder.create_node(structure)
 
     def test_delay_node(self):
+        timeconst = 2
         expression = """
             {
               "id": "rn36",
               "type": "DelayNode",
-              "delay": 2,
+              "delay": %d,
               "position": {
                 "left": 292,
                 "top": 160
@@ -38,9 +41,13 @@ class PerformerTest(unittest.TestCase):
               "parallel": [],
               "exceptional": []
             }
-        """
-        node = NodeBuilder.create_node(expression)
-        print(node.execute({}))
+        """ % timeconst
+        structure = json.loads(expression)
+        node = NodeBuilder.create_node(structure)
+        start_time = time.time()
+        node.execute({})
+        elapsed_time = time.time() - start_time
+        self.assertGreater(0.5, abs(elapsed_time-2))
 
     def test_required_fields(self):
         bad_node = """
@@ -48,7 +55,8 @@ class PerformerTest(unittest.TestCase):
                 "type": "RequestNode"
             }
         """
-        self.assertRaises(Exception, NodeBuilder.create_node, bad_node)
+        bn_structure = json.loads(bad_node)
+        self.assertRaises(Exception, NodeBuilder.create_node, bn_structure)
         bad_request_node = """
             {
                 "id": "test",
@@ -59,4 +67,5 @@ class PerformerTest(unittest.TestCase):
                 }
             }
         """
-        self.assertRaises(Exception, NodeBuilder.create_node, bad_request_node)
+        brn_structure = json.loads(bad_request_node)
+        self.assertRaises(Exception, NodeBuilder.create_node, brn_structure)
