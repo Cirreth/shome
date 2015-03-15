@@ -15,10 +15,6 @@ class ActionProcessor:
 
     def init(self, context):
         logging.info("Action processor initialization")
-        self._performer = context.performer
-        AbstractNode._performer = context.performer
-        AbstractNode._scheduler = context.scheduler
-        AbstractNode._action_processor = self
         Scenario._action_processor = self
         Scenario._config = context.config
         self._config = context.config
