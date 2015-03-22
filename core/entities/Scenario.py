@@ -46,11 +46,7 @@ class Scenario(Base):
         for root_node in self.root:
             node = self.nodes[root_node]
             result = node.execute(parameters)
-            print(result)
-
-    def execute(self, params):
-        return 100500
-        #raise NotImplementedError()
+            
 
     def __repr__(self):
         return json.dumps({

@@ -13,7 +13,7 @@ class Configuration():
         Scenario._config = self
         Plugin._config = self
         Task._config = self
-        self._engine = create_engine('sqlite:///config.db', echo=True)
+        self._engine = create_engine('sqlite:///config.db') #, echo=True)
         Session = sessionmaker(bind=self._engine)
         self._session = Session()
         self._metadata = MetaData(bind=self._engine)

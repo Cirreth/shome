@@ -79,14 +79,14 @@ class ScenarioTest(unittest.TestCase):
           "dimension": {
             "width": 180,
             "height": 65
-          },
-          "active": false
+          }
         },
         {
           "id": "rn361",
           "type": "RequestNode",
           "plugin": "mock",
           "reference": "change me",
+          "retvar": "res",
           "position": {
             "left": 593,
             "top": 152
@@ -97,8 +97,7 @@ class ScenarioTest(unittest.TestCase):
           "dimension": {
             "width": 180,
             "height": 65
-          },
-          "active": false
+          }
         }
     ]
     """

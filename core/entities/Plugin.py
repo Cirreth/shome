@@ -33,7 +33,7 @@ class Plugin(Base):
         self.__update_dict_repr()
         self.__load()
 
-    def call(self, reference, values={}):
+    def call(self, reference, values):
         return self.plugin_instance.call(reference, values)
 
     def __load(self):

@@ -12,7 +12,10 @@ from abc import abstractmethod, ABCMeta
 
 class AbstractNode(metaclass=ABCMeta):
 
-    _required_fields = []
+    _required_fields = ['id']
+    _optional_fields = []
+    _directions = ['next', 'parallel', 'exceptional']
+
     _general_required_fields = ['id', 'position']
 
     def __init__(self, structure):
@@ -20,11 +23,10 @@ class AbstractNode(metaclass=ABCMeta):
         self.__check_required_fields(structure)
         #general initialization
         self.id = structure['id']
-        if 'next' in structure:
-            self.next = structure['next']
-        if 'exceptional' in structure:
-            self.exceptional = structure['exceptional']
-
+        #fields initialization
+        for p in self._required_fields+self._optional_fields:
+            if p in structure:
+                self.__setattr__(p, structure[p])
 
     @abstractmethod
     def action(self, parameters):

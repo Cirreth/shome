@@ -23,3 +23,12 @@ class PluginManagerTest(unittest.TestCase):
         finally:
             p0.delete()
             p1.delete()
+
+    def test_call(self):
+        try:
+            p0 = Plugin('mock0', 'mock')
+            p0.save()
+            pm = PluginManager()
+            self.assertEqual(pm.call_plugin('mock0', 'test'), 'test')
+        finally:
+            p0.delete()

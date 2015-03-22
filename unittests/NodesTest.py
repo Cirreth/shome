@@ -3,12 +3,20 @@ import os
 import logging
 import unittest
 import time
+from core.Configuration import Configuration
+from core.PluginManager import PluginManager
 from core.actproctree.NodeBuilder import NodeBuilder
+from core.actproctree.RequestNode import RequestNode
 
 logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s', filename='debug.log', filemode='w')
 
 
 class NodesTest(unittest.TestCase):
+
+    cfg = Configuration()
+    pm = PluginManager()
+    pm._config = cfg
+    RequestNode.set_plugin_manager(pm)
 
     def test_request_node(self):
         expression = """
@@ -17,6 +25,7 @@ class NodesTest(unittest.TestCase):
                 "type": "RequestNode",
                 "plugin": "mock",
                 "reference": "right",
+                "retvar": "res",
                 "position": {
                     "left": 360,
                     "top": 175
@@ -25,6 +34,8 @@ class NodesTest(unittest.TestCase):
         """
         structure = json.loads(expression)
         node = NodeBuilder.create_node(structure)
+        self.assertEqual(node.plugin, 'mock')
+        self.assertEqual(node.reference, 'right')
 
     def test_delay_node(self):
         timeconst = 2

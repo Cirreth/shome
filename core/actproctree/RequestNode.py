@@ -7,10 +7,21 @@ from core.actproctree.AbstractNode import AbstractNode
 class RequestNode(AbstractNode):
     """Request value from plugin"""
 
-    _required_fields = ['reference']
+    _plugin_manager = None
+    _required_fields = ['reference', 'plugin']
+    _optional_fields = ['retvar', 'value']
 
     def __init__(self, structure):
+        if not RequestNode._plugin_manager:
+            raise Exception("""Setup RequestNode._plugin_manager variable before initializing node instances.\n
+                            Use method .set_plugin_manager""")
         super().__init__(structure)
 
     def action(self, parameters):
-        raise NotImplementedError
+        res = self._plugin_manager.call(self.plugin, self.reference, parameters)
+        if hasattr(self, 'retvar'):
+            return {self.retvar: res}
+
+    @classmethod
+    def set_plugin_manager(cls, plugin_manager):
+        cls._plugin_manager = plugin_manager
