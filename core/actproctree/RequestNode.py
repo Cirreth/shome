@@ -1,10 +1,9 @@
 __author__ = 'cirreth'
 
 import logging
-from core.actproctree.AbstractNode import AbstractNode
+from core.actproctree.Node import Node
 
-
-class RequestNode(AbstractNode):
+class RequestNode(Node):
     """Request value from plugin"""
 
     _plugin_manager = None
@@ -18,7 +17,7 @@ class RequestNode(AbstractNode):
         super().__init__(structure)
 
     def action(self, parameters):
-        res = self._plugin_manager.call(self.plugin, self.reference, parameters)
+        res = self._plugin_manager.call_plugin(self.plugin, self.reference, parameters)
         if hasattr(self, 'retvar'):
             return {self.retvar: res}
 

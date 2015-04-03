@@ -1,3 +1,5 @@
+from core.actproctree.RequestNode import RequestNode
+
 __author__ = 'cirreth'
 from core.entities.Plugin import Plugin
 
@@ -7,6 +9,7 @@ class PluginManager:
     _plugins = {}
 
     def __init__(self):
+        RequestNode.set_plugin_manager(self)
         self.__reload_all_configured()
 
     def __reload_all_configured(self):

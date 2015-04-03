@@ -6,7 +6,7 @@ __author__ = 'cirreth'
 import json
 from core.entities import Base
 from plugins.SHomePlugin import SHomePlugin
-from sqlalchemy import Column, String, Boolean
+from sqlalchemy import Column, String, Boolean, orm
 
 
 class Plugin(Base):
@@ -18,6 +18,9 @@ class Plugin(Base):
     name = Column('name', String(32))
     _params = Column('params', String(16000))
     enabled = Column('enabled', Boolean)
+
+    def __init__(self):
+        print({1: 2})
 
     def __init__(self, instname, name, params='{}', enabled=True):
         #stored
@@ -32,6 +35,10 @@ class Plugin(Base):
         #init
         self.__update_dict_repr()
         self.__load()
+
+    @orm.reconstructor
+    def __init_on_load__(self):
+        self.__init__(self.instname, self.name, self._params, self.enabled)
 
     def call(self, reference, values):
         return self.plugin_instance.call(reference, values)
@@ -97,6 +104,7 @@ class Plugin(Base):
         session = self._config.get_session()
         session.add(self)
         session.commit()
+        return self
 
     def delete(self):
         session = self._config.get_session()

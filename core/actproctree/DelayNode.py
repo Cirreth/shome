@@ -3,12 +3,13 @@ __author__ = 'cirreth'
 import queue
 import logging
 from time import sleep
-from core.actproctree.AbstractNode import AbstractNode
+from core.actproctree.Node import Node
 
 
-class DelayNode(AbstractNode):
+class DelayNode(Node):
 
     _required_fields = ['delay']
+    _optional_fields = []
 
     def __init__(self, structure):
         super().__init__(structure)

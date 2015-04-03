@@ -2,7 +2,7 @@ __author__ = 'Кирилл'
 
 import json
 from core.entities import Base
-from sqlalchemy import Column, String, Boolean, ForeignKey
+from sqlalchemy import Column, String, Boolean, ForeignKey, orm
 
 class Task(Base):
     __tablename__ = 'tasks'
@@ -27,6 +27,10 @@ class Task(Base):
         self.enabled = enabled
         self.description = description
 
+    @orm.reconstructor
+    def __init_on_load(self):
+        self.__init__(self.name, self.scenario, self.task_type, self.scheme, self.enabled, self.description)
+
     def __repr__(self):
         return json.dumps({
             'name': self.name,
@@ -41,6 +45,7 @@ class Task(Base):
         session = self._config.get_session()
         session.add(self)
         session.commit()
+        return self
 
     def delete(self):
         session = self._config.get_session()

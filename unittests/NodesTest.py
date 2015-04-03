@@ -1,12 +1,10 @@
 import json
-import os
 import logging
 import unittest
 import time
 from core.Configuration import Configuration
 from core.PluginManager import PluginManager
-from core.actproctree.NodeBuilder import NodeBuilder
-from core.actproctree.RequestNode import RequestNode
+from core.actproctree.Node import Node
 
 logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s', filename='debug.log', filemode='w')
 
@@ -16,7 +14,6 @@ class NodesTest(unittest.TestCase):
     cfg = Configuration()
     pm = PluginManager()
     pm._config = cfg
-    RequestNode.set_plugin_manager(pm)
 
     def test_request_node(self):
         expression = """
@@ -33,7 +30,7 @@ class NodesTest(unittest.TestCase):
             }
         """
         structure = json.loads(expression)
-        node = NodeBuilder.create_node(structure)
+        node = Node.create(structure)
         self.assertEqual(node.plugin, 'mock')
         self.assertEqual(node.reference, 'right')
 
@@ -54,11 +51,11 @@ class NodesTest(unittest.TestCase):
             }
         """ % timeconst
         structure = json.loads(expression)
-        node = NodeBuilder.create_node(structure)
+        node = Node.create(structure)
         start_time = time.time()
         node.execute({})
         elapsed_time = time.time() - start_time
-        self.assertGreater(0.5, abs(elapsed_time-2))
+        self.assertGreater(0.5, abs(elapsed_time-timeconst))
 
     def test_required_fields(self):
         bad_node = """
@@ -67,7 +64,7 @@ class NodesTest(unittest.TestCase):
             }
         """
         bn_structure = json.loads(bad_node)
-        self.assertRaises(Exception, NodeBuilder.create_node, bn_structure)
+        self.assertRaises(Exception, Node.create, bn_structure)
         bad_request_node = """
             {
                 "id": "test",
@@ -79,4 +76,4 @@ class NodesTest(unittest.TestCase):
             }
         """
         brn_structure = json.loads(bad_request_node)
-        self.assertRaises(Exception, NodeBuilder.create_node, brn_structure)
+        self.assertRaises(Exception, Node.create, brn_structure)
