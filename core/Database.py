@@ -7,7 +7,7 @@ from sqlalchemy import create_engine, MetaData
 from sqlalchemy.orm import sessionmaker
 
 
-class Configuration():
+class Database():
 
     def __init__(self):
         Scenario._config = self

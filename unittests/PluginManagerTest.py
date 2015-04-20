@@ -1,14 +1,14 @@
 import os
 import logging
 import unittest
-from core.Configuration import Configuration
+from core.Database import Database
 from core.PluginManager import PluginManager
 from core.entities.Plugin import Plugin
 
 
 class PluginManagerTest(unittest.TestCase):
 
-    cfg = Configuration()
+    cfg = Database()
     Plugin._config = cfg
     cfg.create_database()
 

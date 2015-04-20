@@ -1,7 +1,7 @@
 import json
 import logging
 import unittest
-from core.Configuration import Configuration
+from core.Database import Database
 from core.entities.Plugin import Plugin
 
 logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s', filename='debug.log', filemode='w')
@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] 
 
 class PluginsTest(unittest.TestCase):
 
-    config = Configuration()
+    config = Database()
     config.create_database()
     Plugin._config = config
 

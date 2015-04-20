@@ -1,5 +1,5 @@
 __author__ = 'cirreth'
-from core.Configuration import Configuration
+from core.Database import Database
 from core.ActionProcessor import ActionProcessor
 from core.Scheduler import Scheduler
 from core.Performer_OLD import Performer
@@ -13,7 +13,7 @@ class Context:
         logging.basicConfig(level=logging.DEBUG,
                             format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s',
                             filename='debug.log', filemode='w')
-        self.config = Configuration()
+        self.config = Database()
         self.action_processor = ActionProcessor()
         #self.scheduler = Scheduler()
         #self.performer = Performer()

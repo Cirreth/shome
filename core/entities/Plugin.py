@@ -1,11 +1,8 @@
+__author__ = 'cirreth'
 import importlib
 import os
-
-__author__ = 'cirreth'
-
 import json
 from core.entities import Base
-from plugins.SHomePlugin import SHomePlugin
 from sqlalchemy import Column, String, Boolean, orm
 
 
@@ -18,9 +15,6 @@ class Plugin(Base):
     name = Column('name', String(32))
     _params = Column('params', String(16000))
     enabled = Column('enabled', Boolean)
-
-    def __init__(self):
-        print({1: 2})
 
     def __init__(self, instname, name, params='{}', enabled=True):
         #stored
@@ -49,20 +43,6 @@ class Plugin(Base):
                 mdl = importlib.import_module('plugins.'+self.name+'.'+name[:-3])
                 plg = getattr(mdl, name[:-3])
                 self.plugin_instance = plg(self._params_dict)
-
-    """
-    for plugin in os.listdir('plugins'):
-            if not plugin.startswith('__') and not plugin.endswith('.py'):  # folders only
-                for module in os.listdir('plugins/'+plugin):
-                    if not module.startswith('__'):
-                        try:
-                            module_name = module[:-3]  # -py
-                            m = importlib.import_module('plugins.'+plugin+'.'+module_name)
-                            res['found'][plugin] = getattr(m, module_name)
-                        except Exception as e:
-                            logging.error('Not loaded '+plugin+' - '+str(e))
-                            res['error'][plugin] = str(e)
-    """
 
     def __update_str_repr(self):
         self._params = json.dumps(self._params_dict)

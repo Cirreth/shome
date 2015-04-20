@@ -2,7 +2,7 @@ import json
 import logging
 import unittest
 import time
-from core.Configuration import Configuration
+from core.Database import Database
 from core.PluginManager import PluginManager
 from core.actproctree.Node import Node
 
@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] 
 
 class NodesTest(unittest.TestCase):
 
-    cfg = Configuration()
+    cfg = Database()
     pm = PluginManager()
     pm._config = cfg
 

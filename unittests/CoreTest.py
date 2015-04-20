@@ -1,5 +1,5 @@
 import time
-from core.Configuration import Configuration
+from core.Database import Database
 from core.ActionProcessor import ActionProcessor, prepare_parameter
 from core.Scheduler import Scheduler
 from core.Performer_OLD import Performer
@@ -20,7 +20,7 @@ class MyTestCase(unittest.TestCase):
         def __init__(self):
             os.chdir("../")
             logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s', filename='unittests/debug.log', filemode='w')
-            self.config = Configuration()
+            self.config = Database()
             self.action_processor = ActionProcessor()
             self.scheduler = Scheduler()
             self.performer = Performer()

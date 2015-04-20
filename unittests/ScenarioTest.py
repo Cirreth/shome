@@ -1,11 +1,11 @@
 import logging
 import unittest
-from core.Configuration import Configuration
+from core.Database import Database
 from core.PluginManager import PluginManager
 from core.entities.Scenario import Scenario
 
 logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s', filename='debug.log', filemode='w')
-cfg = Configuration()
+cfg = Database()
 cfg.create_database()
 #mp = Plugin('mock', 'mock').save()
 p = PluginManager()

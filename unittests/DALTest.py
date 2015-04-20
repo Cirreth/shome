@@ -2,13 +2,13 @@ import os
 import unittest
 from core.entities.Plugin import Plugin
 from core.entities.Scenario import Scenario
-from core.Configuration import Configuration
+from core.Database import Database
 from core.entities.Task import Task
 
 
 class MyTestCase(unittest.TestCase):
     os.remove('config.db')
-    conf = Configuration()
+    conf = Database()
     conf.create_database()
 
     def test_plugin_CRUD(self):
