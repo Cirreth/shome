@@ -5,6 +5,7 @@ import time
 from core.Database import Database
 from core.PluginManager import PluginManager
 from core.actproctree.Node import Node
+from core.actproctree.NodeFactory import NodeFactory
 
 logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s', filename='debug.log', filemode='w')
 
@@ -15,7 +16,7 @@ class NodesTest(unittest.TestCase):
     pm = PluginManager()
     pm._config = cfg
 
-    def test_request_node(self):
+    def test_request_node_parsing(self):
         expression = """
             {
                 "id": "rn144",
@@ -30,7 +31,7 @@ class NodesTest(unittest.TestCase):
             }
         """
         structure = json.loads(expression)
-        node = Node.create(structure)
+        node = NodeFactory.create(structure)
         self.assertEqual(node.plugin, 'mock')
         self.assertEqual(node.reference, 'right')
 
@@ -51,11 +52,11 @@ class NodesTest(unittest.TestCase):
             }
         """ % timeconst
         structure = json.loads(expression)
-        node = Node.create(structure)
+        node = NodeFactory.create(structure)
         start_time = time.time()
         node.execute({})
         elapsed_time = time.time() - start_time
-        self.assertGreater(0.5, abs(elapsed_time-timeconst))
+        self.assertGreaterEqual(timeconst, abs(elapsed_time-timeconst))
 
     def test_required_fields(self):
         bad_node = """
@@ -64,7 +65,7 @@ class NodesTest(unittest.TestCase):
             }
         """
         bn_structure = json.loads(bad_node)
-        self.assertRaises(Exception, Node.create, bn_structure)
+        self.assertRaises(Exception, NodeFactory.create, bn_structure)
         bad_request_node = """
             {
                 "id": "test",
@@ -76,4 +77,4 @@ class NodesTest(unittest.TestCase):
             }
         """
         brn_structure = json.loads(bad_request_node)
-        self.assertRaises(Exception, Node.create, brn_structure)
+        self.assertRaises(Exception, NodeFactory.create, brn_structure)

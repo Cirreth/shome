@@ -18,3 +18,6 @@ class DelayNode(Node):
 
     def action(self, parameters):
         sleep(self.delay)
+
+    def execute(self, parameters):
+        return self.node_exec(parameters, async=True)

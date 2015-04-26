@@ -1,3 +1,5 @@
+from threading import Thread
+
 __author__ = 'cirreth'
 
 import logging
@@ -20,16 +22,31 @@ class Node(metaclass=ABCMeta):
         for p in self._required_fields+self._optional_fields:
             if p in structure:
                 self.__setattr__(p, structure[p])
+        #directions initialization
+        for d in self._directions:
+            self.__setattr__(d, structure[d] if d in structure else [])
 
     @abstractmethod
     def action(self, parameters):
         pass
 
-    def execute(self, parameters):
-        q = Queue()
+    def async_wrapper(self, q, parameters):
         res = self.action(parameters)
-        q.put((res, self._directions['next']))
-        return q, self._directions['parallel']
+        direction_next = self.next if 'next' in self._directions else []
+        q.put((res, direction_next))
+
+    def node_exec(self, parameters, async=False):
+        q = Queue()
+        if async:
+            Thread(target=self.async_wrapper, args=(q, parameters))
+        else:
+            res = self.action(parameters)
+            direction_next = self.next if 'next' in self._directions else []
+            q.put((res, direction_next))
+        return q, self.parallel if 'parallel' in self._directions else []
+
+    def execute(self, parameters):
+        return self.node_exec(parameters)
 
     def __check_required_fields(self, structure):
         for k in self._required_fields+self._general_required_fields:
