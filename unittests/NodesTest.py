@@ -1,5 +1,6 @@
 import json
 import logging
+from queue import Queue
 import unittest
 import time
 from core.Database import Database
@@ -34,6 +35,28 @@ class NodesTest(unittest.TestCase):
         node = NodeFactory.create(structure)
         self.assertEqual(node.plugin, 'mock')
         self.assertEqual(node.reference, 'right')
+
+    def test_request_node_exec(self):
+        expression = """
+            {
+                "id": "rn144",
+                "type": "RequestNode",
+                "plugin": "mock",
+                "reference": "right",
+                "retvar": "res",
+                "position": {
+                    "left": 360,
+                    "top": 175
+                }
+            }
+        """
+        structure = json.loads(expression)
+        node = NodeFactory.create(structure)
+        q, parallel = node.execute({})
+        res, next = q.get()
+        self.assertEqual(parallel, [])
+        self.assertEqual(next, [])
+        self.assertEqual(res, {'res': 'right'})
 
     def test_delay_node(self):
         timeconst = 2

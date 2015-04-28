@@ -38,7 +38,7 @@ class Node(metaclass=ABCMeta):
     def node_exec(self, parameters, async=False):
         q = Queue()
         if async:
-            Thread(target=self.async_wrapper, args=(q, parameters))
+            Thread(target=self.async_wrapper, args=(q, parameters)).start()
         else:
             res = self.action(parameters)
             direction_next = self.next if 'next' in self._directions else []
