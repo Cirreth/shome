@@ -1,4 +1,5 @@
 from queue import Queue
+from core.actproctree.NodeFactory import NodeFactory
 
 __author__ = 'cirreth'
 
@@ -44,23 +45,33 @@ class Scenario(Base):
         struct = {node['id']: node for node in struct}
         self.root = struct['Start']['next']
         del struct['Start']
-        self.nodes = {node:  Node.create(struct[node]) for node in struct}
+        self.nodes = {node:  NodeFactory.create(struct[node]) for node in struct}
 
     def execute(self, parameters):
-        def async_wrapper(node_id, parameters):
-            rq = self.nodes[node_id].execute(parameters)
-            queues = {}
-            pqs = [async_wrapper(self.nodes[nid], parameters, pq) for nid in node.parallel]
         result = {}
-        queues = {}
-        #execute all root nodes
-        for node in self.root:
-            q = Queue()
-            queues[node.id] = async_wrapper(node, parameters, q)
-        #collecting results
-        for q in queues:
-            res = q.get()
-            result.update(res if res else {})
+        parallel = Queue()
+        first_iteration = True
+        while first_iteration or not parallel.empty():
+            first_iteration = False
+            queues = {}
+            next_nodes = []
+            # preparing queue
+            for node in self.root:
+                parallel.put(node)
+            # execute all parallel
+            while not parallel.empty():
+                node = parallel.get()
+                queues[self.nodes[node].id], nodes_parallel = self.nodes[node].execute(parameters)
+                for prl in nodes_parallel:
+                    parallel.put(prl)
+            # collect results
+            for node_id, q in queues.items():
+                res, node_next = q.get()
+                next_nodes += node_next
+                result.update(res if res else {})
+            # execute all next_nodes
+            for node in next_nodes:
+                parallel.put(node)
         return result
 
     def __repr__(self):
