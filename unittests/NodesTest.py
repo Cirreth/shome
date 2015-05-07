@@ -5,8 +5,8 @@ import unittest
 import time
 from core.Database import Database
 from core.PluginManager import PluginManager
-from core.actproctree.Node import Node
-from core.actproctree.NodeFactory import NodeFactory
+from core.processtree.Node import Node
+from core.processtree.NodeFactory import NodeFactory
 
 logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s', filename='debug.log', filemode='w')
 

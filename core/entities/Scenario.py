@@ -1,12 +1,12 @@
 from queue import Queue
-from core.actproctree.NodeFactory import NodeFactory
+from core.processtree.NodeFactory import NodeFactory
 
 __author__ = 'cirreth'
 
 import json
 import logging
 from core.entities import Base
-from core.actproctree.Node import Node
+from core.processtree.Node import Node
 from sqlalchemy import Column, String, Boolean, orm
 
 

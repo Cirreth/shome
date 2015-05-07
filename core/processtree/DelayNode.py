@@ -2,7 +2,7 @@ __author__ = 'cirreth'
 
 import logging
 from time import sleep
-from core.actproctree.Node import Node
+from core.processtree.Node import Node
 
 
 class DelayNode(Node):

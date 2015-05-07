@@ -1,6 +1,6 @@
 __author__ = 'Кирилл'
 
-from core.actproctree import *
+from core.processtree import *
 
 
 class NodeFactory():

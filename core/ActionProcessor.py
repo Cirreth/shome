@@ -1,6 +1,6 @@
 __author__ = 'cirreth'
 
-from core.actproctree import *
+from core.processtree import *
 from threading import Thread
 import json
 import re

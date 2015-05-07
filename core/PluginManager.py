@@ -1,4 +1,4 @@
-from core.actproctree.RequestNode import RequestNode
+from core.processtree.RequestNode import RequestNode
 
 __author__ = 'cirreth'
 from core.entities.Plugin import Plugin
