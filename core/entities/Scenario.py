@@ -34,6 +34,7 @@ class Scenario(Base):
         self.isrunned = False
         self.root = []
         self.nodes = {}
+        self.construct()
 
     @orm.reconstructor
     def __init_on_load(self):

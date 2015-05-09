@@ -5,6 +5,7 @@ import unittest
 import time
 from core.Database import Database
 from core.PluginManager import PluginManager
+from core.entities.Scenario import Scenario
 from core.processtree.Node import Node
 from core.processtree.NodeFactory import NodeFactory
 
@@ -21,12 +22,12 @@ class NodesTest(unittest.TestCase):
         self.assertIn('onewire', self.pm.list_all())
 
     def test_ow_execution(self):
-        expression = """
+        expression = r"""
             {
                 "id": "rn144",
                 "type": "RequestNode",
-                "plugin": "mock",
-                "reference": "right",
+                "plugin": "onewire",
+                "reference": "/28.F2CF39040000/temperature10",
                 "retvar": "res",
                 "position": {
                     "left": 360,
@@ -36,5 +37,34 @@ class NodesTest(unittest.TestCase):
         """
         structure = json.loads(expression)
         node = NodeFactory.create(structure)
-        self.assertEqual(node.plugin, 'mock')
-        self.assertEqual(node.reference, 'right')
+        self.assertEqual(node.plugin, 'onewire')
+        self.assertEqual(node.reference, '/28.F2CF39040000/temperature10')
+        res = node.execute({})[0].get()[0]
+        self.assertGreater(float(res['res']), 10)
+
+    def test_ow_scenario(self):
+        expression = r"""
+        [
+            {
+                "id": "Start",
+                "type": "StartNode",
+                "next": [
+                    "rn144"
+                ]
+            },
+            {
+                "id": "rn144",
+                "type": "RequestNode",
+                "plugin": "onewire",
+                "reference": "/28.F2CF39040000/temperature10",
+                "retvar": "res",
+                "position": {
+                    "left": 360,
+                    "top": 175
+                }
+            }
+        ]
+        """
+        s = Scenario('demo', expression)
+        res = s.execute({})
+        self.assertGreater(res['res'], 10)

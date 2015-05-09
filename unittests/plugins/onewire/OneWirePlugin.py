@@ -15,8 +15,7 @@ class OneWirePlugin(SHomePlugin):
     _port = None
     _connection = None
 
-    def __init__(self, parameters):
-        params = json.loads(parameters)
+    def __init__(self, params):
         self._host = params['host']
         self._port = int(params['port'])
         logging.debug('OneWirePlugin initialization')
@@ -46,8 +45,8 @@ class OneWirePlugin(SHomePlugin):
         res = self._connection.write(address, value)
         logging.debug('OneWirePlugin have writen value ' + str(value) + ' to address '+address+' with result : '+str(res))
 
-    def call(self, reference, value=None):
-        if value is not None:
+    def call(self, reference, value={}):
+        if len(value) > 0:
             return self._write(reference, value)
         else:
             return self._read(reference)
