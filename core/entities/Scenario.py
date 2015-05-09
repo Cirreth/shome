@@ -51,14 +51,14 @@ class Scenario(Base):
     def execute(self, parameters):
         result = {}
         parallel = Queue()
+        # preparing queue
+        for node in self.root:
+            parallel.put(node)
         first_iteration = True
         while first_iteration or not parallel.empty():
             first_iteration = False
             queues = {}
             next_nodes = []
-            # preparing queue
-            for node in self.root:
-                parallel.put(node)
             # execute all parallel
             while not parallel.empty():
                 node = parallel.get()

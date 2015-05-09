@@ -45,8 +45,9 @@ class OneWirePlugin(SHomePlugin):
         logging.debug('OneWirePlugin trying to write address ( '+address+' ) and value ( '+str(value)+' )...')
         res = self._connection.write(address, value)
         logging.debug('OneWirePlugin have writen value ' + str(value) + ' to address '+address+' with result : '+str(res))
+        return 'Success'
 
-    def call(self, reference, value=None):
+    def call(self, reference, value):
         if value is not None:
             return self._write(reference, value)
         else:

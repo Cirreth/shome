@@ -16,7 +16,8 @@ class RequestNode(Node):
         super().__init__(structure)
 
     def action(self, parameters):
-        res = self._plugin_manager.call_plugin(self.plugin, self.reference, parameters)
+        value = self.value if hasattr(self, 'value') else None
+        res = self._plugin_manager.call_plugin(self.plugin, self.reference, value)
         if hasattr(self, 'retvar'):
             return {self.retvar: res}
 

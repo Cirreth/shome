@@ -68,3 +68,46 @@ class NodesTest(unittest.TestCase):
         s = Scenario('demo', expression)
         res = s.execute({})
         self.assertGreater(res['res'], 10)
+
+    def test_ow_scenario_write(self):
+        val = 0
+        expression = r"""
+        [
+            {
+                "id": "Start",
+                "type": "StartNode",
+                "next": [
+                    "rn144"
+                ]
+            },
+            {
+                "id": "rn144",
+                "type": "RequestNode",
+                "plugin": "onewire",
+                "reference": "/3A.F2360D000000/PIO.A",
+                "value": %d,
+                "retvar": "rstate",
+                "position": {
+                    "left": 360,
+                    "top": 175
+                },
+                "next": [
+                    "rn145"
+                ]
+            },
+            {
+                "id": "rn145",
+                "type": "RequestNode",
+                "plugin": "onewire",
+                "reference": "/3A.F2360D000000/PIO.A",
+                "retvar": "res",
+                "position": {
+                    "left": 360,
+                    "top": 175
+                }
+            }
+        ]
+        """ % val
+        s = Scenario('demo', expression)
+        res = s.execute({})
+        self.assertEqual(res, {'res': val, 'rstate': 'Success'})
