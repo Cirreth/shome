@@ -1,3 +1,5 @@
+from core.PluginManager import PluginManager
+
 __author__ = 'cirreth'
 from core.Database import Database
 from core.ActionProcessor import ActionProcessor
@@ -16,10 +18,9 @@ class Context:
         self.config = Database()
         self.action_processor = ActionProcessor()
         #self.scheduler = Scheduler()
-        #self.performer = Performer()
+        self.plugin_manager = PluginManager()
         self.action_processor.init(self)
         #self.scheduler.init(self)
-        #self.performer.init(self)
         logging.info('Context initialized')
 
         """
