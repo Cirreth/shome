@@ -1,5 +1,3 @@
-__author__ = 'cirreth'
-
 import os
 import logging
 import tornado.httpserver
@@ -25,7 +23,7 @@ class WebServer():
 
     def init_ws(self):
         if self._action_processor is None or self._scheduler is None:
-            raise Exception('WebServer initialization error. ActionProcessor or Scheduler is not set')
+            raise Exception('WebServer initialization error. ActionProcessor, Scheduler is not set')
         tornado.options.parse_command_line()
         logging.getLogger().setLevel(logging.DEBUG)
         settings = {

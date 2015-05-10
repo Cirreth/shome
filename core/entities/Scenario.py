@@ -1,19 +1,12 @@
-from queue import Queue
-from core.processtree.NodeFactory import NodeFactory
-
-__author__ = 'cirreth'
-
 import json
-import logging
+from queue import Queue
 from core.entities import Base
-from core.processtree.Node import Node
 from sqlalchemy import Column, String, Boolean, orm
-
+from core.NodeFactory import NodeFactory
 
 class Scenario(Base):
     __tablename__ = 'scenarios'
 
-    _action_processor = None
     _config = None
 
     name = Column('name', String(32), primary_key=True)

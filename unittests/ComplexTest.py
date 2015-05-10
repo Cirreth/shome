@@ -1,13 +1,12 @@
 import json
 import logging
-from queue import Queue
 import unittest
-import time
+
 from core.Database import Database
 from core.PluginManager import PluginManager
 from core.entities.Scenario import Scenario
-from core.processtree.Node import Node
-from core.processtree.NodeFactory import NodeFactory
+from core import NodeFactory, ActionProcessor
+
 
 logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s', filename='debug.log', filemode='w')
 
@@ -111,3 +110,31 @@ class NodesTest(unittest.TestCase):
         s = Scenario('demo', expression)
         res = s.execute({})
         self.assertEqual(res, {'res': val, 'rstate': 'Success'})
+
+    def test_action_processor(self):
+        expression = """
+        [
+            {
+                "id": "Start",
+                "type": "StartNode",
+                "next": [
+                    "rn144"
+                ]
+            },
+            {
+                "id": "rn144",
+                "type": "RequestNode",
+                "plugin": "onewire",
+                "reference": "/28.F2CF39040000/temperature10",
+                "retvar": "res",
+                "position": {
+                    "left": 360,
+                    "top": 175
+                }
+            }
+        ]
+        """
+        ap = ActionProcessor()
+        ap.add_scenario('demo', expression)
+        res = ap.execute('demo', {})
+        self.assertGreater(res['res'], 10)

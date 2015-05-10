@@ -1,9 +1,5 @@
 __author__ = 'cirreth'
 
-from core.processtree import *
-from threading import Thread
-import json
-import re
 import logging
 from core.entities.Scenario import Scenario
 
@@ -11,13 +7,7 @@ from core.entities.Scenario import Scenario
 class ActionProcessor:
 
     def __init__(self):
-        pass
-
-    def init(self, context):
-        logging.info("Action processor initialization")
-        Scenario._action_processor = self
-        Scenario._config = context.config
-        self._config = context.config
+        self._scenarios = {}
 
     def add_scenario(self, name, expression, description='', runoninit=False, published=False):
         if name in self._scenarios:
@@ -31,8 +21,8 @@ class ActionProcessor:
     def delete_scenario(self, name):
         raise NotImplementedError()
 
-    def execute(self, name, params: "dict"):
-        if isinstance(params, dict):
+    def execute(self, name, params={}):
+        if not isinstance(params, dict):
             raise Exception('Parameters type must be dict')
         if name in self._scenarios:
-            return self._scenarios[name].execute()
+            return self._scenarios[name].execute(params)
