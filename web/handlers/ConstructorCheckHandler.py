@@ -15,11 +15,10 @@ class ConstructorCheckHandler(tornado.web.RequestHandler):
         parameters = data['parameters'] if 'parameters' in data else None
         if expression:
             gid = 'chk'+str(uuid.uuid4())
-            self._ws._action_processor.create_process(gid, expression)
-            parameters = '{'+parameters+'}' if parameters else ''
-            res = self._ws._action_processor.execute(gid+parameters)
-            self._ws._action_processor.delete_process(gid)
-            if (res):
-                self.write(res)
+            self._ws.action_processor.add_scenario(gid, expression)
+            res = self._ws.action_processor.execute(gid, {})
+            self._ws.action_processor.delete_scenario(gid)
+            if res:
+                self.finish(res)
         else:
-            raise tornado.HTTPError(422, "Expression is not defined")
+            raise tornado.HTTPError(405, "Expression is not defined")

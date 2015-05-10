@@ -16,9 +16,8 @@ class OneWirePlugin(SHomePlugin):
     _connection = None
 
     def __init__(self, parameters):
-        params = json.loads(parameters)
-        self._host = params['host']
-        self._port = int(params['port'])
+        self._host = parameters['host']
+        self._port = int(parameters['port'])
         logging.debug('OneWirePlugin initialization')
         self._connection = ownet.Connection(self._host, self._port)
         logging.debug('\nOneWirePlugin list dir:')

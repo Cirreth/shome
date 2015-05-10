@@ -2,7 +2,7 @@
 
     var app = angular.module('shomeAdm');
 
-    app.directive('startNode', ['$rootScope', 'Constructor', function($rootScope, Constructor) {
+    app.directive('startNode', ['$rootScope', 'Notification', 'Constructor',  function($rootScope, Notification, Constructor) {
         return {
             restrict: 'E',
             require: '?ngModel',
@@ -101,14 +101,12 @@
     */
 
     app.controller('ConstructorController',
-                            ['$scope', '$rootScope', '$http', '$interval', '$routeParams', 'InfoMessage', 'Constructor',
-                             function($scope, $rootScope, $http, $interval, $routeParams, InfoMessage, Constructor) {
+                            ['$scope', '$rootScope', '$http', '$interval', '$routeParams', 'Notification', 'Constructor',
+                             function($scope, $rootScope, $http, $interval, $routeParams, Notification, Constructor) {
 
         window.onresize = function(event) {
             Constructor.repaint();
         };
-
-        $scope.im = InfoMessage;
 
         $scope.exceptionalMode = Constructor.exceptionalMode;
 
@@ -252,9 +250,13 @@
                 $scope.nodes = Constructor.nodes;
                 initConstructor($scope.name);
             }
-            $http.get('/admin/plugins/active')
+            $http.get('/admin/plugins')
                 .success(function(data){
-                    $scope.plugins = data;
+                    var plugins = [];
+                    angular.forEach(data.plugins, function(v, k) {
+                        if (v.state == 'active') plugins.push(k);
+                    });
+                    $scope.plugins = plugins;
                 });
             $http.get('/admin/scenarios/')
                 .success(function(data){
@@ -271,18 +273,18 @@
         }
 
         $scope.checkScenario = function() {
-            $scope.im.loader();
-            $scope.packScenario();
-            if (!$scope.scenario) {
-                $scope.im.errorMessage('There are no nodes connected to start');
+            //$scope.packScenario();
+            var start = $scope.nodes.filter(function(a) {return a.id == 'Start'})[0];
+            if (!start.next || start.next.length == 0) {
+                Notification.error('There are no nodes connected to start');
                 return;
             }
-            $http.post('/admin/constructor/check', {expression: angular.toJson($scope.scenario)})
+            $http.post('/admin/constructor/check', {expression: angular.toJson($scope.nodes)})
             .success(function(data) {
-                $scope.im.okMessage('Result: '+angular.toJson(data));
+                Notification.success('Result: '+angular.toJson(data));
             })
             .error(function(data, status){
-                $scope.im.errorMessage('Error: '+data);
+                Notification.error({message: 'Error: '+data, delay: 30000});
             });
         }
 
@@ -292,18 +294,18 @@
                 $http.post('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.scenario)})
                 .success(function(data) {
                     delete $scope.new;
-                    $scope.im.okMessage('Result: '+data);
+                    Notification.success('Result: '+data);
                 })
                 .error(function(data, status){
-                    $scope.im.errorMessage('Error: '+data);
+                    Notification.error('Error: '+data);
                 });
             } else {
                 $http.put('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.scenario)})
                 .success(function(data) {
-                    $scope.im.okMessage('Result: '+data);
+                    Notification.success('Result: '+data);
                 })
                 .error(function(data, status){
-                    $scope.im.errorMessage('Error: '+data);
+                    Notification.error('Error: '+data);
                 });
             }
         }

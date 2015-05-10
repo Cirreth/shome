@@ -10,20 +10,15 @@ from .handlers import *
 
 class WebServer():
 
-    _action_processor = None
-    _scheduler = None
-
     define("port", default=8082, type=int)
 
     def __init__(self, context):
-        self._action_processor = context.action_processor
-        self._scheduler = context.scheduler
+        self.context = context
+        self.action_processor = context.action_processor
+        self.plugin_manager = context.plugin_manager
         self.init_ws()
-        server = self
 
     def init_ws(self):
-        if self._action_processor is None or self._scheduler is None:
-            raise Exception('WebServer initialization error. ActionProcessor, Scheduler is not set')
         tornado.options.parse_command_line()
         logging.getLogger().setLevel(logging.DEBUG)
         settings = {
@@ -39,8 +34,8 @@ class WebServer():
             #(r"/admin/scenarios/", ScenariosListAllHandler, {'ws': self}),
             #(r"/admin/scenarios/(.+)", ScenariosHandler, {'ws': self}),
             (r"/admin/constructor/check", ConstructorCheckHandler, {'ws': self}),
-            (r"/admin/plugins/(?P<path>.+)", PluginManagementHandler, {'ws': self}),
-            #(r"/admin/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
+            (r"/admin/plugins", PluginManagementHandler, {'ws': self}),
+            (r"/admin/static/(.*)", tornado.web.StaticFileHandler, dict(path=settings['admin_path'])),
             (r"/(.*)", MainHandler),
         ], debug=True, **settings)
         http_server = tornado.httpserver.HTTPServer(application)

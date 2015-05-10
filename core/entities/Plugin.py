@@ -23,7 +23,7 @@ class Plugin(Base):
         self._params = params
         self.enabled = enabled
         #runtime
-        self.state = 'unknown'
+        self.state = 'active'
         self._params_dict = None
         self.plugin_instance = None
         #init
@@ -38,7 +38,7 @@ class Plugin(Base):
         return self.plugin_instance.call(reference, values)
 
     def __load(self):
-        for name in os.listdir('../plugins/'+self.name):
+        for name in os.listdir('./plugins/'+self.name):
             if not name.startswith('__') and name.endswith('.py'):
                 mdl = importlib.import_module('plugins.'+self.name+'.'+name[:-3])
                 plg = getattr(mdl, name[:-3])
@@ -68,7 +68,7 @@ class Plugin(Base):
     def get_params(self):
         return self._params_dict
 
-    def json_repr(self):
+    def dict(self):
         return {
             'instname': self.instname,
             'name': self.name,

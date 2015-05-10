@@ -1,11 +1,9 @@
 from core.PluginManager import PluginManager
+from web.WebServer import WebServer
 
 __author__ = 'cirreth'
 from core.Database import Database
 from core.ActionProcessor import ActionProcessor
-from core.Scheduler import Scheduler
-from core.Performer_OLD import Performer
-from web.WebServer import WebServer
 import logging
 
 
@@ -19,7 +17,6 @@ class Context:
         self.action_processor = ActionProcessor()
         #self.scheduler = Scheduler()
         self.plugin_manager = PluginManager()
-        self.action_processor.init(self)
         #self.scheduler.init(self)
         logging.info('Context initialized')
 
@@ -38,7 +35,7 @@ class Context:
         for k in self.config.get_all_tasks():
             logging.debug('Loading: ' + str((k['process'], k['title'], k['description'], k['scheme'], k['isrunned'])))
             self.scheduler.create(k['process'], k['title'], k['scheme'], k['isrunned'], k['description'])
+        """
 
         #start web server
         self.web_server = WebServer(self)
-        """

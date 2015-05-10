@@ -19,7 +19,7 @@ class ActionProcessor:
             return self._scenarios[name]
 
     def delete_scenario(self, name):
-        raise NotImplementedError()
+        del self._scenarios[name]
 
     def execute(self, name, params={}):
         if not isinstance(params, dict):

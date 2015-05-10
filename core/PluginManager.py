@@ -20,4 +20,4 @@ class PluginManager:
         return self._plugins[name].call(reference, values)
 
     def list_all(self):
-        return list(self._plugins.keys())
+        return {instname: plugin.dict() for instname, plugin in self._plugins.items()}

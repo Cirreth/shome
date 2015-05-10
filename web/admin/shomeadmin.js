@@ -1,6 +1,6 @@
 (function(){
 
-  var app = angular.module('shomeAdm',['ngAnimate','ngRoute']);
+  var app = angular.module('shomeAdm',['ngAnimate','ngRoute', 'ui-notification']);
 
   app.config(['$routeProvider',
     function($routeProvider, $locationProvider) {

@@ -35,7 +35,10 @@ class Scenario(Base):
 
     def construct(self):
         self.root = []
-        struct = json.loads(self.expression)
+        try:
+            struct = json.loads(self.expression)
+        except Exception as e:
+            raise Exception('Invalid JSON: '+str(e))
         struct = {node['id']: node for node in struct}
         self.root = struct['Start']['next']
         del struct['Start']
