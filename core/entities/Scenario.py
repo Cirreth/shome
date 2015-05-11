@@ -71,14 +71,14 @@ class Scenario(Base):
                 parallel.put(node)
         return result
 
-    def __repr__(self):
-        return json.dumps({
+    def dict(self):
+        return {
             'name': self.name,
             'description': self.description,
             'expression': self.expression,
             'runOnInit': self.runoninit,
             'published': self.published
-        })
+        }
 
     def save(self):
         session = self._config.get_session()

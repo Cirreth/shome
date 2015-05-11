@@ -272,13 +272,18 @@
             $scope.exceptionalMode = Constructor.exceptionalMode;
         }
 
-        $scope.checkScenario = function() {
-            //$scope.packScenario();
+        var checkScenario = function() {
             var start = $scope.nodes.filter(function(a) {return a.id == 'Start'})[0];
             if (!start.next || start.next.length == 0) {
                 Notification.error('There are no nodes connected to start');
-                return;
+                return false;
             }
+            return true;
+        }
+
+        $scope.checkScenario = function() {
+            if (!checkScenario()) return;
+            Notification('...')
             $http.post('/admin/constructor/check', {expression: angular.toJson($scope.nodes)})
             .success(function(data) {
                 Notification.success('Result: '+angular.toJson(data));
@@ -289,7 +294,7 @@
         }
 
         $scope.saveScenario = function() {
-            $scope.packScenario();
+            if (!checkScenario()) return;
             if ($scope.new) {
                 $http.post('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.scenario)})
                 .success(function(data) {

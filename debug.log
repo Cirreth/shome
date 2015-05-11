@@ -1,27 +1,23 @@
-[DEBUG] [2015-05-10 22:31:53,983] (MainThread) OneWirePlugin initialization
-[DEBUG] [2015-05-10 22:31:53,984] (MainThread) 
+[DEBUG] [2015-05-11 09:52:59,502] (MainThread) OneWirePlugin initialization
+[DEBUG] [2015-05-11 09:52:59,503] (MainThread) 
 OneWirePlugin list dir:
-[DEBUG] [2015-05-10 22:31:54,158] (MainThread) b'/28.345805050000'
-[DEBUG] [2015-05-10 22:31:54,158] (MainThread) b'/28.F2CF39040000'
-[DEBUG] [2015-05-10 22:31:54,159] (MainThread) b'/28.259039040000'
-[DEBUG] [2015-05-10 22:31:54,159] (MainThread) b'/28.1D9D39040000'
-[DEBUG] [2015-05-10 22:31:54,160] (MainThread) b'/3A.F2360D000000'
-[DEBUG] [2015-05-10 22:31:54,160] (MainThread) b'/3A.C9330D000000'
-[DEBUG] [2015-05-10 22:31:54,160] (MainThread) b'/81.F34132000000'
-[DEBUG] [2015-05-10 22:31:54,160] (MainThread) b'/bus.0'
-[DEBUG] [2015-05-10 22:31:54,161] (MainThread) b'/uncached'
-[DEBUG] [2015-05-10 22:31:54,161] (MainThread) b'/settings'
-[DEBUG] [2015-05-10 22:31:54,161] (MainThread) b'/system'
-[DEBUG] [2015-05-10 22:31:54,161] (MainThread) b'/statistics'
-[DEBUG] [2015-05-10 22:31:54,162] (MainThread) b'/structure'
-[DEBUG] [2015-05-10 22:31:54,162] (MainThread) b'/simultaneous'
-[DEBUG] [2015-05-10 22:31:54,162] (MainThread) b'/alarm'
-[DEBUG] [2015-05-10 22:31:54,162] (MainThread) 
+[DEBUG] [2015-05-11 09:52:59,512] (MainThread) b'/28.345805050000'
+[DEBUG] [2015-05-11 09:52:59,513] (MainThread) b'/28.F2CF39040000'
+[DEBUG] [2015-05-11 09:52:59,514] (MainThread) b'/28.259039040000'
+[DEBUG] [2015-05-11 09:52:59,514] (MainThread) b'/28.1D9D39040000'
+[DEBUG] [2015-05-11 09:52:59,515] (MainThread) b'/3A.F2360D000000'
+[DEBUG] [2015-05-11 09:52:59,515] (MainThread) b'/3A.C9330D000000'
+[DEBUG] [2015-05-11 09:52:59,516] (MainThread) b'/81.F34132000000'
+[DEBUG] [2015-05-11 09:52:59,516] (MainThread) b'/bus.0'
+[DEBUG] [2015-05-11 09:52:59,516] (MainThread) b'/uncached'
+[DEBUG] [2015-05-11 09:52:59,517] (MainThread) b'/settings'
+[DEBUG] [2015-05-11 09:52:59,517] (MainThread) b'/system'
+[DEBUG] [2015-05-11 09:52:59,518] (MainThread) b'/statistics'
+[DEBUG] [2015-05-11 09:52:59,518] (MainThread) b'/structure'
+[DEBUG] [2015-05-11 09:52:59,518] (MainThread) b'/simultaneous'
+[DEBUG] [2015-05-11 09:52:59,518] (MainThread) b'/alarm'
+[DEBUG] [2015-05-11 09:52:59,519] (MainThread) 
 
-[INFO] [2015-05-10 22:31:54,163] (MainThread) Context initialized
-[DEBUG] [2015-05-10 22:31:55,452] (MainThread) RequestNode constructor called: {'dimension': {'height': 65, 'width': 180}, 'id': 'rn49', 'exceptional': [], 'reference': 'change me', 'plugin': 'mock', 'parallel': [], 'type': 'RequestNode', 'next': [], 'position': {'top': 170, 'left': 260}, 'active': False}
-[DEBUG] [2015-05-10 22:31:55,453] (Thread-1  ) MockPlugin call with change me
-[INFO] [2015-05-10 22:31:55,455] (MainThread) 200 POST /admin/constructor/check (::1) 5.00ms
-[DEBUG] [2015-05-10 22:32:02,764] (MainThread) RequestNode constructor called: {'dimension': {'height': 65, 'width': 180}, 'id': 'rn49', 'exceptional': [], 'reference': 'change me', 'plugin': 'mock', 'retvar': 'xxx', 'parallel': [], 'type': 'RequestNode', 'next': [], 'position': {'top': 170, 'left': 260}, 'active': True}
-[DEBUG] [2015-05-10 22:32:02,765] (Thread-2  ) MockPlugin call with change me
-[INFO] [2015-05-10 22:32:02,767] (MainThread) 200 POST /admin/constructor/check (::1) 3.99ms
+[INFO] [2015-05-11 09:52:59,519] (MainThread) Context initialized
+[INFO] [2015-05-11 09:52:59,809] (MainThread) 200 GET /admin/scenarios/1 (::1) 3.00ms
+[INFO] [2015-05-11 09:53:04,621] (MainThread) 200 GET /admin/scenarios/ (::1) 2.00ms

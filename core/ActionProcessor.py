@@ -26,3 +26,6 @@ class ActionProcessor:
             raise Exception('Parameters type must be dict')
         if name in self._scenarios:
             return self._scenarios[name].execute(params)
+
+    def list_all(self):
+        return [scenario.dict() for scenario in self._scenarios]
