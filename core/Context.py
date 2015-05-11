@@ -14,10 +14,8 @@ class Context:
                             format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s',
                             filename='debug.log', filemode='w')
         self.config = Database()
-        self.action_processor = ActionProcessor()
-        #self.scheduler = Scheduler()
         self.plugin_manager = PluginManager()
-        #self.scheduler.init(self)
+        self.action_processor = ActionProcessor()
         logging.info('Context initialized')
 
         """

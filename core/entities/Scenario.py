@@ -31,7 +31,7 @@ class Scenario(Base):
 
     @orm.reconstructor
     def __init_on_load(self):
-        self.__init__(self, self.name, self.expression, self.description, self.runoninit, self.published)
+        self.__init__(self.name, self.expression, self.description, self.runoninit, self.published)
 
     def construct(self):
         self.root = []
@@ -95,3 +95,8 @@ class Scenario(Base):
     def get(cls, name):
         session = cls._config.get_session()
         return session.query(cls).get(name)
+
+    @classmethod
+    def get_all(cls):
+        session = cls._config.get_session()
+        return session.query(cls).all()

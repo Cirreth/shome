@@ -1,5 +1,6 @@
 import tornado
-from tornado.web import RequestHandler
+from tornado.web import RequestHandler, HTTPError
+
 
 class ScenariosListAllHandler(RequestHandler):
 
@@ -10,7 +11,7 @@ class ScenariosListAllHandler(RequestHandler):
         self._ws = ws
 
     def get(self):
-        self.finish({"scenarios": self._ws.action_processor.list_all()})
+        self.finish({"scenarios":  [scenario.dict() for name, scenario in self._ws.action_processor.list_all()]})
 
 
 class ScenariosHandler(tornado.web.RequestHandler):
@@ -22,7 +23,11 @@ class ScenariosHandler(tornado.web.RequestHandler):
         self._ws = ws
 
     def get(self, name):
-        self.finish(self._ws.action_processor.get_scenario(name))
+        scenario = self._ws.action_processor.get_scenario(name)
+        if scenario:
+            self.finish(scenario.dict())
+        else:
+            raise HTTPError(404, "Scenario not found")
 
     def put(self, tag):
         data = tornado.escape.json_decode(self.request.body)
@@ -38,19 +43,20 @@ class ScenariosHandler(tornado.web.RequestHandler):
         """
         try:
             if expression:
-                self.write(self._ws.action_processor.update_process(
-                    tag, expression, description, published, runoninit))
+                self._ws.action_processor.update_scenario(
+                    tag, expression, description, published, runoninit)
+                self.finish({"result": "success"})
         except Exception as e:
-            self.write(e)
-
+            raise HTTPError(500, str(e))
 
     def post(self, tag):
         data = tornado.escape.json_decode(self.request.body)
         description = data['description'] if 'description' in data else None
         expression = data['expression'] if 'expression' in data else None
         if expression:
-            self.finish(self._ws.action_processor.add_scenario(tag, expression, save=True))
+            self._ws.action_processor.add_scenario(tag, expression, save=True)
+            self.finish({"result": "success"})
 
     def delete(self, tag):
         self._ws.action_processor.delete_process(tag)
-        self.write('Success')
+        self.finish({"result": "success"})

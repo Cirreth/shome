@@ -239,7 +239,7 @@
             if ($scope.name) {
                 $http.get('/admin/scenarios/'+$scope.name)
                 .success(function(data){
-                    Constructor.nodes = unpackScenario(data);
+                    Constructor.nodes = JSON.parse(data.expression);
                     $scope.nodes = Constructor.nodes;
                     initConstructor($scope.name);
                 });
@@ -251,20 +251,20 @@
                 initConstructor($scope.name);
             }
             $http.get('/admin/plugins')
-                .success(function(data){
-                    var plugins = [];
-                    angular.forEach(data.plugins, function(v, k) {
-                        if (v.state == 'active') plugins.push(k);
-                    });
-                    $scope.plugins = plugins;
+            .success(function(data){
+                var plugins = [];
+                angular.forEach(data.plugins, function(v, k) {
+                    if (v.state == 'active') plugins.push(k);
                 });
+                $scope.plugins = plugins;
+            });
             $http.get('/admin/scenarios/')
-                .success(function(data){
-                    $scope.scenarios = [];
-                    angular.forEach(data, function(v) {
-                        $scope.scenarios.push(v.name);
-                    });
+            .success(function(data){
+                $scope.scenarios = [];
+                angular.forEach(data, function(v) {
+                    $scope.scenarios.push(v.name);
                 });
+            });
         }
 
         $scope.toggleExceptional = function() {
@@ -299,18 +299,18 @@
                 $http.post('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.nodes)})
                 .success(function(data) {
                     delete $scope.new;
-                    Notification.success('Result: '+data);
+                    Notification.success('Created successfully');
                 })
-                .error(function(data, status){
-                    Notification.error('Error: '+data);
+                .error(function(error){
+                    Notification.error('Error: '+error);
                 });
             } else {
                 $http.put('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.nodes)})
                 .success(function(data) {
-                    Notification.success('Result: '+data);
+                    Notification.success('Updated successfully');
                 })
-                .error(function(data, status){
-                    Notification.error('Error: '+data);
+                .error(function(error){
+                    Notification.error('Error: '+error);
                 });
             }
         }
