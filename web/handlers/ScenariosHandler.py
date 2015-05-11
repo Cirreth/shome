@@ -49,8 +49,8 @@ class ScenariosHandler(tornado.web.RequestHandler):
         description = data['description'] if 'description' in data else None
         expression = data['expression'] if 'expression' in data else None
         if expression:
-            self.write(self._ws._action_processor.create_process(tag, expression, writedb=True))
+            self.finish(self._ws.action_processor.add_scenario(tag, expression, save=True))
 
     def delete(self, tag):
-        self._ws._action_processor.delete_process(tag)
+        self._ws.action_processor.delete_process(tag)
         self.write('Success')

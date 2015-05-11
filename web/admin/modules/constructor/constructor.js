@@ -296,7 +296,7 @@
         $scope.saveScenario = function() {
             if (!checkScenario()) return;
             if ($scope.new) {
-                $http.post('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.scenario)})
+                $http.post('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.nodes)})
                 .success(function(data) {
                     delete $scope.new;
                     Notification.success('Result: '+data);
@@ -305,7 +305,7 @@
                     Notification.error('Error: '+data);
                 });
             } else {
-                $http.put('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.scenario)})
+                $http.put('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.nodes)})
                 .success(function(data) {
                     Notification.success('Result: '+data);
                 })

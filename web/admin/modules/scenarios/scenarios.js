@@ -1,14 +1,17 @@
 (function() {
 
     angular.module('shomeAdm')
-    .controller('ScenariosController', ['$scope', '$http', 'InfoMessage', function($scope, $http, InfoMessage) {
+    .controller('ScenariosController', ['$scope', '$http', 'Notification', 'InfoMessage', function($scope, $http, Notification, InfoMessage) {
 
         $scope.im = InfoMessage;
 
         $scope.load = function() {
             $http.get('/admin/scenarios/')
                     .success(function(data){
-                        $scope.scenarios = data;
+                        $scope.scenarios = data.scenarios;
+                    })
+                    .error(function(){
+                        Notification.error('Error on scenarios list loading')
                     });
         }
 

@@ -1,23 +1,198 @@
-[DEBUG] [2015-05-11 09:52:59,502] (MainThread) OneWirePlugin initialization
-[DEBUG] [2015-05-11 09:52:59,503] (MainThread) 
+[DEBUG] [2015-05-11 17:08:16,698] (MainThread) OneWirePlugin initialization
+[DEBUG] [2015-05-11 17:08:16,699] (MainThread) 
 OneWirePlugin list dir:
-[DEBUG] [2015-05-11 09:52:59,512] (MainThread) b'/28.345805050000'
-[DEBUG] [2015-05-11 09:52:59,513] (MainThread) b'/28.F2CF39040000'
-[DEBUG] [2015-05-11 09:52:59,514] (MainThread) b'/28.259039040000'
-[DEBUG] [2015-05-11 09:52:59,514] (MainThread) b'/28.1D9D39040000'
-[DEBUG] [2015-05-11 09:52:59,515] (MainThread) b'/3A.F2360D000000'
-[DEBUG] [2015-05-11 09:52:59,515] (MainThread) b'/3A.C9330D000000'
-[DEBUG] [2015-05-11 09:52:59,516] (MainThread) b'/81.F34132000000'
-[DEBUG] [2015-05-11 09:52:59,516] (MainThread) b'/bus.0'
-[DEBUG] [2015-05-11 09:52:59,516] (MainThread) b'/uncached'
-[DEBUG] [2015-05-11 09:52:59,517] (MainThread) b'/settings'
-[DEBUG] [2015-05-11 09:52:59,517] (MainThread) b'/system'
-[DEBUG] [2015-05-11 09:52:59,518] (MainThread) b'/statistics'
-[DEBUG] [2015-05-11 09:52:59,518] (MainThread) b'/structure'
-[DEBUG] [2015-05-11 09:52:59,518] (MainThread) b'/simultaneous'
-[DEBUG] [2015-05-11 09:52:59,518] (MainThread) b'/alarm'
-[DEBUG] [2015-05-11 09:52:59,519] (MainThread) 
+[DEBUG] [2015-05-11 17:08:16,877] (MainThread) b'/28.345805050000'
+[DEBUG] [2015-05-11 17:08:16,878] (MainThread) b'/28.F2CF39040000'
+[DEBUG] [2015-05-11 17:08:16,878] (MainThread) b'/28.259039040000'
+[DEBUG] [2015-05-11 17:08:16,879] (MainThread) b'/28.1D9D39040000'
+[DEBUG] [2015-05-11 17:08:16,879] (MainThread) b'/3A.F2360D000000'
+[DEBUG] [2015-05-11 17:08:16,879] (MainThread) b'/3A.C9330D000000'
+[DEBUG] [2015-05-11 17:08:16,880] (MainThread) b'/81.F34132000000'
+[DEBUG] [2015-05-11 17:08:16,880] (MainThread) b'/bus.0'
+[DEBUG] [2015-05-11 17:08:16,881] (MainThread) b'/uncached'
+[DEBUG] [2015-05-11 17:08:16,881] (MainThread) b'/settings'
+[DEBUG] [2015-05-11 17:08:16,881] (MainThread) b'/system'
+[DEBUG] [2015-05-11 17:08:16,882] (MainThread) b'/statistics'
+[DEBUG] [2015-05-11 17:08:16,882] (MainThread) b'/structure'
+[DEBUG] [2015-05-11 17:08:16,882] (MainThread) b'/simultaneous'
+[DEBUG] [2015-05-11 17:08:16,883] (MainThread) b'/alarm'
+[DEBUG] [2015-05-11 17:08:16,883] (MainThread) 
 
-[INFO] [2015-05-11 09:52:59,519] (MainThread) Context initialized
-[INFO] [2015-05-11 09:52:59,809] (MainThread) 200 GET /admin/scenarios/1 (::1) 3.00ms
-[INFO] [2015-05-11 09:53:04,621] (MainThread) 200 GET /admin/scenarios/ (::1) 2.00ms
+[INFO] [2015-05-11 17:08:16,884] (MainThread) Context initialized
+[INFO] [2015-05-11 17:08:17,121] (MainThread) 200 GET /admin/scenarios/ (::1) 2.01ms
+[INFO] [2015-05-11 17:08:17,984] (MainThread) 304 GET /admin/scenarios/ (::1) 2.00ms
+[INFO] [2015-05-11 17:08:18,435] (MainThread) 304 GET /admin/scenarios/ (::1) 2.00ms
+[INFO] [2015-05-11 17:08:18,607] (MainThread) 304 GET /admin/scenarios/ (::1) 0.98ms
+[INFO] [2015-05-11 17:08:18,812] (MainThread) 304 GET /admin/scenarios/ (::1) 1.01ms
+[INFO] [2015-05-11 17:08:18,966] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 17:08:19,154] (MainThread) 304 GET /admin/scenarios/ (::1) 2.03ms
+[INFO] [2015-05-11 17:08:19,357] (MainThread) 304 GET /admin/scenarios/ (::1) 1.03ms
+[INFO] [2015-05-11 17:08:19,469] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 17:08:19,668] (MainThread) 304 GET /admin/scenarios/ (::1) 1.01ms
+[INFO] [2015-05-11 17:08:19,842] (MainThread) 304 GET /admin/scenarios/ (::1) 1.01ms
+[INFO] [2015-05-11 17:08:20,009] (MainThread) 304 GET /admin/scenarios/ (::1) 2.03ms
+[INFO] [2015-05-11 17:08:20,182] (MainThread) 304 GET /admin/scenarios/ (::1) 2.00ms
+[INFO] [2015-05-11 17:08:20,361] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 17:08:20,523] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 17:08:20,705] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 17:08:20,878] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 17:08:21,589] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 17:08:21,768] (MainThread) 304 GET /admin/scenarios/ (::1) 1.99ms
+[INFO] [2015-05-11 17:08:21,956] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 17:08:22,117] (MainThread) 304 GET /admin/scenarios/ (::1) 2.00ms
+[INFO] [2015-05-11 17:08:22,285] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 17:08:25,857] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 17:08:25,889] (MainThread) 200 GET /admin/plugins (::1) 1.00ms
+[DEBUG] [2015-05-11 17:08:30,345] (MainThread) RequestNode constructor called: {'type': 'RequestNode', 'active': False, 'next': [], 'position': {'left': 247, 'top': 148}, 'dimension': {'width': 180, 'height': 65}, 'exceptional': [], 'plugin': 'mock', 'id': 'rn292', 'reference': 'change me', 'parallel': []}
+[ERROR] [2015-05-11 17:08:30,350] (MainThread) Uncaught exception POST /admin/scenarios/New%20scenario%20name (::1)
+HTTPServerRequest(protocol='http', host='localhost:8082', method='POST', uri='/admin/scenarios/New%20scenario%20name', version='HTTP/1.1', remote_ip='::1', headers={'Content-Type': 'application/json;charset=utf-8', 'Host': 'localhost:8082', 'Connection': 'keep-alive', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'Accept': 'application/json, text/plain, */*', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'Content-Length': '397', 'Referer': 'http://localhost:8082/admin/static/index.html', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'Accept-Encoding': 'gzip, deflate'})
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\sqlalchemy\engine\base.py", line 951, in _execute_context
+    context)
+  File "C:\Python33\lib\site-packages\sqlalchemy\engine\default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: column name is not unique
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\tornado\web.py", line 1346, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Temp\shome - Copy\web\handlers\ScenariosHandler.py", line 52, in post
+    self.finish(self._ws.action_processor.add_scenario(tag, expression, save=True))
+  File "C:\Temp\shome - Copy\core\ActionProcessor.py", line 17, in add_scenario
+    self._scenarios[name].save()
+  File "C:\Temp\shome - Copy\core\entities\Scenario.py", line 86, in save
+    session.commit()
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 776, in commit
+    self.transaction.commit()
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 377, in commit
+    self._prepare_impl()
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 357, in _prepare_impl
+    self.session.flush()
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 1919, in flush
+    self._flush(objects)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 2037, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Python33\lib\site-packages\sqlalchemy\util\langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Python33\lib\site-packages\sqlalchemy\util\compat.py", line 182, in reraise
+    raise value
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 2001, in _flush
+    flush_context.execute()
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 372, in execute
+    rec.execute(self)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 526, in execute
+    uow
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\persistence.py", line 65, in save_obj
+    mapper, table, insert)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\persistence.py", line 570, in _emit_insert_statements
+    execute(statement, multiparams)
+  File "C:\Python33\lib\site-packages\sqlalchemy\engine\base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "C:\Python33\lib\site-packages\sqlalchemy\sql\elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Python33\lib\site-packages\sqlalchemy\engine\base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Python33\lib\site-packages\sqlalchemy\engine\base.py", line 958, in _execute_context
+    context)
+  File "C:\Python33\lib\site-packages\sqlalchemy\engine\base.py", line 1159, in _handle_dbapi_exception
+    exc_info
+  File "C:\Python33\lib\site-packages\sqlalchemy\util\compat.py", line 188, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=exc_value)
+  File "C:\Python33\lib\site-packages\sqlalchemy\util\compat.py", line 181, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Python33\lib\site-packages\sqlalchemy\engine\base.py", line 951, in _execute_context
+    context)
+  File "C:\Python33\lib\site-packages\sqlalchemy\engine\default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (IntegrityError) column name is not unique 'INSERT INTO scenarios (name, description, expression, runoninit, published) VALUES (?, ?, ?, ?, ?)' ('New scenario name', '', '[{"id":"Start","type":"StartNode","next":["rn292"],"parallel":[],"dimension":{"width":90,"height":32},"active":false},{"id":"rn292","type":"RequestNode","plugin":"mock","reference":"change me","position":{"left":247,"top":148},"next":[],"parallel":[],"exceptional":[],"dimension":{"width":180,"height":65},"active":false}]', 0, 0)
+[ERROR] [2015-05-11 17:08:30,375] (MainThread) 500 POST /admin/scenarios/New%20scenario%20name (::1) 31.00ms
+[DEBUG] [2015-05-11 17:08:49,857] (MainThread) RequestNode constructor called: {'type': 'RequestNode', 'active': False, 'next': [], 'position': {'left': 247, 'top': 148}, 'dimension': {'width': 180, 'height': 65}, 'exceptional': [], 'plugin': 'mock', 'id': 'rn292', 'reference': 'change me', 'parallel': []}
+[ERROR] [2015-05-11 17:08:49,858] (MainThread) Uncaught exception POST /admin/scenarios/first (::1)
+HTTPServerRequest(protocol='http', host='localhost:8082', method='POST', uri='/admin/scenarios/first', version='HTTP/1.1', remote_ip='::1', headers={'Content-Type': 'application/json;charset=utf-8', 'Host': 'localhost:8082', 'Connection': 'keep-alive', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'Accept': 'application/json, text/plain, */*', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'Content-Length': '397', 'Referer': 'http://localhost:8082/admin/static/index.html', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'Accept-Encoding': 'gzip, deflate'})
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\tornado\web.py", line 1346, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Temp\shome - Copy\web\handlers\ScenariosHandler.py", line 52, in post
+    self.finish(self._ws.action_processor.add_scenario(tag, expression, save=True))
+  File "C:\Temp\shome - Copy\core\ActionProcessor.py", line 17, in add_scenario
+    self._scenarios[name].save()
+  File "C:\Temp\shome - Copy\core\entities\Scenario.py", line 86, in save
+    session.commit()
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 776, in commit
+    self.transaction.commit()
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 375, in commit
+    self._assert_active(prepared_ok=True)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 214, in _assert_active
+    % self._rollback_exception
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (IntegrityError) column name is not unique 'INSERT INTO scenarios (name, description, expression, runoninit, published) VALUES (?, ?, ?, ?, ?)' ('New scenario name', '', '[{"id":"Start","type":"StartNode","next":["rn292"],"parallel":[],"dimension":{"width":90,"height":32},"active":false},{"id":"rn292","type":"RequestNode","plugin":"mock","reference":"change me","position":{"left":247,"top":148},"next":[],"parallel":[],"exceptional":[],"dimension":{"width":180,"height":65},"active":false}]', 0, 0)
+[ERROR] [2015-05-11 17:08:49,863] (MainThread) 500 POST /admin/scenarios/first (::1) 7.00ms
+[ERROR] [2015-05-11 17:10:09,834] (MainThread) Uncaught exception POST /admin/scenarios/first (::1)
+HTTPServerRequest(protocol='http', host='localhost:8082', method='POST', uri='/admin/scenarios/first', version='HTTP/1.1', remote_ip='::1', headers={'Content-Type': 'application/json;charset=utf-8', 'Host': 'localhost:8082', 'Connection': 'keep-alive', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'Accept': 'application/json, text/plain, */*', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'Content-Length': '397', 'Referer': 'http://localhost:8082/admin/static/index.html', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'Accept-Encoding': 'gzip, deflate'})
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\tornado\web.py", line 1346, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Temp\shome - Copy\web\handlers\ScenariosHandler.py", line 52, in post
+    self.finish(self._ws.action_processor.add_scenario(tag, expression, save=True))
+  File "C:\Temp\shome - Copy\core\ActionProcessor.py", line 14, in add_scenario
+    raise Exception('Scenario with name '+name+' already exists')
+Exception: Scenario with name first already exists
+[ERROR] [2015-05-11 17:10:09,836] (MainThread) 500 POST /admin/scenarios/first (::1) 3.01ms
+[INFO] [2015-05-11 17:10:16,785] (MainThread) 200 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 17:10:20,259] (MainThread) 304 GET /admin/scenarios/ (::1) 2.00ms
+[ERROR] [2015-05-11 17:10:26,771] (MainThread) Uncaught exception GET /admin/scenarios/New%20scenario%20name (::1)
+HTTPServerRequest(protocol='http', host='localhost:8082', method='GET', uri='/admin/scenarios/New%20scenario%20name', version='HTTP/1.1', remote_ip='::1', headers={'Host': 'localhost:8082', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'Referer': 'http://localhost:8082/admin/static/index.html', 'Connection': 'keep-alive', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'Accept': 'application/json, text/plain, */*', 'Accept-Encoding': 'gzip, deflate'})
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\tornado\web.py", line 1346, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Temp\shome - Copy\web\handlers\ScenariosHandler.py", line 25, in get
+    self.finish(self._ws.action_processor.get_scenario(name))
+  File "C:\Python33\lib\site-packages\tornado\web.py", line 868, in finish
+    self.write(chunk)
+  File "C:\Python33\lib\site-packages\tornado\web.py", line 655, in write
+    raise TypeError("write() only accepts bytes, unicode, and dict objects")
+TypeError: write() only accepts bytes, unicode, and dict objects
+[ERROR] [2015-05-11 17:10:26,776] (MainThread) 500 GET /admin/scenarios/New%20scenario%20name (::1) 6.00ms
+[ERROR] [2015-05-11 17:10:26,781] (MainThread) Uncaught exception GET /admin/plugins (::1)
+HTTPServerRequest(protocol='http', host='localhost:8082', method='GET', uri='/admin/plugins', version='HTTP/1.1', remote_ip='::1', headers={'Host': 'localhost:8082', 'If-None-Match': '"6c7c2079418c0a2ba3566a440a03aa61640b26c3"', 'Connection': 'keep-alive', 'Accept': 'application/json, text/plain, */*', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'Referer': 'http://localhost:8082/admin/static/index.html', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'Accept-Encoding': 'gzip, deflate'})
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\tornado\web.py", line 1346, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Temp\shome - Copy\web\handlers\PluginManagementHandler.py", line 14, in get
+    self.finish({"plugins": self._ws.context.plugin_manager.list_all()})
+  File "C:\Temp\shome - Copy\core\PluginManager.py", line 23, in list_all
+    return {instname: plugin.dict() for instname, plugin in self._plugins.items()}
+  File "C:\Temp\shome - Copy\core\PluginManager.py", line 23, in <dictcomp>
+    return {instname: plugin.dict() for instname, plugin in self._plugins.items()}
+  File "C:\Temp\shome - Copy\core\entities\Plugin.py", line 73, in dict
+    'instname': self.instname,
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\attributes.py", line 239, in __get__
+    return self.impl.get(instance_state(instance), dict_)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\attributes.py", line 589, in get
+    value = callable_(state, passive)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\state.py", line 424, in __call__
+    self.manager.deferred_scalar_loader(self, toload)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\loading.py", line 609, in load_scalar_attributes
+    only_load_props=attribute_names)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\loading.py", line 231, in load_on_ident
+    return q.one()
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\query.py", line 2395, in one
+    ret = list(self)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\query.py", line 2438, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\query.py", line 2451, in _execute_and_instances
+    close_with_result=True)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\query.py", line 2442, in _connection_from_session
+    **kw)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 854, in connection
+    close_with_result=close_with_result)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 858, in _connection_for_bind
+    return self.transaction._connection_for_bind(engine)
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 305, in _connection_for_bind
+    self._assert_active()
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\session.py", line 214, in _assert_active
+    % self._rollback_exception
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (IntegrityError) column name is not unique 'INSERT INTO scenarios (name, description, expression, runoninit, published) VALUES (?, ?, ?, ?, ?)' ('New scenario name', '', '[{"id":"Start","type":"StartNode","next":["rn292"],"parallel":[],"dimension":{"width":90,"height":32},"active":false},{"id":"rn292","type":"RequestNode","plugin":"mock","reference":"change me","position":{"left":247,"top":148},"next":[],"parallel":[],"exceptional":[],"dimension":{"width":180,"height":65},"active":false}]', 0, 0)
+[ERROR] [2015-05-11 17:10:26,803] (MainThread) 500 GET /admin/plugins (::1) 24.01ms
+[INFO] [2015-05-11 17:10:26,808] (MainThread) 304 GET /admin/scenarios/ (::1) 2.00ms
