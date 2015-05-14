@@ -57,6 +57,6 @@ class ScenariosHandler(tornado.web.RequestHandler):
             self._ws.action_processor.add_scenario(tag, expression, save=True)
             self.finish({"result": "success"})
 
-    def delete(self, tag):
-        self._ws.action_processor.delete_process(tag)
+    def delete(self, name):
+        self._ws.action_processor.delete_scenario(name)
         self.finish({"result": "success"})

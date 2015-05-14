@@ -30,16 +30,36 @@ class Task(Base):
     @orm.reconstructor
     def __init_on_load(self):
         self.__init__(self.name, self.scenario, self.task_type, self.scheme, self.enabled, self.description)
+        if self.enabled:
+            self.start()
 
-    def __repr__(self):
-        return json.dumps({
+    def dict(self):
+        return {
             'name': self.name,
             'description': self.description,
             'scenario': self.scenario,
             'type': self.type,
             'scheme': self.scheme,
             'enabled': self.enabled
-        })
+        }
+
+    def start(self):
+        if self.enabled:
+            return True
+        try:
+            pass
+        except Exception:
+            return False
+        return True
+
+    def stop(self):
+        if not self.enabled:
+            return False
+        try:
+            pass
+        except Exception:
+            return False
+        return True
 
     def save(self):
         session = self._config.get_session()
@@ -56,3 +76,8 @@ class Task(Base):
     def get(cls, name):
         session = cls._config.get_session()
         return session.query(cls).get(name)
+
+    @classmethod
+    def get_all(cls):
+        session = cls._config.get_session()
+        return session.query(cls).all()

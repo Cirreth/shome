@@ -1,7 +1,9 @@
-__author__ = 'Кирилл'
+import logging
+import tornado
+from tornado.web import RequestHandler, HTTPError
 
 
-class SchedulerAllTasksHandler(tornado.web.RequestHandler):
+class SchedulerAllTasksHandler(RequestHandler):
 
     #web server instance
     _ws = None
@@ -10,49 +12,50 @@ class SchedulerAllTasksHandler(tornado.web.RequestHandler):
         self._ws = ws
 
     def get(self):
-        self.write(json.dumps(self._ws._scheduler.list_all()).encode())
+        self.finish(self._ws.scheduler.list_all())
 
-class SchedulerTaskHandler(tornado.web.RequestHandler):
+
+class SchedulerTaskHandler(RequestHandler):
     """Single task REST service"""
     _ws = None
 
     def initialize(self, ws):
         self._ws = ws
 
-    def get(self, title):
-        self.write(json.dumps(self._ws._scheduler.get_by_title(title)))
+    def get(self, name):
+        self.finish(self._ws.scheduler.get(name))
 
-    def post(self, title):
+    def post(self, name):
         data = tornado.escape.json_decode(self.request.body)
         tasktype = data['type'] if 'type' in data else None
         scheme = data['scheme'] if 'scheme' in data else None
         description = data['description'] if 'description' in data else None
         isrunned = data['isrunned'] if 'isrunned' in data else None
         process = data['process'] if 'process' in data else None
-        logging.debug('SchedulerTaskHandler post: '+title+' // {process: '+str(process)+', isrunned:'+ \
+        logging.debug('SchedulerTaskHandler post: '+name+' // {process: '+str(process)+', isrunned:'+ \
             str(isrunned)+', type: '+str(tasktype)+', scheme: '+str(scheme)+', description: '+str(description))
-        self.write('Success')
-        self._ws._scheduler.create(process, title, scheme, isrunned, description, writedb=True)
+        self.finish({"result": "success"})
+        self._ws.scheduler.create(process, name, scheme, isrunned, description, save=True)
 
-    def put(self, title):
+    def put(self, name):
         data = tornado.escape.json_decode(self.request.body)
         tasktype = data['type'] if 'type' in data else None
         scheme = data['scheme'] if 'scheme' in data else None
         description = data['description'] if 'description' in data else None
         isrunned = data['isrunned'] if 'isrunned' in data else None
         process = data['process'] if 'process' in data else None
-        logging.debug('SchedulerTaskHandler put: '+title+' // {process: '+str(process)+', isrunned:'+ \
+        logging.debug('SchedulerTaskHandler put: '+name+' // {process: '+str(process)+', isrunned:'+ \
             str(isrunned)+', type: '+str(tasktype)+', scheme: '+str(scheme)+', description: '+str(description))
         if isrunned is not None:
             if isrunned:
-                self._ws._scheduler.start(title)
+                self._ws.scheduler.start(name)
             else:
-                self._ws._scheduler.stop(title)
+                self._ws.scheduler.stop(name)
 
-    def delete(self, title):
-        logging.debug('SchedulerTaskHandler delete: '+title)
+    def delete(self, name):
+        logging.debug('SchedulerTaskHandler delete: '+name)
         try:
-            self._ws._scheduler.delete(title)
-            self.write(title + ' successfully deleted')
+            self._ws.scheduler.delete(name)
+            self.finish()
         except Exception as e:
-            return str(e)
+            raise HTTPError(500, str(e))

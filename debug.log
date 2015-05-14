@@ -1,112 +1,353 @@
-[DEBUG] [2015-05-11 20:36:08,650] (MainThread) OneWirePlugin initialization
-[DEBUG] [2015-05-11 20:36:08,651] (MainThread) 
+[DEBUG] [2015-05-11 22:02:38,392] (MainThread) OneWirePlugin initialization
+[DEBUG] [2015-05-11 22:02:38,393] (MainThread) 
 OneWirePlugin list dir:
-[DEBUG] [2015-05-11 20:36:08,949] (MainThread) b'/28.345805050000'
-[DEBUG] [2015-05-11 20:36:08,950] (MainThread) b'/28.F2CF39040000'
-[DEBUG] [2015-05-11 20:36:08,950] (MainThread) b'/28.259039040000'
-[DEBUG] [2015-05-11 20:36:08,951] (MainThread) b'/28.1D9D39040000'
-[DEBUG] [2015-05-11 20:36:08,951] (MainThread) b'/3A.F2360D000000'
-[DEBUG] [2015-05-11 20:36:08,951] (MainThread) b'/3A.C9330D000000'
-[DEBUG] [2015-05-11 20:36:08,952] (MainThread) b'/81.F34132000000'
-[DEBUG] [2015-05-11 20:36:08,952] (MainThread) b'/bus.0'
-[DEBUG] [2015-05-11 20:36:08,952] (MainThread) b'/uncached'
-[DEBUG] [2015-05-11 20:36:08,953] (MainThread) b'/settings'
-[DEBUG] [2015-05-11 20:36:08,953] (MainThread) b'/system'
-[DEBUG] [2015-05-11 20:36:08,954] (MainThread) b'/statistics'
-[DEBUG] [2015-05-11 20:36:08,954] (MainThread) b'/structure'
-[DEBUG] [2015-05-11 20:36:08,955] (MainThread) b'/simultaneous'
-[DEBUG] [2015-05-11 20:36:08,955] (MainThread) b'/alarm'
-[DEBUG] [2015-05-11 20:36:08,955] (MainThread) 
+[DEBUG] [2015-05-11 22:02:38,569] (MainThread) b'/28.345805050000'
+[DEBUG] [2015-05-11 22:02:38,569] (MainThread) b'/28.F2CF39040000'
+[DEBUG] [2015-05-11 22:02:38,570] (MainThread) b'/28.259039040000'
+[DEBUG] [2015-05-11 22:02:38,570] (MainThread) b'/28.1D9D39040000'
+[DEBUG] [2015-05-11 22:02:38,571] (MainThread) b'/3A.F2360D000000'
+[DEBUG] [2015-05-11 22:02:38,571] (MainThread) b'/3A.C9330D000000'
+[DEBUG] [2015-05-11 22:02:38,571] (MainThread) b'/81.F34132000000'
+[DEBUG] [2015-05-11 22:02:38,572] (MainThread) b'/bus.0'
+[DEBUG] [2015-05-11 22:02:38,572] (MainThread) b'/uncached'
+[DEBUG] [2015-05-11 22:02:38,573] (MainThread) b'/settings'
+[DEBUG] [2015-05-11 22:02:38,573] (MainThread) b'/system'
+[DEBUG] [2015-05-11 22:02:38,574] (MainThread) b'/statistics'
+[DEBUG] [2015-05-11 22:02:38,574] (MainThread) b'/structure'
+[DEBUG] [2015-05-11 22:02:38,575] (MainThread) b'/simultaneous'
+[DEBUG] [2015-05-11 22:02:38,575] (MainThread) b'/alarm'
+[DEBUG] [2015-05-11 22:02:38,575] (MainThread) 
 
-[DEBUG] [2015-05-11 20:36:08,960] (MainThread) RequestNode constructor called: {'exceptional': [], 'parallel': [], 'reference': 'change me', 'plugin': 'mock', 'next': [], 'dimension': {'height': 65, 'width': 180}, 'type': 'RequestNode', 'id': 'rn295', 'active': False, 'position': {'left': 304, 'top': 226}}
-[INFO] [2015-05-11 20:36:08,960] (MainThread) Context initialized
-[INFO] [2015-05-11 20:36:12,261] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 232.94ms
-[INFO] [2015-05-11 20:36:14,680] (MainThread) 304 GET /admin/static/index.html (::1) 30.00ms
-[INFO] [2015-05-11 20:36:14,762] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 9.00ms
-[INFO] [2015-05-11 20:36:14,769] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 4.00ms
-[INFO] [2015-05-11 20:36:14,775] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 4.00ms
-[INFO] [2015-05-11 20:36:14,781] (MainThread) 304 GET /resources/css/animations.css (::1) 4.00ms
-[INFO] [2015-05-11 20:36:14,787] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 4.00ms
-[INFO] [2015-05-11 20:36:14,793] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 3.00ms
-[INFO] [2015-05-11 20:36:14,801] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 5.00ms
-[INFO] [2015-05-11 20:36:14,810] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 7.00ms
-[INFO] [2015-05-11 20:36:14,816] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 4.00ms
-[INFO] [2015-05-11 20:36:14,836] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 17.00ms
-[INFO] [2015-05-11 20:36:14,849] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 10.00ms
-[INFO] [2015-05-11 20:36:14,856] (MainThread) 304 GET /resources/js/jquery.js (::1) 5.00ms
-[INFO] [2015-05-11 20:36:14,864] (MainThread) 304 GET /resources/js/angular.min.js (::1) 4.00ms
-[INFO] [2015-05-11 20:36:14,869] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:14,874] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:14,881] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 4.00ms
-[INFO] [2015-05-11 20:36:14,888] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 4.00ms
-[INFO] [2015-05-11 20:36:14,894] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:14,902] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 5.00ms
-[INFO] [2015-05-11 20:36:14,911] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 7.00ms
-[INFO] [2015-05-11 20:36:14,930] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 17.00ms
-[INFO] [2015-05-11 20:36:14,936] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 4.00ms
-[INFO] [2015-05-11 20:36:14,943] (MainThread) 304 GET /admin/static/index.html (::1) 5.00ms
-[INFO] [2015-05-11 20:36:14,951] (MainThread) 304 GET /resources/logo.png (::1) 6.00ms
-[INFO] [2015-05-11 20:36:15,518] (MainThread) 304 GET /admin/static/modules/constructor/constructor.html (::1) 3.00ms
-[INFO] [2015-05-11 20:36:15,854] (MainThread) 200 GET /admin/scenarios/my1 (::1) 6.00ms
-[INFO] [2015-05-11 20:36:15,864] (MainThread) 200 GET /admin/plugins (::1) 6.99ms
-[INFO] [2015-05-11 20:36:15,866] (MainThread) 200 GET /admin/scenarios/ (::1) 2.00ms
-[INFO] [2015-05-11 20:36:18,956] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 240.29ms
-[INFO] [2015-05-11 20:36:20,560] (MainThread) 304 GET /admin/static/index.html (::1) 3.99ms
-[INFO] [2015-05-11 20:36:20,640] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 7.00ms
-[INFO] [2015-05-11 20:36:20,649] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 4.00ms
-[INFO] [2015-05-11 20:36:20,653] (MainThread) 304 GET /resources/css/animations.css (::1) 3.00ms
-[INFO] [2015-05-11 20:36:20,658] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 3.00ms
-[INFO] [2015-05-11 20:36:20,662] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 3.00ms
-[INFO] [2015-05-11 20:36:20,666] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 3.00ms
-[INFO] [2015-05-11 20:36:20,675] (MainThread) 304 GET /resources/js/jquery.js (::1) 6.00ms
-[INFO] [2015-05-11 20:36:20,682] (MainThread) 304 GET /resources/js/angular.min.js (::1) 4.02ms
-[INFO] [2015-05-11 20:36:20,689] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 4.98ms
-[INFO] [2015-05-11 20:36:20,696] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 6.03ms
-[INFO] [2015-05-11 20:36:20,703] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 5.00ms
-[INFO] [2015-05-11 20:36:20,709] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 3.03ms
-[INFO] [2015-05-11 20:36:20,714] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 2.96ms
-[INFO] [2015-05-11 20:36:20,718] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 2.99ms
-[INFO] [2015-05-11 20:36:20,723] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 3.01ms
-[INFO] [2015-05-11 20:36:20,729] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 3.99ms
-[INFO] [2015-05-11 20:36:20,734] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 2.99ms
-[INFO] [2015-05-11 20:36:20,740] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:20,745] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 3.01ms
-[INFO] [2015-05-11 20:36:20,749] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:20,753] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:20,756] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 2.00ms
-[INFO] [2015-05-11 20:36:20,760] (MainThread) 304 GET /admin/static/index.html (::1) 2.01ms
-[INFO] [2015-05-11 20:36:20,764] (MainThread) 304 GET /resources/logo.png (::1) 2.00ms
-[INFO] [2015-05-11 20:36:21,380] (MainThread) 304 GET /admin/static/modules/constructor/constructor.html (::1) 3.00ms
-[INFO] [2015-05-11 20:36:21,713] (MainThread) 200 GET /admin/scenarios/my1 (::1) 7.03ms
-[INFO] [2015-05-11 20:36:21,716] (MainThread) 200 GET /admin/scenarios/ (::1) 1.00ms
-[INFO] [2015-05-11 20:36:21,724] (MainThread) 304 GET /admin/plugins (::1) 7.00ms
-[INFO] [2015-05-11 20:36:24,640] (MainThread) 304 GET /admin/static/index.html (::1) 3.00ms
-[INFO] [2015-05-11 20:36:24,721] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 10.00ms
-[INFO] [2015-05-11 20:36:24,728] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 3.00ms
-[INFO] [2015-05-11 20:36:24,731] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 2.00ms
-[INFO] [2015-05-11 20:36:24,736] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 4.00ms
-[INFO] [2015-05-11 20:36:24,742] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 5.00ms
-[INFO] [2015-05-11 20:36:24,745] (MainThread) 304 GET /resources/css/animations.css (::1) 2.00ms
-[INFO] [2015-05-11 20:36:24,750] (MainThread) 304 GET /resources/js/jquery.js (::1) 2.00ms
-[INFO] [2015-05-11 20:36:24,755] (MainThread) 304 GET /resources/js/angular.min.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:24,761] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 5.00ms
-[INFO] [2015-05-11 20:36:24,769] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 6.00ms
-[INFO] [2015-05-11 20:36:24,776] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 4.01ms
-[INFO] [2015-05-11 20:36:24,781] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:24,786] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:24,792] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 4.00ms
-[INFO] [2015-05-11 20:36:24,798] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 4.00ms
-[INFO] [2015-05-11 20:36:24,803] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:24,808] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:24,813] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:24,817] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:24,821] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 2.00ms
-[INFO] [2015-05-11 20:36:24,825] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 2.00ms
-[INFO] [2015-05-11 20:36:24,829] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 3.00ms
-[INFO] [2015-05-11 20:36:24,834] (MainThread) 304 GET /admin/static/index.html (::1) 4.00ms
-[INFO] [2015-05-11 20:36:24,841] (MainThread) 304 GET /resources/logo.png (::1) 4.00ms
-[INFO] [2015-05-11 20:36:25,478] (MainThread) 304 GET /admin/static/modules/constructor/constructor.html (::1) 3.00ms
-[INFO] [2015-05-11 20:36:25,822] (MainThread) 304 GET /admin/scenarios/my1 (::1) 1.01ms
-[INFO] [2015-05-11 20:36:25,826] (MainThread) 304 GET /admin/plugins (::1) 2.01ms
-[INFO] [2015-05-11 20:36:25,828] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
-[INFO] [2015-05-11 20:36:28,987] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 225.80ms
+[DEBUG] [2015-05-11 22:02:38,583] (MainThread) RequestNode constructor called: {'exceptional': [], 'dimension': {'width': 180, 'height': 65}, 'active': True, 'retvar': 'x', 'position': {'top': 159, 'left': 275}, 'id': 'rn295', 'reference': 'change me', 'plugin': 'mock', 'type': 'RequestNode', 'parallel': [], 'next': []}
+[INFO] [2015-05-11 22:02:38,583] (MainThread) Context initialized
+[INFO] [2015-05-11 22:02:39,222] (MainThread) 304 GET /admin/static/index.html (::1) 39.00ms
+[INFO] [2015-05-11 22:02:39,352] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 5.00ms
+[INFO] [2015-05-11 22:02:39,358] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 4.00ms
+[INFO] [2015-05-11 22:02:39,365] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 4.00ms
+[INFO] [2015-05-11 22:02:39,372] (MainThread) 304 GET /resources/css/animations.css (::1) 5.00ms
+[INFO] [2015-05-11 22:02:39,378] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 4.00ms
+[INFO] [2015-05-11 22:02:39,384] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 3.00ms
+[INFO] [2015-05-11 22:02:39,392] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 5.00ms
+[INFO] [2015-05-11 22:02:39,404] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 8.00ms
+[INFO] [2015-05-11 22:02:39,414] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 8.00ms
+[INFO] [2015-05-11 22:02:39,420] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:02:39,425] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:02:39,435] (MainThread) 304 GET /resources/js/jquery.js (::1) 4.00ms
+[INFO] [2015-05-11 22:02:39,441] (MainThread) 304 GET /resources/js/angular.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:02:39,446] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:02:39,452] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:02:39,458] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:02:39,509] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 49.00ms
+[INFO] [2015-05-11 22:02:39,540] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 5.00ms
+[INFO] [2015-05-11 22:02:39,547] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 5.00ms
+[INFO] [2015-05-11 22:02:39,556] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 4.00ms
+[INFO] [2015-05-11 22:02:39,565] (MainThread) 200 GET /admin/static/modules/scenarios/scenarios.js (::1) 7.00ms
+[INFO] [2015-05-11 22:02:39,575] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 7.00ms
+[INFO] [2015-05-11 22:02:39,617] (MainThread) 304 GET /admin/static/index.html (::1) 7.00ms
+[INFO] [2015-05-11 22:02:39,625] (MainThread) 304 GET /resources/logo.png (::1) 4.00ms
+[INFO] [2015-05-11 22:02:40,317] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.html (::1) 1.99ms
+[INFO] [2015-05-11 22:02:40,396] (MainThread) 200 GET /admin/scenarios/ (::1) 1.99ms
+[INFO] [2015-05-11 22:03:33,658] (MainThread) 304 GET /admin/static/index.html (::1) 4.00ms
+[INFO] [2015-05-11 22:03:33,813] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 8.00ms
+[INFO] [2015-05-11 22:03:33,820] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 3.00ms
+[INFO] [2015-05-11 22:03:33,825] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 3.00ms
+[INFO] [2015-05-11 22:03:33,830] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 4.00ms
+[INFO] [2015-05-11 22:03:33,838] (MainThread) 304 GET /resources/css/animations.css (::1) 6.00ms
+[INFO] [2015-05-11 22:03:33,845] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 3.00ms
+[INFO] [2015-05-11 22:03:33,852] (MainThread) 304 GET /resources/js/jquery.js (::1) 3.00ms
+[INFO] [2015-05-11 22:03:33,858] (MainThread) 304 GET /resources/js/angular.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:03:33,866] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 6.00ms
+[INFO] [2015-05-11 22:03:33,875] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 7.00ms
+[INFO] [2015-05-11 22:03:33,893] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 16.00ms
+[INFO] [2015-05-11 22:03:33,900] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 5.00ms
+[INFO] [2015-05-11 22:03:33,906] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:03:33,911] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:03:33,916] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:03:33,922] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:03:33,945] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 21.00ms
+[INFO] [2015-05-11 22:03:33,951] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 4.00ms
+[INFO] [2015-05-11 22:03:33,956] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 3.00ms
+[INFO] [2015-05-11 22:03:33,963] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 5.00ms
+[INFO] [2015-05-11 22:03:33,968] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 3.00ms
+[INFO] [2015-05-11 22:03:33,975] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 5.00ms
+[INFO] [2015-05-11 22:03:33,986] (MainThread) 304 GET /admin/static/index.html (::1) 9.00ms
+[INFO] [2015-05-11 22:03:33,993] (MainThread) 304 GET /resources/logo.png (::1) 4.00ms
+[INFO] [2015-05-11 22:03:34,693] (MainThread) 200 GET /admin/static/modules/scenarios/scenarios.html (::1) 4.01ms
+[INFO] [2015-05-11 22:03:34,750] (MainThread) 304 GET /admin/scenarios/ (::1) 2.00ms
+[INFO] [2015-05-11 22:03:49,637] (MainThread) 304 GET /admin/static/index.html (::1) 2.00ms
+[INFO] [2015-05-11 22:03:49,722] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 6.00ms
+[INFO] [2015-05-11 22:03:49,731] (MainThread) 304 GET /resources/css/animations.css (::1) 4.00ms
+[INFO] [2015-05-11 22:03:49,736] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 4.00ms
+[INFO] [2015-05-11 22:03:49,741] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 4.00ms
+[INFO] [2015-05-11 22:03:49,746] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 4.00ms
+[INFO] [2015-05-11 22:03:49,749] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 2.00ms
+[INFO] [2015-05-11 22:03:49,756] (MainThread) 304 GET /resources/js/jquery.js (::1) 4.01ms
+[INFO] [2015-05-11 22:03:49,762] (MainThread) 304 GET /resources/js/angular.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:03:49,769] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 4.97ms
+[INFO] [2015-05-11 22:03:49,776] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 6.00ms
+[INFO] [2015-05-11 22:03:49,781] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 3.01ms
+[INFO] [2015-05-11 22:03:49,786] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:03:49,791] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:03:49,796] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 2.99ms
+[INFO] [2015-05-11 22:03:49,800] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:03:49,805] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:03:49,810] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 3.00ms
+[INFO] [2015-05-11 22:03:49,814] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 2.00ms
+[INFO] [2015-05-11 22:03:49,819] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 3.00ms
+[INFO] [2015-05-11 22:03:49,824] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 2.97ms
+[INFO] [2015-05-11 22:03:49,828] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 2.00ms
+[INFO] [2015-05-11 22:03:49,835] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 4.00ms
+[INFO] [2015-05-11 22:03:49,840] (MainThread) 304 GET /admin/static/index.html (::1) 3.00ms
+[INFO] [2015-05-11 22:03:49,844] (MainThread) 304 GET /resources/logo.png (::1) 2.00ms
+[INFO] [2015-05-11 22:03:50,483] (MainThread) 200 GET /admin/static/modules/scenarios/scenarios.html (::1) 3.99ms
+[INFO] [2015-05-11 22:03:50,568] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 22:03:57,154] (MainThread) 200 DELETE /admin/scenarios/my1 (::1) 21.01ms
+[INFO] [2015-05-11 22:03:57,176] (MainThread) 200 GET /admin/scenarios/ (::1) 1.01ms
+[INFO] [2015-05-11 22:04:00,082] (MainThread) 304 GET /admin/static/modules/constructor/constructor.html (::1) 5.01ms
+[INFO] [2015-05-11 22:04:00,522] (MainThread) 200 GET /admin/plugins (::1) 9.00ms
+[INFO] [2015-05-11 22:04:00,525] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[WARNING] [2015-05-11 22:04:02,670] (MainThread) 404 GET /admin/scenarios/my1 (::1): Scenario not found
+[WARNING] [2015-05-11 22:04:02,676] (MainThread) 404 GET /admin/scenarios/my1 (::1) 5.03ms
+[WARNING] [2015-05-11 22:04:15,050] (MainThread) 404 GET /admin/scenarios/my1 (::1): Scenario not found
+[WARNING] [2015-05-11 22:04:15,051] (MainThread) 404 GET /admin/scenarios/my1 (::1) 2.00ms
+[INFO] [2015-05-11 22:04:15,054] (MainThread) 304 GET /admin/scenarios/ (::1) 0.99ms
+[INFO] [2015-05-11 22:04:15,057] (MainThread) 304 GET /admin/plugins (::1) 2.00ms
+[INFO] [2015-05-11 22:04:21,829] (MainThread) 304 GET /admin/plugins (::1) 0.99ms
+[INFO] [2015-05-11 22:04:21,832] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[DEBUG] [2015-05-11 22:04:49,890] (MainThread) RequestNode constructor called: {'exceptional': [], 'dimension': {'width': 180, 'height': 65}, 'active': False, 'position': {'top': 142, 'left': 260}, 'id': 'rn303', 'reference': 'change me', 'plugin': 'mock', 'type': 'RequestNode', 'parallel': [], 'next': []}
+[DEBUG] [2015-05-11 22:04:49,891] (Thread-1  ) MockPlugin call with change me
+[INFO] [2015-05-11 22:04:49,896] (MainThread) 200 POST /admin/constructor/check (::1) 8.00ms
+[DEBUG] [2015-05-11 22:04:53,285] (MainThread) RequestNode constructor called: {'exceptional': [], 'dimension': {'width': 180, 'height': 65}, 'active': False, 'position': {'top': 142, 'left': 260}, 'id': 'rn303', 'reference': 'change me', 'plugin': 'mock', 'type': 'RequestNode', 'parallel': [], 'next': []}
+[INFO] [2015-05-11 22:04:53,509] (MainThread) 200 POST /admin/scenarios/my1 (::1) 223.99ms
+[INFO] [2015-05-11 22:05:03,097] (MainThread) 200 GET /admin/scenarios/my1 (::1) 5.03ms
+[ERROR] [2015-05-11 22:05:18,840] (MainThread) Uncaught exception GET /admin/scheduler/alltasks (::1)
+HTTPServerRequest(protocol='http', host='localhost:8082', method='GET', uri='/admin/scheduler/alltasks', version='HTTP/1.1', remote_ip='::1', headers={'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'Accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'Accept-Encoding': 'gzip, deflate', 'Referer': 'http://localhost:8082/admin/static/index.html', 'Host': 'localhost:8082'})
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\tornado\web.py", line 1346, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+TypeError: get() takes 1 positional argument but 2 were given
+[ERROR] [2015-05-11 22:05:18,842] (MainThread) 500 GET /admin/scheduler/alltasks (::1) 2.00ms
+[INFO] [2015-05-11 22:05:19,355] (MainThread) 200 GET /admin/scenarios/ (::1) 1.00ms
+[ERROR] [2015-05-11 22:05:20,467] (MainThread) Uncaught exception GET /admin/scheduler/alltasks (::1)
+HTTPServerRequest(protocol='http', host='localhost:8082', method='GET', uri='/admin/scheduler/alltasks', version='HTTP/1.1', remote_ip='::1', headers={'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'Accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'Accept-Encoding': 'gzip, deflate', 'Referer': 'http://localhost:8082/admin/static/index.html', 'Host': 'localhost:8082'})
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\tornado\web.py", line 1346, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+TypeError: get() takes 1 positional argument but 2 were given
+[ERROR] [2015-05-11 22:05:20,469] (MainThread) 500 GET /admin/scheduler/alltasks (::1) 3.00ms
+[INFO] [2015-05-11 22:05:21,062] (MainThread) 304 GET /admin/scenarios/ (::1) 2.00ms
+[INFO] [2015-05-11 22:05:22,055] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 1.00ms
+[INFO] [2015-05-11 22:05:22,702] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 1.00ms
+[INFO] [2015-05-11 22:05:47,034] (MainThread) 304 GET /admin/static/index.html (::1) 2.99ms
+[INFO] [2015-05-11 22:05:47,192] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 3.00ms
+[INFO] [2015-05-11 22:05:47,201] (MainThread) 304 GET /resources/js/jquery.js (::1) 4.00ms
+[INFO] [2015-05-11 22:05:47,205] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 3.00ms
+[INFO] [2015-05-11 22:05:47,211] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 3.00ms
+[INFO] [2015-05-11 22:05:47,220] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 6.00ms
+[INFO] [2015-05-11 22:05:47,225] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 4.00ms
+[INFO] [2015-05-11 22:05:47,231] (MainThread) 304 GET /resources/css/animations.css (::1) 4.00ms
+[INFO] [2015-05-11 22:05:47,240] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 6.00ms
+[INFO] [2015-05-11 22:05:47,248] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 5.00ms
+[INFO] [2015-05-11 22:05:47,258] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 8.00ms
+[INFO] [2015-05-11 22:05:47,263] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:05:47,268] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:05:47,274] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:05:47,281] (MainThread) 304 GET /resources/js/angular.min.js (::1) 6.00ms
+[INFO] [2015-05-11 22:05:47,287] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:05:47,293] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:05:47,299] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 4.00ms
+[INFO] [2015-05-11 22:05:47,306] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 5.00ms
+[INFO] [2015-05-11 22:05:47,313] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 4.00ms
+[INFO] [2015-05-11 22:05:47,319] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 4.00ms
+[INFO] [2015-05-11 22:05:47,327] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 6.00ms
+[INFO] [2015-05-11 22:05:47,333] (MainThread) 200 GET /admin/static/modules/scenarios/scenarios.js (::1) 4.00ms
+[INFO] [2015-05-11 22:05:47,339] (MainThread) 304 GET /admin/static/index.html (::1) 4.00ms
+[INFO] [2015-05-11 22:05:47,346] (MainThread) 304 GET /resources/logo.png (::1) 3.00ms
+[INFO] [2015-05-11 22:05:47,975] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.html (::1) 5.00ms
+[INFO] [2015-05-11 22:05:48,071] (MainThread) 304 GET /admin/scenarios/ (::1) 2.00ms
+[INFO] [2015-05-11 22:05:49,561] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 2.01ms
+[INFO] [2015-05-11 22:05:50,551] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 1.00ms
+[INFO] [2015-05-11 22:06:08,251] (MainThread) 304 GET /admin/static/index.html (::1) 4.00ms
+[INFO] [2015-05-11 22:06:08,351] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 6.00ms
+[INFO] [2015-05-11 22:06:08,361] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 5.00ms
+[INFO] [2015-05-11 22:06:08,366] (MainThread) 304 GET /resources/css/animations.css (::1) 4.00ms
+[INFO] [2015-05-11 22:06:08,370] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 3.00ms
+[INFO] [2015-05-11 22:06:08,375] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 3.00ms
+[INFO] [2015-05-11 22:06:08,379] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 3.00ms
+[INFO] [2015-05-11 22:06:08,387] (MainThread) 304 GET /resources/js/jquery.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:08,393] (MainThread) 304 GET /resources/js/angular.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:08,400] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 5.00ms
+[INFO] [2015-05-11 22:06:08,409] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 6.00ms
+[INFO] [2015-05-11 22:06:08,418] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 8.00ms
+[INFO] [2015-05-11 22:06:08,423] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 3.01ms
+[INFO] [2015-05-11 22:06:08,430] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:08,437] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 5.00ms
+[INFO] [2015-05-11 22:06:08,444] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 5.00ms
+[INFO] [2015-05-11 22:06:08,452] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 6.00ms
+[INFO] [2015-05-11 22:06:08,467] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 13.00ms
+[INFO] [2015-05-11 22:06:08,472] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 3.00ms
+[INFO] [2015-05-11 22:06:08,480] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 6.00ms
+[INFO] [2015-05-11 22:06:08,486] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:08,493] (MainThread) 200 GET /admin/static/modules/scenarios/scenarios.js (::1) 5.00ms
+[INFO] [2015-05-11 22:06:08,498] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 3.00ms
+[INFO] [2015-05-11 22:06:08,512] (MainThread) 304 GET /admin/static/index.html (::1) 11.00ms
+[INFO] [2015-05-11 22:06:08,517] (MainThread) 304 GET /resources/logo.png (::1) 3.00ms
+[INFO] [2015-05-11 22:06:09,285] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.html (::1) 4.00ms
+[INFO] [2015-05-11 22:06:09,342] (MainThread) 304 GET /admin/scenarios/ (::1) 2.01ms
+[INFO] [2015-05-11 22:06:10,035] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 1.00ms
+[INFO] [2015-05-11 22:06:10,522] (MainThread) 304 GET /admin/static/index.html (::1) 2.00ms
+[INFO] [2015-05-11 22:06:10,656] (MainThread) 304 GET /resources/css/animations.css (::1) 2.00ms
+[INFO] [2015-05-11 22:06:10,659] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 3.00ms
+[INFO] [2015-05-11 22:06:10,663] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 3.00ms
+[INFO] [2015-05-11 22:06:10,667] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 3.00ms
+[INFO] [2015-05-11 22:06:10,672] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 3.00ms
+[INFO] [2015-05-11 22:06:10,676] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 3.00ms
+[INFO] [2015-05-11 22:06:10,684] (MainThread) 304 GET /resources/js/jquery.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:10,691] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 5.00ms
+[INFO] [2015-05-11 22:06:10,703] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 8.00ms
+[INFO] [2015-05-11 22:06:10,708] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 2.99ms
+[INFO] [2015-05-11 22:06:10,714] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:06:10,718] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:06:10,723] (MainThread) 304 GET /resources/js/angular.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:06:10,727] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 3.03ms
+[INFO] [2015-05-11 22:06:10,732] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 2.00ms
+[INFO] [2015-05-11 22:06:10,737] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 3.97ms
+[INFO] [2015-05-11 22:06:10,742] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 3.02ms
+[INFO] [2015-05-11 22:06:10,748] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 3.97ms
+[INFO] [2015-05-11 22:06:10,754] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 3.97ms
+[INFO] [2015-05-11 22:06:10,760] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:10,765] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 3.01ms
+[INFO] [2015-05-11 22:06:10,769] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 3.02ms
+[INFO] [2015-05-11 22:06:10,773] (MainThread) 304 GET /admin/static/index.html (::1) 2.00ms
+[INFO] [2015-05-11 22:06:10,777] (MainThread) 304 GET /resources/logo.png (::1) 2.00ms
+[INFO] [2015-05-11 22:06:11,296] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.html (::1) 3.00ms
+[INFO] [2015-05-11 22:06:11,378] (MainThread) 304 GET /admin/scenarios/ (::1) 2.00ms
+[INFO] [2015-05-11 22:06:15,273] (MainThread) 200 GET /admin/scenarios/my1 (::1) 2.00ms
+[INFO] [2015-05-11 22:06:20,099] (MainThread) 304 GET /admin/static/index.html (::1) 2.99ms
+[INFO] [2015-05-11 22:06:20,193] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 5.00ms
+[INFO] [2015-05-11 22:06:20,199] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 3.00ms
+[INFO] [2015-05-11 22:06:20,204] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 4.00ms
+[INFO] [2015-05-11 22:06:20,210] (MainThread) 304 GET /resources/css/animations.css (::1) 4.00ms
+[INFO] [2015-05-11 22:06:20,215] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 3.00ms
+[INFO] [2015-05-11 22:06:20,220] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 3.00ms
+[INFO] [2015-05-11 22:06:20,227] (MainThread) 304 GET /resources/js/jquery.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:20,232] (MainThread) 304 GET /resources/js/angular.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:06:20,237] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 3.99ms
+[INFO] [2015-05-11 22:06:20,243] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 4.99ms
+[INFO] [2015-05-11 22:06:20,247] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 2.00ms
+[INFO] [2015-05-11 22:06:20,253] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 4.01ms
+[INFO] [2015-05-11 22:06:20,258] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:06:20,264] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:20,271] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:20,276] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:06:20,284] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:20,291] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 5.00ms
+[INFO] [2015-05-11 22:06:20,298] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:20,304] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:20,310] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 3.98ms
+[INFO] [2015-05-11 22:06:20,317] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 4.00ms
+[INFO] [2015-05-11 22:06:20,322] (MainThread) 304 GET /admin/static/index.html (::1) 3.00ms
+[INFO] [2015-05-11 22:06:20,327] (MainThread) 304 GET /resources/logo.png (::1) 3.00ms
+[INFO] [2015-05-11 22:06:20,960] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.html (::1) 3.00ms
+[INFO] [2015-05-11 22:06:21,053] (MainThread) 304 GET /admin/scenarios/ (::1) 1.02ms
+[INFO] [2015-05-11 22:06:21,750] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 2.00ms
+[INFO] [2015-05-11 22:06:23,690] (MainThread) 304 GET /admin/scenarios/my1 (::1) 2.01ms
+[INFO] [2015-05-11 22:07:53,360] (MainThread) 304 GET /admin/static/index.html (::1) 2.97ms
+[INFO] [2015-05-11 22:07:53,448] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 5.00ms
+[INFO] [2015-05-11 22:07:53,455] (MainThread) 304 GET /resources/css/animations.css (::1) 3.01ms
+[INFO] [2015-05-11 22:07:53,461] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 4.00ms
+[INFO] [2015-05-11 22:07:53,464] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 2.00ms
+[INFO] [2015-05-11 22:07:53,468] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 3.00ms
+[INFO] [2015-05-11 22:07:53,471] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 2.00ms
+[INFO] [2015-05-11 22:07:53,476] (MainThread) 304 GET /resources/js/jquery.js (::1) 3.00ms
+[INFO] [2015-05-11 22:07:53,482] (MainThread) 304 GET /resources/js/angular.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:07:53,489] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 5.00ms
+[INFO] [2015-05-11 22:07:53,498] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 7.00ms
+[INFO] [2015-05-11 22:07:53,503] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:07:53,508] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:07:53,515] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:07:53,520] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 2.00ms
+[INFO] [2015-05-11 22:07:53,525] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 3.01ms
+[INFO] [2015-05-11 22:07:53,530] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:07:53,534] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 2.00ms
+[INFO] [2015-05-11 22:07:53,538] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 2.00ms
+[INFO] [2015-05-11 22:07:53,542] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 2.00ms
+[INFO] [2015-05-11 22:07:53,549] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 4.00ms
+[INFO] [2015-05-11 22:07:53,555] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 3.00ms
+[INFO] [2015-05-11 22:07:53,561] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 3.98ms
+[INFO] [2015-05-11 22:07:53,566] (MainThread) 304 GET /admin/static/index.html (::1) 2.97ms
+[INFO] [2015-05-11 22:07:53,572] (MainThread) 304 GET /resources/logo.png (::1) 3.98ms
+[INFO] [2015-05-11 22:07:54,149] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.html (::1) 3.00ms
+[INFO] [2015-05-11 22:07:54,226] (MainThread) 304 GET /admin/scenarios/ (::1) 3.01ms
+[INFO] [2015-05-11 22:07:55,511] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 1.99ms
+[INFO] [2015-05-11 22:07:55,832] (MainThread) 304 GET /admin/static/index.html (::1) 3.00ms
+[INFO] [2015-05-11 22:07:55,952] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 9.00ms
+[INFO] [2015-05-11 22:07:55,958] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 2.01ms
+[INFO] [2015-05-11 22:07:55,964] (MainThread) 304 GET /resources/css/animations.css (::1) 3.00ms
+[INFO] [2015-05-11 22:07:55,970] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 4.02ms
+[INFO] [2015-05-11 22:07:55,973] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 2.00ms
+[INFO] [2015-05-11 22:07:55,978] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 3.00ms
+[INFO] [2015-05-11 22:07:55,983] (MainThread) 304 GET /resources/js/jquery.js (::1) 3.00ms
+[INFO] [2015-05-11 22:07:55,988] (MainThread) 304 GET /resources/js/angular.min.js (::1) 3.01ms
+[INFO] [2015-05-11 22:07:55,994] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 5.00ms
+[INFO] [2015-05-11 22:07:56,003] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 6.00ms
+[INFO] [2015-05-11 22:07:56,008] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 3.00ms
+[INFO] [2015-05-11 22:07:56,014] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:07:56,019] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 2.00ms
+[INFO] [2015-05-11 22:07:56,024] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 3.99ms
+[INFO] [2015-05-11 22:07:56,030] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:07:56,036] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 2.99ms
+[INFO] [2015-05-11 22:07:56,041] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 3.00ms
+[INFO] [2015-05-11 22:07:56,046] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 3.00ms
+[INFO] [2015-05-11 22:07:56,052] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 4.00ms
+[INFO] [2015-05-11 22:07:56,058] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 4.00ms
+[INFO] [2015-05-11 22:07:56,064] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 3.00ms
+[INFO] [2015-05-11 22:07:56,070] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 4.00ms
+[INFO] [2015-05-11 22:07:56,075] (MainThread) 304 GET /admin/static/index.html (::1) 3.00ms
+[INFO] [2015-05-11 22:07:56,080] (MainThread) 304 GET /resources/logo.png (::1) 3.00ms
+[INFO] [2015-05-11 22:07:56,703] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.html (::1) 2.00ms
+[INFO] [2015-05-11 22:07:56,793] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 22:07:58,635] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 1.02ms
+[INFO] [2015-05-11 22:07:59,584] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 2.00ms
+[INFO] [2015-05-11 22:08:00,834] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 1.00ms
+[INFO] [2015-05-11 22:08:02,165] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 2.00ms
+[INFO] [2015-05-11 22:12:58,645] (MainThread) 200 GET /admin/plugins (::1) 7.98ms
+[INFO] [2015-05-11 22:12:58,648] (MainThread) 200 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-11 22:12:58,652] (MainThread) 200 GET /admin/scenarios/my1 (::1) 1.00ms
+[INFO] [2015-05-11 22:18:43,175] (MainThread) 200 GET /admin/static/modules/system/system.html (::1) 4.97ms
+[INFO] [2015-05-11 22:18:43,309] (MainThread) 304 GET /admin/plugins (::1) 1.00ms
+[INFO] [2015-05-11 22:20:35,680] (MainThread) 304 GET /admin/static/index.html (::1) 3.00ms
+[INFO] [2015-05-11 22:20:35,790] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 7.00ms
+[INFO] [2015-05-11 22:20:35,796] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 3.00ms
+[INFO] [2015-05-11 22:20:35,803] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 3.00ms
+[INFO] [2015-05-11 22:20:35,810] (MainThread) 304 GET /resources/css/animations.css (::1) 5.01ms
+[INFO] [2015-05-11 22:20:35,816] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 3.00ms
+[INFO] [2015-05-11 22:20:35,823] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 4.00ms
+[INFO] [2015-05-11 22:20:35,831] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:20:35,839] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 6.00ms
+[INFO] [2015-05-11 22:20:35,845] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:20:35,862] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 14.00ms
+[INFO] [2015-05-11 22:20:35,869] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 5.00ms
+[INFO] [2015-05-11 22:20:35,875] (MainThread) 304 GET /resources/js/jquery.js (::1) 4.00ms
+[INFO] [2015-05-11 22:20:35,882] (MainThread) 304 GET /resources/js/angular.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:20:35,890] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 7.00ms
+[INFO] [2015-05-11 22:20:35,896] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:20:35,958] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 4.00ms
+[INFO] [2015-05-11 22:20:35,964] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 4.00ms
+[INFO] [2015-05-11 22:20:35,970] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 4.00ms
+[INFO] [2015-05-11 22:20:35,975] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 3.00ms
+[INFO] [2015-05-11 22:20:35,982] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 4.00ms
+[INFO] [2015-05-11 22:20:35,992] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 8.00ms
+[INFO] [2015-05-11 22:20:35,998] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 4.00ms
+[INFO] [2015-05-11 22:20:36,004] (MainThread) 304 GET /admin/static/index.html (::1) 4.00ms
+[INFO] [2015-05-11 22:20:36,010] (MainThread) 304 GET /resources/logo.png (::1) 4.00ms
+[INFO] [2015-05-11 22:20:36,792] (MainThread) 200 GET /admin/static/modules/system/system.html (::1) 5.00ms
+[INFO] [2015-05-11 22:20:36,922] (MainThread) 304 GET /admin/plugins (::1) 2.00ms
+[ERROR] [2015-05-11 22:21:34,094] (MainThread) Uncaught exception GET /admin/scheduler/alltasks (::1)
+HTTPServerRequest(protocol='http', host='localhost:8082', method='GET', uri='/admin/scheduler/alltasks', version='HTTP/1.1', remote_ip='::1', headers={'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'Accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0', 'Accept-Encoding': 'gzip, deflate', 'Referer': 'http://localhost:8082/admin/static/index.html', 'Host': 'localhost:8082'})
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\tornado\web.py", line 1346, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+TypeError: get() takes 1 positional argument but 2 were given
+[ERROR] [2015-05-11 22:21:34,096] (MainThread) 500 GET /admin/scheduler/alltasks (::1) 3.00ms
+[WARNING] [2015-05-11 22:22:33,343] (MainThread) 405 POST /admin/scheduler/task/asdasd (::1) 2.00ms

@@ -42,7 +42,6 @@
         }
 
         var update = function(scenario, onsuccess, onerror) {
-            $scope.im.loader();
             scenario = {
                 name: scenario.name,
                 description: scenario.description,
@@ -51,25 +50,24 @@
             }
             $http.put('/admin/scenarios/'+scenario.name, scenario)
                     .success(function(data){
-                        $scope.im.okMessage(data);
+                        Notification.success('Updated successfully')
                         if (typeof onsuccess !== "undefined") onsuccess();
                     })
-                    .error(function(data, status) {
-                        $scope.im.errorMessage(status+': '+data);
+                    .error(function(error) {
+                        Notification.error('Error: '+error)
                         if (typeof onerror !== "undefined") onerror();
                     });
         }
 
         $scope.delete = function(tag, accepted) {
             if (!accepted) return;
-            $scope.im.loader();
             $http.delete('/admin/scenarios/'+tag)
                 .success(function(data) {
-                    $scope.im.okMessage(data);
+                    Notification.success('Deleted successfully')
                     $scope.load();
                 })
-                .error(function(data, status){
-                    $scope.im.errorMessage(status+': '+data);
+                .error(function(error){
+                    Notification.error('Error: '+error)
 	    	    });
         }
 
