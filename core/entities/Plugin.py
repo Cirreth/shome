@@ -1,3 +1,5 @@
+import logging
+
 __author__ = 'cirreth'
 import importlib
 import os
@@ -35,14 +37,21 @@ class Plugin(Base):
         self.__init__(self.instname, self.name, self._params, self.enabled)
 
     def call(self, reference, values):
-        return self.plugin_instance.call(reference, values)
+        if self.state == 'active':
+            return self.plugin_instance.call(reference, values)
+        else:
+            raise Exception("Can't call plugin with status "+self.state)
 
     def __load(self):
         for name in os.listdir('./plugins/'+self.name):
             if not name.startswith('__') and name.endswith('.py'):
                 mdl = importlib.import_module('plugins.'+self.name+'.'+name[:-3])
                 plg = getattr(mdl, name[:-3])
-                self.plugin_instance = plg(self._params_dict)
+                try:
+                    self.plugin_instance = plg(self._params_dict)
+                except Exception as e:
+                    logging.error(self.name+' plugin initialization error: '+str(e))
+                    self.state = 'failed'
 
     def __update_str_repr(self):
         self._params = json.dumps(self._params_dict)

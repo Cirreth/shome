@@ -11,22 +11,23 @@
           <i class="fa fa-times deleted" ng-show="mode=='delete'"></i>
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">
-              <input required class="form-control sch-fld-title" placeholder="Task name" text ng-model="editing.title" ng-disabled="mode!='new'" set-focus="{{editing}}"></h3>
+                <input required class="form-control sch-fld-title" placeholder="Task name" text ng-model="editing.name" ng-disabled="mode!='new'">
             </div>
             <div class="panel-body">
               <textarea required class="form-control" rows="2" placeholder="Short description" ng-model="editing.description"></textarea>
               <input required class="form-control" placeholder="Process name" ng-model="editing.process">
               <div class="form-group sch-radio">
                 <input id="sch-type-interval" type="radio" ng-model="editing.type" value="interval" ng-click="startScheduling()"><label class="radio-inline" for="sch-type-interval">Interval</label>
+                <!--
                 <input id="sch-type-plan" type="radio" ng-model="editing.type" value="plan" ng-click="startScheduling()"><label for="sch-type-plan" class="radio-inline">Plan</label>
                 <input id="sch-type-runonce" type="radio" ng-model="editing.type" value="runonce" ng-click="startScheduling()"><label class="radio-inline" for="sch-type-runonce">Run once</label>
+                -->
               </div>
-              <i class="pull-left">{{editing.type}} : {{editing.scheme}} s.</i>
+              <i class="pull-left">{{editing.type}} : {{editing.scheme | schemeRepr}}</i>
                 <div class="sch-st-cont ">
                   <div class="sch-stop">
                     <div class="slider-check-box">
-                      <input id="{{'enbl-cb-'+editing.process}}" ng-model="editing.isrunned" type="checkbox" ng-checked="editing.isrunned">
+                      <input id="{{'enbl-cb-'+editing.process}}" ng-model="editing.enabled" type="checkbox" ng-checked="editing.enabled">
                       <label id="{{'enbl-ch-lbl-'+editing.process}}" for="{{'enbl-cb-'+editing.process}}"></label>
                     </div>
                   </div>
@@ -46,7 +47,7 @@
             <div class="panel-body">
 
               <div class="form-group input-group font-black m-r-10">
-                <input class="form-control font-black" name="interval" placeholder="Interval" ng-model="editing.scheme" set-focus="{{editing.type=='interval'}}" type="number">
+                <input class="form-control font-black" name="interval" placeholder="Interval" ng-model="editing.scheme.interval" set-focus="{{editing.type=='interval'}}" type="number">
                 <span class="input-group-addon font-black" >c.</span>
               </div>
               <button class="sch-btn pull-right m-r-10 m-b-5" type="button" ng-click="stopScheduling()">
@@ -117,21 +118,18 @@
           <div class="panel panel-default" ng-if="tasks[idx+colidx]" ng-init="task=tasks[idx+colidx]">
             
             <div class="panel-heading">
-              <h3 class="panel-title" ng-click="edit(task)">{{task.title}} <div class="fa fa-fw fa-wrench sch-cfg"></div></h3>
+              <h3 class="panel-title" ng-click="edit(task)">{{task.name}} <div class="fa fa-fw fa-wrench sch-cfg"></div></h3>
             </div>
             
             <div class="panel-body">
               <p>{{task.description}}<span class="transparent6" ng-show="!task.description">Is not described</span></p>
               <p><strong>Process: </strong>{{task.process}}</p>
-              <i><strong>{{task.type | capitalize}}</strong> : {{task.scheme}}
-                <span ng-show="task.type=='interval'">s.</span>
-                <span ng-show="task.nextafter && task.isrunned">({{task.nextafter}} s.)</span>
-              </i>
+              <i><strong>{{task.type | capitalize}}</strong> : {{task.scheme | schemeRepr}}</i>
               <div class="sch-st-cont" >
                 <div class="sch-stop">
                   <div class="slider-check-box">
-                    <input id="{{'enbl-cb-'+task.process}}" ng-model="task.isrunned" type="checkbox" ng-checked="task.isrunned" ng-click="updateTaskStatus(task)">
-                    <label id="{{'enbl-ch-lbl-'+task.process}}" for="{{'enbl-cb-'+task.process}}"></label>
+                    <input id="{{'enbl-cbx-'+task.process}}" ng-model="task.enabled" type="checkbox" ng-checked="task.enabled" ng-click="updateTaskStatus(task)">
+                    <label for="{{'enbl-cbx-'+task.process}}"></label>
                   </div>
                 </div>
               </div>

@@ -1,16 +1,22 @@
 (function() {
 
-    angular.module('shomeAdm')
-    .controller('SchedulerController', ['$scope', '$http', 'InfoMessage', function($scope, $http, InfoMessage) {
+    var app = angular.module('shomeAdm');
 
-    $scope.im = InfoMessage;
+    app.filter('schemeRepr', function() {
+        return function(value) {
+            if (!value) return '';
+            if (value.interval) return value.interval + ' s.';
+        }
+    });
+
+    app.controller('SchedulerController', ['$scope', '$http', 'Notification', function($scope, $http, Notification) {
 
     $scope.mode = undefined;
 
     $scope.load = function() {
-        $http.get('/admin/scheduler/alltasks')
+        $http.get('/admin/scheduler/tasks')
         .success(function(data){
-            $scope.tasks = data;
+            $scope.tasks = data.tasks;
         });
     }
 
@@ -46,47 +52,36 @@
     }
 
     $scope.updateTaskStatus = function(task) {
-        $http.put('/admin/scheduler/task/'+task.title,
+        $http.put('/admin/scheduler/task/'+task.name,
             {
-                isrunned: !task.isrunned
+                enabled: !task.enabled
             })
             .success(function() {
-                $scope.im.okMessage(task.title+' '+(task.isrunned ? 'enabled' : 'disabled'));
+                Notification.success(task.name+' '+(task.enabled ? 'enabled' : 'disabled'));
             })
             .error(function(data, status){
-                $scope.im.errorMessage(status+': '+data);
+                Notification.error(status+': '+data);
             }
         );
     }
 
-    /*
-        {
-            title: task.title,
-            description: task.description,
-            process: task.process,
-            type: task.type,
-            scheme: task.scheme,
-            isrunned: !task.isrunned
-        }
-    */
-
 	$scope.saveTask = function() {
 	    if ($scope.mode == 'new') {
-	    	$http.post('/admin/scheduler/task/'+$scope.editing.title, $scope.editing)
+	    	$http.post('/admin/scheduler/task/'+$scope.editing.name, $scope.editing)
 	    	.success(function() {
-                $scope.im.okMessage($scope.editing.title+' saved');
+                Notification.success($scope.editing.name+' saved');
                 endEditing();
 	    	    $scope.load();
 	    	})
 	    	.error(function(data, status){
-                $scope.im.errorMessage(status+': '+data);
+                Notification.error(status+': '+data);
 	    	});
 	    } else if ($scope.mode == 'delete') {
-            $http.delete('/admin/scheduler/task/'+$scope.editing.title)
+            $http.delete('/admin/scheduler/task/'+$scope.editing.name)
 	    	.success(function(data) {
-	    	    $scope.im.okMessage(data);
+	    	    Notification.success(data);
                 for (var i=0; i<$scope.tasks.length; i++) {
-                    if ($scope.tasks[i].title == $scope.editing.title) {
+                    if ($scope.tasks[i].title == $scope.editing.name) {
                         delete $scope.tasks[i];
                         break;
                     }
@@ -95,17 +90,17 @@
                 $scope.load();
 	    	})
 	    	.error(function(data, status){
-                $scope.im.errorMessage(status+': '+data);
+                Notification.error(status+': '+data);
 	    	});
 	    } else {
-            $http.put('/admin/scheduler/task/'+$scope.editing.title, $scope.editing)
+            $http.put('/admin/scheduler/task/'+$scope.editing.name, $scope.editing)
 	    	.success(function() {
-	    	    $scope.im.okMessage($scope.editing.title+' updated');
+	    	    Notification.success($scope.editing.name+' updated');
                 endEditing();
                 $scope.load();
 	    	})
 	    	.error(function(data, status){
-                $scope.im.errorMessage(status+': '+data);
+                Notification.error(status+': '+data);
 	    	});
         }
 	}
@@ -113,7 +108,7 @@
 	$scope.cancel = function(task) {
         if ($scope.mode == 'edit') {
             for (var i=0; i<$scope.tasks.length; i++) {
-                if ($scope.tasks[i].title == task.title) {
+                if ($scope.tasks[i].title == task.name) {
                     $scope.tasks[i] = $scope.oldtask;
                 }
             }
@@ -130,7 +125,7 @@
             process: "",
             type: "",
             scheme: null,
-            isrunned: false
+            enabled: false
 		}
 	}
 

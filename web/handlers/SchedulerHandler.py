@@ -12,7 +12,7 @@ class SchedulerAllTasksHandler(RequestHandler):
         self._ws = ws
 
     def get(self):
-        self.finish(self._ws.scheduler.list_all())
+        self.finish({"tasks": self._ws.scheduler.list_all()})
 
 
 class SchedulerTaskHandler(RequestHandler):
@@ -30,27 +30,27 @@ class SchedulerTaskHandler(RequestHandler):
         tasktype = data['type'] if 'type' in data else None
         scheme = data['scheme'] if 'scheme' in data else None
         description = data['description'] if 'description' in data else None
-        isrunned = data['isrunned'] if 'isrunned' in data else None
+        enabled = data['enabled'] if 'enabled' in data else None
         process = data['process'] if 'process' in data else None
-        logging.debug('SchedulerTaskHandler post: '+name+' // {process: '+str(process)+', isrunned:'+ \
-            str(isrunned)+', type: '+str(tasktype)+', scheme: '+str(scheme)+', description: '+str(description))
+        logging.debug('SchedulerTaskHandler post: '+name+' // {process: '+str(process)+', enabled:'+ \
+            str(enabled)+', type: '+str(tasktype)+', scheme: '+str(scheme)+', description: '+str(description))
         self.finish({"result": "success"})
-        self._ws.scheduler.create(process, name, scheme, isrunned, description, save=True)
+        self._ws.scheduler.create(process, name, scheme, enabled, description, save=True)
 
     def put(self, name):
         data = tornado.escape.json_decode(self.request.body)
         tasktype = data['type'] if 'type' in data else None
         scheme = data['scheme'] if 'scheme' in data else None
         description = data['description'] if 'description' in data else None
-        isrunned = data['isrunned'] if 'isrunned' in data else None
+        enabled = data['enabled'] if 'enabled' in data else None
         process = data['process'] if 'process' in data else None
-        logging.debug('SchedulerTaskHandler put: '+name+' // {process: '+str(process)+', isrunned:'+ \
-            str(isrunned)+', type: '+str(tasktype)+', scheme: '+str(scheme)+', description: '+str(description))
-        if isrunned is not None:
-            if isrunned:
-                self._ws.scheduler.start(name)
+        logging.debug('SchedulerTaskHandler put: '+name+' // {process: '+str(process)+', enabled:'+ \
+            str(enabled)+', type: '+str(tasktype)+', scheme: '+str(scheme)+', description: '+str(description))
+        if enabled is not None:
+            if enabled:
+                self._ws.scheduler.start_task(name)
             else:
-                self._ws.scheduler.stop(name)
+                self._ws.scheduler.stop_task(name)
 
     def delete(self, name):
         logging.debug('SchedulerTaskHandler delete: '+name)

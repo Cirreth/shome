@@ -34,10 +34,10 @@
         });
   }]);
 
-  app.filter('capitalize',function(){
+  app.filter('capitalize', function(){
     return function(input) {
         return input.charAt(0).toUpperCase()+input.slice(1);
-    };
+    }
   });
 
   app.directive('setFocus', function($timeout) {

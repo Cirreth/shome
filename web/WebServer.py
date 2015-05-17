@@ -16,6 +16,7 @@ class WebServer():
         self.context = context
         self.action_processor = context.action_processor
         self.plugin_manager = context.plugin_manager
+        self.scheduler = context.scheduler
         self.init_ws()
 
     def init_ws(self):
@@ -29,8 +30,8 @@ class WebServer():
         application = tornado.web.Application([
             (r"/resources/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
             (r"/app/(.*)", tornado.web.StaticFileHandler, dict(path=settings['app_path'])),
-            #(r"/admin/scheduler/alltasks", SchedulerAllTasksHandler, {'ws': self}),
-            #(r"/admin/scheduler/task/(.+)", SchedulerTaskHandler, {'ws': self}),
+            (r"/admin/scheduler/tasks", SchedulerAllTasksHandler, {'ws': self}),
+            (r"/admin/scheduler/task/(.+)", SchedulerTaskHandler, {'ws': self}),
             (r"/admin/scenarios/", ScenariosListAllHandler, {'ws': self}),
             (r"/admin/scenarios/(.+)", ScenariosHandler, {'ws': self}),
             (r"/admin/constructor/check", ConstructorCheckHandler, {'ws': self}),
