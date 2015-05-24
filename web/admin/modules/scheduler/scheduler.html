@@ -16,7 +16,7 @@
             </div>
             <div class="panel-body">
               <textarea required class="form-control" rows="2" placeholder="Short description" ng-model="editing.description"></textarea>
-              <input required class="form-control" placeholder="Process name" ng-model="editing.process">
+              <input required class="form-control" placeholder="Scenario" ng-model="editing.scenario">
               <div class="form-group sch-radio">
                 <input id="sch-type-interval" type="radio" ng-model="editing.type" value="interval" ng-click="startScheduling()"><label class="radio-inline" for="sch-type-interval">Interval</label>
                 <!--
@@ -28,8 +28,8 @@
                 <div class="sch-st-cont ">
                   <div class="sch-stop">
                     <div class="slider-check-box">
-                      <input id="{{'enbl-cb-'+editing.process}}" ng-model="editing.enabled" type="checkbox" ng-checked="editing.enabled">
-                      <label id="{{'enbl-ch-lbl-'+editing.process}}" for="{{'enbl-cb-'+editing.process}}"></label>
+                      <input id="{{'enbl-cb-'+editing.scenario}}" ng-model="editing.enabled" type="checkbox" ng-checked="editing.enabled">
+                      <label id="{{'enbl-ch-lbl-'+editing.scenario}}" for="{{'enbl-cb-'+editing.scenario}}"></label>
                     </div>
                   </div>
                 </div>
@@ -37,6 +37,7 @@
           </div><!--panel-default-->
         </div><!--col-sm-4-->
 
+        <!-- Interval type edit mode -->
         <div class="col-sm-4 animate-flipx" ng-show="schemeconfig && editing.type=='interval'">
           <div class="panel panel-default panel-helper">
             <div class="panel-heading">

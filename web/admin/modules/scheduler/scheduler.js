@@ -54,7 +54,7 @@
     $scope.updateTaskStatus = function(task) {
         $http.put('/admin/scheduler/task/'+task.name,
             {
-                enabled: !task.enabled
+                enabled: task.enabled
             })
             .success(function() {
                 Notification.success(task.name+' '+(task.enabled ? 'enabled' : 'disabled'));
@@ -79,7 +79,7 @@
 	    } else if ($scope.mode == 'delete') {
             $http.delete('/admin/scheduler/task/'+$scope.editing.name)
 	    	.success(function(data) {
-	    	    Notification.success(data);
+	    	    Notification.success(data.result);
                 for (var i=0; i<$scope.tasks.length; i++) {
                     if ($scope.tasks[i].title == $scope.editing.name) {
                         delete $scope.tasks[i];

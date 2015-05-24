@@ -1,11 +1,9 @@
 import logging
 import threading
-
-__author__ = 'Кирилл'
-
 import json
 from core.entities import Base
 from sqlalchemy import Column, String, Boolean, ForeignKey, orm
+
 
 class Task(Base):
     __tablename__ = 'tasks'
@@ -33,21 +31,24 @@ class Task(Base):
             self.task_type = task_type
         else:
             raise Exception('Invalid task type. Must be runonce, interval or scheme.')
-        self.scheme = scheme
-        self._scheme = json.loads(scheme)
+        self.scheme = json.dumps(scheme)
+        self._scheme = scheme
         self.enabled = enabled
         self.description = description
         self._started = False
+        if self.enabled:
+            self.start(save=False)
+
 
     @orm.reconstructor
     def __init_on_load(self):
         self.__init__(self.name, self.scenario, self.task_type, self.scheme, self.enabled, self.description)
-        if self.enabled:
-            self.start(save=False)
 
     def set_scheme(self, scheme):
-        self.scheme = scheme
-        self._scheme = json.loads(scheme)
+        if scheme is None:
+            return
+        self.scheme = json.dumps(scheme)
+        self._scheme = scheme
 
     def dict_repr(self):
         return {
@@ -70,7 +71,7 @@ class Task(Base):
 
     def start(self, save=True):
         if self._started:
-            return False
+            raise Exception('Already started')
         try:
             if self.task_type == 'interval' and self._scheme['interval'] < 300:
                 self._start_frequent_interval()
@@ -93,7 +94,7 @@ class Task(Base):
 
     def stop(self, save=True):
         if not self._started:
-            return False
+            raise Exception('Already stopped')
         try:
             if self.task_type == 'interval' and self._scheme['interval'] < 300:
                 self._thread.cancel()
@@ -121,37 +122,21 @@ class Task(Base):
             session.commit()
             return self
         except Exception as e:
-            logging.error('Exception occurs in method save of '+self.name+' task: '+str(e))
             session.rollback()
+            logging.error('Exception occurs in method save of '+self.name+' task: '+str(e))
             raise e
 
     def delete(self):
         session = self._config.get_session()
         try:
+            if self._started:
+                self.stop()
             session.delete(self)
             session.commit()
         except Exception as e:
             logging.error('Exception occurs in method delete of '+self.name+' task: '+str(e))
             session.rollback()
             raise e
-
-    def change(self, description=None, scenario=None, task_type=None, scheme=None, enabled=None):
-        task_type = task_type if task_type else self.task_type
-        scheme = scheme if scheme else self.scheme
-        if Task.check_scheme(task_type, scheme):
-            self.description = description if description else self.description
-            self.scenario = scenario if scenario else self.scenario
-            self.task_type = task_type
-            self._scheme = scheme
-            self.scheme = json.dumps(scheme)
-            if self.enabled is not None:
-                if enabled:
-                    self.start(save=False)
-                else:
-                    self.stop(save=False)
-            self.save()
-        else:
-            raise Exception('Task type '+task_type+" can't by used with scheme "+str(scheme)+" (task: "+self.name)
 
     @classmethod
     def check_scheme(cls, task_type, scheme):
