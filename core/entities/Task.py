@@ -39,7 +39,6 @@ class Task(Base):
         if self.enabled:
             self.start(save=False)
 
-
     @orm.reconstructor
     def __init_on_load(self):
         self.__init__(self.name, self.scenario, self.task_type, self.scheme, self.enabled, self.description)

@@ -4,7 +4,7 @@
 
     app.filter('schemeRepr', function() {
         return function(value) {
-            if (!value) return '';
+            if (!value) return 'Undefined?';
             if (value.interval) return value.interval + ' s.';
         }
     });
@@ -79,7 +79,7 @@
 	    } else if ($scope.mode == 'delete') {
             $http.delete('/admin/scheduler/task/'+$scope.editing.name)
 	    	.success(function(data) {
-	    	    Notification.success(data.result);
+	    	    Notification.success('Deleted successfully');
                 for (var i=0; i<$scope.tasks.length; i++) {
                     if ($scope.tasks[i].title == $scope.editing.name) {
                         delete $scope.tasks[i];

@@ -114,6 +114,7 @@
 </div>
 <hr>
 
+    <!-- tasks -->
     <div class="row" ng-repeat="(idx, task) in tasks" ng-if="idx % 3 == 0">
 
         <div class="col-sm-4" ng-repeat="colidx in [0,1,2]">
@@ -144,10 +145,3 @@
 
       </div>
     </div>
-
- <!-- widget demonstration. delete after testing -->
-<script>
-      $(document).ready(function(){
-  $('#sch-datepicker-uper').pickmeup_twitter_bootstrap({flat: true, mode:'multiple'});
-      });
-</script>
