@@ -17,7 +17,7 @@ class Task(Base):
     name = Column('name', String(32), primary_key=True)
     description = Column('description', String(255))
     scenario = Column('scenario', ForeignKey("scenarios.name"), nullable=False)
-    type = Column('type', String(10), nullable=False)
+    task_type = Column('type', String(10), nullable=False)
     scheme = Column('scheme', String(8192), nullable=False)
     enabled = Column('enabled', Boolean, nullable=False)
 
@@ -30,7 +30,7 @@ class Task(Base):
         self.name = name
         self.scenario = scenario
         if task_type in ('runonce', 'interval', 'scheme'):
-            self.type = task_type
+            self.task_type = task_type
         else:
             raise Exception('Invalid task type. Must be runonce, interval or scheme.')
         self.scheme = scheme
@@ -41,7 +41,7 @@ class Task(Base):
 
     @orm.reconstructor
     def __init_on_load(self):
-        self.__init__(self.name, self.scenario, self.type, self.scheme, self.enabled, self.description)
+        self.__init__(self.name, self.scenario, self.task_type, self.scheme, self.enabled, self.description)
         if self.enabled:
             self.start(save=False)
 
@@ -54,8 +54,8 @@ class Task(Base):
             'name': self.name,
             'description': self.description,
             'scenario': self.scenario,
-            'type': self.type,
-            'scheme': self.scheme,
+            'type': self.task_type,
+            'scheme': self._scheme,
             'enabled': self.enabled
         }
 
@@ -72,13 +72,13 @@ class Task(Base):
         if self._started:
             return False
         try:
-            if self.type == 'interval' and self._scheme['interval'] < 300:
+            if self.task_type == 'interval' and self._scheme['interval'] < 300:
                 self._start_frequent_interval()
-            elif self.type == 'interval' and self._scheme['interval'] >= 300:
+            elif self.task_type == 'interval' and self._scheme['interval'] >= 300:
                 raise NotImplementedError()
-            elif self.type == 'runonce':
+            elif self.task_type == 'runonce':
                 raise NotImplementedError()
-            elif self.type == 'scheme':
+            elif self.task_type == 'scheme':
                 raise NotImplementedError()
             self._started = True
             try:
@@ -95,13 +95,13 @@ class Task(Base):
         if not self._started:
             return False
         try:
-            if self.type == 'interval' and self._scheme['interval'] < 300:
+            if self.task_type == 'interval' and self._scheme['interval'] < 300:
                 self._thread.cancel()
-            elif self.type == 'interval' and self._scheme['interval'] >= 300:
+            elif self.task_type == 'interval' and self._scheme['interval'] >= 300:
                 raise NotImplementedError()
-            elif self.type == 'runonce':
+            elif self.task_type == 'runonce':
                 raise NotImplementedError()
-            elif self.type == 'scheme':
+            elif self.task_type == 'scheme':
                 raise NotImplementedError()
             try:
                 self._started = False
@@ -134,6 +134,32 @@ class Task(Base):
             logging.error('Exception occurs in method delete of '+self.name+' task: '+str(e))
             session.rollback()
             raise e
+
+    def change(self, description=None, scenario=None, task_type=None, scheme=None, enabled=None):
+        task_type = task_type if task_type else self.task_type
+        scheme = scheme if scheme else self.scheme
+        if Task.check_scheme(task_type, scheme):
+            self.description = description if description else self.description
+            self.scenario = scenario if scenario else self.scenario
+            self.task_type = task_type
+            self._scheme = scheme
+            self.scheme = json.dumps(scheme)
+            if self.enabled is not None:
+                if enabled:
+                    self.start(save=False)
+                else:
+                    self.stop(save=False)
+            self.save()
+        else:
+            raise Exception('Task type '+task_type+" can't by used with scheme "+str(scheme)+" (task: "+self.name)
+
+    @classmethod
+    def check_scheme(cls, task_type, scheme):
+        """
+        Not implemented
+        :return:
+        """
+        return True
 
     @classmethod
     def get(cls, name):

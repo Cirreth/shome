@@ -4,6 +4,7 @@
     New task
 </button>
 
+<!-- New task -->
 <div ng-show="editing" class="animate-new">
 <div class="row">
     <form novalidate>
@@ -123,13 +124,13 @@
             
             <div class="panel-body">
               <p>{{task.description}}<span class="transparent6" ng-show="!task.description">Is not described</span></p>
-              <p><strong>Process: </strong>{{task.process}}</p>
+              <p><strong>Scenario: </strong>{{task.scenario}}</p>
               <i><strong>{{task.type | capitalize}}</strong> : {{task.scheme | schemeRepr}}</i>
               <div class="sch-st-cont" >
                 <div class="sch-stop">
                   <div class="slider-check-box">
-                    <input id="{{'enbl-cbx-'+task.process}}" ng-model="task.enabled" type="checkbox" ng-checked="task.enabled" ng-click="updateTaskStatus(task)">
-                    <label for="{{'enbl-cbx-'+task.process}}"></label>
+                    <input id="{{'enbl-cbx-'+task.scenario}}" ng-model="task.enabled" type="checkbox" ng-checked="task.enabled" ng-click="updateTaskStatus(task)">
+                    <label for="{{'enbl-cbx-'+task.scenario}}"></label>
                   </div>
                 </div>
               </div>

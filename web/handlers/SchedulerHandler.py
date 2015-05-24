@@ -43,14 +43,10 @@ class SchedulerTaskHandler(RequestHandler):
         scheme = data['scheme'] if 'scheme' in data else None
         description = data['description'] if 'description' in data else None
         enabled = data['enabled'] if 'enabled' in data else None
-        process = data['process'] if 'process' in data else None
-        logging.debug('SchedulerTaskHandler put: '+name+' // {process: '+str(process)+', enabled:'+ \
+        scenario = data['scenario'] if 'scenario' in data else None
+        logging.debug('SchedulerTaskHandler put: '+name+' // {scenario: '+str(scenario)+', enabled:'+ \
             str(enabled)+', type: '+str(tasktype)+', scheme: '+str(scheme)+', description: '+str(description))
-        if enabled is not None:
-            if enabled:
-                self._ws.scheduler.start_task(name)
-            else:
-                self._ws.scheduler.stop_task(name)
+        self._ws.scheduler.get_task(name).change()
 
     def delete(self, name):
         logging.debug('SchedulerTaskHandler delete: '+name)
