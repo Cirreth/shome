@@ -422,7 +422,7 @@
             Constructor.nodes.push({
                 id: 'cn'+parseInt(Math.random()*500),
                 type: "ConditionalNode",
-                condition: "not defined",
+                expression: "not defined",
                 position: {
                     left: 100,
                     top: 100

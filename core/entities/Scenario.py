@@ -4,6 +4,7 @@ from core.entities import Base
 from sqlalchemy import Column, String, Boolean, orm
 from core.NodeFactory import NodeFactory
 
+
 class Scenario(Base):
     __tablename__ = 'scenarios'
 
@@ -16,7 +17,7 @@ class Scenario(Base):
     published = Column('published', Boolean)
 
     def __init__(self, name, expression, description='', runoninit=False, published=False):
-        #stored
+        # stored
         self.name = name
         self.expression = expression
         self.description = description
@@ -38,11 +39,11 @@ class Scenario(Base):
         try:
             struct = json.loads(self.expression)
         except Exception as e:
-            raise Exception('Invalid JSON: '+str(e))
+            raise Exception('Invalid JSON: ' + str(e))
         struct = {node['id']: node for node in struct}
         self.root = struct['Start']['next']
         del struct['Start']
-        self.nodes = {node:  NodeFactory.create(struct[node]) for node in struct}
+        self.nodes = {node: NodeFactory.create(struct[node]) for node in struct}
 
     def execute(self, parameters):
         result = {}
@@ -65,7 +66,8 @@ class Scenario(Base):
             for node_id, q in queues.items():
                 res, node_next = q.get()
                 next_nodes += node_next
-                result.update(res if res else {})
+                if type(res) is dict:
+                    result.update(res if res else {})
             # execute all next_nodes
             for node in next_nodes:
                 parallel.put(node)

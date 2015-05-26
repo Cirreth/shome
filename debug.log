@@ -1,202 +1,261 @@
-[DEBUG] [2015-05-24 21:31:06,447] (MainThread) OneWirePlugin initialization
-[DEBUG] [2015-05-24 21:31:06,448] (MainThread) 
+[DEBUG] [2015-05-26 21:35:15,470] (MainThread) OneWirePlugin initialization
+[DEBUG] [2015-05-26 21:35:15,470] (MainThread) 
 OneWirePlugin list dir:
-[DEBUG] [2015-05-24 21:31:07,159] (MainThread) b'/28.345805050000'
-[DEBUG] [2015-05-24 21:31:07,161] (MainThread) b'/28.F2CF39040000'
-[DEBUG] [2015-05-24 21:31:07,163] (MainThread) b'/28.259039040000'
-[DEBUG] [2015-05-24 21:31:07,164] (MainThread) b'/28.1D9D39040000'
-[DEBUG] [2015-05-24 21:31:07,166] (MainThread) b'/3A.F2360D000000'
-[DEBUG] [2015-05-24 21:31:07,168] (MainThread) b'/3A.C9330D000000'
-[DEBUG] [2015-05-24 21:31:07,170] (MainThread) b'/81.F34132000000'
-[DEBUG] [2015-05-24 21:31:07,171] (MainThread) b'/bus.0'
-[DEBUG] [2015-05-24 21:31:07,173] (MainThread) b'/uncached'
-[DEBUG] [2015-05-24 21:31:07,175] (MainThread) b'/settings'
-[DEBUG] [2015-05-24 21:31:07,176] (MainThread) b'/system'
-[DEBUG] [2015-05-24 21:31:07,178] (MainThread) b'/statistics'
-[DEBUG] [2015-05-24 21:31:07,180] (MainThread) b'/structure'
-[DEBUG] [2015-05-24 21:31:07,182] (MainThread) b'/simultaneous'
-[DEBUG] [2015-05-24 21:31:07,184] (MainThread) b'/alarm'
-[DEBUG] [2015-05-24 21:31:07,185] (MainThread) 
+[DEBUG] [2015-05-26 21:35:15,655] (MainThread) b'/28.345805050000'
+[DEBUG] [2015-05-26 21:35:15,655] (MainThread) b'/28.F2CF39040000'
+[DEBUG] [2015-05-26 21:35:15,655] (MainThread) b'/28.259039040000'
+[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/28.1D9D39040000'
+[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/3A.F2360D000000'
+[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/3A.C9330D000000'
+[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/81.F34132000000'
+[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/bus.0'
+[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/uncached'
+[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/settings'
+[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/system'
+[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/statistics'
+[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/structure'
+[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/simultaneous'
+[DEBUG] [2015-05-26 21:35:15,657] (MainThread) b'/alarm'
+[DEBUG] [2015-05-26 21:35:15,657] (MainThread) 
 
-[DEBUG] [2015-05-24 21:31:07,205] (MainThread) RequestNode constructor called: {'reference': 'change me', 'plugin': 'mock', 'dimension': {'height': 65, 'width': 180}, 'parallel': [], 'exceptional': [], 'next': [], 'type': 'RequestNode', 'id': 'rn303', 'active': False, 'position': {'left': 260, 'top': 142}}
-[ERROR] [2015-05-24 21:31:07,218] (MainThread) string indices must be integers
-[INFO] [2015-05-24 21:31:07,218] (MainThread) Context initialized
-[INFO] [2015-05-24 21:31:07,276] (MainThread) 304 GET /admin/static/index.html (::1) 7.97ms
-[INFO] [2015-05-24 21:31:07,326] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 8.00ms
-[INFO] [2015-05-24 21:31:07,337] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 6.00ms
-[INFO] [2015-05-24 21:31:07,348] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 6.00ms
-[INFO] [2015-05-24 21:31:07,357] (MainThread) 304 GET /resources/css/animations.css (::1) 4.00ms
-[INFO] [2015-05-24 21:31:07,365] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 4.00ms
-[INFO] [2015-05-24 21:31:07,374] (MainThread) 304 GET /admin/static/shomeadmin.css (::1) 4.00ms
-[INFO] [2015-05-24 21:31:07,383] (MainThread) 304 GET /resources/js/jquery.js (::1) 5.00ms
-[INFO] [2015-05-24 21:31:07,393] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 5.00ms
-[INFO] [2015-05-24 21:31:07,403] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:31:07,413] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:31:07,427] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 8.00ms
-[INFO] [2015-05-24 21:31:07,435] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 5.00ms
-[INFO] [2015-05-24 21:31:07,445] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:31:07,458] (MainThread) 304 GET /resources/js/angular.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:31:07,468] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:31:07,477] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 4.00ms
-[INFO] [2015-05-24 21:31:07,485] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 5.00ms
-[INFO] [2015-05-24 21:31:07,497] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 5.00ms
-[INFO] [2015-05-24 21:31:07,507] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 6.00ms
-[INFO] [2015-05-24 21:31:07,516] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 4.00ms
-[INFO] [2015-05-24 21:31:07,525] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 6.00ms
-[INFO] [2015-05-24 21:31:07,544] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 9.00ms
-[INFO] [2015-05-24 21:31:07,558] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 7.00ms
-[INFO] [2015-05-24 21:31:07,661] (MainThread) 304 GET /admin/static/index.html (::1) 8.00ms
-[INFO] [2015-05-24 21:31:07,675] (MainThread) 304 GET /resources/logo.png (::1) 7.00ms
-[INFO] [2015-05-24 21:31:07,710] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.html (::1) 7.00ms
-[INFO] [2015-05-24 21:31:07,831] (MainThread) 200 GET /admin/scheduler/tasks (::1) 2.99ms
-[DEBUG] [2015-05-24 21:31:12,541] (MainThread) SchedulerTaskHandler delete: demo
-[INFO] [2015-05-24 21:31:12,770] (MainThread) 200 DELETE /admin/scheduler/task/demo (::1) 231.02ms
-[INFO] [2015-05-24 21:31:12,900] (MainThread) 200 GET /admin/scheduler/tasks (::1) 2.00ms
-[DEBUG] [2015-05-24 21:33:38,914] (MainThread) SchedulerTaskHandler post: demo0 // {process: my1, enabled:False, type: interval, scheme: {'interval': 15}, description: 
-[INFO] [2015-05-24 21:33:39,150] (MainThread) 200 POST /admin/scheduler/task/demo0 (::1) 236.80ms
-[INFO] [2015-05-24 21:33:39,281] (MainThread) 200 GET /admin/scheduler/tasks (::1) 14.00ms
-[INFO] [2015-05-24 21:34:24,219] (MainThread) 304 GET /admin/static/index.html (::1) 11.00ms
-[INFO] [2015-05-24 21:34:24,292] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 8.00ms
-[INFO] [2015-05-24 21:34:24,305] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 6.00ms
-[INFO] [2015-05-24 21:34:24,314] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 5.00ms
-[INFO] [2015-05-24 21:34:24,323] (MainThread) 304 GET /resources/css/animations.css (::1) 4.00ms
-[INFO] [2015-05-24 21:34:24,331] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 5.00ms
-[INFO] [2015-05-24 21:34:24,341] (MainThread) 304 GET /admin/static/shomeadmin.css (::1) 5.00ms
-[INFO] [2015-05-24 21:34:24,350] (MainThread) 304 GET /resources/js/jquery.js (::1) 5.00ms
-[INFO] [2015-05-24 21:34:24,360] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:34:24,372] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:34:24,385] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:34:24,395] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 5.00ms
-[INFO] [2015-05-24 21:34:24,405] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 5.00ms
-[INFO] [2015-05-24 21:34:24,417] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:34:24,426] (MainThread) 304 GET /resources/js/angular.min.js (::1) 5.00ms
-[INFO] [2015-05-24 21:34:24,439] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:34:24,451] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:34:24,460] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 5.00ms
-[INFO] [2015-05-24 21:34:24,471] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 6.00ms
-[INFO] [2015-05-24 21:34:24,484] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 6.00ms
-[INFO] [2015-05-24 21:34:24,495] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 7.00ms
-[INFO] [2015-05-24 21:34:24,506] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 8.00ms
-[INFO] [2015-05-24 21:34:24,515] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 4.00ms
-[INFO] [2015-05-24 21:34:24,522] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 4.00ms
-[INFO] [2015-05-24 21:34:24,530] (MainThread) 304 GET /admin/static/index.html (::1) 4.00ms
-[INFO] [2015-05-24 21:34:24,538] (MainThread) 304 GET /resources/logo.png (::1) 4.00ms
-[INFO] [2015-05-24 21:34:24,687] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.html (::1) 5.02ms
-[INFO] [2015-05-24 21:34:24,840] (MainThread) 304 GET /admin/scheduler/tasks (::1) 2.99ms
-[DEBUG] [2015-05-24 21:34:37,180] (MainThread) SchedulerTaskHandler delete: demo0
-[INFO] [2015-05-24 21:34:37,399] (MainThread) 200 DELETE /admin/scheduler/task/demo0 (::1) 220.36ms
-[INFO] [2015-05-24 21:34:37,450] (MainThread) 200 GET /admin/scheduler/tasks (::1) 3.00ms
-[INFO] [2015-05-24 21:34:39,078] (MainThread) 304 GET /admin/static/index.html (::1) 15.01ms
-[INFO] [2015-05-24 21:34:39,138] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 8.00ms
-[INFO] [2015-05-24 21:34:39,150] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 5.00ms
-[INFO] [2015-05-24 21:34:39,157] (MainThread) 304 GET /admin/static/shomeadmin.css (::1) 5.00ms
-[INFO] [2015-05-24 21:34:39,164] (MainThread) 304 GET /resources/css/animations.css (::1) 5.00ms
-[INFO] [2015-05-24 21:34:39,171] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 5.00ms
-[INFO] [2015-05-24 21:34:39,177] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 4.00ms
-[INFO] [2015-05-24 21:34:39,188] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 4.00ms
-[INFO] [2015-05-24 21:34:39,198] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 5.00ms
-[INFO] [2015-05-24 21:34:39,206] (MainThread) 304 GET /resources/js/jquery.js (::1) 4.00ms
-[INFO] [2015-05-24 21:34:39,216] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:34:39,225] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:34:39,237] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 6.99ms
-[INFO] [2015-05-24 21:34:39,247] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:34:39,262] (MainThread) 304 GET /resources/js/angular.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:34:39,274] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:34:39,288] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 8.00ms
-[INFO] [2015-05-24 21:34:39,301] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:34:39,314] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 6.00ms
-[INFO] [2015-05-24 21:34:39,325] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 5.00ms
-[INFO] [2015-05-24 21:34:39,372] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 8.00ms
-[INFO] [2015-05-24 21:34:39,385] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 7.00ms
-[INFO] [2015-05-24 21:34:39,397] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 6.00ms
-[INFO] [2015-05-24 21:34:39,409] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 7.00ms
-[INFO] [2015-05-24 21:34:39,422] (MainThread) 304 GET /admin/static/index.html (::1) 5.99ms
-[INFO] [2015-05-24 21:34:39,431] (MainThread) 304 GET /resources/logo.png (::1) 4.00ms
-[INFO] [2015-05-24 21:34:39,504] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.html (::1) 7.00ms
-[INFO] [2015-05-24 21:34:39,609] (MainThread) 304 GET /admin/scheduler/tasks (::1) 2.99ms
-[INFO] [2015-05-24 21:51:04,027] (MainThread) 304 GET /admin/static/index.html (::1) 14.00ms
-[INFO] [2015-05-24 21:51:04,093] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 9.00ms
-[INFO] [2015-05-24 21:51:04,105] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 6.97ms
-[INFO] [2015-05-24 21:51:04,115] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 4.00ms
-[INFO] [2015-05-24 21:51:04,124] (MainThread) 304 GET /resources/css/animations.css (::1) 4.00ms
-[INFO] [2015-05-24 21:51:04,132] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 5.00ms
-[INFO] [2015-05-24 21:51:04,141] (MainThread) 304 GET /admin/static/shomeadmin.css (::1) 5.00ms
-[INFO] [2015-05-24 21:51:04,151] (MainThread) 304 GET /resources/js/jquery.js (::1) 5.00ms
-[INFO] [2015-05-24 21:51:04,160] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 5.00ms
-[INFO] [2015-05-24 21:51:04,173] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 8.00ms
-[INFO] [2015-05-24 21:51:04,185] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:51:04,194] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 5.00ms
-[INFO] [2015-05-24 21:51:04,206] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 7.00ms
-[INFO] [2015-05-24 21:51:04,218] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:51:04,231] (MainThread) 304 GET /resources/js/angular.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:51:04,243] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 7.01ms
-[INFO] [2015-05-24 21:51:04,256] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:51:04,264] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 5.00ms
-[INFO] [2015-05-24 21:51:04,274] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 4.00ms
-[INFO] [2015-05-24 21:51:04,285] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 7.00ms
-[INFO] [2015-05-24 21:51:04,298] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 7.00ms
-[INFO] [2015-05-24 21:51:04,309] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 8.00ms
-[INFO] [2015-05-24 21:51:04,318] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 4.00ms
-[INFO] [2015-05-24 21:51:04,326] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 4.00ms
-[INFO] [2015-05-24 21:51:04,360] (MainThread) 304 GET /admin/static/index.html (::1) 4.00ms
-[INFO] [2015-05-24 21:51:04,368] (MainThread) 304 GET /resources/logo.png (::1) 5.00ms
-[INFO] [2015-05-24 21:51:04,509] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.html (::1) 6.01ms
-[INFO] [2015-05-24 21:51:04,651] (MainThread) 200 GET /admin/scheduler/tasks (::1) 3.00ms
-[INFO] [2015-05-24 21:51:28,700] (MainThread) 304 GET /admin/scheduler/tasks (::1) 3.99ms
-[INFO] [2015-05-24 21:51:29,794] (MainThread) 200 GET /admin/static/modules/system/system.html (::1) 8.99ms
-[INFO] [2015-05-24 21:51:29,844] (MainThread) 200 GET /admin/plugins (::1) 18.00ms
-[INFO] [2015-05-24 21:51:34,367] (MainThread) 200 GET /admin/scenarios/ (::1) 10.03ms
-[INFO] [2015-05-24 21:51:38,849] (MainThread) 200 GET /admin/static/modules/constructor/constructor.html (::1) 13.00ms
-[INFO] [2015-05-24 21:51:38,972] (MainThread) 200 GET /admin/scenarios/my1 (::1) 2.99ms
-[INFO] [2015-05-24 21:51:38,978] (MainThread) 304 GET /admin/plugins (::1) 3.00ms
-[INFO] [2015-05-24 21:51:38,983] (MainThread) 304 GET /admin/scenarios/ (::1) 3.00ms
-[INFO] [2015-05-24 21:51:40,604] (MainThread) 304 GET /admin/scheduler/tasks (::1) 2.02ms
-[INFO] [2015-05-24 21:51:41,562] (MainThread) 304 GET /admin/scenarios/ (::1) 4.00ms
-[INFO] [2015-05-24 21:51:43,084] (MainThread) 304 GET /admin/scenarios/my1 (::1) 3.00ms
-[INFO] [2015-05-24 21:51:43,095] (MainThread) 304 GET /admin/scenarios/ (::1) 5.00ms
-[INFO] [2015-05-24 21:51:43,102] (MainThread) 304 GET /admin/plugins (::1) 4.00ms
-[INFO] [2015-05-24 21:51:43,993] (MainThread) 304 GET /admin/scenarios/ (::1) 5.00ms
-[INFO] [2015-05-24 21:57:05,112] (MainThread) 304 GET /admin/static/index.html (::1) 5.03ms
-[INFO] [2015-05-24 21:57:05,158] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 8.00ms
-[INFO] [2015-05-24 21:57:05,168] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 6.00ms
-[INFO] [2015-05-24 21:57:05,177] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 5.00ms
-[INFO] [2015-05-24 21:57:05,186] (MainThread) 304 GET /resources/css/animations.css (::1) 4.00ms
-[INFO] [2015-05-24 21:57:05,194] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 5.00ms
-[INFO] [2015-05-24 21:57:05,202] (MainThread) 304 GET /admin/static/shomeadmin.css (::1) 4.00ms
-[INFO] [2015-05-24 21:57:05,213] (MainThread) 304 GET /resources/js/jquery.js (::1) 4.00ms
-[INFO] [2015-05-24 21:57:05,222] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:57:05,231] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:57:05,242] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:57:05,250] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 5.00ms
-[INFO] [2015-05-24 21:57:05,263] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 7.00ms
-[INFO] [2015-05-24 21:57:05,275] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:57:05,285] (MainThread) 304 GET /resources/js/angular.min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:57:05,298] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:57:05,311] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 7.00ms
-[INFO] [2015-05-24 21:57:05,323] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 6.00ms
-[INFO] [2015-05-24 21:57:05,373] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 6.00ms
-[INFO] [2015-05-24 21:57:05,386] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 7.00ms
-[INFO] [2015-05-24 21:57:05,396] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 6.00ms
-[INFO] [2015-05-24 21:57:05,406] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 5.00ms
-[INFO] [2015-05-24 21:57:05,413] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 4.00ms
-[INFO] [2015-05-24 21:57:05,421] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 4.00ms
-[INFO] [2015-05-24 21:57:05,430] (MainThread) 304 GET /admin/static/index.html (::1) 4.00ms
-[INFO] [2015-05-24 21:57:05,443] (MainThread) 304 GET /resources/logo.png (::1) 8.00ms
-[INFO] [2015-05-24 21:57:05,532] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.html (::1) 6.01ms
-[INFO] [2015-05-24 21:57:05,609] (MainThread) 304 GET /admin/scenarios/ (::1) 4.00ms
-[INFO] [2015-05-24 21:57:17,533] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 3.98ms
-[INFO] [2015-05-24 21:57:17,964] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 5.01ms
-[INFO] [2015-05-24 21:57:18,448] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 4.00ms
-[INFO] [2015-05-24 21:57:19,471] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 3.99ms
-[INFO] [2015-05-24 21:57:23,705] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 3.02ms
-[INFO] [2015-05-24 21:57:25,205] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 3.99ms
-[INFO] [2015-05-24 21:57:26,688] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 4.00ms
-[INFO] [2015-05-24 21:57:28,178] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 2.99ms
-[INFO] [2015-05-24 21:57:29,437] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 4.00ms
-[INFO] [2015-05-24 21:57:31,182] (MainThread) 200 PUT /admin/scenarios/my1 (::1) 3.98ms
-[INFO] [2015-05-24 21:58:36,475] (MainThread) 304 GET /admin/plugins (::1) 3.97ms
-[INFO] [2015-05-24 21:58:36,480] (MainThread) 304 GET /admin/scenarios/ (::1) 2.00ms
-[INFO] [2015-05-24 21:58:37,428] (MainThread) 304 GET /admin/scenarios/ (::1) 3.00ms
-[INFO] [2015-05-24 21:58:38,907] (MainThread) 200 GET /admin/scenarios/my1 (::1) 2.98ms
-[INFO] [2015-05-24 21:58:39,116] (MainThread) 304 GET /admin/plugins (::1) 6.00ms
-[INFO] [2015-05-24 21:58:39,129] (MainThread) 304 GET /admin/scenarios/ (::1) 6.00ms
+[DEBUG] [2015-05-26 21:35:15,659] (MainThread) RequestNode constructor called: {'position': {'left': 260, 'top': 142}, 'exceptional': [], 'active': False, 'id': 'rn303', 'next': [], 'reference': 'change me', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[INFO] [2015-05-26 21:35:15,660] (MainThread) Context initialized
+[INFO] [2015-05-26 21:35:16,701] (MainThread) 200 GET /admin/static/index.html (::1) 34.99ms
+[INFO] [2015-05-26 21:35:16,779] (MainThread) 304 GET /admin/static/index.html (::1) 2.00ms
+[INFO] [2015-05-26 21:35:16,816] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 8.00ms
+[INFO] [2015-05-26 21:35:16,823] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 6.00ms
+[INFO] [2015-05-26 21:35:16,830] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 6.00ms
+[INFO] [2015-05-26 21:35:16,837] (MainThread) 304 GET /resources/css/animations.css (::1) 4.00ms
+[INFO] [2015-05-26 21:35:16,846] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 8.00ms
+[INFO] [2015-05-26 21:35:16,851] (MainThread) 304 GET /admin/static/shomeadmin.css (::1) 4.00ms
+[INFO] [2015-05-26 21:35:16,882] (MainThread) 304 GET /resources/js/jquery.js (::1) 29.00ms
+[INFO] [2015-05-26 21:35:16,926] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 44.01ms
+[INFO] [2015-05-26 21:35:16,966] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 39.00ms
+[INFO] [2015-05-26 21:35:16,982] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 15.00ms
+[INFO] [2015-05-26 21:35:16,992] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 9.00ms
+[INFO] [2015-05-26 21:35:17,000] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 7.00ms
+[INFO] [2015-05-26 21:35:17,010] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 9.00ms
+[INFO] [2015-05-26 21:35:17,052] (MainThread) 304 GET /resources/js/angular.min.js (::1) 41.00ms
+[INFO] [2015-05-26 21:35:17,066] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 13.00ms
+[INFO] [2015-05-26 21:35:17,080] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 13.00ms
+[INFO] [2015-05-26 21:35:17,088] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 7.00ms
+[INFO] [2015-05-26 21:35:17,098] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 8.00ms
+[INFO] [2015-05-26 21:35:17,106] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 7.00ms
+[INFO] [2015-05-26 21:35:17,118] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 11.00ms
+[INFO] [2015-05-26 21:35:17,127] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 8.00ms
+[INFO] [2015-05-26 21:35:17,135] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 7.00ms
+[INFO] [2015-05-26 21:35:17,142] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 6.00ms
+[INFO] [2015-05-26 21:35:17,146] (MainThread) 304 GET /resources/logo.png (::1) 3.00ms
+[INFO] [2015-05-26 21:35:17,333] (MainThread) 304 GET /admin/static/modules/constructor/constructor.html (::1) 5.00ms
+[INFO] [2015-05-26 21:35:17,504] (MainThread) 200 GET /admin/plugins (::1) 2.00ms
+[INFO] [2015-05-26 21:35:17,505] (MainThread) 200 GET /admin/scenarios/ (::1) 0.00ms
+[INFO] [2015-05-26 21:35:18,525] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.html (::1) 4.99ms
+[INFO] [2015-05-26 21:35:18,564] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-26 21:35:19,727] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-26 21:35:19,731] (MainThread) 304 GET /admin/plugins (::1) 0.00ms
+[DEBUG] [2015-05-26 21:36:19,202] (MainThread) RequestNode constructor called: {'position': {'left': 12, 'top': 263}, 'exceptional': [], 'active': False, 'id': 'rn376', 'retvar': 'x', 'next': [], 'reference': 'false', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:36:19,203] (MainThread) RequestNode constructor called: {'parallel': [], 'condition': '', 'reference': 'true', 'id': 'rn399', 'active': False, 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 370, 'top': 254}, 'retvar': 'x', 'type': 'RequestNode', 'exceptional': [], 'next': [], 'plugin': 'mock'}
+[DEBUG] [2015-05-26 21:36:19,203] (MainThread) ConditionalNode constructor called: {'active': False, 'position': {'left': 222, 'top': 113}, 'exceptional': [], 'type': 'ConditionalNode', 'condition': '1 === 1', 'id': 'cn175', 'no': ['rn376'], 'parallel': [], 'next': [], 'dimension': {'width': 218, 'height': 85}, 'yes': ['rn399']}
+[ERROR] [2015-05-26 21:36:19,203] (MainThread) Uncaught exception POST /admin/constructor/check (::1)
+HTTPServerRequest(protocol='http', host='localhost:8082', method='POST', uri='/admin/constructor/check', version='HTTP/1.1', remote_ip='::1', headers={'Referer': 'http://localhost:8082/admin/static/index.html', 'Pragma': 'no-cache', 'Connection': 'keep-alive', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'Host': 'localhost:8082', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0', 'Content-Type': 'application/json;charset=utf-8', 'Cache-Control': 'no-cache', 'Accept': 'application/json, text/plain, */*', 'Content-Length': '941'})
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\tornado\web.py", line 1346, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Temp\shome\web\handlers\ConstructorCheckHandler.py", line 18, in post
+    self._ws.action_processor.add_scenario(gid, expression)
+  File "C:\Temp\shome\core\ActionProcessor.py", line 18, in add_scenario
+    self._scenarios[name] = Scenario(name, expression, description, runoninit, published)
+  File "<string>", line 4, in __init__
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\state.py", line 260, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "C:\Temp\shome\core\entities\Scenario.py", line 31, in __init__
+    self.construct()
+  File "C:\Temp\shome\core\entities\Scenario.py", line 46, in construct
+    self.nodes = {node: NodeFactory.create(struct[node]) for node in struct}
+  File "C:\Temp\shome\core\entities\Scenario.py", line 46, in <dictcomp>
+    self.nodes = {node: NodeFactory.create(struct[node]) for node in struct}
+  File "C:\Temp\shome\core\NodeFactory.py", line 14, in create
+    return ConditionalNode(structure)
+  File "C:\Temp\shome\core\processtree\ConditionalNode.py", line 16, in __init__
+    super().__init__(structure)
+  File "C:\Temp\shome\core\processtree\Node.py", line 18, in __init__
+    self.__check_required_fields(structure)
+  File "C:\Temp\shome\core\processtree\Node.py", line 54, in __check_required_fields
+    raise Exception('Required field "'+k+'" not found in node: '+str(structure))
+Exception: Required field "expression" not found in node: {'active': False, 'position': {'left': 222, 'top': 113}, 'exceptional': [], 'type': 'ConditionalNode', 'condition': '1 === 1', 'id': 'cn175', 'no': ['rn376'], 'parallel': [], 'next': [], 'dimension': {'width': 218, 'height': 85}, 'yes': ['rn399']}
+[ERROR] [2015-05-26 21:36:19,231] (MainThread) 500 POST /admin/constructor/check (::1) 29.00ms
+[DEBUG] [2015-05-26 21:36:39,589] (MainThread) RequestNode constructor called: {'position': {'left': 12, 'top': 263}, 'exceptional': [], 'active': False, 'id': 'rn376', 'retvar': 'x', 'next': [], 'reference': 'false', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:36:39,589] (MainThread) RequestNode constructor called: {'parallel': [], 'condition': '', 'reference': 'true', 'id': 'rn399', 'active': False, 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 370, 'top': 254}, 'retvar': 'x', 'type': 'RequestNode', 'exceptional': [], 'next': [], 'plugin': 'mock'}
+[DEBUG] [2015-05-26 21:36:39,589] (MainThread) ConditionalNode constructor called: {'active': False, 'position': {'left': 222, 'top': 113}, 'exceptional': [], 'type': 'ConditionalNode', 'condition': '1 === 1', 'id': 'cn175', 'no': ['rn376'], 'parallel': [], 'next': [], 'dimension': {'width': 218, 'height': 85}, 'yes': ['rn399']}
+[ERROR] [2015-05-26 21:36:39,590] (MainThread) Uncaught exception POST /admin/constructor/check (::1)
+HTTPServerRequest(protocol='http', host='localhost:8082', method='POST', uri='/admin/constructor/check', version='HTTP/1.1', remote_ip='::1', headers={'Referer': 'http://localhost:8082/admin/static/index.html', 'Pragma': 'no-cache', 'Connection': 'keep-alive', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'Host': 'localhost:8082', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0', 'Content-Type': 'application/json;charset=utf-8', 'Cache-Control': 'no-cache', 'Accept': 'application/json, text/plain, */*', 'Content-Length': '941'})
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\tornado\web.py", line 1346, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Temp\shome\web\handlers\ConstructorCheckHandler.py", line 18, in post
+    self._ws.action_processor.add_scenario(gid, expression)
+  File "C:\Temp\shome\core\ActionProcessor.py", line 18, in add_scenario
+    self._scenarios[name] = Scenario(name, expression, description, runoninit, published)
+  File "<string>", line 4, in __init__
+  File "C:\Python33\lib\site-packages\sqlalchemy\orm\state.py", line 260, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "C:\Temp\shome\core\entities\Scenario.py", line 31, in __init__
+    self.construct()
+  File "C:\Temp\shome\core\entities\Scenario.py", line 46, in construct
+    self.nodes = {node: NodeFactory.create(struct[node]) for node in struct}
+  File "C:\Temp\shome\core\entities\Scenario.py", line 46, in <dictcomp>
+    self.nodes = {node: NodeFactory.create(struct[node]) for node in struct}
+  File "C:\Temp\shome\core\NodeFactory.py", line 14, in create
+    return ConditionalNode(structure)
+  File "C:\Temp\shome\core\processtree\ConditionalNode.py", line 16, in __init__
+    super().__init__(structure)
+  File "C:\Temp\shome\core\processtree\Node.py", line 18, in __init__
+    self.__check_required_fields(structure)
+  File "C:\Temp\shome\core\processtree\Node.py", line 54, in __check_required_fields
+    raise Exception('Required field "'+k+'" not found in node: '+str(structure))
+Exception: Required field "expression" not found in node: {'active': False, 'position': {'left': 222, 'top': 113}, 'exceptional': [], 'type': 'ConditionalNode', 'condition': '1 === 1', 'id': 'cn175', 'no': ['rn376'], 'parallel': [], 'next': [], 'dimension': {'width': 218, 'height': 85}, 'yes': ['rn399']}
+[ERROR] [2015-05-26 21:36:39,592] (MainThread) 500 POST /admin/constructor/check (::1) 4.01ms
+[INFO] [2015-05-26 21:38:05,155] (MainThread) 304 GET /admin/static/index.html (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,205] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 4.00ms
+[INFO] [2015-05-26 21:38:05,209] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,212] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,215] (MainThread) 304 GET /resources/css/animations.css (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,218] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 1.00ms
+[INFO] [2015-05-26 21:38:05,220] (MainThread) 304 GET /admin/static/shomeadmin.css (::1) 1.00ms
+[INFO] [2015-05-26 21:38:05,223] (MainThread) 304 GET /resources/js/jquery.js (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,226] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,230] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 3.00ms
+[INFO] [2015-05-26 21:38:05,233] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,236] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,238] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 1.00ms
+[INFO] [2015-05-26 21:38:05,241] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,243] (MainThread) 304 GET /resources/js/angular.min.js (::1) 1.01ms
+[INFO] [2015-05-26 21:38:05,246] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,249] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,251] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 1.00ms
+[INFO] [2015-05-26 21:38:05,254] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,256] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 1.00ms
+[INFO] [2015-05-26 21:38:05,258] (MainThread) 200 GET /admin/static/modules/constructor/constructor.js (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,260] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 1.00ms
+[INFO] [2015-05-26 21:38:05,262] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 1.00ms
+[INFO] [2015-05-26 21:38:05,265] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,267] (MainThread) 304 GET /admin/static/index.html (::1) 1.00ms
+[INFO] [2015-05-26 21:38:05,270] (MainThread) 304 GET /resources/logo.png (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,510] (MainThread) 200 GET /admin/static/modules/constructor/constructor.html (::1) 2.00ms
+[INFO] [2015-05-26 21:38:05,693] (MainThread) 304 GET /admin/plugins (::1) 1.03ms
+[INFO] [2015-05-26 21:38:05,694] (MainThread) 304 GET /admin/scenarios/ (::1) 0.97ms
+[DEBUG] [2015-05-26 21:38:15,867] (MainThread) ConditionalNode constructor called: {'position': {'left': 189, 'top': 168}, 'exceptional': [], 'expression': '1 === 1', 'active': True, 'id': 'cn164', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
+[DEBUG] [2015-05-26 21:38:16,055] (MainThread) For expression // 1 === 1 // evaluation result is True
+[INFO] [2015-05-26 21:38:16,058] (MainThread) 200 POST /admin/constructor/check (::1) 192.01ms
+[DEBUG] [2015-05-26 21:38:44,562] (MainThread) RequestNode constructor called: {'position': {'left': 0, 'top': 237}, 'exceptional': [], 'active': False, 'id': 'rn278', 'retvar': 'x', 'next': [], 'reference': 'false', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:38:44,562] (MainThread) RequestNode constructor called: {'position': {'left': 413, 'top': 250}, 'exceptional': [], 'active': False, 'id': 'rn204', 'retvar': 'x', 'next': [], 'reference': 'true', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:38:44,562] (MainThread) ConditionalNode constructor called: {'position': {'left': 178, 'top': 135}, 'exceptional': [], 'expression': '1 === 1', 'active': False, 'id': 'cn164', 'no': ['rn278'], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': ['rn204'], 'dimension': {'width': 218, 'height': 85}}
+[DEBUG] [2015-05-26 21:38:44,755] (MainThread) For expression // 1 === 1 // evaluation result is True
+[DEBUG] [2015-05-26 21:38:44,756] (Thread-1  ) MockPlugin call with true
+[INFO] [2015-05-26 21:38:44,757] (MainThread) 200 POST /admin/constructor/check (::1) 196.01ms
+[DEBUG] [2015-05-26 21:38:49,385] (MainThread) RequestNode constructor called: {'position': {'left': 0, 'top': 237}, 'exceptional': [], 'active': False, 'id': 'rn278', 'retvar': 'x', 'next': [], 'reference': 'false', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:38:49,385] (MainThread) RequestNode constructor called: {'position': {'left': 413, 'top': 250}, 'exceptional': [], 'active': False, 'id': 'rn204', 'retvar': 'x', 'next': [], 'reference': 'true', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:38:49,386] (MainThread) ConditionalNode constructor called: {'position': {'left': 178, 'top': 135}, 'exceptional': [], 'expression': '1 === 2', 'active': True, 'id': 'cn164', 'no': ['rn278'], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': ['rn204'], 'dimension': {'width': 218, 'height': 85}}
+[DEBUG] [2015-05-26 21:38:49,733] (MainThread) For expression // 1 === 2 // evaluation result is False
+[DEBUG] [2015-05-26 21:38:49,734] (Thread-2  ) MockPlugin call with false
+[INFO] [2015-05-26 21:38:49,736] (MainThread) 200 POST /admin/constructor/check (::1) 350.88ms
+[DEBUG] [2015-05-26 21:39:10,122] (MainThread) RequestNode constructor called: {'position': {'left': 0, 'top': 237}, 'exceptional': [], 'active': False, 'id': 'rn278', 'retvar': 'x', 'next': [], 'reference': 'false', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:39:10,122] (MainThread) RequestNode constructor called: {'position': {'left': 413, 'top': 250}, 'exceptional': [], 'active': False, 'id': 'rn204', 'retvar': 'x', 'next': [], 'reference': 'true', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:39:10,122] (MainThread) ConditionalNode constructor called: {'position': {'left': 178, 'top': 135}, 'exceptional': [], 'expression': '1 === 2', 'active': False, 'id': 'cn164', 'no': ['rn278'], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': ['rn204'], 'dimension': {'width': 218, 'height': 85}}
+[INFO] [2015-05-26 21:39:10,138] (MainThread) 200 POST /admin/scenarios/conditional_test (::1) 17.00ms
+[INFO] [2015-05-26 21:39:13,073] (MainThread) 200 GET /admin/scenarios/ (::1) 7.02ms
+[INFO] [2015-05-26 21:39:15,377] (MainThread) 200 GET /admin/scenarios/conditional_test (::1) 1.99ms
+[INFO] [2015-05-26 21:39:15,380] (MainThread) 304 GET /admin/scenarios/ (::1) 1.97ms
+[INFO] [2015-05-26 21:39:15,384] (MainThread) 304 GET /admin/plugins (::1) 4.00ms
+[DEBUG] [2015-05-26 21:39:17,196] (MainThread) RequestNode constructor called: {'position': {'left': 0, 'top': 237}, 'exceptional': [], 'active': False, 'id': 'rn278', 'retvar': 'x', 'next': [], 'reference': 'false', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:39:17,196] (MainThread) RequestNode constructor called: {'position': {'left': 413, 'top': 250}, 'exceptional': [], 'active': False, 'id': 'rn204', 'retvar': 'x', 'next': [], 'reference': 'true', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:39:17,196] (MainThread) ConditionalNode constructor called: {'position': {'left': 178, 'top': 135}, 'exceptional': [], 'expression': '1 === 2', 'active': False, 'id': 'cn164', 'no': ['rn278'], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': ['rn204'], 'dimension': {'width': 218, 'height': 85}}
+[DEBUG] [2015-05-26 21:39:17,380] (MainThread) For expression // 1 === 2 // evaluation result is False
+[DEBUG] [2015-05-26 21:39:17,380] (Thread-3  ) MockPlugin call with false
+[INFO] [2015-05-26 21:39:17,382] (MainThread) 200 POST /admin/constructor/check (::1) 187.01ms
+[INFO] [2015-05-26 21:39:56,717] (MainThread) 304 GET /admin/scenarios/ (::1) 1.01ms
+[INFO] [2015-05-26 21:39:57,846] (MainThread) 304 GET /admin/plugins (::1) 1.01ms
+[INFO] [2015-05-26 21:39:57,847] (MainThread) 304 GET /admin/scenarios/ (::1) 0.00ms
+[INFO] [2015-05-26 21:39:58,795] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-26 21:39:59,333] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.html (::1) 5.02ms
+[INFO] [2015-05-26 21:39:59,387] (MainThread) 200 GET /admin/scheduler/tasks (::1) 1.00ms
+[INFO] [2015-05-26 21:40:01,194] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-26 21:40:02,432] (MainThread) 304 GET /admin/scheduler/tasks (::1) 0.00ms
+[INFO] [2015-05-26 21:40:03,738] (MainThread) 304 GET /admin/static/modules/system/system.html (::1) 5.00ms
+[INFO] [2015-05-26 21:40:03,778] (MainThread) 304 GET /admin/plugins (::1) 2.00ms
+[INFO] [2015-05-26 21:40:08,350] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-26 21:40:09,570] (MainThread) 304 GET /admin/plugins (::1) 1.00ms
+[INFO] [2015-05-26 21:40:09,572] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-26 21:40:10,224] (MainThread) 304 GET /admin/scenarios/ (::1) 0.98ms
+[INFO] [2015-05-26 21:40:10,788] (MainThread) 304 GET /admin/plugins (::1) 2.00ms
+[INFO] [2015-05-26 21:40:10,789] (MainThread) 304 GET /admin/scenarios/ (::1) 0.00ms
+[INFO] [2015-05-26 21:40:21,191] (MainThread) 304 GET /admin/plugins (::1) 0.98ms
+[INFO] [2015-05-26 21:40:21,192] (MainThread) 304 GET /admin/scenarios/ (::1) 0.99ms
+[INFO] [2015-05-26 21:40:21,505] (MainThread) 304 GET /admin/scenarios/ (::1) 1.01ms
+[INFO] [2015-05-26 21:40:24,033] (MainThread) 304 GET /admin/scenarios/conditional_test (::1) 1.00ms
+[INFO] [2015-05-26 21:40:24,035] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-26 21:40:24,037] (MainThread) 304 GET /admin/plugins (::1) 2.02ms
+[INFO] [2015-05-26 21:41:09,151] (MainThread) 304 GET /admin/plugins (::1) 1.00ms
+[INFO] [2015-05-26 21:41:09,152] (MainThread) 304 GET /admin/scenarios/ (::1) 0.00ms
+[DEBUG] [2015-05-26 21:41:22,721] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'next': [], 'reference': 'dir /', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:41:22,721] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
+[DEBUG] [2015-05-26 21:41:22,722] (Thread-4  ) OneWirePlugin read address dir / (attempt: 0)
+[INFO] [2015-05-26 21:41:22,899] (MainThread) 200 POST /admin/constructor/check (::1) 178.50ms
+[DEBUG] [2015-05-26 21:41:26,818] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': 'dir /', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:41:26,818] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
+[DEBUG] [2015-05-26 21:41:26,818] (Thread-5  ) OneWirePlugin read address dir / (attempt: 0)
+[INFO] [2015-05-26 21:41:26,826] (MainThread) 200 POST /admin/constructor/check (::1) 9.01ms
+[DEBUG] [2015-05-26 21:41:42,189] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': 'dir /', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:41:42,190] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
+[DEBUG] [2015-05-26 21:41:42,190] (Thread-6  ) OneWirePlugin read address dir / (attempt: 0)
+[INFO] [2015-05-26 21:41:42,198] (MainThread) 200 POST /admin/constructor/check (::1) 9.01ms
+[DEBUG] [2015-05-26 21:41:45,806] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': 'dir /', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:41:45,806] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
+[DEBUG] [2015-05-26 21:41:45,806] (Thread-7  ) OneWirePlugin read address dir / (attempt: 0)
+[INFO] [2015-05-26 21:41:45,814] (MainThread) 200 POST /admin/constructor/check (::1) 9.00ms
+[DEBUG] [2015-05-26 21:41:51,093] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': 'dir /', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:41:51,093] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
+[DEBUG] [2015-05-26 21:41:51,094] (Thread-8  ) OneWirePlugin read address dir / (attempt: 0)
+[INFO] [2015-05-26 21:41:51,104] (MainThread) 200 POST /admin/constructor/check (::1) 12.01ms
+[DEBUG] [2015-05-26 21:41:56,020] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': 'dir /', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:41:56,021] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
+[DEBUG] [2015-05-26 21:41:56,021] (Thread-9  ) OneWirePlugin read address dir / (attempt: 0)
+[INFO] [2015-05-26 21:41:56,029] (MainThread) 200 POST /admin/constructor/check (::1) 9.02ms
+[DEBUG] [2015-05-26 21:42:40,470] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': 'dir /3A.C9330D000000/', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:42:40,471] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
+[DEBUG] [2015-05-26 21:42:40,471] (Thread-10 ) OneWirePlugin read address dir /3A.C9330D000000/ (attempt: 0)
+[INFO] [2015-05-26 21:42:40,478] (MainThread) 200 POST /admin/constructor/check (::1) 9.02ms
+[DEBUG] [2015-05-26 21:42:54,188] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': '/3A.C9330D000000/PIO.A', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
+[DEBUG] [2015-05-26 21:42:54,189] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
+[DEBUG] [2015-05-26 21:42:54,189] (Thread-11 ) OneWirePlugin read address /3A.C9330D000000/PIO.A (attempt: 0)
+[DEBUG] [2015-05-26 21:42:54,220] (Thread-11 ) OneWirePlugin address /3A.C9330D000000/PIO.A reading result : 0
+[INFO] [2015-05-26 21:42:54,222] (MainThread) 200 POST /admin/constructor/check (::1) 35.02ms
+[INFO] [2015-05-26 22:20:44,675] (MainThread) C:\Temp\shome\core\processtree\Node.py modified; restarting server
+[ERROR] [2015-05-26 22:20:44,677] (MainThread) Exception in callback functools.partial(<function wrap.<locals>.null_wrapper at 0x0000000003D0F950>)
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\tornado\ioloop.py", line 989, in _run
+    return self.callback()
+  File "C:\Python33\lib\site-packages\tornado\autoreload.py", line 181, in _reload_on_update
+    _check_file(modify_times, path)
+  File "C:\Python33\lib\site-packages\tornado\autoreload.py", line 196, in _check_file
+    _reload()
+  File "C:\Python33\lib\site-packages\tornado\autoreload.py", line 223, in _reload
+    sys.exit(0)
+SystemExit: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\tornado\ioloop.py", line 568, in _run_callback
+    ret = callback()
+  File "C:\Python33\lib\site-packages\tornado\stack_context.py", line 275, in null_wrapper
+    return fn(*args, **kwargs)
+  File "C:\Python33\lib\site-packages\tornado\ioloop.py", line 993, in _run
+    self._schedule_next()
+  File "C:\Python33\lib\site-packages\tornado\ioloop.py", line 1000, in _schedule_next
+    self._timeout = self.io_loop.add_timeout(self._next_timeout, self._run)
+  File "C:\Python33\lib\site-packages\tornado\ioloop.py", line 465, in add_timeout
+    return self.call_at(deadline, callback, *args, **kwargs)
+  File "C:\Python33\lib\site-packages\tornado\ioloop.py", line 873, in call_at
+    heapq.heappush(self._timeouts, timeout)
+TypeError: heap argument must be a list

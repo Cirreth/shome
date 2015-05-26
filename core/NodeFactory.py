@@ -1,5 +1,3 @@
-__author__ = 'Кирилл'
-
 from core.processtree import *
 
 
@@ -12,3 +10,5 @@ class NodeFactory():
             return RequestNode(structure)
         elif node_type == 'DelayNode':
             return DelayNode(structure)
+        elif node_type == 'ConditionalNode':
+            return ConditionalNode(structure)

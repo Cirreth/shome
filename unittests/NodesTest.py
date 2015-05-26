@@ -101,3 +101,29 @@ class NodesTest(unittest.TestCase):
         """
         brn_structure = json.loads(bad_request_node)
         self.assertRaises(Exception, NodeFactory.create, brn_structure)
+
+    def test_conditional_node(self):
+        expression = """
+            {
+                "id": "test",
+                "type": "ConditionalNode",
+                "expression": "1+1",
+                "yes": [],
+                "no": [],
+                "position": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        """
+        structure = json.loads(expression)
+        node = NodeFactory.create(structure)
+        q, parallel = node.execute({})
+        res, next = q.get()
+        self.assertEqual(res, True)
+        # replace expression and run next test
+        structure['expression'] = "1 === 2"
+        node = NodeFactory.create(structure)
+        q, parallel = node.execute({})
+        res, next = q.get()
+        self.assertEqual(res, False)

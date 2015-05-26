@@ -1,3 +1,4 @@
+import re
 from threading import Thread
 
 __author__ = 'cirreth'
@@ -47,6 +48,10 @@ class Node(metaclass=ABCMeta):
 
     def execute(self, parameters):
         return self.node_exec(parameters)
+
+    def _substitute_placeholders(self, str, parameters):
+        m = re.search('[{]{2}([a-zA-Z_-]?)[}]{2}', str)
+        return str
 
     def __check_required_fields(self, structure):
         for k in self._required_fields+self._general_required_fields:
