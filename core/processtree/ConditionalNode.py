@@ -16,12 +16,16 @@ class ConditionalNode(Node):
         super().__init__(structure)
 
     def action(self, parameters):
-        return eval(self.substitute_placeholders(self.expression, parameters))
+        try:
+            return eval(self.substitute_placeholders(self.expression, parameters))
+        except Exception as e:
+            return 'ConditionalNode exception: id: %s, expression: %s, parameters: %s, exception: %s' % self.id, str(
+                self.expression), str(self.parameters), str(e)
 
     def node_exec(self, parameters, async=False):
         q = Queue()
         res = self.action(parameters)
-        logging.debug('For expression // '+self.expression+' // evaluation result is '+str(res))
+        logging.debug('For expression // ' + self.expression + ' // evaluation result is ' + str(res))
         direction_next = self.yes if res else self.no
         res = bool(res)
         q.put((res, direction_next))

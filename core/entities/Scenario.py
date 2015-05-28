@@ -25,7 +25,7 @@ class Scenario(Base):
         self.published = published
         #runtime
         self.variables = dict()
-        self.isrunned = False
+        self.isrunned = False  # flag to prevent multiple execution
         self.root = []
         self.nodes = {}
         self.construct()

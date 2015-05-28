@@ -1,3 +1,5 @@
+import logging
+
 __author__ = 'cirreth'
 from core.processtree.Node import Node
 
@@ -18,7 +20,26 @@ class RequestNode(Node):
     def action(self, parameters):
         value = self.value if hasattr(self, 'value') else None
         reference = Node.substitute_placeholders(self.reference, parameters)
-        res = self._plugin_manager.call_plugin(self.plugin, reference, value)
+        try:
+            res = self._plugin_manager.call_plugin(self.plugin, reference, value)
+        except Exception as e:
+            logging.error("""
+                            Exception in RequestNode.
+                            id: %s,
+                            plugin: %s,
+                            reference: %s,
+                            value: %s,
+                            parameters: %s,
+                            exception: %s""",
+                          self.id,
+                          self.plugin,
+                          str(self.reference),
+                          self.value if hasattr(self, value) else '[none]',
+                          str(parameters),
+                          str(e)
+                          )
+            if hasattr(self, 'retvar'):
+                return {self.retvar: 'error'}
         if hasattr(self, 'retvar'):
             return {self.retvar: res}
 
