@@ -17,7 +17,8 @@ class RequestNode(Node):
 
     def action(self, parameters):
         value = self.value if hasattr(self, 'value') else None
-        res = self._plugin_manager.call_plugin(self.plugin, self.reference, value)
+        reference = Node.substitute_placeholders(self.reference, parameters)
+        res = self._plugin_manager.call_plugin(self.plugin, reference, value)
         if hasattr(self, 'retvar'):
             return {self.retvar: res}
 

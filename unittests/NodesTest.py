@@ -6,6 +6,7 @@ import time
 from core.Database import Database
 from core.PluginManager import PluginManager
 from core import NodeFactory
+from core.processtree.Node import Node
 
 
 logging.basicConfig(level=logging.DEBUG,  format='[%(levelname)s] [%(asctime)s] (%(threadName)-10s) %(message)s', filename='debug.log', filemode='w')
@@ -127,3 +128,7 @@ class NodesTest(unittest.TestCase):
         q, parallel = node.execute({})
         res, next = q.get()
         self.assertEqual(res, False)
+
+    def test_substitution(self):
+        q1 = "[x] == 1"
+        self.assertEqual(Node.substitute_placeholders(q1, {'x': 1}), '1 == 1')

@@ -16,7 +16,7 @@ class ConditionalNode(Node):
         super().__init__(structure)
 
     def action(self, parameters):
-        return eval(self.expression)
+        return eval(self.substitute_placeholders(self.expression, parameters))
 
     def node_exec(self, parameters, async=False):
         q = Queue()

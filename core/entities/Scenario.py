@@ -46,31 +46,36 @@ class Scenario(Base):
         self.nodes = {node: NodeFactory.create(struct[node]) for node in struct}
 
     def execute(self, parameters):
-        result = {}
-        parallel = Queue()
-        # preparing queue
-        for node in self.root:
-            parallel.put(node)
-        first_iteration = True
-        while first_iteration or not parallel.empty():
-            first_iteration = False
-            queues = {}
-            next_nodes = []
-            # execute all parallel
-            while not parallel.empty():
-                node = parallel.get()
-                queues[self.nodes[node].id], nodes_parallel = self.nodes[node].execute(parameters)
-                for prl in nodes_parallel:
-                    parallel.put(prl)
-            # collect results
-            for node_id, q in queues.items():
-                res, node_next = q.get()
-                next_nodes += node_next
-                if type(res) is dict:
-                    result.update(res if res else {})
-            # execute all next_nodes
-            for node in next_nodes:
+        self.isrunned = True
+        try:
+            result = {}
+            parallel = Queue()
+            # preparing queue
+            for node in self.root:
                 parallel.put(node)
+            first_iteration = True
+            while first_iteration or not parallel.empty():
+                first_iteration = False
+                queues = {}
+                next_nodes = []
+                parameters.update(result)
+                # execute all parallel
+                while not parallel.empty():
+                    node = parallel.get()
+                    queues[self.nodes[node].id], nodes_parallel = self.nodes[node].execute(parameters)
+                    for prl in nodes_parallel:
+                        parallel.put(prl)
+                # collect results
+                for node_id, q in queues.items():
+                    res, node_next = q.get()
+                    next_nodes += node_next
+                    if type(res) is dict:
+                        result.update(res if res else {})
+                # execute all next_nodes
+                for node in next_nodes:
+                    parallel.put(node)
+        finally:
+            self.isrunned = False
         return result
 
     def dict(self):

@@ -1,261 +1,225 @@
-[DEBUG] [2015-05-26 21:35:15,470] (MainThread) OneWirePlugin initialization
-[DEBUG] [2015-05-26 21:35:15,470] (MainThread) 
+[DEBUG] [2015-05-27 23:19:47,044] (MainThread) OneWirePlugin initialization
+[DEBUG] [2015-05-27 23:19:47,044] (MainThread) 
 OneWirePlugin list dir:
-[DEBUG] [2015-05-26 21:35:15,655] (MainThread) b'/28.345805050000'
-[DEBUG] [2015-05-26 21:35:15,655] (MainThread) b'/28.F2CF39040000'
-[DEBUG] [2015-05-26 21:35:15,655] (MainThread) b'/28.259039040000'
-[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/28.1D9D39040000'
-[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/3A.F2360D000000'
-[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/3A.C9330D000000'
-[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/81.F34132000000'
-[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/bus.0'
-[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/uncached'
-[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/settings'
-[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/system'
-[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/statistics'
-[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/structure'
-[DEBUG] [2015-05-26 21:35:15,656] (MainThread) b'/simultaneous'
-[DEBUG] [2015-05-26 21:35:15,657] (MainThread) b'/alarm'
-[DEBUG] [2015-05-26 21:35:15,657] (MainThread) 
+[DEBUG] [2015-05-27 23:19:47,918] (MainThread) b'/28.345805050000'
+[DEBUG] [2015-05-27 23:19:47,918] (MainThread) b'/28.F2CF39040000'
+[DEBUG] [2015-05-27 23:19:47,919] (MainThread) b'/28.259039040000'
+[DEBUG] [2015-05-27 23:19:47,919] (MainThread) b'/28.1D9D39040000'
+[DEBUG] [2015-05-27 23:19:47,919] (MainThread) b'/3A.F2360D000000'
+[DEBUG] [2015-05-27 23:19:47,919] (MainThread) b'/3A.C9330D000000'
+[DEBUG] [2015-05-27 23:19:47,920] (MainThread) b'/81.F34132000000'
+[DEBUG] [2015-05-27 23:19:47,920] (MainThread) b'/bus.0'
+[DEBUG] [2015-05-27 23:19:47,920] (MainThread) b'/uncached'
+[DEBUG] [2015-05-27 23:19:47,920] (MainThread) b'/settings'
+[DEBUG] [2015-05-27 23:19:47,921] (MainThread) b'/system'
+[DEBUG] [2015-05-27 23:19:47,921] (MainThread) b'/statistics'
+[DEBUG] [2015-05-27 23:19:47,921] (MainThread) b'/structure'
+[DEBUG] [2015-05-27 23:19:47,921] (MainThread) b'/simultaneous'
+[DEBUG] [2015-05-27 23:19:47,922] (MainThread) b'/alarm'
+[DEBUG] [2015-05-27 23:19:47,922] (MainThread) 
 
-[DEBUG] [2015-05-26 21:35:15,659] (MainThread) RequestNode constructor called: {'position': {'left': 260, 'top': 142}, 'exceptional': [], 'active': False, 'id': 'rn303', 'next': [], 'reference': 'change me', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[INFO] [2015-05-26 21:35:15,660] (MainThread) Context initialized
-[INFO] [2015-05-26 21:35:16,701] (MainThread) 200 GET /admin/static/index.html (::1) 34.99ms
-[INFO] [2015-05-26 21:35:16,779] (MainThread) 304 GET /admin/static/index.html (::1) 2.00ms
-[INFO] [2015-05-26 21:35:16,816] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 8.00ms
-[INFO] [2015-05-26 21:35:16,823] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 6.00ms
-[INFO] [2015-05-26 21:35:16,830] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 6.00ms
-[INFO] [2015-05-26 21:35:16,837] (MainThread) 304 GET /resources/css/animations.css (::1) 4.00ms
-[INFO] [2015-05-26 21:35:16,846] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 8.00ms
-[INFO] [2015-05-26 21:35:16,851] (MainThread) 304 GET /admin/static/shomeadmin.css (::1) 4.00ms
-[INFO] [2015-05-26 21:35:16,882] (MainThread) 304 GET /resources/js/jquery.js (::1) 29.00ms
-[INFO] [2015-05-26 21:35:16,926] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 44.01ms
-[INFO] [2015-05-26 21:35:16,966] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 39.00ms
-[INFO] [2015-05-26 21:35:16,982] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 15.00ms
-[INFO] [2015-05-26 21:35:16,992] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 9.00ms
-[INFO] [2015-05-26 21:35:17,000] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 7.00ms
-[INFO] [2015-05-26 21:35:17,010] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 9.00ms
-[INFO] [2015-05-26 21:35:17,052] (MainThread) 304 GET /resources/js/angular.min.js (::1) 41.00ms
-[INFO] [2015-05-26 21:35:17,066] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 13.00ms
-[INFO] [2015-05-26 21:35:17,080] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 13.00ms
-[INFO] [2015-05-26 21:35:17,088] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 7.00ms
-[INFO] [2015-05-26 21:35:17,098] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 8.00ms
-[INFO] [2015-05-26 21:35:17,106] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 7.00ms
-[INFO] [2015-05-26 21:35:17,118] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 11.00ms
-[INFO] [2015-05-26 21:35:17,127] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 8.00ms
-[INFO] [2015-05-26 21:35:17,135] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 7.00ms
-[INFO] [2015-05-26 21:35:17,142] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 6.00ms
-[INFO] [2015-05-26 21:35:17,146] (MainThread) 304 GET /resources/logo.png (::1) 3.00ms
-[INFO] [2015-05-26 21:35:17,333] (MainThread) 304 GET /admin/static/modules/constructor/constructor.html (::1) 5.00ms
-[INFO] [2015-05-26 21:35:17,504] (MainThread) 200 GET /admin/plugins (::1) 2.00ms
-[INFO] [2015-05-26 21:35:17,505] (MainThread) 200 GET /admin/scenarios/ (::1) 0.00ms
-[INFO] [2015-05-26 21:35:18,525] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.html (::1) 4.99ms
-[INFO] [2015-05-26 21:35:18,564] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
-[INFO] [2015-05-26 21:35:19,727] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
-[INFO] [2015-05-26 21:35:19,731] (MainThread) 304 GET /admin/plugins (::1) 0.00ms
-[DEBUG] [2015-05-26 21:36:19,202] (MainThread) RequestNode constructor called: {'position': {'left': 12, 'top': 263}, 'exceptional': [], 'active': False, 'id': 'rn376', 'retvar': 'x', 'next': [], 'reference': 'false', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:36:19,203] (MainThread) RequestNode constructor called: {'parallel': [], 'condition': '', 'reference': 'true', 'id': 'rn399', 'active': False, 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 370, 'top': 254}, 'retvar': 'x', 'type': 'RequestNode', 'exceptional': [], 'next': [], 'plugin': 'mock'}
-[DEBUG] [2015-05-26 21:36:19,203] (MainThread) ConditionalNode constructor called: {'active': False, 'position': {'left': 222, 'top': 113}, 'exceptional': [], 'type': 'ConditionalNode', 'condition': '1 === 1', 'id': 'cn175', 'no': ['rn376'], 'parallel': [], 'next': [], 'dimension': {'width': 218, 'height': 85}, 'yes': ['rn399']}
-[ERROR] [2015-05-26 21:36:19,203] (MainThread) Uncaught exception POST /admin/constructor/check (::1)
-HTTPServerRequest(protocol='http', host='localhost:8082', method='POST', uri='/admin/constructor/check', version='HTTP/1.1', remote_ip='::1', headers={'Referer': 'http://localhost:8082/admin/static/index.html', 'Pragma': 'no-cache', 'Connection': 'keep-alive', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'Host': 'localhost:8082', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0', 'Content-Type': 'application/json;charset=utf-8', 'Cache-Control': 'no-cache', 'Accept': 'application/json, text/plain, */*', 'Content-Length': '941'})
+[DEBUG] [2015-05-27 23:19:47,927] (MainThread) RequestNode constructor called: {'id': 'rn303', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 260, 'top': 142}, 'reference': 'change me', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:19:47,928] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn204', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 413, 'top': 250}, 'reference': 'true', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:19:47,929] (MainThread) ConditionalNode constructor called: {'next': [], 'id': 'cn164', 'yes': ['rn204'], 'parallel': [], 'expression': '1 === 2', 'no': ['rn278'], 'position': {'left': 178, 'top': 135}, 'active': False, 'dimension': {'width': 218, 'height': 85}, 'exceptional': [], 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:19:47,929] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn278', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 0, 'top': 237}, 'reference': 'false', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[INFO] [2015-05-27 23:19:47,933] (MainThread) Context initialized
+[INFO] [2015-05-27 23:19:49,519] (MainThread) 200 GET /admin/static/index.html (::1) 16.97ms
+[INFO] [2015-05-27 23:19:49,582] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 10.00ms
+[INFO] [2015-05-27 23:19:49,589] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 6.00ms
+[INFO] [2015-05-27 23:19:49,597] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 7.00ms
+[INFO] [2015-05-27 23:19:49,602] (MainThread) 304 GET /resources/css/animations.css (::1) 4.00ms
+[INFO] [2015-05-27 23:19:49,611] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 7.00ms
+[INFO] [2015-05-27 23:19:49,617] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 5.00ms
+[INFO] [2015-05-27 23:19:49,662] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 43.00ms
+[INFO] [2015-05-27 23:19:49,701] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 39.00ms
+[INFO] [2015-05-27 23:19:49,716] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 14.00ms
+[INFO] [2015-05-27 23:19:49,728] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 11.00ms
+[INFO] [2015-05-27 23:19:49,735] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 6.00ms
+[INFO] [2015-05-27 23:19:49,762] (MainThread) 304 GET /resources/js/jquery.js (::1) 26.00ms
+[INFO] [2015-05-27 23:19:49,792] (MainThread) 304 GET /resources/js/angular.min.js (::1) 28.00ms
+[INFO] [2015-05-27 23:19:49,799] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 7.00ms
+[INFO] [2015-05-27 23:19:49,809] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 9.00ms
+[INFO] [2015-05-27 23:19:49,816] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 6.00ms
+[INFO] [2015-05-27 23:19:49,823] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 6.00ms
+[INFO] [2015-05-27 23:19:49,832] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 8.00ms
+[INFO] [2015-05-27 23:19:49,837] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 5.00ms
+[INFO] [2015-05-27 23:19:49,842] (MainThread) 304 GET /admin/static/shomeadmin.css (::1) 4.00ms
+[INFO] [2015-05-27 23:19:49,850] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 7.00ms
+[INFO] [2015-05-27 23:19:49,859] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 8.00ms
+[INFO] [2015-05-27 23:19:49,870] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 10.00ms
+[INFO] [2015-05-27 23:19:49,872] (MainThread) 304 GET /admin/static/index.html (::1) 1.00ms
+[INFO] [2015-05-27 23:19:49,876] (MainThread) 304 GET /resources/logo.png (::1) 3.00ms
+[INFO] [2015-05-27 23:19:50,189] (MainThread) 200 GET /admin/static/modules/constructor/constructor.html (::1) 7.00ms
+[INFO] [2015-05-27 23:19:50,367] (MainThread) 200 GET /admin/plugins (::1) 2.00ms
+[INFO] [2015-05-27 23:19:50,368] (MainThread) 200 GET /admin/scenarios/ (::1) 0.00ms
+[DEBUG] [2015-05-27 23:21:07,998] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn178', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 408, 'top': 375}, 'reference': 'true', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:21:07,999] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn460', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 0, 'top': 380}, 'reference': 'false', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:21:07,999] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn178'], 'next': [], 'exceptional': [], 'active': False, 'no': ['rn460'], 'id': 'cn334', 'parallel': [], 'expression': '[z] == 1', 'position': {'left': 192, 'top': 261}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:21:07,999] (MainThread) RequestNode constructor called: {'retvar': 'z', 'next': ['cn334'], 'exceptional': [], 'active': False, 'plugin': 'mock', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 206, 'top': 125}, 'reference': '1', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:21:08,000] (Thread-1  ) MockPlugin call with 1
+[DEBUG] [2015-05-27 23:21:08,289] (MainThread) For expression // [z] == 1 // evaluation result is True
+[DEBUG] [2015-05-27 23:21:08,290] (Thread-2  ) MockPlugin call with true
+[INFO] [2015-05-27 23:21:08,292] (MainThread) 200 POST /admin/constructor/check (::1) 295.08ms
+[DEBUG] [2015-05-27 23:21:14,994] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn178', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 408, 'top': 375}, 'reference': 'true', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:21:14,994] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn460', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 0, 'top': 380}, 'reference': 'false', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:21:14,994] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn178'], 'next': [], 'exceptional': [], 'active': True, 'no': ['rn460'], 'id': 'cn334', 'parallel': [], 'expression': '[z] == 0', 'position': {'left': 192, 'top': 261}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:21:14,994] (MainThread) RequestNode constructor called: {'retvar': 'z', 'next': ['cn334'], 'exceptional': [], 'active': False, 'plugin': 'mock', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 206, 'top': 125}, 'reference': '1', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:21:14,995] (Thread-3  ) MockPlugin call with 1
+[DEBUG] [2015-05-27 23:21:15,191] (MainThread) For expression // [z] == 0 // evaluation result is False
+[DEBUG] [2015-05-27 23:21:15,191] (Thread-4  ) MockPlugin call with false
+[INFO] [2015-05-27 23:21:15,193] (MainThread) 200 POST /admin/constructor/check (::1) 199.99ms
+[DEBUG] [2015-05-27 23:21:52,245] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn178', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 408, 'top': 375}, 'reference': 'z is "[z]"', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:21:52,245] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn460', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 0, 'top': 380}, 'reference': 'false', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:21:52,245] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn178'], 'next': [], 'exceptional': [], 'active': False, 'no': ['rn460'], 'id': 'cn334', 'parallel': [], 'expression': '[z] == 0', 'position': {'left': 192, 'top': 261}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:21:52,245] (MainThread) RequestNode constructor called: {'retvar': 'z', 'next': ['cn334'], 'exceptional': [], 'active': False, 'plugin': 'mock', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 206, 'top': 125}, 'reference': '1', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:21:52,246] (Thread-5  ) MockPlugin call with 1
+[DEBUG] [2015-05-27 23:21:52,438] (MainThread) For expression // [z] == 0 // evaluation result is False
+[DEBUG] [2015-05-27 23:21:52,439] (Thread-6  ) MockPlugin call with false
+[INFO] [2015-05-27 23:21:52,442] (MainThread) 200 POST /admin/constructor/check (::1) 198.01ms
+[DEBUG] [2015-05-27 23:22:02,287] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn178', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 408, 'top': 375}, 'reference': 'z is "[z]"', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:22:02,288] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn460', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 0, 'top': 380}, 'reference': 'false', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:22:02,288] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn178'], 'next': [], 'exceptional': [], 'active': True, 'no': ['rn460'], 'id': 'cn334', 'parallel': [], 'expression': '[z] == 1', 'position': {'left': 192, 'top': 261}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:22:02,288] (MainThread) RequestNode constructor called: {'retvar': 'z', 'next': ['cn334'], 'exceptional': [], 'active': False, 'plugin': 'mock', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 206, 'top': 125}, 'reference': '1', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:22:02,289] (Thread-7  ) MockPlugin call with 1
+[DEBUG] [2015-05-27 23:22:02,481] (MainThread) For expression // [z] == 1 // evaluation result is True
+[DEBUG] [2015-05-27 23:22:02,481] (Thread-8  ) MockPlugin call with z is "1"
+[INFO] [2015-05-27 23:22:02,483] (MainThread) 200 POST /admin/constructor/check (::1) 196.01ms
+[DEBUG] [2015-05-27 23:22:45,956] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn178', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 412, 'top': 451}, 'reference': 'z is "[z]"', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:22:45,956] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn460', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 0, 'top': 380}, 'reference': 'false', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:22:45,956] (MainThread) DelayNode constructor called: {'id': 'rn115', 'parallel': [], 'next': ['rn178'], 'delay': 0, 'position': {'left': 440, 'top': 347}, 'active': False, 'dimension': {'width': 60, 'height': 60}, 'exceptional': [], 'type': 'DelayNode'}
+[DEBUG] [2015-05-27 23:22:45,957] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn115'], 'next': [], 'exceptional': [], 'active': False, 'no': ['rn460'], 'id': 'cn334', 'parallel': [], 'expression': '[z] == 1', 'position': {'left': 180, 'top': 247}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:22:45,957] (MainThread) RequestNode constructor called: {'retvar': 'z', 'next': ['cn334'], 'exceptional': [], 'active': False, 'plugin': 'mock', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 206, 'top': 125}, 'reference': '1', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:22:45,957] (Thread-9  ) MockPlugin call with 1
+[DEBUG] [2015-05-27 23:22:46,145] (MainThread) For expression // [z] == 1 // evaluation result is True
+[DEBUG] [2015-05-27 23:22:46,145] (Thread-11 ) MockPlugin call with z is "1"
+[INFO] [2015-05-27 23:22:46,148] (MainThread) 200 POST /admin/constructor/check (::1) 193.01ms
+[DEBUG] [2015-05-27 23:22:56,399] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn178', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 412, 'top': 451}, 'reference': 'z is "[z]"', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:22:56,400] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn460', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 0, 'top': 380}, 'reference': 'false', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:22:56,400] (MainThread) DelayNode constructor called: {'id': 'rn115', 'parallel': [], 'next': ['rn178'], 'delay': 5, 'position': {'left': 440, 'top': 347}, 'active': False, 'dimension': {'width': 60, 'height': 60}, 'exceptional': [], 'type': 'DelayNode'}
+[DEBUG] [2015-05-27 23:22:56,400] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn115'], 'next': [], 'exceptional': [], 'active': False, 'no': ['rn460'], 'id': 'cn334', 'parallel': [], 'expression': '[z] == 1', 'position': {'left': 180, 'top': 247}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:22:56,400] (MainThread) RequestNode constructor called: {'retvar': 'z', 'next': ['cn334'], 'exceptional': [], 'active': False, 'plugin': 'mock', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 206, 'top': 125}, 'reference': '1', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:22:56,401] (Thread-12 ) MockPlugin call with 1
+[DEBUG] [2015-05-27 23:22:56,588] (MainThread) For expression // [z] == 1 // evaluation result is True
+[DEBUG] [2015-05-27 23:23:01,589] (Thread-14 ) MockPlugin call with z is "1"
+[INFO] [2015-05-27 23:23:01,592] (MainThread) 200 POST /admin/constructor/check (::1) 5194.03ms
+[DEBUG] [2015-05-27 23:23:19,826] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn178', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 412, 'top': 451}, 'reference': 'z is [z]', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:23:19,826] (MainThread) RequestNode constructor called: {'retvar': 'x', 'id': 'rn460', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 0, 'top': 380}, 'reference': 'false', 'plugin': 'mock', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:23:19,826] (MainThread) DelayNode constructor called: {'id': 'rn115', 'parallel': [], 'next': ['rn178'], 'delay': 5, 'position': {'left': 440, 'top': 347}, 'active': False, 'dimension': {'width': 60, 'height': 60}, 'exceptional': [], 'type': 'DelayNode'}
+[DEBUG] [2015-05-27 23:23:19,827] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn115'], 'next': [], 'exceptional': [], 'active': False, 'no': ['rn460'], 'id': 'cn334', 'parallel': [], 'expression': '[z] == 1', 'position': {'left': 180, 'top': 247}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:23:19,827] (MainThread) RequestNode constructor called: {'retvar': 'z', 'next': ['cn334'], 'exceptional': [], 'active': False, 'plugin': 'mock', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 206, 'top': 125}, 'reference': '1', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:23:19,827] (Thread-15 ) MockPlugin call with 1
+[DEBUG] [2015-05-27 23:23:20,020] (MainThread) For expression // [z] == 1 // evaluation result is True
+[DEBUG] [2015-05-27 23:23:25,022] (Thread-17 ) MockPlugin call with z is 1
+[INFO] [2015-05-27 23:23:25,027] (MainThread) 200 POST /admin/constructor/check (::1) 5202.09ms
+[DEBUG] [2015-05-27 23:26:15,923] (MainThread) RequestNode constructor called: {'retvar': '1', 'id': 'rn178', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 24, 'top': 470}, 'reference': '/3A.F2360D000000/PIO.A', 'plugin': 'onewire', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:26:15,924] (MainThread) RequestNode constructor called: {'retvar': '0', 'id': 'rn460', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 313, 'top': 317}, 'reference': '/3A.F2360D000000/PIO.A', 'plugin': 'onewire', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:26:15,924] (MainThread) DelayNode constructor called: {'retvar': '', 'id': 'rn115', 'parallel': [], 'expression': '', 'next': ['rn178'], 'delay': 10, 'position': {'left': 228, 'top': 382}, 'active': False, 'dimension': {'width': 60, 'height': 60}, 'exceptional': [], 'type': 'DelayNode'}
+[DEBUG] [2015-05-27 23:26:15,924] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn115', 'rn460'], 'next': [], 'exceptional': [], 'active': False, 'no': [], 'id': 'cn334', 'parallel': [], 'expression': '[state] == 1', 'position': {'left': 31, 'top': 219}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:26:15,924] (MainThread) RequestNode constructor called: {'retvar': 'state', 'next': ['cn334'], 'exceptional': [], 'active': False, 'plugin': 'onewire', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 64, 'top': 104}, 'reference': '/3A.F2360D000000/sensed.B', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[INFO] [2015-05-27 23:26:16,150] (MainThread) 200 POST /admin/scenarios/Doorbell (::1) 226.96ms
+[INFO] [2015-05-27 23:26:21,132] (MainThread) 200 GET /admin/scenarios/ (::1) 7.99ms
+[INFO] [2015-05-27 23:26:23,262] (MainThread) 200 GET /admin/scenarios/Doorbell (::1) 1.00ms
+[INFO] [2015-05-27 23:26:23,263] (MainThread) 304 GET /admin/scenarios/ (::1) 0.00ms
+[INFO] [2015-05-27 23:26:23,269] (MainThread) 304 GET /admin/plugins (::1) 4.00ms
+[INFO] [2015-05-27 23:26:26,758] (MainThread) 304 GET /admin/scenarios/ (::1) 2.01ms
+[INFO] [2015-05-27 23:26:43,255] (MainThread) 304 GET /admin/scenarios/Doorbell (::1) 1.00ms
+[INFO] [2015-05-27 23:26:43,256] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-27 23:26:43,258] (MainThread) 304 GET /admin/plugins (::1) 1.00ms
+[DEBUG] [2015-05-27 23:26:44,302] (MainThread) RequestNode constructor called: {'retvar': '1', 'id': 'rn178', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 24, 'top': 470}, 'reference': '/3A.F2360D000000/PIO.A', 'plugin': 'onewire', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:26:44,302] (MainThread) RequestNode constructor called: {'retvar': '0', 'id': 'rn460', 'active': False, 'parallel': [], 'next': [], 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 313, 'top': 317}, 'reference': '/3A.F2360D000000/PIO.A', 'plugin': 'onewire', 'exceptional': [], 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:26:44,302] (MainThread) DelayNode constructor called: {'retvar': '', 'id': 'rn115', 'parallel': [], 'expression': '', 'next': ['rn178'], 'delay': 10, 'position': {'left': 228, 'top': 382}, 'active': False, 'dimension': {'width': 60, 'height': 60}, 'exceptional': [], 'type': 'DelayNode'}
+[DEBUG] [2015-05-27 23:26:44,303] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn115', 'rn460'], 'next': [], 'exceptional': [], 'active': False, 'no': [], 'id': 'cn334', 'parallel': [], 'expression': '[state] == 1', 'position': {'left': 31, 'top': 219}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:26:44,303] (MainThread) RequestNode constructor called: {'retvar': 'state', 'next': ['cn334'], 'exceptional': [], 'active': False, 'plugin': 'onewire', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 64, 'top': 104}, 'reference': '/3A.F2360D000000/sensed.B', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:26:44,304] (Thread-18 ) OneWirePlugin read address /3A.F2360D000000/sensed.B (attempt: 0)
+[DEBUG] [2015-05-27 23:26:44,355] (Thread-18 ) OneWirePlugin address /3A.F2360D000000/sensed.B reading result : 0
+[DEBUG] [2015-05-27 23:26:44,548] (MainThread) For expression // [state] == 1 // evaluation result is False
+[INFO] [2015-05-27 23:26:44,551] (MainThread) 200 POST /admin/constructor/check (::1) 249.59ms
+[INFO] [2015-05-27 23:27:06,056] (MainThread) 304 GET /admin/scenarios/ (::1) 1.01ms
+[INFO] [2015-05-27 23:27:08,173] (MainThread) 304 GET /admin/scenarios/Doorbell (::1) 1.99ms
+[INFO] [2015-05-27 23:27:08,175] (MainThread) 304 GET /admin/plugins (::1) 0.97ms
+[INFO] [2015-05-27 23:27:08,176] (MainThread) 304 GET /admin/scenarios/ (::1) 1.02ms
+[INFO] [2015-05-27 23:27:13,404] (MainThread) 304 GET /admin/static/index.html (::1) 4.00ms
+[INFO] [2015-05-27 23:27:13,490] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 4.00ms
+[INFO] [2015-05-27 23:27:13,494] (MainThread) 304 GET /resources/css/animations.css (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,497] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,500] (MainThread) 304 GET /admin/static/shomeadmin.css (::1) 1.00ms
+[INFO] [2015-05-27 23:27:13,503] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,506] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,509] (MainThread) 304 GET /resources/js/jquery.js (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,512] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,516] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 3.00ms
+[INFO] [2015-05-27 23:27:13,520] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,522] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 1.00ms
+[INFO] [2015-05-27 23:27:13,525] (MainThread) 304 GET /resources/js/angular.min.js (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,529] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 3.00ms
+[INFO] [2015-05-27 23:27:13,533] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,536] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,725] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,727] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 1.00ms
+[INFO] [2015-05-27 23:27:13,729] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 1.00ms
+[INFO] [2015-05-27 23:27:13,732] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,734] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,737] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,741] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,744] (MainThread) 304 GET /admin/static/modules/constructor/constructor.js (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,746] (MainThread) 304 GET /admin/static/index.html (::1) 1.00ms
+[INFO] [2015-05-27 23:27:13,749] (MainThread) 304 GET /resources/logo.png (::1) 2.00ms
+[INFO] [2015-05-27 23:27:13,909] (MainThread) 304 GET /admin/static/modules/constructor/constructor.html (::1) 2.00ms
+[INFO] [2015-05-27 23:27:14,057] (MainThread) 304 GET /admin/scenarios/Doorbell (::1) 1.00ms
+[INFO] [2015-05-27 23:27:14,059] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
+[INFO] [2015-05-27 23:27:14,060] (MainThread) 304 GET /admin/plugins (::1) 1.00ms
+[DEBUG] [2015-05-27 23:27:34,535] (MainThread) RequestNode constructor called: {'retvar': '', 'next': [], 'exceptional': [], 'active': False, 'plugin': 'onewire', 'value': '1', 'id': 'rn178', 'parallel': [], 'position': {'left': 24, 'top': 470}, 'reference': '/3A.F2360D000000/PIO.A', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:27:34,535] (MainThread) RequestNode constructor called: {'retvar': '', 'next': [], 'exceptional': [], 'active': False, 'plugin': 'onewire', 'value': '0', 'id': 'rn460', 'parallel': [], 'position': {'left': 313, 'top': 317}, 'reference': '/3A.F2360D000000/PIO.A', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:27:34,536] (MainThread) DelayNode constructor called: {'retvar': '', 'id': 'rn115', 'parallel': [], 'expression': '', 'next': ['rn178'], 'delay': 10, 'position': {'left': 228, 'top': 382}, 'active': False, 'dimension': {'width': 60, 'height': 60}, 'exceptional': [], 'type': 'DelayNode'}
+[DEBUG] [2015-05-27 23:27:34,536] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn115', 'rn460'], 'next': [], 'exceptional': [], 'active': False, 'no': [], 'id': 'cn334', 'parallel': [], 'expression': '[state] == 1', 'position': {'left': 31, 'top': 219}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:27:34,536] (MainThread) RequestNode constructor called: {'retvar': 'state', 'next': ['cn334'], 'exceptional': [], 'active': False, 'plugin': 'onewire', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 64, 'top': 104}, 'reference': '/3A.F2360D000000/sensed.B', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:27:34,536] (Thread-19 ) OneWirePlugin read address /3A.F2360D000000/sensed.B (attempt: 0)
+[DEBUG] [2015-05-27 23:27:34,566] (Thread-19 ) OneWirePlugin address /3A.F2360D000000/sensed.B reading result : 0
+[DEBUG] [2015-05-27 23:27:34,756] (MainThread) For expression // [state] == 1 // evaluation result is False
+[INFO] [2015-05-27 23:27:34,826] (MainThread) 200 POST /admin/constructor/check (::1) 291.81ms
+[DEBUG] [2015-05-27 23:27:44,983] (MainThread) RequestNode constructor called: {'retvar': '', 'next': [], 'exceptional': [], 'active': False, 'plugin': 'onewire', 'value': '1', 'id': 'rn178', 'parallel': [], 'position': {'left': 24, 'top': 470}, 'reference': '/3A.F2360D000000/PIO.A', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:27:44,983] (MainThread) RequestNode constructor called: {'retvar': '', 'next': [], 'exceptional': [], 'active': False, 'plugin': 'onewire', 'value': '0', 'id': 'rn460', 'parallel': [], 'position': {'left': 313, 'top': 317}, 'reference': '/3A.F2360D000000/PIO.A', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:27:44,983] (MainThread) DelayNode constructor called: {'retvar': '', 'id': 'rn115', 'parallel': [], 'expression': '', 'next': ['rn178'], 'delay': 10, 'position': {'left': 228, 'top': 382}, 'active': False, 'dimension': {'width': 60, 'height': 60}, 'exceptional': [], 'type': 'DelayNode'}
+[DEBUG] [2015-05-27 23:27:44,983] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn115', 'rn460'], 'next': [], 'exceptional': [], 'active': False, 'no': [], 'id': 'cn334', 'parallel': [], 'expression': '[state] == 1', 'position': {'left': 31, 'top': 219}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:27:44,983] (MainThread) RequestNode constructor called: {'retvar': 'state', 'next': ['cn334'], 'exceptional': [], 'active': False, 'plugin': 'onewire', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 64, 'top': 104}, 'reference': '1', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:27:44,984] (Thread-20 ) OneWirePlugin read address 1 (attempt: 0)
+[DEBUG] [2015-05-27 23:27:45,017] (Thread-20 ) OneWirePlugin address 1 reading result : Exception occured: can't convert negative value to unsigned int
+[ERROR] [2015-05-27 23:27:45,205] (MainThread) Uncaught exception POST /admin/constructor/check (::1)
+HTTPServerRequest(protocol='http', host='localhost:8082', method='POST', uri='/admin/constructor/check', version='HTTP/1.1', remote_ip='::1', headers={'Accept-Encoding': 'gzip, deflate', 'Host': 'localhost:8082', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0', 'Pragma': 'no-cache', 'Connection': 'keep-alive', 'Referer': 'http://localhost:8082/admin/static/index.html', 'Content-Type': 'application/json;charset=utf-8', 'Accept': 'application/json, text/plain, */*', 'Content-Length': '1546', 'Cache-Control': 'no-cache'})
 Traceback (most recent call last):
   File "C:\Python33\lib\site-packages\tornado\web.py", line 1346, in _execute
     result = method(*self.path_args, **self.path_kwargs)
-  File "C:\Temp\shome\web\handlers\ConstructorCheckHandler.py", line 18, in post
-    self._ws.action_processor.add_scenario(gid, expression)
-  File "C:\Temp\shome\core\ActionProcessor.py", line 18, in add_scenario
-    self._scenarios[name] = Scenario(name, expression, description, runoninit, published)
-  File "<string>", line 4, in __init__
-  File "C:\Python33\lib\site-packages\sqlalchemy\orm\state.py", line 260, in _initialize_instance
-    return manager.original_init(*mixed[1:], **kwargs)
-  File "C:\Temp\shome\core\entities\Scenario.py", line 31, in __init__
-    self.construct()
-  File "C:\Temp\shome\core\entities\Scenario.py", line 46, in construct
-    self.nodes = {node: NodeFactory.create(struct[node]) for node in struct}
-  File "C:\Temp\shome\core\entities\Scenario.py", line 46, in <dictcomp>
-    self.nodes = {node: NodeFactory.create(struct[node]) for node in struct}
-  File "C:\Temp\shome\core\NodeFactory.py", line 14, in create
-    return ConditionalNode(structure)
-  File "C:\Temp\shome\core\processtree\ConditionalNode.py", line 16, in __init__
-    super().__init__(structure)
-  File "C:\Temp\shome\core\processtree\Node.py", line 18, in __init__
-    self.__check_required_fields(structure)
-  File "C:\Temp\shome\core\processtree\Node.py", line 54, in __check_required_fields
-    raise Exception('Required field "'+k+'" not found in node: '+str(structure))
-Exception: Required field "expression" not found in node: {'active': False, 'position': {'left': 222, 'top': 113}, 'exceptional': [], 'type': 'ConditionalNode', 'condition': '1 === 1', 'id': 'cn175', 'no': ['rn376'], 'parallel': [], 'next': [], 'dimension': {'width': 218, 'height': 85}, 'yes': ['rn399']}
-[ERROR] [2015-05-26 21:36:19,231] (MainThread) 500 POST /admin/constructor/check (::1) 29.00ms
-[DEBUG] [2015-05-26 21:36:39,589] (MainThread) RequestNode constructor called: {'position': {'left': 12, 'top': 263}, 'exceptional': [], 'active': False, 'id': 'rn376', 'retvar': 'x', 'next': [], 'reference': 'false', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:36:39,589] (MainThread) RequestNode constructor called: {'parallel': [], 'condition': '', 'reference': 'true', 'id': 'rn399', 'active': False, 'dimension': {'width': 180, 'height': 65}, 'position': {'left': 370, 'top': 254}, 'retvar': 'x', 'type': 'RequestNode', 'exceptional': [], 'next': [], 'plugin': 'mock'}
-[DEBUG] [2015-05-26 21:36:39,589] (MainThread) ConditionalNode constructor called: {'active': False, 'position': {'left': 222, 'top': 113}, 'exceptional': [], 'type': 'ConditionalNode', 'condition': '1 === 1', 'id': 'cn175', 'no': ['rn376'], 'parallel': [], 'next': [], 'dimension': {'width': 218, 'height': 85}, 'yes': ['rn399']}
-[ERROR] [2015-05-26 21:36:39,590] (MainThread) Uncaught exception POST /admin/constructor/check (::1)
-HTTPServerRequest(protocol='http', host='localhost:8082', method='POST', uri='/admin/constructor/check', version='HTTP/1.1', remote_ip='::1', headers={'Referer': 'http://localhost:8082/admin/static/index.html', 'Pragma': 'no-cache', 'Connection': 'keep-alive', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'Host': 'localhost:8082', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0', 'Content-Type': 'application/json;charset=utf-8', 'Cache-Control': 'no-cache', 'Accept': 'application/json, text/plain, */*', 'Content-Length': '941'})
-Traceback (most recent call last):
-  File "C:\Python33\lib\site-packages\tornado\web.py", line 1346, in _execute
-    result = method(*self.path_args, **self.path_kwargs)
-  File "C:\Temp\shome\web\handlers\ConstructorCheckHandler.py", line 18, in post
-    self._ws.action_processor.add_scenario(gid, expression)
-  File "C:\Temp\shome\core\ActionProcessor.py", line 18, in add_scenario
-    self._scenarios[name] = Scenario(name, expression, description, runoninit, published)
-  File "<string>", line 4, in __init__
-  File "C:\Python33\lib\site-packages\sqlalchemy\orm\state.py", line 260, in _initialize_instance
-    return manager.original_init(*mixed[1:], **kwargs)
-  File "C:\Temp\shome\core\entities\Scenario.py", line 31, in __init__
-    self.construct()
-  File "C:\Temp\shome\core\entities\Scenario.py", line 46, in construct
-    self.nodes = {node: NodeFactory.create(struct[node]) for node in struct}
-  File "C:\Temp\shome\core\entities\Scenario.py", line 46, in <dictcomp>
-    self.nodes = {node: NodeFactory.create(struct[node]) for node in struct}
-  File "C:\Temp\shome\core\NodeFactory.py", line 14, in create
-    return ConditionalNode(structure)
-  File "C:\Temp\shome\core\processtree\ConditionalNode.py", line 16, in __init__
-    super().__init__(structure)
-  File "C:\Temp\shome\core\processtree\Node.py", line 18, in __init__
-    self.__check_required_fields(structure)
-  File "C:\Temp\shome\core\processtree\Node.py", line 54, in __check_required_fields
-    raise Exception('Required field "'+k+'" not found in node: '+str(structure))
-Exception: Required field "expression" not found in node: {'active': False, 'position': {'left': 222, 'top': 113}, 'exceptional': [], 'type': 'ConditionalNode', 'condition': '1 === 1', 'id': 'cn175', 'no': ['rn376'], 'parallel': [], 'next': [], 'dimension': {'width': 218, 'height': 85}, 'yes': ['rn399']}
-[ERROR] [2015-05-26 21:36:39,592] (MainThread) 500 POST /admin/constructor/check (::1) 4.01ms
-[INFO] [2015-05-26 21:38:05,155] (MainThread) 304 GET /admin/static/index.html (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,205] (MainThread) 304 GET /resources/css/bootstrap.min.css (::1) 4.00ms
-[INFO] [2015-05-26 21:38:05,209] (MainThread) 304 GET /resources/css/angular-ui-notification.min.css (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,212] (MainThread) 304 GET /resources/css/sb-admin.css (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,215] (MainThread) 304 GET /resources/css/animations.css (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,218] (MainThread) 304 GET /admin/static/modules/constructor/constructor.css (::1) 1.00ms
-[INFO] [2015-05-26 21:38:05,220] (MainThread) 304 GET /admin/static/shomeadmin.css (::1) 1.00ms
-[INFO] [2015-05-26 21:38:05,223] (MainThread) 304 GET /resources/js/jquery.js (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,226] (MainThread) 304 GET /resources/js/jquery-ui.min.js (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,230] (MainThread) 304 GET /resources/js/jquery.jsPlumb-min.js (::1) 3.00ms
-[INFO] [2015-05-26 21:38:05,233] (MainThread) 304 GET /resources/js/bootstrap.min.js (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,236] (MainThread) 304 GET /resources/js/jquery.pickmeup.min.js (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,238] (MainThread) 304 GET /resources/font-awesome-4.1.0/css/font-awesome.min.css (::1) 1.00ms
-[INFO] [2015-05-26 21:38:05,241] (MainThread) 304 GET /resources/js/jquery.pickmeup.twitter-bootstrap.min.js (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,243] (MainThread) 304 GET /resources/js/angular.min.js (::1) 1.01ms
-[INFO] [2015-05-26 21:38:05,246] (MainThread) 304 GET /resources/js/angular-route.min.js (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,249] (MainThread) 304 GET /resources/js/angular-animate.min.js (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,251] (MainThread) 304 GET /resources/js/angular-ui-notification.min.js (::1) 1.00ms
-[INFO] [2015-05-26 21:38:05,254] (MainThread) 304 GET /admin/static/shomeadmin.js (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,256] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.js (::1) 1.00ms
-[INFO] [2015-05-26 21:38:05,258] (MainThread) 200 GET /admin/static/modules/constructor/constructor.js (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,260] (MainThread) 304 GET /admin/static/modules/constructor/constructor-svc.js (::1) 1.00ms
-[INFO] [2015-05-26 21:38:05,262] (MainThread) 304 GET /admin/static/modules/scenarios/scenarios.js (::1) 1.00ms
-[INFO] [2015-05-26 21:38:05,265] (MainThread) 304 GET /admin/static/modules/system/system.js (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,267] (MainThread) 304 GET /admin/static/index.html (::1) 1.00ms
-[INFO] [2015-05-26 21:38:05,270] (MainThread) 304 GET /resources/logo.png (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,510] (MainThread) 200 GET /admin/static/modules/constructor/constructor.html (::1) 2.00ms
-[INFO] [2015-05-26 21:38:05,693] (MainThread) 304 GET /admin/plugins (::1) 1.03ms
-[INFO] [2015-05-26 21:38:05,694] (MainThread) 304 GET /admin/scenarios/ (::1) 0.97ms
-[DEBUG] [2015-05-26 21:38:15,867] (MainThread) ConditionalNode constructor called: {'position': {'left': 189, 'top': 168}, 'exceptional': [], 'expression': '1 === 1', 'active': True, 'id': 'cn164', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
-[DEBUG] [2015-05-26 21:38:16,055] (MainThread) For expression // 1 === 1 // evaluation result is True
-[INFO] [2015-05-26 21:38:16,058] (MainThread) 200 POST /admin/constructor/check (::1) 192.01ms
-[DEBUG] [2015-05-26 21:38:44,562] (MainThread) RequestNode constructor called: {'position': {'left': 0, 'top': 237}, 'exceptional': [], 'active': False, 'id': 'rn278', 'retvar': 'x', 'next': [], 'reference': 'false', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:38:44,562] (MainThread) RequestNode constructor called: {'position': {'left': 413, 'top': 250}, 'exceptional': [], 'active': False, 'id': 'rn204', 'retvar': 'x', 'next': [], 'reference': 'true', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:38:44,562] (MainThread) ConditionalNode constructor called: {'position': {'left': 178, 'top': 135}, 'exceptional': [], 'expression': '1 === 1', 'active': False, 'id': 'cn164', 'no': ['rn278'], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': ['rn204'], 'dimension': {'width': 218, 'height': 85}}
-[DEBUG] [2015-05-26 21:38:44,755] (MainThread) For expression // 1 === 1 // evaluation result is True
-[DEBUG] [2015-05-26 21:38:44,756] (Thread-1  ) MockPlugin call with true
-[INFO] [2015-05-26 21:38:44,757] (MainThread) 200 POST /admin/constructor/check (::1) 196.01ms
-[DEBUG] [2015-05-26 21:38:49,385] (MainThread) RequestNode constructor called: {'position': {'left': 0, 'top': 237}, 'exceptional': [], 'active': False, 'id': 'rn278', 'retvar': 'x', 'next': [], 'reference': 'false', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:38:49,385] (MainThread) RequestNode constructor called: {'position': {'left': 413, 'top': 250}, 'exceptional': [], 'active': False, 'id': 'rn204', 'retvar': 'x', 'next': [], 'reference': 'true', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:38:49,386] (MainThread) ConditionalNode constructor called: {'position': {'left': 178, 'top': 135}, 'exceptional': [], 'expression': '1 === 2', 'active': True, 'id': 'cn164', 'no': ['rn278'], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': ['rn204'], 'dimension': {'width': 218, 'height': 85}}
-[DEBUG] [2015-05-26 21:38:49,733] (MainThread) For expression // 1 === 2 // evaluation result is False
-[DEBUG] [2015-05-26 21:38:49,734] (Thread-2  ) MockPlugin call with false
-[INFO] [2015-05-26 21:38:49,736] (MainThread) 200 POST /admin/constructor/check (::1) 350.88ms
-[DEBUG] [2015-05-26 21:39:10,122] (MainThread) RequestNode constructor called: {'position': {'left': 0, 'top': 237}, 'exceptional': [], 'active': False, 'id': 'rn278', 'retvar': 'x', 'next': [], 'reference': 'false', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:39:10,122] (MainThread) RequestNode constructor called: {'position': {'left': 413, 'top': 250}, 'exceptional': [], 'active': False, 'id': 'rn204', 'retvar': 'x', 'next': [], 'reference': 'true', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:39:10,122] (MainThread) ConditionalNode constructor called: {'position': {'left': 178, 'top': 135}, 'exceptional': [], 'expression': '1 === 2', 'active': False, 'id': 'cn164', 'no': ['rn278'], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': ['rn204'], 'dimension': {'width': 218, 'height': 85}}
-[INFO] [2015-05-26 21:39:10,138] (MainThread) 200 POST /admin/scenarios/conditional_test (::1) 17.00ms
-[INFO] [2015-05-26 21:39:13,073] (MainThread) 200 GET /admin/scenarios/ (::1) 7.02ms
-[INFO] [2015-05-26 21:39:15,377] (MainThread) 200 GET /admin/scenarios/conditional_test (::1) 1.99ms
-[INFO] [2015-05-26 21:39:15,380] (MainThread) 304 GET /admin/scenarios/ (::1) 1.97ms
-[INFO] [2015-05-26 21:39:15,384] (MainThread) 304 GET /admin/plugins (::1) 4.00ms
-[DEBUG] [2015-05-26 21:39:17,196] (MainThread) RequestNode constructor called: {'position': {'left': 0, 'top': 237}, 'exceptional': [], 'active': False, 'id': 'rn278', 'retvar': 'x', 'next': [], 'reference': 'false', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:39:17,196] (MainThread) RequestNode constructor called: {'position': {'left': 413, 'top': 250}, 'exceptional': [], 'active': False, 'id': 'rn204', 'retvar': 'x', 'next': [], 'reference': 'true', 'parallel': [], 'plugin': 'mock', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:39:17,196] (MainThread) ConditionalNode constructor called: {'position': {'left': 178, 'top': 135}, 'exceptional': [], 'expression': '1 === 2', 'active': False, 'id': 'cn164', 'no': ['rn278'], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': ['rn204'], 'dimension': {'width': 218, 'height': 85}}
-[DEBUG] [2015-05-26 21:39:17,380] (MainThread) For expression // 1 === 2 // evaluation result is False
-[DEBUG] [2015-05-26 21:39:17,380] (Thread-3  ) MockPlugin call with false
-[INFO] [2015-05-26 21:39:17,382] (MainThread) 200 POST /admin/constructor/check (::1) 187.01ms
-[INFO] [2015-05-26 21:39:56,717] (MainThread) 304 GET /admin/scenarios/ (::1) 1.01ms
-[INFO] [2015-05-26 21:39:57,846] (MainThread) 304 GET /admin/plugins (::1) 1.01ms
-[INFO] [2015-05-26 21:39:57,847] (MainThread) 304 GET /admin/scenarios/ (::1) 0.00ms
-[INFO] [2015-05-26 21:39:58,795] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
-[INFO] [2015-05-26 21:39:59,333] (MainThread) 304 GET /admin/static/modules/scheduler/scheduler.html (::1) 5.02ms
-[INFO] [2015-05-26 21:39:59,387] (MainThread) 200 GET /admin/scheduler/tasks (::1) 1.00ms
-[INFO] [2015-05-26 21:40:01,194] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
-[INFO] [2015-05-26 21:40:02,432] (MainThread) 304 GET /admin/scheduler/tasks (::1) 0.00ms
-[INFO] [2015-05-26 21:40:03,738] (MainThread) 304 GET /admin/static/modules/system/system.html (::1) 5.00ms
-[INFO] [2015-05-26 21:40:03,778] (MainThread) 304 GET /admin/plugins (::1) 2.00ms
-[INFO] [2015-05-26 21:40:08,350] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
-[INFO] [2015-05-26 21:40:09,570] (MainThread) 304 GET /admin/plugins (::1) 1.00ms
-[INFO] [2015-05-26 21:40:09,572] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
-[INFO] [2015-05-26 21:40:10,224] (MainThread) 304 GET /admin/scenarios/ (::1) 0.98ms
-[INFO] [2015-05-26 21:40:10,788] (MainThread) 304 GET /admin/plugins (::1) 2.00ms
-[INFO] [2015-05-26 21:40:10,789] (MainThread) 304 GET /admin/scenarios/ (::1) 0.00ms
-[INFO] [2015-05-26 21:40:21,191] (MainThread) 304 GET /admin/plugins (::1) 0.98ms
-[INFO] [2015-05-26 21:40:21,192] (MainThread) 304 GET /admin/scenarios/ (::1) 0.99ms
-[INFO] [2015-05-26 21:40:21,505] (MainThread) 304 GET /admin/scenarios/ (::1) 1.01ms
-[INFO] [2015-05-26 21:40:24,033] (MainThread) 304 GET /admin/scenarios/conditional_test (::1) 1.00ms
-[INFO] [2015-05-26 21:40:24,035] (MainThread) 304 GET /admin/scenarios/ (::1) 1.00ms
-[INFO] [2015-05-26 21:40:24,037] (MainThread) 304 GET /admin/plugins (::1) 2.02ms
-[INFO] [2015-05-26 21:41:09,151] (MainThread) 304 GET /admin/plugins (::1) 1.00ms
-[INFO] [2015-05-26 21:41:09,152] (MainThread) 304 GET /admin/scenarios/ (::1) 0.00ms
-[DEBUG] [2015-05-26 21:41:22,721] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'next': [], 'reference': 'dir /', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:41:22,721] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
-[DEBUG] [2015-05-26 21:41:22,722] (Thread-4  ) OneWirePlugin read address dir / (attempt: 0)
-[INFO] [2015-05-26 21:41:22,899] (MainThread) 200 POST /admin/constructor/check (::1) 178.50ms
-[DEBUG] [2015-05-26 21:41:26,818] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': 'dir /', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:41:26,818] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
-[DEBUG] [2015-05-26 21:41:26,818] (Thread-5  ) OneWirePlugin read address dir / (attempt: 0)
-[INFO] [2015-05-26 21:41:26,826] (MainThread) 200 POST /admin/constructor/check (::1) 9.01ms
-[DEBUG] [2015-05-26 21:41:42,189] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': 'dir /', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:41:42,190] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
-[DEBUG] [2015-05-26 21:41:42,190] (Thread-6  ) OneWirePlugin read address dir / (attempt: 0)
-[INFO] [2015-05-26 21:41:42,198] (MainThread) 200 POST /admin/constructor/check (::1) 9.01ms
-[DEBUG] [2015-05-26 21:41:45,806] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': 'dir /', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:41:45,806] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
-[DEBUG] [2015-05-26 21:41:45,806] (Thread-7  ) OneWirePlugin read address dir / (attempt: 0)
-[INFO] [2015-05-26 21:41:45,814] (MainThread) 200 POST /admin/constructor/check (::1) 9.00ms
-[DEBUG] [2015-05-26 21:41:51,093] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': 'dir /', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:41:51,093] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
-[DEBUG] [2015-05-26 21:41:51,094] (Thread-8  ) OneWirePlugin read address dir / (attempt: 0)
-[INFO] [2015-05-26 21:41:51,104] (MainThread) 200 POST /admin/constructor/check (::1) 12.01ms
-[DEBUG] [2015-05-26 21:41:56,020] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': 'dir /', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:41:56,021] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
-[DEBUG] [2015-05-26 21:41:56,021] (Thread-9  ) OneWirePlugin read address dir / (attempt: 0)
-[INFO] [2015-05-26 21:41:56,029] (MainThread) 200 POST /admin/constructor/check (::1) 9.02ms
-[DEBUG] [2015-05-26 21:42:40,470] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': 'dir /3A.C9330D000000/', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:42:40,471] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
-[DEBUG] [2015-05-26 21:42:40,471] (Thread-10 ) OneWirePlugin read address dir /3A.C9330D000000/ (attempt: 0)
-[INFO] [2015-05-26 21:42:40,478] (MainThread) 200 POST /admin/constructor/check (::1) 9.02ms
-[DEBUG] [2015-05-26 21:42:54,188] (MainThread) RequestNode constructor called: {'position': {'left': 172, 'top': 126}, 'exceptional': [], 'active': True, 'id': 'rn234', 'retvar': 'x', 'next': [], 'reference': '/3A.C9330D000000/PIO.A', 'parallel': [], 'plugin': 'onewire', 'type': 'RequestNode', 'dimension': {'width': 180, 'height': 65}}
-[DEBUG] [2015-05-26 21:42:54,189] (MainThread) ConditionalNode constructor called: {'position': {'left': 273, 'top': 198}, 'exceptional': [], 'expression': 'not defined', 'active': False, 'id': 'cn469', 'no': [], 'next': [], 'type': 'ConditionalNode', 'parallel': [], 'yes': [], 'dimension': {'width': 218, 'height': 85}}
-[DEBUG] [2015-05-26 21:42:54,189] (Thread-11 ) OneWirePlugin read address /3A.C9330D000000/PIO.A (attempt: 0)
-[DEBUG] [2015-05-26 21:42:54,220] (Thread-11 ) OneWirePlugin address /3A.C9330D000000/PIO.A reading result : 0
-[INFO] [2015-05-26 21:42:54,222] (MainThread) 200 POST /admin/constructor/check (::1) 35.02ms
-[INFO] [2015-05-26 22:20:44,675] (MainThread) C:\Temp\shome\core\processtree\Node.py modified; restarting server
-[ERROR] [2015-05-26 22:20:44,677] (MainThread) Exception in callback functools.partial(<function wrap.<locals>.null_wrapper at 0x0000000003D0F950>)
-Traceback (most recent call last):
-  File "C:\Python33\lib\site-packages\tornado\ioloop.py", line 989, in _run
-    return self.callback()
-  File "C:\Python33\lib\site-packages\tornado\autoreload.py", line 181, in _reload_on_update
-    _check_file(modify_times, path)
-  File "C:\Python33\lib\site-packages\tornado\autoreload.py", line 196, in _check_file
-    _reload()
-  File "C:\Python33\lib\site-packages\tornado\autoreload.py", line 223, in _reload
-    sys.exit(0)
-SystemExit: 0
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Python33\lib\site-packages\tornado\ioloop.py", line 568, in _run_callback
-    ret = callback()
-  File "C:\Python33\lib\site-packages\tornado\stack_context.py", line 275, in null_wrapper
-    return fn(*args, **kwargs)
-  File "C:\Python33\lib\site-packages\tornado\ioloop.py", line 993, in _run
-    self._schedule_next()
-  File "C:\Python33\lib\site-packages\tornado\ioloop.py", line 1000, in _schedule_next
-    self._timeout = self.io_loop.add_timeout(self._next_timeout, self._run)
-  File "C:\Python33\lib\site-packages\tornado\ioloop.py", line 465, in add_timeout
-    return self.call_at(deadline, callback, *args, **kwargs)
-  File "C:\Python33\lib\site-packages\tornado\ioloop.py", line 873, in call_at
-    heapq.heappush(self._timeouts, timeout)
-TypeError: heap argument must be a list
+  File "C:\Temp\shome\web\handlers\ConstructorCheckHandler.py", line 19, in post
+    res = self._ws.action_processor.execute(gid, {})
+  File "C:\Temp\shome\core\ActionProcessor.py", line 46, in execute
+    return self._scenarios[name].execute(params)
+  File "C:\Temp\shome\core\entities\Scenario.py", line 63, in execute
+    queues[self.nodes[node].id], nodes_parallel = self.nodes[node].execute(parameters)
+  File "C:\Temp\shome\core\processtree\ConditionalNode.py", line 31, in execute
+    return self.node_exec(parameters, async=False)
+  File "C:\Temp\shome\core\processtree\ConditionalNode.py", line 23, in node_exec
+    res = self.action(parameters)
+  File "C:\Temp\shome\core\processtree\ConditionalNode.py", line 19, in action
+    return eval(self.substitute_placeholders(self.expression, parameters))
+  File "C:\Python33\lib\site-packages\execjs\__init__.py", line 126, in eval
+    return get().eval(source)
+  File "C:\Python33\lib\site-packages\execjs\__init__.py", line 211, in eval
+    return self.Context(self).eval(source)
+  File "C:\Python33\lib\site-packages\execjs\__init__.py", line 259, in eval
+    return self.exec_(code)
+  File "C:\Python33\lib\site-packages\execjs\__init__.py", line 276, in exec_
+    return self._extract_result(output.split("\n")[-2])
+  File "C:\Python33\lib\site-packages\execjs\__init__.py", line 315, in _extract_result
+    raise RuntimeError(value)
+execjs.RuntimeError: SyntaxError: Unexpected identifier
+[ERROR] [2015-05-27 23:27:45,431] (MainThread) 500 POST /admin/constructor/check (::1) 448.73ms
+[DEBUG] [2015-05-27 23:28:28,504] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn115'], 'next': [], 'exceptional': [], 'active': False, 'no': [], 'id': 'cn334', 'parallel': [], 'expression': '[state] == 1', 'position': {'left': 31, 'top': 219}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:28:28,505] (MainThread) DelayNode constructor called: {'retvar': '', 'id': 'rn115', 'parallel': [], 'expression': '', 'next': [], 'delay': 10, 'position': {'left': 228, 'top': 382}, 'active': False, 'dimension': {'width': 60, 'height': 60}, 'exceptional': [], 'type': 'DelayNode'}
+[DEBUG] [2015-05-27 23:28:28,505] (MainThread) RequestNode constructor called: {'retvar': '', 'next': [], 'exceptional': [], 'active': False, 'plugin': 'onewire', 'value': '1', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 64, 'top': 104}, 'reference': '/3A.F2360D000000/PIO.A', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:28:28,506] (Thread-21 ) OneWirePlugin trying to write address ( /3A.F2360D000000/PIO.A ) and value ( 1 )...
+[DEBUG] [2015-05-27 23:28:28,558] (Thread-21 ) OneWirePlugin have writen value 1 to address /3A.F2360D000000/PIO.A with result : 0
+[INFO] [2015-05-27 23:28:28,562] (MainThread) 200 POST /admin/constructor/check (::1) 57.37ms
+[DEBUG] [2015-05-27 23:28:37,170] (MainThread) ConditionalNode constructor called: {'retvar': '', 'yes': ['rn115'], 'next': [], 'exceptional': [], 'active': False, 'no': [], 'id': 'cn334', 'parallel': [], 'expression': '[state] == 1', 'position': {'left': 31, 'top': 219}, 'dimension': {'width': 218, 'height': 85}, 'type': 'ConditionalNode'}
+[DEBUG] [2015-05-27 23:28:37,170] (MainThread) DelayNode constructor called: {'retvar': '', 'id': 'rn115', 'parallel': [], 'expression': '', 'next': [], 'delay': 10, 'position': {'left': 228, 'top': 382}, 'active': False, 'dimension': {'width': 60, 'height': 60}, 'exceptional': [], 'type': 'DelayNode'}
+[DEBUG] [2015-05-27 23:28:37,170] (MainThread) RequestNode constructor called: {'retvar': 'x', 'next': [], 'exceptional': [], 'active': True, 'plugin': 'onewire', 'value': '', 'id': 'rn142', 'parallel': [], 'expression': '', 'position': {'left': 64, 'top': 104}, 'reference': '/3A.F2360D000000/PIO.A', 'dimension': {'width': 180, 'height': 65}, 'type': 'RequestNode'}
+[DEBUG] [2015-05-27 23:28:37,171] (Thread-22 ) OneWirePlugin trying to write address ( /3A.F2360D000000/PIO.A ) and value (  )...

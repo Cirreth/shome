@@ -49,9 +49,17 @@ class Node(metaclass=ABCMeta):
     def execute(self, parameters):
         return self.node_exec(parameters)
 
-    def _substitute_placeholders(self, str, parameters):
-        m = re.search('[{]{2}([a-zA-Z_-]?)[}]{2}', str)
-        return str
+    @classmethod
+    def substitute_placeholders(cls, text, parameters):
+        res = ''
+        last_idx = 0
+        for m in re.finditer('\[@?[a-zA-Z0-9-_]*?\]', text):
+            name = m.group(0)[1:-1]
+            if name in parameters:
+                res += text[last_idx:m.start(0)]+str(parameters[name])
+            last_idx = m.end(0)
+        res += text[last_idx:]
+        return res
 
     def __check_required_fields(self, structure):
         for k in self._required_fields+self._general_required_fields:
