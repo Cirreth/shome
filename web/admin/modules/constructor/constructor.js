@@ -42,6 +42,7 @@
                     Constructor.connect(scope, element, attrs, model);
                     $rootScope.selected = Constructor.selected;
                 };
+
             }
         }
     }]);
@@ -115,6 +116,11 @@
                 delete $scope.selected;
             }
         });
+
+        $scope.$watch('selected.value', function(value) {
+            if (value.trim() === '')
+                delete $scope.selected.value;
+        })
 
         var startNode = {
                 id: 'Start',
