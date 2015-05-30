@@ -1,4 +1,5 @@
 import json
+import logging
 from queue import Queue
 from core.entities import Base
 from sqlalchemy import Column, String, Boolean, orm
@@ -46,7 +47,11 @@ class Scenario(Base):
         self.nodes = {node: NodeFactory.create(struct[node]) for node in struct}
 
     def execute(self, parameters):
+        if self.isrunned:
+            logging.warning('Scenario double exec prevented')
+            raise Exception('Scenario '+self.name+' already runned')
         self.isrunned = True
+        logging.debug('Scenario '+self.name+' locked')
         try:
             result = {}
             parallel = Queue()
@@ -76,6 +81,7 @@ class Scenario(Base):
                     parallel.put(node)
         finally:
             self.isrunned = False
+            logging.debug('Scenario '+self.name+' unlocked')
         return result
 
     def dict(self):
