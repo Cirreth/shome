@@ -39,7 +39,7 @@ class Scheduler:
             task.scenario = scenario if scenario else task.scenario
             task.task_type = task_type
             task.set_scheme(scheme)
-            if task.enabled is not None:
+            if enabled is not None:
                 if enabled:
                     if not task.enabled:
                         task.start(save=False)

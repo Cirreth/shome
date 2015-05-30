@@ -41,7 +41,7 @@ class Task(Base):
 
     @orm.reconstructor
     def __init_on_load(self):
-        self.__init__(self.name, self.scenario, self.task_type, self.scheme, self.enabled, self.description)
+        self.__init__(self.name, self.scenario, self.task_type, json.loads(self.scheme), self.enabled, self.description)
 
     def set_scheme(self, scheme):
         if scheme is None:
