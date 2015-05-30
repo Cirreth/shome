@@ -16,9 +16,8 @@ class OneWirePlugin(SHomePlugin):
     _connection = None
 
     def __init__(self, parameters):
-        params = json.loads(parameters)
-        self._host = params['host']
-        self._port = int(params['port'])
+        self._host = parameters['host']
+        self._port = int(parameters['port'])
         logging.debug('OneWirePlugin initialization')
         self._connection = ownet.Connection(self._host, self._port)
         logging.debug('\nOneWirePlugin list dir:')
@@ -45,8 +44,9 @@ class OneWirePlugin(SHomePlugin):
         logging.debug('OneWirePlugin trying to write address ( '+address+' ) and value ( '+str(value)+' )...')
         res = self._connection.write(address, value)
         logging.debug('OneWirePlugin have writen value ' + str(value) + ' to address '+address+' with result : '+str(res))
+        return 'Success'
 
-    def call(self, reference, value=None):
+    def call(self, reference, value):
         if value is not None:
             return self._write(reference, value)
         else:

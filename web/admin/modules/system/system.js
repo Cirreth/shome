@@ -6,9 +6,9 @@
         $scope.im = InfoMessage;
 
         $scope.load = function() {
-            $http.get('/admin/plugins/all')
+            $http.get('/admin/plugins')
                     .success(function(data){
-                        $scope.plugins = data;
+                        $scope.plugins = data.plugins;
                         angular.forEach($scope.plugins, function(p) {
                             if (p.params) {
                                 p.params = angular.fromJson(p.params);

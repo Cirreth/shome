@@ -5,7 +5,8 @@ import logging
 import json
 import pymysql
 
-class DatabaseMySQLPlugin(SHomePlugin):
+
+class DatabasePlugin(SHomePlugin):
 
     _host = None
     _login = None
@@ -15,8 +16,7 @@ class DatabaseMySQLPlugin(SHomePlugin):
     _connection = None
     _cursor = None
 
-    def __init__(self, parameters):
-        params = json.loads(parameters)
+    def __init__(self, params):
         self._host = params['host']
         self._database = params['database']
         self._login = params['login']
@@ -42,7 +42,7 @@ class DatabaseMySQLPlugin(SHomePlugin):
             return str(e)
 
     def __connect(self):
-        self._connection._connect(host=self._host, user=self._login, passwd=self._password, db=self._database)
+        self._connection = pymysql.connect(host=self._host, user=self._login, passwd=self._password, db=self._database)
         self._connection.autocommit(True)
         self._cursor = self._connection.cursor(pymysql.cursors.DictCursor)
 

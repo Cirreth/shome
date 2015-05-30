@@ -1,9 +1,9 @@
 __author__ = 'cirreth'
 from abc import abstractmethod, ABCMeta
 
+
 class SHomePlugin(metaclass=ABCMeta):
 
-    @abstractmethod
     def __init__(self, parameters):
         pass
 

@@ -2,7 +2,6 @@ import logging
 import subprocess
 from plugins.SHomePlugin import SHomePlugin
 
-__author__ = 'cirreth'
 
 class SystemExecPlugin(SHomePlugin):
 

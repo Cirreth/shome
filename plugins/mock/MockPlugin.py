@@ -1,19 +1,15 @@
-__author__ = 'cirreth'
 from plugins.SHomePlugin import SHomePlugin
+
+__author__ = 'cirreth'
+
 import logging
+
 
 class MockPlugin(SHomePlugin):
 
-    def __init__(self, parameters):
-        logging.debug('MockPlugin initialization')
-
     def call(self, reference, values={}):
         logging.debug('MockPlugin call with '+reference)
-        return self._execute(reference)
-
-    def _execute(self, command):
-        print('execute mock! '+command)
-        return command
+        return reference
 
     def list(self, reference=''):
         return 'Any value'

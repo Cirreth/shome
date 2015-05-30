@@ -480,6 +480,18 @@ background: green;
     border: 2px solid #ccc !important;
 }
 
+.btn-green {
+    color: white !important;
+    background: green !important;
+    border: 2px solid #ccc !important;
+}
+
+.btn-blue {
+    color: white !important;
+    background: #177EF3 !important;
+    border: 2px solid #ccc !important;
+}
+
 .sch-btn {
   border: 2px solid #ccc;
   border-radius: 4px;

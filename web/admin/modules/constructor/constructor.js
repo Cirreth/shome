@@ -2,7 +2,7 @@
 
     var app = angular.module('shomeAdm');
 
-    app.directive('startNode', ['$rootScope', 'Constructor', function($rootScope, Constructor) {
+    app.directive('startNode', ['$rootScope', 'Notification', 'Constructor',  function($rootScope, Notification, Constructor) {
         return {
             restrict: 'E',
             require: '?ngModel',
@@ -42,6 +42,7 @@
                     Constructor.connect(scope, element, attrs, model);
                     $rootScope.selected = Constructor.selected;
                 };
+
             }
         }
     }]);
@@ -101,14 +102,12 @@
     */
 
     app.controller('ConstructorController',
-                            ['$scope', '$rootScope', '$http', '$interval', '$routeParams', 'InfoMessage', 'Constructor',
-                             function($scope, $rootScope, $http, $interval, $routeParams, InfoMessage, Constructor) {
+                            ['$scope', '$rootScope', '$http', '$interval', '$routeParams', 'Notification', 'Constructor',
+                             function($scope, $rootScope, $http, $interval, $routeParams, Notification, Constructor) {
 
         window.onresize = function(event) {
             Constructor.repaint();
         };
-
-        $scope.im = InfoMessage;
 
         $scope.exceptionalMode = Constructor.exceptionalMode;
 
@@ -117,6 +116,11 @@
                 delete $scope.selected;
             }
         });
+
+        $scope.$watch('selected.value', function(value) {
+            if (value.trim() === '')
+                delete $scope.selected.value;
+        })
 
         var startNode = {
                 id: 'Start',
@@ -241,7 +245,7 @@
             if ($scope.name) {
                 $http.get('/admin/scenarios/'+$scope.name)
                 .success(function(data){
-                    Constructor.nodes = unpackScenario(data);
+                    Constructor.nodes = JSON.parse(data.expression);
                     $scope.nodes = Constructor.nodes;
                     initConstructor($scope.name);
                 });
@@ -252,17 +256,21 @@
                 $scope.nodes = Constructor.nodes;
                 initConstructor($scope.name);
             }
-            $http.get('/admin/plugins/active')
-                .success(function(data){
-                    $scope.plugins = data;
+            $http.get('/admin/plugins')
+            .success(function(data){
+                var plugins = [];
+                angular.forEach(data.plugins, function(v, k) {
+                    if (v.state == 'active') plugins.push(k);
                 });
+                $scope.plugins = plugins;
+            });
             $http.get('/admin/scenarios/')
-                .success(function(data){
-                    $scope.scenarios = [];
-                    angular.forEach(data, function(v) {
-                        $scope.scenarios.push(v.name);
-                    });
+            .success(function(data){
+                $scope.scenarios = [];
+                angular.forEach(data, function(v) {
+                    $scope.scenarios.push(v.name);
                 });
+            });
         }
 
         $scope.toggleExceptional = function() {
@@ -270,40 +278,45 @@
             $scope.exceptionalMode = Constructor.exceptionalMode;
         }
 
-        $scope.checkScenario = function() {
-            $scope.im.loader();
-            $scope.packScenario();
-            if (!$scope.scenario) {
-                $scope.im.errorMessage('There are no nodes connected to start');
-                return;
+        var checkScenario = function() {
+            var start = $scope.nodes.filter(function(a) {return a.id == 'Start'})[0];
+            if (!start.next || start.next.length == 0) {
+                Notification.error('There are no nodes connected to start');
+                return false;
             }
-            $http.post('/admin/constructor/check', {expression: angular.toJson($scope.scenario)})
+            return true;
+        }
+
+        $scope.checkScenario = function() {
+            if (!checkScenario()) return;
+            Notification('...')
+            $http.post('/admin/constructor/check', {expression: angular.toJson($scope.nodes)})
             .success(function(data) {
-                $scope.im.okMessage('Result: '+angular.toJson(data));
+                Notification.success('Result: '+angular.toJson(data));
             })
             .error(function(data, status){
-                $scope.im.errorMessage('Error: '+data);
+                Notification.error({message: 'Error: '+data, delay: 30000});
             });
         }
 
         $scope.saveScenario = function() {
-            $scope.packScenario();
+            if (!checkScenario()) return;
             if ($scope.new) {
-                $http.post('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.scenario)})
+                $http.post('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.nodes)})
                 .success(function(data) {
                     delete $scope.new;
-                    $scope.im.okMessage('Result: '+data);
+                    Notification.success('Created successfully');
                 })
-                .error(function(data, status){
-                    $scope.im.errorMessage('Error: '+data);
+                .error(function(error){
+                    Notification.error('Error: '+error);
                 });
             } else {
-                $http.put('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.scenario)})
+                $http.put('/admin/scenarios/'+$scope.name, {expression: angular.toJson($scope.nodes)})
                 .success(function(data) {
-                    $scope.im.okMessage('Result: '+data);
+                    Notification.success('Updated successfully');
                 })
-                .error(function(data, status){
-                    $scope.im.errorMessage('Error: '+data);
+                .error(function(error){
+                    Notification.error('Error: '+error);
                 });
             }
         }
@@ -415,7 +428,7 @@
             Constructor.nodes.push({
                 id: 'cn'+parseInt(Math.random()*500),
                 type: "ConditionalNode",
-                condition: "not defined",
+                expression: "not defined",
                 position: {
                     left: 100,
                     top: 100

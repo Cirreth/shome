@@ -1,0 +1,23 @@
+__author__ = 'cirreth'
+
+import logging
+from time import sleep
+from core.processtree.Node import Node
+
+
+class DelayNode(Node):
+
+    _required_fields = ['delay']
+    _optional_fields = []
+
+    def __init__(self, structure):
+        super().__init__(structure)
+        #node fields initialization
+        self.delay = structure['delay']
+        float(self.delay) #raise exception if delay is not number
+
+    def action(self, parameters):
+        sleep(self.delay)
+
+    def execute(self, parameters):
+        return self.node_exec(parameters, async=True)
