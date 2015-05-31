@@ -30,6 +30,8 @@ class WebServer():
         application = tornado.web.Application([
             (r"/resources/(.*)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
             (r"/app/(.*)", tornado.web.StaticFileHandler, dict(path=settings['app_path'])),
+            (r"/client/execute", ExecuteScenarioHandler, {'ws': self}),
+            (r"/client/scenarios", ListScenariosHandler, {'ws': self}),
             (r"/admin/scheduler/tasks", SchedulerAllTasksHandler, {'ws': self}),
             (r"/admin/scheduler/task/(.+)", SchedulerTaskHandler, {'ws': self}),
             (r"/admin/scenarios/", ScenariosListAllHandler, {'ws': self}),

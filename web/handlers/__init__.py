@@ -5,7 +5,9 @@ __all__ = [
     "ScenariosListAllHandler",
     "ScenariosHandler",
     "SchedulerTaskHandler",
-    "SchedulerAllTasksHandler"
+    "SchedulerAllTasksHandler",
+    "ExecuteScenarioHandler",
+    "ListScenariosHandler"
 ]
 
 from .MainHandler import MainHandler
@@ -13,3 +15,4 @@ from .PluginManagementHandler import PluginManagementHandler
 from .ConstructorCheckHandler import ConstructorCheckHandler
 from .ScenariosHandler import ScenariosListAllHandler, ScenariosHandler
 from .SchedulerHandler import SchedulerAllTasksHandler, SchedulerTaskHandler
+from .ClientApplicationHandler import ExecuteScenarioHandler, ListScenariosHandler

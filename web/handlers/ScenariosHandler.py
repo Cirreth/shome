@@ -29,23 +29,26 @@ class ScenariosHandler(tornado.web.RequestHandler):
         else:
             raise HTTPError(404, "Scenario not found")
 
-    def put(self, tag):
+    def put(self, name):
         data = tornado.escape.json_decode(self.request.body)
-        newtag = data['tag'] if 'tag' in data else None
         description = data['description'] if 'description' in data else None
         expression = data['expression'] if 'expression' in data else None
-        runoninit = data['runoninit'] if 'runoninit' in data else False
-        published = data['published'] if 'published' in data else False
+        runoninit = data['runoninit'] if 'runoninit' in data else None
+        published = data['published'] if 'published' in data else None
         """if description:
             raise NotImplementedError('Description update not supported yet')
         if newtag:
             raise NotImplementedError('Process renaming not supported yet')
         """
         try:
-            if expression:
-                self._ws.action_processor.update_scenario(
-                    tag, expression, description, published, runoninit)
-                self.finish({"result": "success"})
+            self._ws.action_processor.update_scenario(
+                name=name,
+                expression=expression,
+                description=description,
+                published=published,
+                runoninit=runoninit
+            )
+            self.finish({"result": "success"})
         except Exception as e:
             raise HTTPError(500, str(e))
 

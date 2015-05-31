@@ -292,7 +292,7 @@
             Notification('...')
             $http.post('/admin/constructor/check', {expression: angular.toJson($scope.nodes)})
             .success(function(data) {
-                Notification.success('Result: '+angular.toJson(data));
+                Notification.success({message: 'Result: '+angular.toJson(data), delay: 30000});
             })
             .error(function(data, status){
                 Notification.error({message: 'Error: '+data, delay: 30000});

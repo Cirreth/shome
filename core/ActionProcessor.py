@@ -19,14 +19,14 @@ class ActionProcessor:
         if save:
             self._scenarios[name].save()
 
-    def update_scenario(self, name, expression, description='', runoninit=False, published=False):
+    def update_scenario(self, name, expression=None, description=None, runoninit=None, published=None):
         if name not in self._scenarios:
             raise Exception(name+' is not in scenarios')
         scenario = self._scenarios[name]
-        scenario.expression = expression
-        scenario.description = description
-        scenario.runoninit = runoninit
-        scenario.published = published
+        scenario.expression = expression if expression else scenario.expression
+        scenario.description = description if description else scenario.description
+        scenario.runoninit = runoninit if runoninit else scenario.runoninit
+        scenario.published = published if published else scenario.published
         scenario.save()
 
     def get_scenario(self, name):
