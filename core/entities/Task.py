@@ -75,14 +75,15 @@ class Task(Base):
         if self._started:
             raise Exception('Already started')
         try:
-            if self.task_type == 'interval' and self._scheme['interval'] < 300:
+            if self.task_type == 'interval' and self._scheme['interval'] < 1000:
                 self._start_frequent_interval()
+                logging.debug('Frequent task with name '+self.name+' initialized')
             elif self.task_type == 'interval' and self._scheme['interval'] >= 300:
-                raise NotImplementedError()
+                raise NotImplementedError('Not implemented yet')
             elif self.task_type == 'runonce':
-                raise NotImplementedError()
+                raise NotImplementedError('Not implemented yet')
             elif self.task_type == 'scheme':
-                raise NotImplementedError()
+                raise NotImplementedError('Not implemented yet')
             self._started = True
             try:
                 if save:
@@ -90,7 +91,7 @@ class Task(Base):
             except Exception as e:
                 logging.error('Error on saving task state: '+str(e))
         except Exception as e:
-            logging.error(str(e))
+            logging.error('Unknown error on task initialization: '+str(e))
             return False
         return True
 
