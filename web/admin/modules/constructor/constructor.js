@@ -118,7 +118,7 @@
         });
 
         $scope.$watch('selected.value', function(value) {
-            if (value.trim() === '')
+            if (value && value.trim() === '')
                 delete $scope.selected.value;
         })
 
