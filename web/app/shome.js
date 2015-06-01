@@ -2,7 +2,7 @@
 
 var app = angular.module('shomeUI', []);
 
-app.controller('MainController', ['$scope', function($scope){
+app.controller('MainController', ['$scope', '$http', function($scope, $http){
 
     $scope.sliderLow = 23;
     $scope.sliderHigh = 23;
@@ -23,7 +23,10 @@ app.controller('MainController', ['$scope', function($scope){
             $scope.sliderLow = value < $scope.sliderLow ? value : $scope.sliderLow;
         });
 
-        $http.post('/client/', {scenario: ''})
+        $http.post('/client/execute', {scenario: 'Today outdoor t'})
+        .success(function(data){
+            $scope.data = data;
+        });
 
     }
 
