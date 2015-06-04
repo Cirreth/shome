@@ -50,12 +50,16 @@
           Label
         </div>
 
+        <div class="uish-btn">
+            <div id="container" style="min-width: 250px; margin: 0 auto"></div>
+        </div>
+
         <div class="uish-btn slider">
             <div class="row">
                 <div class="col-md-6 hidden-xs hidden-sm slot-left">Label</div>
                 <div class="col-md-6 col-xs-12 slot-right">
-                    <input type="range" min="15" max="27" step="0.5" ng-model="sliderLow">
-                    <input type="range" min="15" max="27" step="0.5" ng-model="sliderHigh">
+                    <input type="range" min="15" max="27" step="0.3" ng-model="sliderLow">
+                    <input type="range" min="15" max="27" step="0.3" ng-model="sliderHigh">
                     [{{sliderLow}}; {{sliderHigh}}]
                 </div>
             </div>
@@ -70,33 +74,24 @@
             </div>
         </div>
 
-        {{data}}
+        <div class="uish-btn">
+          Температура в детской: {{hallTemp}} &#8451;
+        </div>
 
     </div> <!-- /container -->
 
-    <!-- jQuery -->
+    <!-- vendor js -->
     <script src="/resources/js/jquery.js"></script>
-
-    <!-- JQuery UI for JSPlumb -->
     <script src="/resources/js/jquery-ui.min.js"></script>
-	
-    <!-- JSPlumb -->
     <script src="/resources/js/jquery.jsPlumb-min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
     <script src="/resources/js/bootstrap.min.js"></script>
-	
-    <!-- Datepicker -->
     <script src="/resources/js/jquery.pickmeup.min.js"></script>
     <script src="/resources/js/jquery.pickmeup.twitter-bootstrap.min.js"></script>
+    <script src="/resources/js/highcharts.js"></script>
 
     <!-- Angular JS -->
     <script src="/resources/js/angular.min.js"></script>
-
-    <!-- Angular animate JS -->
     <script src="/resources/js/angular-route.min.js"></script>
-
-    <!-- Angular routes JS -->
     <script src="/resources/js/angular-animate.min.js"></script>
 
     <!-- Application script -->

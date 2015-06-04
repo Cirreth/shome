@@ -37,7 +37,7 @@ class DatabasePlugin(SHomePlugin):
             self.__connect()
             self._cursor.execute(request)
         try:
-            return str(self._cursor.fetchall())
+            return self._cursor.fetchall()
         except Exception as e:
             return str(e)
 
