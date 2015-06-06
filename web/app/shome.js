@@ -1,6 +1,6 @@
 (function() {
 
-var app = angular.module('shomeUI', []);
+var app = angular.module('shomeUI', ['shomeUiComponents']);
 
 app.controller('MainController', ['$scope', '$http', function($scope, $http){
 
@@ -21,14 +21,6 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
         })
         .error(function(){
 
-        });
-
-        $scope.$watch('sliderLow', function(value){
-            $scope.sliderHigh = value > $scope.sliderHigh ? value : $scope.sliderHigh;
-        });
-
-        $scope.$watch('sliderHigh', function(value){
-            $scope.sliderLow = value < $scope.sliderLow ? value : $scope.sliderLow;
         });
 
         $http.post('/client/execute', {scenario: 'Today outdoor t'})

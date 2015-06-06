@@ -50,19 +50,10 @@
           Label
         </div>
 
+        <interval scenario="Temperature" parameters="temperature.parameters" value-label="Температура в детской"></interval>
+
         <div class="uish-btn">
             <div id="container" style="min-width: 250px; margin: 0 auto"></div>
-        </div>
-
-        <div class="uish-btn slider">
-            <div class="row">
-                <div class="col-md-6 hidden-xs hidden-sm slot-left">Label</div>
-                <div class="col-md-6 col-xs-12 slot-right">
-                    <input type="range" min="15" max="27" step="0.3" ng-model="sliderLow">
-                    <input type="range" min="15" max="27" step="0.3" ng-model="sliderHigh">
-                    [{{sliderLow}}; {{sliderHigh}}]
-                </div>
-            </div>
         </div>
 
         <div class="uish-btn toggle" ng-click="toggle()">
@@ -73,6 +64,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="uish-btn">
           Температура в детской: {{hallTemp}} &#8451;
@@ -94,8 +86,9 @@
     <script src="/resources/js/angular-route.min.js"></script>
     <script src="/resources/js/angular-animate.min.js"></script>
 
-    <!-- Application script -->
+    <!-- Application scripts -->
     <script src="shome.js"></script>
+    <script src="components/control-interval.js"></script>
 
 </body>
 
