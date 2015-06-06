@@ -50,13 +50,24 @@ class Node(metaclass=ABCMeta):
         return self.node_exec(parameters)
 
     @classmethod
-    def substitute_placeholders(cls, text, parameters):
+    def substitute_placeholders(cls, text, parameters, skipped_as_null=False):
+        """
+        :param text: Text to be replaced
+        :param parameters: List of keywords
+        :param skipped_as_null: If it is True, skipped variables will be replaced to js keyword 'null'
+        :return:
+        """
+        if text is None:
+            return None
         res = ''
         last_idx = 0
         for m in re.finditer('\[@?[a-zA-Z0-9-_]*?\]', text):
             name = m.group(0)[1:-1]
             if name in parameters:
                 res += text[last_idx:m.start(0)]+str(parameters[name])
+            else:
+                if skipped_as_null:
+                    res += 'null'
             last_idx = m.end(0)
         res += text[last_idx:]
         return res

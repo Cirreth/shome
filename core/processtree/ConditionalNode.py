@@ -17,7 +17,7 @@ class ConditionalNode(Node):
 
     def action(self, parameters):
         try:
-            return eval(self.substitute_placeholders(self.expression, parameters))
+            return eval(self.substitute_placeholders(self.expression, parameters, skipped_as_null=True))
         except Exception as e:
             return 'ConditionalNode exception: id: %s, expression: %s, parameters: %s, exception: %s' % self.id, str(
                 self.expression), str(self.parameters), str(e)

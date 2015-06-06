@@ -19,6 +19,7 @@ class RequestNode(Node):
 
     def action(self, parameters):
         value = self.value if hasattr(self, 'value') else None
+        value = Node.substitute_placeholders(value, parameters)
         reference = Node.substitute_placeholders(self.reference, parameters)
         try:
             res = self._plugin_manager.call_plugin(self.plugin, reference, value)
