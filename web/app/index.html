@@ -46,29 +46,16 @@
 
     <div class="container" id="wrapper" ng-controller="MainController" ng-init="init()">
 
-        <div class="uish-btn">
-          Label
-        </div>
-
         <interval scenario="Temperature" parameters="temperature.parameters" value-label="Температура в детской"></interval>
 
         <div class="uish-btn">
+            <span>Температура на улице: {{last}} &#8451;</span>
             <div id="container" style="min-width: 250px; margin: 0 auto"></div>
         </div>
 
-        <div class="uish-btn toggle" ng-click="toggle()">
-            <div class="row">
-                <div class="col-md-10 col-xs-6">Label</div>
-                <div class="col-md-2 col-xs-6 slot-right">
-                    <div class="led-yellow" ng-class="{off: disabled}"></div>
-                </div>
-            </div>
-        </div>
+        <toggle scenario="Boiler state" label="Котел" true-value=1 false-value=0></toggle>
 
-
-        <div class="uish-btn">
-          Температура в детской: {{hallTemp}} &#8451;
-        </div>
+        <toggle scenario="boilerAutoContl" label="Автоматическое управление" true-value="true" false-value="false"></toggle>
 
     </div> <!-- /container -->
 
@@ -88,7 +75,7 @@
 
     <!-- Application scripts -->
     <script src="shome.js"></script>
-    <script src="components/control-interval.js"></script>
+    <script src="components/controls.js"></script>
 
 </body>
 

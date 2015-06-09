@@ -26,7 +26,7 @@ class ConditionalNode(Node):
         q = Queue()
         res = self.action(parameters)
         logging.debug('For expression // ' + self.expression + ' // evaluation result is ' + str(res))
-        selected_direction = self.yes if res else self.no
+        selected_direction = self.yes if res is not False else self.no
         res = bool(res)
         q.put((res, self.next if hasattr(self, 'next') else []))
         return q, selected_direction

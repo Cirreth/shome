@@ -70,6 +70,7 @@ class Node(metaclass=ABCMeta):
                     res += 'null'
             last_idx = m.end(0)
         res += text[last_idx:]
+        res = res.replace('True', 'true').replace('False', 'false')
         return res
 
     def __check_required_fields(self, structure):

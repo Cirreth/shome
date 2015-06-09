@@ -1,5 +1,6 @@
 body {
     background-color: #888;
+    background: url('../../resources/images/bg.jpg');
 }
 
 body *:not(input) {
@@ -14,12 +15,7 @@ body *:not(input) {
 
 .uish-btn {
   margin: 10px 0;
-  background: #575757;
-  background-image: -webkit-linear-gradient(top, #575757, #4f4f4f);
-  background-image: -moz-linear-gradient(top, #575757, #4f4f4f);
-  background-image: -ms-linear-gradient(top, #575757, #4f4f4f);
-  background-image: -o-linear-gradient(top, #575757, #4f4f4f);
-  background-image: linear-gradient(to bottom, #575757, #4f4f4f);
+  background: rgba(0,0,0,0.6);
   -webkit-border-radius: 7;
   -moz-border-radius: 7;
   border-radius: 7px;
@@ -36,22 +32,13 @@ body *:not(input) {
 }
 
 .uish-btn:active {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  background: rgba(0,128,0,0.6);
   text-decoration: none;
 }
 
 .uish-btn.toggle .slot-right {
   text-align: center;
   border-left: 1px solid #888;
-}
-
-.uish-btn.slider:hover {
-  background: #575757;
 }
 
 .uish-btn.slider .slot-left {
