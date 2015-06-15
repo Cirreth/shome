@@ -362,10 +362,11 @@
 
         $scope.newRequestNode = function() {
             Constructor.nodes.push({
-                id: 'rn'+parseInt(Math.random()*500),
+                id: 'rn'+parseInt(Math.random()*2147483648), //some big number for node ID. @TODO GUID?
                 type: "RequestNode",
                 plugin: "mock",
                 reference: "change me",
+                referenceProcessing: "substitute",
                 position: {
                     left: 100,
                     top: 100

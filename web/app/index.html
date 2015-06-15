@@ -48,12 +48,16 @@
 
         <interval scenario="Temperature" parameters="temperature.parameters" value-label="Температура в детской"></interval>
 
+        <toggle scenario="Boiler state" label="Котел" true-value=1 false-value=0></toggle>
+
+        <div class="uish-btn">
+            <span>Последний звонок в дверь: {{last}} &#8451;</span>
+        </div>
+
         <div class="uish-btn">
             <span>Температура на улице: {{last}} &#8451;</span>
             <div id="container" style="min-width: 250px; margin: 0 auto"></div>
         </div>
-
-        <toggle scenario="Boiler state" label="Котел" true-value=1 false-value=0></toggle>
 
         <toggle scenario="boilerAutoContl" label="Автоматическое управление" true-value="true" false-value="false"></toggle>
 

@@ -62,10 +62,13 @@ class Task(Base):
     def _start_frequent_interval(self):
         def tick(first=False):
             if not first:
-                if not self._started:
-                    logging.warning('Thread of task '+self.name+' was cancelled, but it continues executing')
-                    return
-                self._action_processor.execute(self.scenario)
+                try:
+                    if not self._started:
+                        logging.warning('Thread of task '+self.name+' was cancelled, but it continues executing')
+                        return
+                    self._action_processor.execute(self.scenario)
+                except Exception as e:
+                    logging.error('Exception in _start_frequent_interval task ('+self.name+'): '+str(e))
             t = threading.Timer(self._scheme['interval'], tick)
             t.start()
             return t

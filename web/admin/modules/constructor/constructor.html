@@ -46,6 +46,11 @@
         <div ng-show="selected.type == 'RequestNode'">
             <p>Plugin: <div class="tab-select"><select ng-options="plugin for plugin in plugins" ng-model="selected.plugin"></select></div></p>
             <p>Reference: <input ng-model="selected.reference"/></p>
+            Reference processing:
+             <div class="form-group sch-radio">
+                <input id="cb-substitute" type="radio" ng-model="selected.referenceProcessing" value="substitute"><label for="cb-substitute" class="radio-inline">Substitute</label>
+                <input id="cb-evaluate" type="radio" ng-model="selected.referenceProcessing" value="evaluate"><label for="cb-evaluate" class="radio-inline">Evaluate</label>
+             </div>
             <p>Value: <input ng-model="selected.value"/></p>
             <p>Return to: <input ng-model="selected.retvar"/></p>
         </div>

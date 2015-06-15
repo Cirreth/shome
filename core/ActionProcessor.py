@@ -28,6 +28,7 @@ class ActionProcessor:
         scenario.runoninit = runoninit if runoninit else scenario.runoninit
         scenario.published = published if published else scenario.published
         scenario.save()
+        scenario.construct()
 
     def get_scenario(self, name):
         if name in self._scenarios:

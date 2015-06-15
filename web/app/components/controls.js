@@ -73,18 +73,17 @@ module.directive('interval', ['$http', function($http){
     }
 }]);
 
-var intervalTemplate = ' <div class="uish-btn slider" ng-click="refresh()"> ' +
+var intervalTemplate = ' <div class="uish-btn slider" ng-click="refresh()" ng-cloak> ' +
 '        <div class="row"> ' + 
 '            <div class="col-md-6 hidden-xs hidden-sm slot-left">{{scenario}}</div>' + 
 '            <div class="col-md-6 col-xs-12 slot-right">' +
-'                <span>{{low}}</span><input type="range" min="21" max="26" step="0.1" ng-model="low">' +
-'                <span>{{high}}</span><input type="range" min="21" max="26" step="0.1" ng-model="high">' +
+'                <span>{{low  || "..."}}</span><input type="range" min="21" max="26" step="0.1" ng-model="low">' +
+'                <span>{{high || "..."}}</span><input type="range" min="21" max="26" step="0.1" ng-model="high">' +
 '                <p><span ng-hide="updateInProgress">{{valueLabel}}: {{value}}</span>' +
 '                <span ng-show="updateInProgress">Loading...</span></p>' +
 '            </div>' +
 '        </div>' + 
 '    </div>';
-
 
 module.directive('toggle', ['$http', function($http){
     return {
@@ -160,7 +159,7 @@ module.directive('toggle', ['$http', function($http){
     }
 }]);
 
-var toggleTemplate = '<div class="uish-btn toggle" ng-click="toggle()">' +
+var toggleTemplate = '<div class="uish-btn toggle" ng-click="toggle()" ng-cloak>' +
 '            <div class="row">' +
 '                <div class="col-md-10 col-xs-6">{{label}}</div>' +
 '                <div class="col-md-2 col-xs-6 slot-right">' +
