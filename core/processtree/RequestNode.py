@@ -9,7 +9,7 @@ class RequestNode(Node):
     """Request value from plugin"""
 
     _plugin_manager = None
-    _required_fields = ['reference', 'plugin', 'reference_processing']
+    _required_fields = ['reference', 'plugin', 'referenceProcessing']
     _optional_fields = ['retvar', 'value']
 
     def __init__(self, structure):
