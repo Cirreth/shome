@@ -32,44 +32,42 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
             });
 
 
-        $('#container').height($('#container').width() > 600 ? 400 : 200);
+            $('#container').height($('#container').width() > 600 ? 400 : 200);
 
-        $('#container').highcharts({
-            chart: {
-                type: 'spline'
-            },
-            title: {
-                text: 'Температура на улице'
-            },
-            xAxis: {
-                type: 'datetime',
-                dateTimeLabelFormats: {
-                    hour: '%H:%M',
-                    month: ''
-                }
-            },
-            yAxis: {
+            $('#container').highcharts({
+                chart: {
+                    type: 'spline'
+                },
                 title: {
-                    text: null
-                }
-            },
-            plotOptions: {
-                spline: {
-                    marker: {
-                        enabled: false
+                    text: 'Температура на улице'
+                },
+                xAxis: {
+                    type: 'datetime',
+                    dateTimeLabelFormats: {
+                        hour: '%H:%M',
+                        month: ''
                     }
-                }
-            },
-            tooltip: {
-                xDateFormat: '%H:%M'
-            },
-            series: [{
-                name: 'Outdoor',
-                data: $scope.data
-            }]
-        });
-
-
+                },
+                yAxis: {
+                    title: {
+                        text: null
+                    }
+                },
+                plotOptions: {
+                    spline: {
+                        marker: {
+                            enabled: false
+                        }
+                    }
+                },
+                tooltip: {
+                    xDateFormat: '%H:%M'
+                },
+                series: [{
+                    name: 'Outdoor',
+                    data: $scope.data
+                }]
+            });
     });
 
     $http.post('/client/execute', {scenario: 'todayTempNursery'})
@@ -124,6 +122,8 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
 
 
     });
+
+    }
 
 }]);
 
