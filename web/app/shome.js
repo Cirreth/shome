@@ -31,8 +31,21 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
                 return [Date.UTC(date.getYear(), date.getMonth()+1, date.getDate(), dt[0], dt[1]), e.value];
             });
 
+        $http.post('/client/execute', {scenario: 'todayTempNursery'})
+        .success(function(data){
+            $scope.dataNursery = data.result;
 
-        $('#container').height($('#container').width() > 600 ? 400 : 200);
+            var date = new Date();
+
+            $scope.lastNursery = $scope.dataNursery.length > 0 ? $scope.dataNursery[$scope.dataNursery.length-1].value : 'Нет данных';
+
+            $scope.dataNursery = $scope.dataNursery.map(function(e){
+                var dt = e.time.split(':');
+                return [Date.UTC(date.getYear(), date.getMonth()+1, date.getDate(), dt[0], dt[1]), e.value];
+            });
+
+
+        $('#container, #conteinerNursery').height($('#container').width() > 600 ? 400 : 200);
 
         $('#container').highcharts({
         chart: {
@@ -66,6 +79,42 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
         series: [{
             name: 'Outdoor',
             data: $scope.data
+        }]
+    });
+
+
+    $('#containerNursery').highcharts({
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Температура в детской'
+        },
+        xAxis: {
+            type: 'datetime',
+            dateTimeLabelFormats: {
+                hour: '%H:%M',
+                month: ''
+            }
+        },
+        yAxis: {
+            title: {
+                text: null
+            }
+        },
+        plotOptions: {
+            spline: {
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        tooltip: {
+            xDateFormat: '%H:%M'
+        },
+        series: [{
+            name: 'Nursery',
+            data: $scope.dataNursery
         }]
     });
 
