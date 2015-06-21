@@ -46,37 +46,47 @@
 
     <div class="container" id="wrapper" ng-controller="MainController" ng-init="init()" ng-cloak>
 
-        <interval scenario="Temperature" parameters="temperature.parameters" value-label="Температура в детской" ng-cloak></interval>
+        <interval
+            scenario="Temperature"
+            parameters="temperature.parameters"
+            value-label="Температура в детской"
+        ></interval>
 
-        <toggle scenario="Boiler state" label="Котел" true-value=1 false-value=0 ng-cloak></toggle>
+        <toggle
+            scenario="Boiler state"
+            label="Котел"
+            true-value=1
+            false-value=0
+        ></toggle>
 
         <sh-value
             label="Последний звонок в дверь: "
             value="lastRing"
-                >
-        </sh-value>
+        ></sh-value>
 
         <sh-value
             label="Температура на улице: "
             units="&#8451;"
             value="last"
-                >
-        </sh-value>
+        ></sh-value>
 
         <sh-chart
             label="Температура на улице"
             series="outdoorSeries"
-                >
-        </sh-chart>
+        ></sh-chart>
 
         <sh-chart
             ng-show="nurserySeries.data"
             label="Температура в детской"
             series="nurserySeries"
-                >
-        </sh-chart>
+        ></sh-chart>
 
-        <toggle scenario="boilerAutoContl" label="Автоматическое управление" true-value="true" false-value="false" ng-cloak></toggle>
+        <toggle
+            scenario="boilerAutoContl"
+            label="Автоматическое управление"
+            true-value="true"
+            false-value="false"
+        ></toggle>
 
     </div> <!-- /container -->
 
