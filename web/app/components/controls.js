@@ -2,7 +2,35 @@
 
 var module = angular.module('shomeUiComponents', []);
 
-module.directive('interval', ['$http', function($http){
+module.directive('stringToNumber', function() {
+  return {
+    require: 'ngModel',
+    link: function(scope, element, attrs, ngModel) {
+      ngModel.$parsers.push(function(value) {
+        return '' + value;
+      });
+      ngModel.$formatters.push(function(value) {
+        return parseFloat(value, 2);
+      });
+    }
+  };
+});
+
+module.directive('selectOnClick', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            element.on('click', function () {
+                if (!window.getSelection().toString()) {
+                    // Required for mobile Safari
+                    this.setSelectionRange(0, this.value.length)
+                }
+            });
+        }
+    };
+});
+
+module.directive('shInterval', ['$http', function($http){
     return {
         restrict: 'E',
         replace: true,
@@ -35,8 +63,8 @@ module.directive('interval', ['$http', function($http){
                     $scope.updateInProgress = false;
                     if (!updateIfChanged()) {
                         $scope.value = data.value;
-                        $scope.low = data.low;
-                        $scope.high = data.high;
+                        $scope.low = parseFloat(data.low);
+                        $scope.high = parseFloat(data.high);
                         $scope.error = false;
                     }
                 }).error(function(error) {
@@ -54,6 +82,10 @@ module.directive('interval', ['$http', function($http){
                 if (!$scope.updateInProgress) {
                     refresh(true);
                 }
+            }
+
+            $scope.focus = function($model) {
+                $model = $model+1;
             }
 
             $scope.$watch('low', function(value){
@@ -77,15 +109,17 @@ var intervalTemplate = ' <div class="uish-btn slider" ng-click="refresh()" ng-cl
 '        <div class="row"> ' + 
 '            <div class="col-md-6 hidden-xs hidden-sm slot-left">{{scenario}}</div>' + 
 '            <div class="col-md-6 col-xs-12 slot-right">' +
-'                <span>{{low  || "..."}}</span><input type="range" min="21" max="26" step="0.1" ng-model="low">' +
-'                <span>{{high || "..."}}</span><input type="range" min="21" max="26" step="0.1" ng-model="high">' +
+'                <span><input class="range-label-input" min="21" max="26" string-to-number type="number" step="0.1" ng-model="low" onfocus="this.value=this.value;"></span>' +
+'                <input type="range" min="21" max="26" step="0.1" ng-model="low">' +
+'                <span><input class="range-label-input" min="21" max="26" string-to-number type="number" step="0.1" ng-model="high" select-on-click></span>' +
+'                <input type="range" min="21" max="26" step="0.1" ng-model="high">' +
 '                <p><span ng-hide="updateInProgress">{{valueLabel}}: {{value}}</span>' +
 '                <span ng-show="updateInProgress">Loading...</span></p>' +
 '            </div>' +
 '        </div>' + 
 '    </div>';
 
-module.directive('toggle', ['$http', function($http){
+module.directive('shToggle', ['$http', function($http){
     return {
         restrict: 'E',
         replace: true,
@@ -168,5 +202,98 @@ var toggleTemplate = '<div class="uish-btn toggle" ng-click="toggle()" ng-cloak>
 '                </div>' +
 '            </div>' +
 '        </div>';
+
+module.directive('shChart', [function() {
+    return {
+        restrict: 'E',
+        replace: true,
+        template: chartTemplate,
+        scope: {
+            series: '=', //[{name: 'foo', data: [...]}]
+            label: '@'
+        },
+        link: function($scope, element, attrs) {
+
+            element.height(element.width() > 600 ? 400 : 200);
+
+            var rebuildCharts = function() {
+
+                element.highcharts({
+                    chart: {
+                        type: 'spline'
+                    },
+                    title: {
+                        text: $scope.label
+                    },
+                    xAxis: {
+                        type: 'datetime',
+                        dateTimeLabelFormats: {
+                            hour: '%H:%M',
+                            month: ''
+                        }
+                    },
+                    yAxis: {
+                        title: {
+                            text: null
+                        }
+                    },
+                    plotOptions: {
+                        spline: {
+                            marker: {
+                                enabled: false
+                            }
+                        }
+                    },
+                    tooltip: {
+                        xDateFormat: '%H:%M'
+                    },
+                    series: $scope.series
+                });
+
+            }
+
+            $scope.$watch('series', function(series) {
+
+                if (series && series.length > 0) {
+                    rebuildCharts();
+                }
+
+            });
+
+        }
+    }
+}]);
+
+var chartTemplate = '<div class="uish-btn" ng-cloak>' +
+'    <div style="min-width: 250px; margin: 0 auto"></div>' +
+'</div>'
+
+module.directive('shValue', ['$http', function($http) {
+    return {
+        restrict: 'E',
+        replace: true,
+        template: valueTemplate,
+        scope: {
+            label: '@',
+            value: '=',
+            units: '@'
+        },
+        link: function($scope, element, attrs) {
+
+            $scope.$watch('value', function(value) {
+
+                if (value) {
+                    $scope.value = value;
+                }
+
+            });
+
+        }
+    }
+}]);
+
+var valueTemplate = '<div class="uish-btn" ng-cloak>' +
+'   <span><b ng-bind="label" style="padding-right: 7px;"></b><span ng-bind="value"></span><span ng-bind="units"></span></span>' +
+'</div>'
 
 })();

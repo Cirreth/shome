@@ -38,7 +38,7 @@ class RequestNode(Node):
                           self.id,
                           self.plugin,
                           str(self.reference),
-                          self.value if hasattr(self, value) else '[none]',
+                          self.value if hasattr(self, 'value') else '[none]',
                           str(parameters),
                           str(e)
                           )
