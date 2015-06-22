@@ -18,14 +18,6 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
 
         });
 
-        $http.post('/client/execute', {scenario: 'Last ring'})
-        .success(function(data){
-            $scope.lastRing = data.value;
-        })
-        .error(function(){
-
-        });
-
         $http.post('/client/execute', {scenario: 'Today outdoor t'})
         .success(function(data){
             $scope.data = data.result;

@@ -275,24 +275,33 @@ module.directive('shValue', ['$http', function($http) {
         template: valueTemplate,
         scope: {
             label: '@',
-            value: '=',
+            scenario: '@',
             units: '@'
         },
         link: function($scope, element, attrs) {
 
-            $scope.$watch('value', function(value) {
+            $scope.loading = false;
 
-                if (value) {
-                    $scope.value = value;
-                }
+            $scope.refresh = function() {
+                $scope.loading = true;
+                $scope.value = 'Loading...';
+                $http.post('/client/execute', {scenario: $scope.scenario})
+                .success(function(value) {
+                    $scope.value = value.value;
+                    $scope.loading = false;
+                })
+                .error(function(error) {
+                    $scope.loading = false;
+                });
+            }
 
-            });
+            $scope.refresh();
 
         }
     }
 }]);
 
-var valueTemplate = '<div class="uish-btn" ng-cloak>' +
+var valueTemplate = '<div class="uish-btn" ng-click="refresh()" ng-cloak>' +
 '   <span><b ng-bind="label" style="padding-right: 7px;"></b><span ng-bind="value"></span><span ng-bind="units"></span></span>' +
 '</div>'
 
