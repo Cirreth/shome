@@ -46,6 +46,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
 
         var date = new Date();
 
+        if (!$scope.dataNursery) return;
         $scope.lastNursery = $scope.dataNursery.length > 0 ? $scope.dataNursery[$scope.dataNursery.length-1].value : 'Нет данных';
 
         $scope.dataNursery = $scope.dataNursery.map(function(e){
