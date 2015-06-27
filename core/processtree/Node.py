@@ -1,5 +1,6 @@
 import re
 from threading import Thread
+import datetime
 
 __author__ = 'cirreth'
 
@@ -64,14 +65,27 @@ class Node(metaclass=ABCMeta):
         for m in re.finditer('\[@?[a-zA-Z0-9-_]*?\]', text):
             name = m.group(0)[1:-1]
             if name in parameters:
-                res += text[last_idx:m.start(0)]+str(parameters[name])
+                val = str(parameters[name])
             else:
-                if skipped_as_null:
-                    res += 'null'
+                val = Node.replace_keyword(name)
+                if val is None and skipped_as_null:
+                    val = 'null'
+            res += text[last_idx:m.start(0)]+val
             last_idx = m.end(0)
         res += text[last_idx:]
         res = res.replace('True', 'true').replace('False', 'false')
         return res
+
+    @staticmethod
+    def replace_keyword(keyword):
+        if keyword == '@DATE':
+            return datetime.datetime.now().strftime('%d.%m.%Y')
+        elif keyword == '@DATETIME':
+            return datetime.datetime.now().strftime('%d.%m.%Y %H:%M:%S')
+        elif keyword == '@TIME':
+            return datetime.datetime.now().strftime('%H:%M:%S')
+        else:
+            return 'null'
 
     def __check_required_fields(self, structure):
         for k in self._required_fields+self._general_required_fields:
