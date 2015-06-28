@@ -17,10 +17,12 @@ class ConditionalNode(Node):
 
     def action(self, parameters):
         try:
-            return eval(self.substitute_placeholders(self.expression, parameters, skipped_as_null=True))
+            condition = self.substitute_placeholders(self.expression, parameters, skipped_to_null=True)
+            res = eval(condition)
+            return False if res is None else res
         except Exception as e:
-            return 'ConditionalNode exception: id: %s, expression: %s, parameters: %s, exception: %s' % self.id, str(
-                self.expression), str(self.parameters), str(e)
+            return 'ConditionalNode exception: id: %s, expression: %s, parameters: %s, exception: %s' % self.id, \
+                str(self.expression), str(self.parameters), str(e)
 
     def node_exec(self, parameters, async=False):
         q = Queue()

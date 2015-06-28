@@ -51,11 +51,11 @@ class Node(metaclass=ABCMeta):
         return self.node_exec(parameters)
 
     @classmethod
-    def substitute_placeholders(cls, text, parameters, skipped_as_null=False):
+    def substitute_placeholders(cls, text, parameters, skipped_to_null=False):
         """
         :param text: Text to be replaced
         :param parameters: List of keywords
-        :param skipped_as_null: If it is True, skipped variables will be replaced to js keyword 'null'
+        :param skipped_to_null: If it is True, skipped variables will be replaced to js keyword 'null'
         :return:
         """
         if text is None:
@@ -68,7 +68,7 @@ class Node(metaclass=ABCMeta):
                 val = str(parameters[name])
             else:
                 val = Node.replace_keyword(name)
-                if val is None and skipped_as_null:
+                if val is None and skipped_to_null:
                     val = 'null'
             res += text[last_idx:m.start(0)]+val
             last_idx = m.end(0)

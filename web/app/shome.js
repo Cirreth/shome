@@ -38,30 +38,30 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
                 }
             ];
 
-    });
-
-    $http.post('/client/execute', {scenario: 'todayTempNursery'})
-    .success(function(data){
-        $scope.dataNursery = data.result;
-
-        var date = new Date();
-
-        if (!$scope.dataNursery) return;
-        $scope.lastNursery = $scope.dataNursery.length > 0 ? $scope.dataNursery[$scope.dataNursery.length-1].value : 'Нет данных';
-
-        $scope.dataNursery = $scope.dataNursery.map(function(e){
-            var dt = e.time.split(':');
-            return [Date.UTC(date.getYear(), date.getMonth()+1, date.getDate(), dt[0], dt[1]), e.value];
         });
 
-        $scope.nurserySeries = [
-            {
-                name: 'Детская',
-                data: $scope.dataNursery
-            }
-        ];
+        $http.post('/client/execute', {scenario: 'todayTempNursery'})
+        .success(function(data){
+            $scope.dataNursery = data.result;
 
-    });
+            var date = new Date();
+
+            if (!$scope.dataNursery) return;
+            $scope.lastNursery = $scope.dataNursery.length > 0 ? $scope.dataNursery[$scope.dataNursery.length-1].value : 'Нет данных';
+
+            $scope.dataNursery = $scope.dataNursery.map(function(e){
+                var dt = e.time.split(':');
+                return [Date.UTC(date.getYear(), date.getMonth()+1, date.getDate(), dt[0], dt[1]), e.value];
+            });
+
+            $scope.nurserySeries = [
+                {
+                    name: 'Детская',
+                    data: $scope.dataNursery
+                }
+            ];
+
+        });
 
     }
 

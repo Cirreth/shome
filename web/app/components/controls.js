@@ -37,29 +37,31 @@ module.directive('shInterval', ['$http', function($http){
         template: intervalTemplate,
         link: function($scope, element, attrs) {
 
-            var updateIfChanged = function() {
-                if ($scope.valueOnUpdateStart.low != $scope.low || $scope.valueOnUpdateStart.high != $scope.high) {
+            updateIfChanged = function() {
+                if (!$scope.valueOnUpdateStart) {
+                    refresh();
+                    return true;
+                }
+                else if ($scope.valueOnUpdateStart.low != $scope.low || $scope.valueOnUpdateStart.high != $scope.high) {
                     refresh(true);
                     return true;
                 }
                 return false;
             }
 
-            var refresh = function(update) {
+            var refresh = function(sendValues) {
                 $scope.updateInProgress = true;
                 $scope.valueOnUpdateStart = {
                     low: $scope.low,
                     high: $scope.high
                 };
-                $http.post('/client/execute',
-                    {
-                        scenario: $scope.scenario,
-                        parameters: update ? {
-                            low: $scope.low,
-                            high: $scope.high
-                        } : {}
-                    }
-                ).success(function(data){
+                $http.post('/client/execute', {
+                    scenario: $scope.scenario,
+                    parameters: sendValues ? {
+                        low: parseFloat($scope.low || $scope.high), //align values on first using
+                        high: parseFloat($scope.high || $scope.low)
+                    } : {}
+                }).success(function(data){
                     $scope.updateInProgress = false;
                     if (!updateIfChanged()) {
                         $scope.value = data.value;
@@ -79,6 +81,7 @@ module.directive('shInterval', ['$http', function($http){
             refresh();
 
             $scope.refresh = function() {
+                $scope.low = $scope.low > $scope.high ? $scope.high : $scope.low;
                 if (!$scope.updateInProgress) {
                     refresh(true);
                 }
@@ -100,7 +103,9 @@ module.directive('shInterval', ['$http', function($http){
         scope: {
             scenario: '@',
             parameters: '=',
-            valueLabel: '@'
+            valueLabel: '@',
+            min: '@',
+            max: '@'
         }
     }
 }]);
@@ -109,10 +114,12 @@ var intervalTemplate = ' <div class="uish-btn slider" ng-click="refresh()" ng-cl
 '        <div class="row"> ' + 
 '            <div class="col-md-6 hidden-xs hidden-sm slot-left">{{scenario}}</div>' + 
 '            <div class="col-md-6 col-xs-12 slot-right">' +
-'                <span><input class="range-label-input" min="21" max="26" string-to-number type="number" step="0.1" ng-model="low" onfocus="this.value=this.value;"></span>' +
-'                <input type="range" min="21" max="26" step="0.1" ng-model="low">' +
-'                <span><input class="range-label-input" min="21" max="26" string-to-number type="number" step="0.1" ng-model="high" select-on-click></span>' +
-'                <input type="range" min="21" max="26" step="0.1" ng-model="high">' +
+'                <span><input class="range-label-input" min="{{min}}" max="{{max}}" type="number" step="0.1" string-to-number' +
+'                    ng-model="low" ng-model-options="{debounce: 1000}" ng-change="refresh()" select-on-click></span>' +
+'                <input type="range" min="{{min}}" max="{{max}}" step="0.1" ng-model="low" ng-mouseup="refresh()" >' +
+'                <span><input class="range-label-input" min="{{min}}" max="{{max}}" type="number"  step="0.1" string-to-number' +
+'                      ng-model="high" ng-model-options="{debounce: 1000}" ng-change="refresh()" select-on-click></span>' +
+'                <input type="range" min="{{min}}" max="{{max}}" step="0.1" ng-model="high" ng-mouseup="refresh()">' +
 '                <p><span ng-hide="updateInProgress">{{valueLabel}}: {{value}}</span>' +
 '                <span ng-show="updateInProgress">Loading...</span></p>' +
 '            </div>' +
