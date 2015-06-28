@@ -124,12 +124,12 @@ input[type=range]::-webkit-slider-runnable-track {
   border: 0px solid #ffffff;
 }
 input[type=range]::-webkit-slider-thumb {
-  box-shadow: 0px 0px 6.6px #ff0000, 0px 0px 0px #ff1a1a;
-  border: 2.9px solid #940000;
+  box-shadow: 0px 0px 2.4px #ffff00, 0px 0px 0px #ffff1a;
+  border: 1.7px solid #ff7d00;
   height: 14px;
   width: 26px;
   border-radius: 21px;
-  background: #ffffff;
+  background: transparent;
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -4.05px;
@@ -147,8 +147,8 @@ input[type=range]::-moz-range-track {
   border: 0px solid #ffffff;
 }
 input[type=range]::-moz-range-thumb {
-  box-shadow: 0px 0px 6.6px #ff0000, 0px 0px 0px #ff1a1a;
-  border: 2.9px solid #940000;
+  box-shadow: 0px 0px 2.4px #ffff00, 0px 0px 0px #ffff1a;
+  border: 1.7px solid #ff7d00;
   height: 14px;
   width: 26px;
   border-radius: 21px;
@@ -176,8 +176,8 @@ input[type=range]::-ms-fill-upper {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
 }
 input[type=range]::-ms-thumb {
-  box-shadow: 0px 0px 6.6px #ff0000, 0px 0px 0px #ff1a1a;
-  border: 2.9px solid #940000;
+  box-shadow: 0px 0px 2.4px #ffff00, 0px 0px 0px #ffff1a;
+  border: 1.7px solid #ff7d00;
   height: 14px;
   width: 26px;
   border-radius: 21px;

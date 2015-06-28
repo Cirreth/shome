@@ -30,7 +30,7 @@ module.directive('selectOnClick', function () {
     };
 });
 
-module.directive('shInterval', ['$http', function($http){
+module.directive('shInterval', ['$http', '$interval', function($http, $interval){
     return {
         restrict: 'E',
         replace: true,
@@ -99,6 +99,12 @@ module.directive('shInterval', ['$http', function($http){
                 $scope.low = value < $scope.low ? value : $scope.low;
             });
 
+            if ($scope.updateInterval) {
+                $interval(function() {
+                    $scope.refresh();
+                }, $scopeUpdateInterval*1000);
+            }
+
         },
         scope: {
             scenario: '@',
@@ -126,7 +132,7 @@ var intervalTemplate = ' <div class="uish-btn slider" ng-click="refresh()" ng-cl
 '        </div>' + 
 '    </div>';
 
-module.directive('shToggle', ['$http', function($http){
+module.directive('shToggle', ['$http', '$interval', function($http, $interval){
     return {
         restrict: 'E',
         replace: true,
@@ -165,7 +171,6 @@ module.directive('shToggle', ['$http', function($http){
                 ).success(function(data){
                     $scope.updateInProgress = false;
                     if (!updateIfChanged()) {
-                        console.log(data.value == true, $scope.trueValue)
                         if ($scope.trueValue && data.value == $scope.trueValue || data.value == true) {
                             $scope.state = true;
                         } else {
@@ -190,12 +195,19 @@ module.directive('shToggle', ['$http', function($http){
                 }
             }
 
+            if ($scope.updateInterval) {
+                $interval(function() {
+                    $scope.refresh();
+                }, $scope.updateInterval*1000);
+            }
+
         },
         scope: {
             scenario: '@',
             label: '@',
             trueValue: '@',
-            falseValue: '@'
+            falseValue: '@',
+            updateInterval: '@'
         }
     }
 }]);
@@ -210,14 +222,15 @@ var toggleTemplate = '<div class="uish-btn toggle" ng-click="toggle()" ng-cloak>
 '            </div>' +
 '        </div>';
 
-module.directive('shChart', [function() {
+module.directive('shChart', ['$http', '$interval', function($http, $interval) {
     return {
         restrict: 'E',
         replace: true,
         template: chartTemplate,
         scope: {
-            series: '=', //[{name: 'foo', data: [...]}]
-            label: '@'
+            label: '@',
+            scenario: '@',
+            updateInterval: '@'
         },
         link: function($scope, element, attrs) {
 
@@ -259,23 +272,69 @@ module.directive('shChart', [function() {
 
             }
 
-            $scope.$watch('series', function(series) {
+            var refresh = function() {
 
-                if (series && series.length > 0) {
-                    rebuildCharts();
-                }
+                $http.post('/client/execute', {scenario: $scope.scenario})
+                .success(function(data){
 
-            });
+                    if (!data) {
+                        $scope.error = true;
+                         console.log('Graph element '+$scope.scenario+' was hidden', 'no data', data);
+                        return;
+                    }
+
+                    $scope.data = data.result;
+
+                    var date = new Date();
+
+                    $scope.last = $scope.data.length > 0 ? $scope.data[$scope.data.length-1].value : 'Нет данных';
+
+                    $scope.data = $scope.data.map(function(e){
+                        var dt = e.time.split(':');
+                        return [Date.UTC(date.getYear(), date.getMonth()+1, date.getDate(), dt[0], dt[1]), e.value];
+                    });
+
+                    $scope.series = [
+                        {
+                            name: 'Улица',
+                            data: $scope.data
+                        }
+                    ];
+
+                    if ($scope.series && $scope.series.length > 0) {
+                        rebuildCharts();
+                    }
+
+                    $scope.error = false;
+
+                }).error(function(error) {
+                    $scope.error = true;
+                    console.log('Graph element '+$scope.scenario+' was hidden', error);
+                });
+
+            }
+
+            $scope.refresh = function() {
+               refresh();
+            }
+
+            refresh();
+
+            if ($scope.updateInterval) { //seconds to milliseconds
+                $interval(function() {
+                    $scope.refresh();
+                }, $scope.updateInterval*1000);
+            }
 
         }
     }
 }]);
 
-var chartTemplate = '<div class="uish-btn" ng-cloak>' +
+var chartTemplate = '<div class="uish-btn" ng-cloak ng-hide="error">' +
 '    <div style="min-width: 250px; margin: 0 auto"></div>' +
 '</div>'
 
-module.directive('shValue', ['$http', function($http) {
+module.directive('shValue', ['$http', '$interval', function($http, $interval) {
     return {
         restrict: 'E',
         replace: true,
@@ -283,7 +342,8 @@ module.directive('shValue', ['$http', function($http) {
         scope: {
             label: '@',
             scenario: '@',
-            units: '@'
+            units: '@',
+            updateInterval: '@'
         },
         link: function($scope, element, attrs) {
 
@@ -303,6 +363,12 @@ module.directive('shValue', ['$http', function($http) {
             }
 
             $scope.refresh();
+
+            if ($scope.updateInterval) {
+                $interval(function() {
+                    $scope.refresh();
+                }, $scope.updateInterval*1000);
+            }
 
         }
     }

@@ -54,6 +54,7 @@
             value-label="Температура в детской"
             min="21"
             max="26"
+            update-interval="300"
         ></sh-interval>
 
         <sh-toggle
@@ -61,36 +62,33 @@
             label="Котел"
             true-value=1
             false-value=0
+            update-interval="30"
         ></sh-toggle>
 
         <sh-value
             label="Последний звонок в дверь: "
             scenario="Last ring"
+            update-interval="30"
         ></sh-value>
 
         <sh-value
-            label="Температура в детской: "
-            units="&#8451;"
-            scenario="Temperature"
-        ></sh-value>
-
-       <sh-value
             label="Температура на улице: "
             units="&#8451;"
             scenario="Outdoor temp"
         ></sh-value>
 
-
         <sh-chart
             label="Температура на улице"
-            series="outdoorSeries"
+            scenario="Today outdoor t"
+            update-interval="900"
         ></sh-chart>
 
         <sh-chart
-            ng-show="nurserySeries.data"
             label="Температура в детской"
-            series="nurserySeries"
+            scenario="todayTempNursery"
+            update-interval="900"
         ></sh-chart>
+
 
         <sh-toggle
             scenario="boilerAutoContl"
