@@ -197,7 +197,9 @@ module.directive('shToggle', ['$http', '$interval', function($http, $interval){
 
             if ($scope.updateInterval) {
                 $interval(function() {
-                    $scope.refresh();
+                    if (!$scope.updateInProgress) {
+                        refresh();
+                    }
                 }, $scope.updateInterval*1000);
             }
 
