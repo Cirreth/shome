@@ -101,7 +101,9 @@ module.directive('shInterval', ['$http', '$interval', function($http, $interval)
 
             if ($scope.updateInterval) {
                 $interval(function() {
-                    $scope.refresh();
+                    if (!$scope.updateInProgress) {
+                        refresh();
+                    }
                 }, $scopeUpdateInterval*1000);
             }
 
